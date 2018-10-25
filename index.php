@@ -3,6 +3,8 @@
  * Display the right model of the template according to the url
  */
 
+var_dump('hello');
+
 require('common/lib.php');
 require('common/define.php');
 require('common/shortcodes.php');
