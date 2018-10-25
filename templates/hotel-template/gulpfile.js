@@ -1,0 +1,74 @@
+// /////////////////////////////////////////////////
+// GULP
+// /////////////////////////////////////////////////
+
+var gulp = require('gulp');
+
+// /////////////////////////////////////////////////
+// GULP tasks
+// /////////////////////////////////////////////////
+
+var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
+var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
+var browserSync = require("browser-sync");
+var reload = browserSync.reload;
+
+
+// /////////////////////////////////////////////////
+// STYLES
+// /////////////////////////////////////////////////
+
+gulp.task('styles', function(){
+  return gulp.src('sass/**/*.scss')
+  	.pipe(plumber())
+    .pipe(sass()) // Using gulp-sass
+    .pipe(gulp.dest('pre-css'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('css'))
+    .pipe(reload({stream:true}));
+});
+
+// /////////////////////////////////////////////////
+// HTML Task
+// /////////////////////////////////////////////////
+
+gulp.task("html", function(){
+    gulp.src("**/*.php")
+    .pipe(reload({stream:true}));
+});
+
+// /////////////////////////////////////////////////
+// Browser-Sync Task
+// /////////////////////////////////////////////////
+
+// gulp.task('browser-sync', function(){
+//   browserSync({
+//     server:{
+//        proxy: 'http://localhost/vissi'
+//     }
+//   })
+// });
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "http://localhost/vissi",
+        files: ["**/*.php"]
+    });
+});
+
+// /////////////////////////////////////////////////
+// WATCH
+// /////////////////////////////////////////////////
+gulp.task('watch', function(){
+  gulp.watch('sass/**/*.scss', ['styles']); 
+});
+
+
+
+// /////////////////////////////////////////////////
+// Default Task
+// /////////////////////////////////////////////////
+
+gulp.task('default',[ 'styles', 'html', 'browser-sync', 'watch' ]);

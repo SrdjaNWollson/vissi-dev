@@ -1,0 +1,295 @@
+//-------------------------
+//----------- MAIN HEADER
+//-------------------------
+
+#mainHeader {
+	.navbar-nav>li {
+		display: inline-block;
+		float: none;
+	}
+	.navbar-nav>li.primary>a.firstLevel {
+		font-size: 11px;
+		line-height: 1.1;
+		font-weight: 600;
+		color: $c-mainLight;
+	}
+	.container {
+		position: relative;
+	}
+	.holder-btn-book {
+		display: inline-block;
+		position: relative;
+		top: 2px;
+		vertical-align: super;
+	}
+	.btn-book-now {
+		padding: 11px 13px 10px;
+		font-size: 11px;
+		font-weight: 600;
+	}
+}
+
+/****************** HEADERS ******************/
+header, header * {
+    transition: all 0.3s;
+}
+#mainHeader {
+    background: none;
+}
+.navbar-header {
+    float: none;
+}
+.navbar-brand,
+.fixed .navbar-brand {
+    display: block;
+    height: auto;
+    padding: 10px 0;
+    width: auto;
+    margin: 0;
+    text-align: left;
+    clear: none;
+}
+@media (max-width: 1199px) {
+    .navbar-brand img {
+        max-height: 105px;
+    }
+}
+@media (min-width: 1200px) {
+    .navbar-brand img {
+        max-height: 100px;
+    }
+}
+@media (min-width: 768px) {
+    body:not(#page-1) header:not(.fixed) .navbar-brand img {
+        max-height: 105px;
+    }
+    #mainMenu {
+        margin-top: 12px;
+    }
+    #page-1 header:not(.fixed) .navbar-brand {
+        float: none;
+        margin: 100px auto 0 auto;
+        text-align: center;
+        clear: both;
+        width: 180px;
+    }
+}
+.navbar-nav {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    @include breakpoint(desktop--small) {
+    	display: none;
+    }
+}
+.navbar-nav > li > a {
+    padding-bottom: 8px;
+    padding-top: 0;
+}
+.nav > li > a {
+    padding-left: 0;
+    padding-right: 0;
+}
+.nav > li.primary {
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+}
+.nav > li.primary.btn-nav {
+    padding-right: 0;
+}
+ul.navbar-nav > li.primary > a.firstLevel {
+    text-transform: uppercase;
+    padding-bottom: 0;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav > li:not(.btn-nav){
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+header.header-type-1{
+	position:relative; 
+    height: 100px;
+}
+
+header.header-type-1.fixed{
+	position:fixed;
+    height: 65px;
+}
+
+header.header-type-1 #mainHeader{
+	background:#fff;
+}
+
+header.header-type-1 .navbar-brand{ 
+    line-height: 100px;
+    padding: 0;
+}
+header.header-type-1.fixed .navbar-brand{ 
+    line-height: 65px;
+}
+
+header.logo-position-1 .navbar-brand{ 
+	float:left !important;
+	margin:0 !important;
+	clear:none !important;
+}
+
+header.logo-position-2 .navbar-brand{ 
+	float:none !important;
+	margin:0 !important;
+	width:100% !important;
+	text-align:center;
+}
+
+header.logo-position-3 .navbar-brand{ 
+	float:none !important;
+	margin:0 !important;
+	width:100% !important;
+	text-align:center;	
+}
+
+header.logo-position-5 .navbar-brand{ 
+	float:right !important;
+	margin:0 !important;
+	clear:none !important;
+}
+
+.fixed .navbar{min-height:10px;}
+
+.centerArrow .rsArrowLeft {
+    bottom: 0;
+    top: 0;
+    left: 10px;
+	right:auto;
+    margin: auto;
+}
+
+.centerArrow .rsArrowRight {
+    bottom: 0;
+    top: 0;
+	left:auto;
+    right: 10px;
+    margin: auto;
+}
+.centerArrow .rsNav{
+	right: 0;
+    left: 0;
+}
+
+.header-type-1.booking-search-position-1 #search-home-wrapper{
+	position:relative;
+	top:0px; 
+}
+
+.booking-search-position-2 #search-home-wrapper{
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#mainMenu {
+    text-align: left;
+    float: right;
+}
+#mainMenu.menu-position-1{
+	float:left;
+}
+
+#mainMenu.menu-position-2{
+	float:none;
+	margin:auto;
+}
+
+#mainMenu.menu-position-3{ 
+	float:right;
+}
+header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1  #mainMenu.menu-position-3{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    margin: 0;
+}
+
+body[dir="rtl"] #mainMenu {
+    text-align: right;
+    float: left;
+}
+#mainMenu {
+    text-align: center;
+    line-height: 0;
+}
+#mainMenu,
+#mainMenu .navbar-nav {
+    position: relative;
+    z-index: 1;
+}
+@media (max-width: 767px) {
+    #page-1 .navbar-brand {
+        display: block;
+        height: auto;
+        padding: 10px 0;
+        width: 180px;
+        margin: 0;
+        text-align: left;
+        float: left;
+        clear: none;
+    }
+    .navbar-brand img,
+    .fixed .navbar-brand img,
+    #page-1 .navbar-brand img,
+    #page-1 .fixed .navbar-brand img {
+        max-height: 60px;
+    }
+    #mainMenu {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        margin-top: 0;
+        border-top: none;
+    }
+    #mainMenu .navbar-nav {
+        display: block;
+    }
+    #mainMenu .navbar-nav li:last-child {
+        border-bottom: none;
+    }
+    ul.navbar-nav > li.primary > a.firstLevel.active, ul.navbar-nav > li.primary > a.firstLevel:hover, ul.navbar-nav > li.primary > a.firstLevel:focus {
+        border-bottom: none;
+    }
+}
+
+ul.navbar-nav > li.primary .dropdown-menu {
+    max-width: 320px;
+    width: auto;
+    white-space: nowrap;
+}
+.dropdown-menu-right {
+    float: right !important;
+    right: 0;
+    left: auto !important;
+}
+ul.navbar-nav > li.primary .dropdown-menu li a {
+    line-height: 12px;
+    font-weight: 400;
+}
+#mainMenu .searchWrapper {
+    margin: 0;
+}
+#mainMenu .searchWrapper .form-control {
+    width: 160px;
+}
+#mainMenu .searchWrapper .form-control, #mainMenu .searchWrapper button {
+    padding: 0 12px;
+    height: 44px;
+    line-height: 44px;
+}
+.navbar-fixed-top.fixed {
+    z-index: 1031;
+}
+

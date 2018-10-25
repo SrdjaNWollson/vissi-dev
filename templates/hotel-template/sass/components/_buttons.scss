@@ -1,0 +1,27 @@
+//-------------------------
+//--------------BUTTONS
+//-------------------------
+
+.btn {
+    text-transform: uppercase;
+    border-radius: 0;
+    line-height: 1;
+}
+.btn-number {
+    padding: 2px;
+}
+
+.btn-primary {
+    background: none;
+    color: #fff;
+    background-color: $c-green;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #5381BA;
+    color: #fff;
+}
+.btn-default {
+    background: none;
+    color: #555;
+}

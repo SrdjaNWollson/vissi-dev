@@ -1,0 +1,20 @@
+//-------------------------
+//--------------BASE CONFIG
+//-------------------------
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+.container {
+	max-width: 1140px;
+	width: 95%;
+	margin: 0 auto;
+	padding: 0;
+}
