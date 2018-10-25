@@ -53,7 +53,7 @@ gulp.task("html", function(){
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "http://localhost/vissi",
+        proxy: "http://localhost/vissi-dev",
         files: ["**/*.php"]
     });
 });
