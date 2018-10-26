@@ -30,7 +30,7 @@
         @media (max-width: $mobile)                             { @content; }
     }
     @else if $point == mobile--l {//max-width = 640px
-        @media (max-width: $mobile)                             { @content; }
+        @media (max-width: $mobile--l)                             { @content; }
     }
     @else if $point == exeptGadgets {
         @media (min-width: $tablet + 1)                     { @content; }

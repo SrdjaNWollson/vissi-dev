@@ -97,7 +97,6 @@ header, header * {
 @media (min-width: 768px) {
     #page-1 header:not(.fixed) .navbar-brand {
         float: none;
-        margin: 100px auto 0 auto;
         text-align: center;
         clear: both;
         width: 220px;
@@ -146,7 +145,6 @@ header.header-type-1.fixed .navbar-brand{
 
 header.logo-position-1 .navbar-brand{ 
 	float:left !important;
-	margin:0 !important;
 	clear:none !important;
 }
 
@@ -256,38 +254,49 @@ body[dir="rtl"] #mainMenu {
     position: relative;
     z-index: 1;
 }
-@media (max-width: 767px) {
-    #page-1 .navbar-brand {
+#page-1 .navbar-brand {
+    margin-left: -13px;
+     @include breakpoint(tablet) {
+        margin-left: -1.4rem;
+    }
+    @include breakpoint(mobile--l) {
+        margin-left: -1.4rem;
+    }
+    @include breakpoint(mobile) {
         display: block;
         height: auto;
-        padding: 10px 0;
+        padding: 5px 0;
         width: 22rem;
-        margin: 0;
         text-align: left;
         float: left;
         clear: none;
-         @include breakpoint(mobile) {
-            width: 22rem;
-        }
-        @include breakpoint(mobile--l) {
-            width: 25rem;
-        }
     }
-    
-    #mainMenu {
+    @include breakpoint(mobile--l) {
+        width: 25rem;
+    }
+}
+
+#mainMenu {
+    @include breakpoint(mobile) {
         position: absolute;
         top: 80px;
         width: 100%;
         margin-top: 0;
         border-top: none;
     }
-    #mainMenu .navbar-nav {
+}
+#mainMenu .navbar-nav {
+    @include breakpoint(mobile) {
         display: block;
     }
-    #mainMenu .navbar-nav li:last-child {
+}
+#mainMenu .navbar-nav li:last-child {
+    @include breakpoint(mobile) {
         border-bottom: none;
     }
-    ul.navbar-nav > li.primary > a.firstLevel.active, ul.navbar-nav > li.primary > a.firstLevel:hover, ul.navbar-nav > li.primary > a.firstLevel:focus {
+}
+ul.navbar-nav > li.primary > a.firstLevel.active, ul.navbar-nav > li.primary > a.firstLevel:hover, ul.navbar-nav > li.primary > a.firstLevel:focus {
+    @include breakpoint(mobile) {
         border-bottom: none;
     }
 }

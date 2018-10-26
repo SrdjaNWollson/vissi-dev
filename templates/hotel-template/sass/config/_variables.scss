@@ -5,12 +5,14 @@
 //-----COLORS
 $c-black           : #000;
 $c-white           : #fff;
+$c-blackWhite      : #E7E6DD;
 $c-main            : #79675a;
 $c-mainLight       : #765e51;
 $c-green           : #7a9e1a;
+$c-gold            : #c5ae60;   
 
 //-----PATHS
-$localFontBase: "/fonts/";
+$localFontBase: "/vissi-dev/templates/hotel-template/fonts/";
 $imgBaseUrl   : "/images/";
 
 
@@ -21,7 +23,8 @@ $fullHeight: 100%;
 
 //------FONT
 $fontDefault     : Arial, Helvetica, Tahoma, sans-serif;
-$baseFont: Arial;
+$baseFont: 'Muli', sans-serif;
+$butler: 'ButlerRegular';
 
 
 
