@@ -31,8 +31,8 @@ html {
     @include breakpoint (tablet) {
         font-size: 1.01010101010101vw;//10px - 768px
     }
-    @include breakpoint (mobile) {//10px - 640px
-        font-size: 1.5625vw;
+    @include breakpoint (mobile) {//10px - 540px
+        font-size: 1.851851851851852vw;
     }
     @include breakpoint (mobile--s) {//10px - 640px
         font-size: 2.083333333333vw;

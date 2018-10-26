@@ -6,21 +6,45 @@
 	.navbar-nav>li {
 		display: inline-block;
 		float: none;
+        @include breakpoint(desktop--small) {
+            display: block;
+        } 
 	}
+    .navbar-nav>li.primary {
+        @include breakpoint(desktop--small) {
+            padding: 20px 0;
+        }
+        @include breakpoint(mobile) {
+            padding: 2rem;
+        }
+    }
 	.navbar-nav>li.primary>a.firstLevel {
 		font-size: 11px;
 		line-height: 1.1;
 		font-weight: 600;
 		color: $c-mainLight;
+        @include breakpoint(desktop--small) {
+            font-size: 24px;
+            color: $c-white;
+        }
+        @include breakpoint(mobile) {
+            font-size: 2.4rem;
+        }
 	}
 	.container {
 		position: relative;
 	}
 	.holder-btn-book {
 		display: inline-block;
-		position: relative;
-		top: 2px;
+		@include absolute(center-vertical);
+        right: 0;
 		vertical-align: super;
+        @include breakpoint(desktop--small) {
+            right: 70px;
+        }
+        @include breakpoint(mobile) {
+            display: none;
+        }
 	}
 	.btn-book-now {
 		padding: 11px 13px 10px;
@@ -29,7 +53,27 @@
 	}
 }
 
+.navbar-nav {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    margin-right: 100px;
+    @include breakpoint(desktop--small) {
+        margin-right: 0;
+    }
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 8px;
+    padding-top: 0;
+}
+.nav > li > a {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /****************** HEADERS ******************/
+
 header, header * {
     transition: all 0.3s;
 }
@@ -49,47 +93,17 @@ header, header * {
     text-align: left;
     clear: none;
 }
-@media (max-width: 1199px) {
-    .navbar-brand img {
-        max-height: 105px;
-    }
-}
-@media (min-width: 1200px) {
-    .navbar-brand img {
-        max-height: 100px;
-    }
-}
+
 @media (min-width: 768px) {
-    body:not(#page-1) header:not(.fixed) .navbar-brand img {
-        max-height: 105px;
-    }
-    #mainMenu {
-        margin-top: 12px;
-    }
     #page-1 header:not(.fixed) .navbar-brand {
         float: none;
         margin: 100px auto 0 auto;
         text-align: center;
         clear: both;
-        width: 180px;
+        width: 220px;
     }
 }
-.navbar-nav {
-    display: inline-block;
-    float: none;
-    margin: 0;
-    @include breakpoint(desktop--small) {
-    	display: none;
-    }
-}
-.navbar-nav > li > a {
-    padding-bottom: 8px;
-    padding-top: 0;
-}
-.nav > li > a {
-    padding-left: 0;
-    padding-right: 0;
-}
+
 .nav > li.primary {
     padding-left: 12.5px;
     padding-right: 12.5px;
@@ -195,6 +209,9 @@ header.logo-position-5 .navbar-brand{
 #mainMenu {
     text-align: left;
     float: right;
+    @include breakpoint(desktop--small) {
+        display: none;
+    }
 }
 #mainMenu.menu-position-1{
 	float:left;
@@ -214,6 +231,16 @@ header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMe
     transform: translateY(-50%);
     right: 0px;
     margin: 0;
+    @include breakpoint(desktop--small) {
+        position: fixed;
+        transform: none;
+        top: 0;
+        height: 100vh;
+        min-height: 700px;
+        width: 100%;
+        padding-top: 100px;
+        background-color: $c-main;
+    }
 }
 
 body[dir="rtl"] #mainMenu {
@@ -234,18 +261,19 @@ body[dir="rtl"] #mainMenu {
         display: block;
         height: auto;
         padding: 10px 0;
-        width: 180px;
+        width: 22rem;
         margin: 0;
         text-align: left;
         float: left;
         clear: none;
+         @include breakpoint(mobile) {
+            width: 22rem;
+        }
+        @include breakpoint(mobile--l) {
+            width: 25rem;
+        }
     }
-    .navbar-brand img,
-    .fixed .navbar-brand img,
-    #page-1 .navbar-brand img,
-    #page-1 .fixed .navbar-brand img {
-        max-height: 60px;
-    }
+    
     #mainMenu {
         position: absolute;
         top: 80px;
@@ -268,6 +296,94 @@ ul.navbar-nav > li.primary .dropdown-menu {
     max-width: 320px;
     width: auto;
     white-space: nowrap;
+}
+/****************** HEADERS ******************/
+#preHeader {
+    height: 44px;
+    line-height: 44px;
+}
+.navbar-brand {
+    height: auto;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+}
+.navbar-brand img {
+    width: 100%;
+}
+@media(max-width:767px) {
+    .navbar-brand {
+        padding: 10px 0;
+    }
+}
+#page-1 .fixed .navbar-brand {
+    width: 180px;
+    @include breakpoint(mobile) {
+        width: 18rem;
+    }
+    @include breakpoint(mobile--l) {
+        width: 20rem;
+    }
+}
+.navbar {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+.navbar-fixed-top {
+    border: none;
+}
+.navbar-collapse {
+    padding: 0;
+}
+.navbar-default {
+    border: none;
+}
+
+.navbar-nav ul li {
+    position: relative;
+}
+.navbar-nav ul {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#mainMenu {
+    position: relative;
+}
+@media(max-width:767px) {
+    ul.navbar-nav > li.primary > a.firstLevel.active,
+    ul.navbar-nav > li.primary > a.firstLevel:hover,
+    ul.navbar-nav > li.primary > a.firstLevel:focus {
+        border-bottom: none;
+    }
+}
+
+.navbar-nav ul li a {
+    display: block;
+    font-size: 12px;
+    padding: 11px;
+}
+@media(min-width:768px) {
+    .navbar-nav ul {
+        left: 0;
+        position: absolute;
+        top: 50px;
+        z-index: 1024;
+        width: 200px;
+    }
+    .navbar-nav ul ul {
+        top: 0;
+    }
+}
+.navbar-nav .Nactive .subMenu {
+    margin-left: 10px;
 }
 .dropdown-menu-right {
     float: right !important;
@@ -293,3 +409,116 @@ ul.navbar-nav > li.primary .dropdown-menu li a {
     z-index: 1031;
 }
 
+
+/****************** HEADERS ******************/
+#preHeader {
+    background: #344860;
+    color: #fff;
+}
+#preHeader a {
+    color: #fff;
+}
+body:not(#page-1) #mainHeader, #mainHeader {
+    background: #e8e8e4;
+}
+body:not(#page-1) .fixed #mainHeader,
+.fixed #mainHeader {
+    background: #e8e8e4;
+}
+// header:not(.fixed) #mainHeader {
+//     background: transparent;
+//     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+//     background: -o-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+//     background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+//     background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+// }
+
+ul.navbar-nav > li.primary > a.firstLevel {
+    color: #765e51;
+}
+ul.navbar-nav > li.primary > a.firstLevel.active,
+ul.navbar-nav > li.primary > a.firstLevel:hover,
+ul.navbar-nav > li.primary > a.firstLevel:focus {
+    border-bottom: 1px solid #765e51;
+    color: #765e51;
+    background: none;
+    @include breakpoint(desktop--small) {
+        border-bottom: none;
+    }
+}
+
+.navbar-fixed-top {
+    @include breakpoint(desktop--small) {
+        z-index: 55555;
+    }
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+@media(max-width:767px) {
+    ul.navbar-nav > li.primary > a.firstLevel.active,
+    ul.navbar-nav > li.primary > a.firstLevel:hover,
+    ul.navbar-nav > li.primary > a.firstLevel:focus {
+        border-bottom: none;
+    }
+}
+#mainMenu .navbar-nav ul li a {
+    border-bottom: 1px solid #ddd;
+}
+.navbar-nav ul li a {
+    color: #666;
+}
+.navbar-nav ul li a:hover, .navbar-nav ul li.hover > a {
+    background: #5381BA;
+    color: #fff;
+}
+ul.navbar-nav > li.primary .dropdown > a,
+ul.navbar-nav > li.primary .dropdown {
+    color: #fff;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background: none;
+    border: none;
+}
+@media(min-width:768px) {
+    .navbar-nav ul {
+        background: #fff;
+    }
+}
+#lang-btn {
+    background: transparent;
+    border: 0;
+}
+#lang-btn:hover,
+#lang-btn:focus {
+    color: #ccc;
+}
+#lang-menu a {
+    color: #333;
+}
+.info-header svg {
+    background: #fff;
+    color: #5381BA;
+}
+.searchWrapper {
+    color: #888;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.searchWrapper button:hover {
+    background: #5381BA;
+}
+.page-header {
+    background-color: #506f9e;
+    color: #fff;
+    border: none;
+}
+.page-header h1, .page-header .h1, .page-header a {
+    color: #fff;
+}
+.breadcrumb {
+    background: transparent;
+}

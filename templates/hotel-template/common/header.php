@@ -109,6 +109,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
     <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
     <script src="<?php echo DOCBASE; ?>common/js/modernizr-2.6.1.min.js"></script>
+    <script src="<?php echo DOCBASE; ?>js/main.js" type="text/javascript"></script>
 
     <script>
         Modernizr.load({
@@ -196,10 +197,10 @@ if($appearance['header_sticky'] == 1){
 <header class="<?= $sticky_class ?> header-type-<?= $appearance['header_type'] ?> logo-position-<?= $appearance['logo_position'] ?>" role="banner">
     <div id="mainHeader">
         <div class="container">
-            <?php if($appearance['logo_position'] == 1 || $appearance['logo_position'] == 2 || $appearance['logo_position'] == 5) : ?>
-                <a class="navbar-brand" href="<?php echo DOCBASE.trim(LANG_ALIAS, "/"); ?>" title="<?php echo $homepage['title']; ?>"><img src="<?php echo getFromTemplate("images/Visi-DArte-logo.png"); ?>" alt="<?php echo SITE_TITLE; ?>"></a>
+            <?php if($appearance['logo_position'] == 1 || $appearance['logo_position'] == 2 || $appearance['logo_position'] == 5) :             ?>
+                <a class="navbar-brand" href="<?php echo DOCBASE.trim(LANG_ALIAS, "/"); ?>" title="<?php echo $homepage['title']; ?>"><img src="<?php echo getFromTemplate("images/vissi-d-arte-logo-brown.svg"); ?>" alt="<?php echo SITE_TITLE; ?>"></a>
             <?php endif; ?>
-            <div id="mainMenu" class="collapse navbar-collapse menu-position-<?= $appearance['menu_position'] ?>">
+            <div id="mainMenu" class="menu-position-<?= $appearance['menu_position'] ?>">
                 <ul class="nav navbar-nav">
                     <?php
                     function subMenu($id_parent, $menu)
@@ -299,10 +300,7 @@ if($appearance['header_sticky'] == 1){
                         </div>
                     </li> */ ?>
                 </ul>
-                     <!-- BOOK NOW BUTTON -->
-                    <div class="holder-btn-book">
-                        <button class="btn btn-primary btn-book-now" type="submit" name="book-now">BOOK NOW</button>
-                    </div>
+                    
                     <?php
                     if(LANG_ENABLED){
                         if(count($langs) > 0){ ?>
@@ -468,6 +466,10 @@ if($appearance['header_sticky'] == 1){
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- BOOK NOW BUTTON -->
+            <div class="holder-btn-book">
+                <button class="btn btn-primary btn-book-now" type="submit" name="book-now">BOOK NOW</button>
             </div>
             <?php if($appearance['logo_position'] == 3) : ?>
                 <a class="navbar-brand" href="<?php echo DOCBASE.trim(LANG_ALIAS, "/"); ?>" title="<?php echo $homepage['title']; ?>"><img src="<?php echo getFromTemplate("images/logo.png"); ?>" alt="<?php echo SITE_TITLE; ?>"></a>

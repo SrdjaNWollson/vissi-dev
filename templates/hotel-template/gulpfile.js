@@ -43,14 +43,6 @@ gulp.task("html", function(){
 // Browser-Sync Task
 // /////////////////////////////////////////////////
 
-// gulp.task('browser-sync', function(){
-//   browserSync({
-//     server:{
-//        proxy: 'http://localhost/vissi'
-//     }
-//   })
-// });
-
 gulp.task('browser-sync', function() {
     browserSync.init({
         proxy: "http://localhost/vissi-dev",

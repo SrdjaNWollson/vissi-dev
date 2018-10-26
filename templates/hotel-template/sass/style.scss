@@ -6,12 +6,6 @@
 //------ALL VARIABLES
 @import 'config/variables';
 
-//-------TEMPLATE CSS
-@import 'template-css/layout';
-@import 'template-css/colors';
-@import 'template-css/main';
-
-
 //------MIXINS
 @import 'mixins/breakpoints';
 @import 'mixins/borderRadius';
@@ -23,6 +17,11 @@
 @import 'mixins/gradient';
 @import 'mixins/vendor-prefixes';
 @import 'mixins/absolute-center';
+
+//-------TEMPLATE CSS
+@import 'template-css/layout';
+@import 'template-css/colors';
+@import 'template-css/main';
 
 
 //------MAIN CONFIG

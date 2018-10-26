@@ -26,10 +26,10 @@
     @else if $point == tablet {//max-width = 990px
         @media (max-width: $tablet)                             { @content; }
     }
-    @else if $point == mobile {//max-width = 640px
+    @else if $point == mobile {//max-width = 767px
         @media (max-width: $mobile)                             { @content; }
     }
-    @else if $point == mobile--s {//max-width = 480px
+    @else if $point == mobile--l {//max-width = 640px
         @media (max-width: $mobile)                             { @content; }
     }
     @else if $point == exeptGadgets {
@@ -41,7 +41,7 @@
 //------MEDIA QUERIES
 $desktop            : 1400px;
 $desktop--small     : 1200px;
-$tablet--landscape  : 1024px;
+$tablet--landscape  : 1023px;
 $tablet             : 990px;
-$mobile             : 640px; 
-$mobile--s          : 480px; 
+$mobile             : 767px; 
+$mobile--l          : 640px; 
