@@ -13,11 +13,13 @@ function screenSize(){
 	else
 		isDesktop = true;
 }
+
 /* =====================================================================
  * DOCUMENT READY
  * =====================================================================
  */
 $(document).ready(function(){
+	
 	//RESIZE EVENTS
 	$(window).resize(function(){
 		screenSize();

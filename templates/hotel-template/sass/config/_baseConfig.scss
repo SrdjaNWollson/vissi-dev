@@ -10,14 +10,15 @@
 }
 
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: $baseFont
 }
 .container {
 	max-width: 1140px;
-	width: 95%;
+	width: 90%;
 	margin: 0 auto;
 	padding: 0;
-    @include breakpoint(tablet) {
-        width: 90%;
+
+    @include breakpoint(mobile) {
+        width: 86.5%;
     }
 }

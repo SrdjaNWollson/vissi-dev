@@ -1,0 +1,133 @@
+//-------------------------
+//----------BOOKING SEARCH
+//-------------------------
+
+.booking-search .btn.dropdown-toggle {
+    background: #fff;
+}
+#search-home {
+    background-color: $c-blackWhite;
+}
+#search-page .container {
+    background: #6197d8;
+}
+.input-group-addon {
+    display: block;
+}
+.booking-search,
+.booking-search .form-control {
+    background: #fff;
+    border-color: #fff;
+    color: #333;
+}
+.booking-search .btn {
+    border-color: #fff;
+    color: #fff;
+}
+.booking-search .btn-primary:hover {
+    background: #5381BA;
+    border-color: #5381BA;
+}
+
+/************** BOOKING SEARCH ***************/
+
+.booking-search {
+    padding: 0px;
+}
+.booking-search [class^="col-"] {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+body.header-type-1 #search-home-wrapper{
+    bottom: -82px;
+}
+#search-home-wrapper {
+    position: absolute;
+    z-index: 1030;
+    top: 60%;
+    width: 100%;
+    margin: auto;
+}
+@media (max-width: 991px) {
+    #search-home-wrapper {
+        bottom: 7%;
+        top: auto;
+        z-index: 900;
+    }
+}
+#search-home {
+    padding: 45px 5.5rem 6.3rem;
+    text-align: center;
+}
+#search-page .container {
+    padding: 30px;
+}
+.booking-search [class^="col-"] {
+    margin: 0!important;
+}
+.booking-search .form-group {
+    padding: 0px!important;
+    margin: 0!important;
+    background-color: $c-blackWhite;
+}
+.booking-search .form-control {
+    height: 52px;
+}
+.booking-search .btn {
+    line-height: 2.75;
+}
+.booking-search .btn-primary {
+    font-weight: 600;
+}
+.ui-datepicker {
+    z-index: 9999!important;
+}
+.bootstrap-select.btn-group .dropdown-menu.inner {
+    max-height: 288px!important;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+    max-height: 300px!important;
+}    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

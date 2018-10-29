@@ -106,59 +106,26 @@
     <![endif]-->
 
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
+    <script src=" <?php if(LANG_TAG != "en") : ?>'//rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-<?php echo LANG_TAG; ?>.js',<?php endif; ?>"></script>
+    
     <script src="<?php echo DOCBASE; ?>common/js/modernizr-2.6.1.min.js"></script>
     <script src="<?php echo DOCBASE; ?>js/main.js" type="text/javascript"></script>
+    <script src="<?php echo DOCBASE; ?>js/custom.js" type="text/javascript"></script>
+    <script src="<?php echo DOCBASE; ?>js/plugins/imagefill/js/jquery-imagefill.js"></script>
+    <script src="<?php echo DOCBASE; ?>js/plugins/toucheeffect/toucheffects.js"></script>
+    <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
-    <script>
-        Modernizr.load({
-            load : [
-                '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js',
-                '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js',
-                '//code.jquery.com/ui/1.11.4/jquery-ui.js',
-                <?php if(LANG_TAG != "en") : ?>'//rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-<?php echo LANG_TAG; ?>.js',<?php endif; ?>
-                '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js',
-                '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js',
-                '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js',
-                
-                //Javascripts required by the current model
-                <?php if(isset($javascripts)) foreach($javascripts as $javascript) echo "'".$javascript."',\n"; ?>
-                
-                '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js',
-				'<?php echo DOCBASE; ?>js/plugins/imagefill/js/jquery-imagefill.js',
-                '<?php echo DOCBASE; ?>js/plugins/toucheeffect/toucheffects.js',
-                '//use.fontawesome.com/releases/v5.0.3/js/all.js'
-            ],
-            complete : function(){
-                Modernizr.load({
-                    load : [
-                        '<?php echo DOCBASE; ?>common/js/custom.js',
-                        '<?php echo DOCBASE; ?>js/custom.js'
-                    ]
-                });
-            }
-        });
-        
-        $(function(){
-            <?php
-            if(isset($msg_error) && $msg_error != ""){ ?>
-                var msg_error = '<?php echo preg_replace("/(\r\n|\n|\r)/","",nl2br(addslashes($msg_error))); ?>';
-                if(msg_error != '') $('.alert-danger').html(msg_error).slideDown();
-                <?php
-            }
-            if(isset($msg_success) && $msg_success != ""){ ?>
-                var msg_success = '<?php echo preg_replace("/(\r\n|\n|\r)/","",nl2br(addslashes($msg_success))); ?>';
-                if(msg_success != '') $('.alert-success').html(msg_success).slideDown();
-                <?php
-            }
-            if(isset($field_notice) && !empty($field_notice))
-                foreach($field_notice as $field => $notice) echo "$('.field-notice[rel=\"".$field."\"]').html('".$notice."').fadeIn('slow').parent().addClass('alert alert-danger');\n"; ?>
-        });
-        
-        <?php echo stripslashes(ANALYTICS_CODE); ?>
-         
-    </script>
+
+
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body class="header-type-<?= $appearance['header_type'] ?> menu-position-<?= $appearance['menu_position'] ?> logo-position-<?= $appearance['logo_position'] ?> booking-search-position-<?= $appearance['booking_search_position'] ?>" id="page-<?php echo $page_id; ?>" itemscope itemtype="http://schema.org/WebPage"<?php if(RTL_DIR) echo " dir=\"rtl\""; ?>>

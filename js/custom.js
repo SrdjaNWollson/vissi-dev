@@ -3,6 +3,8 @@
  * =====================================================================
  */
 $(document).ready(function(){
+    console.log('test');
+
     $(window).resize(function(){
 		Modernizr.addTest('ipad', function(){
 			return !!navigator.userAgent.match(/iPad/i);
@@ -54,6 +56,7 @@ $(document).ready(function(){
             $('#cookies-notice').fadeOut();
         });
      }
+
     /* =================================================================
      * AJAX / FORM
      * =================================================================
