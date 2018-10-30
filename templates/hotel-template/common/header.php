@@ -98,35 +98,9 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="<?php echo DOCBASE; ?>common/css/shortcodes.css">
+    <link rel="stylesheet" href="<?php echo DOCBASE; ?>js/slick/slick.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" href="<?php echo getFromTemplate("css/style.css"); ?>">
-    
-    <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
-    <script src=" <?php if(LANG_TAG != "en") : ?>'//rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-<?php echo LANG_TAG; ?>.js',<?php endif; ?>"></script>
-    
-    <script src="<?php echo DOCBASE; ?>common/js/modernizr-2.6.1.min.js"></script>
-    <script src="<?php echo DOCBASE; ?>js/main.js" type="text/javascript"></script>
-    <script src="<?php echo DOCBASE; ?>js/custom.js" type="text/javascript"></script>
-    <script src="<?php echo DOCBASE; ?>js/plugins/imagefill/js/jquery-imagefill.js"></script>
-    <script src="<?php echo DOCBASE; ?>js/plugins/toucheeffect/toucheffects.js"></script>
-    <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
-
-
-
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body class="header-type-<?= $appearance['header_type'] ?> menu-position-<?= $appearance['menu_position'] ?> logo-position-<?= $appearance['logo_position'] ?> booking-search-position-<?= $appearance['booking_search_position'] ?>" id="page-<?php echo $page_id; ?>" itemscope itemtype="http://schema.org/WebPage"<?php if(RTL_DIR) echo " dir=\"rtl\""; ?>>
 
