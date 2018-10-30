@@ -64,23 +64,23 @@ function contentSlider($db, $atts, $texts){
             $result_room_file->bindParam(':room_id',$id);
             ?>
 
-            <div class="rooms-slide">
+            <div class="<?= $entity ?>-slide">
             <div class="left">  
-                <div class="all-rooms-row">              
+                <div class="all-<?= $entity; ?>-row">              
                     <a href="/rooms" class="link-all-rooms"><h4>see all rooms</h4></a>
                 </div>
-                <div class="rooms-title-row">
+                <div class="<?= $entity; ?>-title-row">
                     <h3><?= $title ?></h3>
                 </div>
-                <div class="rooms-content-row">
+                <div class="<?= $entity; ?>-content-row">
                     <p><?= $content ?></p>
                 </div>
-                <div class="rooms-btn-row">
+                <div class="<?= $entity; ?>-btn-row">
                     <a itemprop="url" href="<?php echo $url; ?>" class="moreLink"><button>See More</button></a>
                 </div>
             </div>
             <div class="right">
-                <div class="rooms-image-box">
+                <div class="<?= $entity; ?>-image-box">
             <?php
             if($result_room_file->execute() !== false){
                 $row = $result_room_file->fetch(PDO::FETCH_ASSOC);
