@@ -56,7 +56,11 @@ if($result_slide !== false){
                         if(is_file($realpath)){ ?>
                         
                             <div class="rsContent">
-                                <img class="rsImg" src="<?php echo $zoompath; ?>" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
+                                <picture>
+                                  <source media="(min-width: 650px)" srcset="<?= $zoompath; ?>">
+                                  <source media="(min-width: 465px)" srcset="<?= $zoompath; ?>">
+                                  <img src="<?= $zoompath; ?>" alt="Flowers" style="width:auto;" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
+                                </picture>
                                 <?php
                                 if($slide_legend != ''){ ?>
                                     <div class="infoBlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
