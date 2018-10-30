@@ -55,7 +55,7 @@ function contentSlider($db, $atts, $texts){
             $id = $row['id'];
             $title = $row['title'];
             $subtitle = $row['subtitle'];
-            $content = $row['descr'];
+            $content = strWordCut($row['descr'],165); 
             $min_price = $row['price'];
             $alias = isset($pages[9]['alias']) ? $pages[9]['alias'] : null;
             $url = DOCBASE.$alias.'/'.text_format($row['alias']);
@@ -189,6 +189,20 @@ function listBoxes($db,$atts,$texts)
             <?php
         }
     } 
+}
+
+function strWordCut($string,$length)
+{
+    $str_len = strlen($string);
+    $string = strip_tags($string);
+
+    if ($str_len > $length) {
+
+        // truncate string
+        $stringCut = substr($string, 0, $length-15);
+        $string = $stringCut.'.....'.substr($string, $str_len-10, $str_len-1);
+    }
+    return $string;
 }
 
 function listItemsInColumns($db, $atts, $texts){
