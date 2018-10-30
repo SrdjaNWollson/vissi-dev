@@ -19,57 +19,77 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
         <?php
     } ?>
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="form-group">
-                <label class="sr-only" for="from"></label>
-                <div class="input-group">
-                    <div class="input-group-addon"><i class="fas fa-fw fa-calendar"></i> <?php echo $texts['CHECK_IN']; ?></div>
-                    <input type="text" class="form-control" id="from_picker" name="from_date" value="<?php echo $from_date; ?>">
-                </div>
-                <div class="field-notice" rel="from_date"></div>
+
+        <div class="form-group form-date">
+            <label class="sr-only" for="from"></label>
+            <div class="input-group">
+                <div class="input-group-addon"> <?php echo $texts['ARRIVAL_DATE']; ?></div>
+                <input type="text" class="form-control" id="from_picker" name="from_date" value="<?php echo $from_date; ?>" autocomplete="off">
+                <div id="fromDate-holder"></div>
+                <i class="icon-calendar"></i>
+            </div>
+            <div class="field-notice" rel="from_date"></div>
+        </div>
+
+
+        <div class="form-group form-date">
+            <div class="input-group">
+                <div class="input-group-addon"> <?php echo $texts['DEPARTURE_DATE']; ?></div>
+                <input type="text" class="form-control" id="to_picker" name="to_date" value="<?php echo $to_date; ?>" autocomplete="off">
+                <div id="toDate-holder"></div>
+                <i class="icon-calendar"></i>
+            </div>
+            <div class="field-notice" rel="to_date"></div>
+        </div>
+
+
+        <div class="form-group form-drop">
+            <div class="input-group">
+                <div class="input-group-addon"><?php echo $texts['PERSONS']; ?></div>
+                <select name="num_adults" class="selectpicker form-control">
+                    <?php
+                    for($i = 1; $i <= $max_adults_search; $i++){
+                        $select = ($_SESSION['num_adults'] == $i) ? ' selected="selected"' : '';
+                        echo '<option value="'.$i.'"'.$select.'>'.$i.'</option>';
+                    } ?>
+                </select>
+            </div>
+            <i class="icon-arrow-down"></i>
+        </div>
+
+
+        <div class="form-group form-drop">
+            <div class="input-group">
+                <div class="input-group-addon"> <?php echo $texts['CHILDREN']; ?></div>
+                <select name="num_children" class="selectpicker form-control">
+                    <?php
+                    for($i = 0; $i <= $max_children_search; $i++){
+                        $select = ($_SESSION['num_children'] == $i) ? ' selected="selected"' : '';
+                        echo '<option value="'.$i.'"'.$select.'>'.$i.'</option>';
+                    } ?>
+                </select>
+            </div>
+            <i class="icon-arrow-down"></i>
+        </div>
+
+   
+        <div class="form-group form-code">
+            <label class="sr-only" for="from"></label>
+            <div class="input-group">
+                 <div class="input-group-addon"> <?php echo $texts['PROMO_CODE']; ?></div>
+                <input type="text" class="form-control" placeholder="000000">
             </div>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><i class="fas fa-fw fa-calendar"></i> <?php echo $texts['CHECK_OUT']; ?></div>
-                    <input type="text" class="form-control" id="to_picker" name="to_date" value="<?php echo $to_date; ?>">
-                </div>
-                <div class="field-notice" rel="to_date"></div>
-            </div>
+
+
+
+        <div class="form-group form-btn">
+            <button class="btn btn-block btn-primary" type="submit" name="check_availabilities"><?php echo $texts['BOOK_NOW']; ?></button>
         </div>
-        <div class="col-md-2 col-sm-6 col-xs-6">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><i class="fas fa-fw fa-male"></i> <?php echo $texts['ADULTS']; ?></div>
-                    <select name="num_adults" class="selectpicker form-control">
-                        <?php
-                        for($i = 1; $i <= $max_adults_search; $i++){
-                            $select = ($_SESSION['num_adults'] == $i) ? ' selected="selected"' : '';
-                            echo '<option value="'.$i.'"'.$select.'>'.$i.'</option>';
-                        } ?>
-                    </select>
-                </div>
-            </div>
+
+        <div class="cancel-reservation">
+            <a href="#dummy"><i class="icon-pen"></i>Change / cancel reservation</a>
         </div>
-        <div class="col-md-2 col-sm-6 col-xs-6">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><i class="fas fa-fw fa-male"></i> <?php echo $texts['CHILDREN']; ?></div>
-                    <select name="num_children" class="selectpicker form-control">
-                        <?php
-                        for($i = 0; $i <= $max_children_search; $i++){
-                            $select = ($_SESSION['num_children'] == $i) ? ' selected="selected"' : '';
-                            echo '<option value="'.$i.'"'.$select.'>'.$i.'</option>';
-                        } ?>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-12 col-xs-12">
-            <div class="form-group">
-                <button class="btn btn-block btn-primary" type="submit" name="check_availabilities"><i class="fas fa-fw fa-search"></i> <?php echo $texts['CHECK']; ?></button>
-            </div>
-        </div>
+
     </div>
 </form>
