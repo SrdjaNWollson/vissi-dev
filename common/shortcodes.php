@@ -65,21 +65,18 @@ function contentSlider($db, $atts, $texts){
             ?>
 
             <div class="<?= $entity ?>-slide">
-            <div class="left">  
-                <div class="all-<?= $entity; ?>-row">              
-                    <a href="/rooms" class="link-all-rooms"><h4>see all rooms</h4></a>
-                </div>
-                <div class="<?= $entity; ?>-title-row">
+                <div class="content-slider__left">  
+                      
+                    <a href="/rooms" class="link-all-rooms">see all rooms</a>
+             
                     <h3><?= $title ?></h3>
-                </div>
-                <div class="<?= $entity; ?>-content-row">
+        
                     <p><?= $content ?></p>
-                </div>
-                <div class="<?= $entity; ?>-btn-row">
+
                     <a itemprop="url" href="<?php echo $url; ?>" class="moreLink"><button>See More</button></a>
+        
                 </div>
-            </div>
-            <div class="right">
+            <div class="content-slider__right">
                 <div class="<?= $entity; ?>-image-box">
             <?php
             if($result_room_file->execute() !== false){

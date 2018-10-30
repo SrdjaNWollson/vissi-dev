@@ -316,23 +316,77 @@ $(document).ready(function(){
      * DATEPICKER
      * =================================================================
      */
-    if($('#from_picker').length && $('#to_picker').length){
-        $('#from_picker').datepicker({
-            dateFormat: 'dd/mm/yy',
-            minDate: 0,
-            onClose: function(selectedDate){
-                var a = selectedDate.split('/');
-                var d = new Date(a[2]+'/'+a[1]+'/'+a[0]);
-                var t = new Date(d.getTime()+86400000);
-                var date = t.getDate()+'/'+(t.getMonth()+1)+'/'+t.getFullYear();
-                $('#to_picker').datepicker('option', 'minDate', date);
+    // if($('#from_picker').length && $('#to_picker').length){
+    //     $('#from_picker').datepicker({
+    //         dateFormat: 'dd/mm/yy',
+    //         minDate: 0,
+    //         onClose: function(selectedDate){
+    //             var a = selectedDate.split('/');
+    //             var d = new Date(a[2]+'/'+a[1]+'/'+a[0]);
+    //             var t = new Date(d.getTime()+86400000);
+    //             var date = t.getDate()+'/'+(t.getMonth()+1)+'/'+t.getFullYear();
+    //             $('#to_picker').datepicker('option', 'minDate', date);
+    //         }
+    //     });
+    //     $('#to_picker').datepicker({
+    //         dateFormat: 'dd/mm/yy',
+    //         defaultDate: '+1w'
+    //     });
+    // }
+
+    // Datepicker FROM date
+        $(function() {
+            $("#fromDate-holder").datepicker({
+                startDate: '+1d',
+                rangeSelect: true,
+                onSelect: function(date) {
+                    $("#from_picker").val(date);
+                    $("#fromDate-holder").hide();
+                    $(this).closest('form').addClass('selected');
+                }
+            }).position({
+                my: "center top",
+                at: "center bottom",
+                of: $("#fromDate-holder"),
+                collision: "flipfit"
+            }).hide();
+            $("#from_picker").focus(function() {
+                $("#fromDate-holder").show();
+            })
+        });
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.form-control,.ui-datepicker-prev, .ui-datepicker-next').length) {
+                // Hide the menus.
+                $('#fromDate-holder').hide();
             }
         });
-        $('#to_picker').datepicker({
-            dateFormat: 'dd/mm/yy',
-            defaultDate: '+1w'
+
+        // Datepicker TO date
+        $(function() {
+            $("#toDate-holder").datepicker({
+                startDate: new Date(),
+                rangeSelect: true,
+                onSelect: function(date) {
+                    $("#to_picker").val(date);
+                    $("#toDate-holder").hide();
+                    $(this).closest('form').addClass('selected');
+                }
+            }).position({
+                my: "center top",
+                at: "center bottom",
+                of: $("#toDate-holder"),
+                collision: "flipfit"
+            }).hide();
+            $("#to_picker").focus(function() {
+                $("#toDate-holder").show();
+            })
         });
-    }
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.form-control,.ui-datepicker-prev, .ui-datepicker-next').length) {
+                // Hide the menus.
+                $('#toDate-holder').hide();
+            }
+        });
 
     /* =================================================================
      * CALENDAR
@@ -560,9 +614,9 @@ $(document).ready(function(){
      */
     if($('.royalSlider').length){
         function royalSliderInit(){
-            var height = $(window).height() - parseInt($('body').css('padding-top')) - parseInt($('header.header-type-1').height());
-            console.log(height);
-            var width = $(window).width();
+            //var height = $(window).height() - parseInt($('body').css('padding-top')) - parseInt($('header.header-type-1').height());
+            //console.log(height);
+            //var width = $(window).width();
             //$('.royalSlider').height(height);
             var sliderArray = {
                     arrowsNav: true,
@@ -573,9 +627,9 @@ $(document).ready(function(){
                     imageScaleMode: 'fill',
                     arrowsNavAutoHide: false,
                     autoHeight: false,
-                    autoScaleSlider: true,
-                    autoScaleSliderWidth: width,     
-                    autoScaleSliderHeight: height,
+                    autoScaleSlider: false,
+                    //autoScaleSliderWidth: width,     
+                    //autoScaleSliderHeight: height,
                     controlNavigation: 'bullets', 
                     thumbsFitInViewport: false,
                     navigateByClick: true,
