@@ -95,11 +95,9 @@ if($result_slide !== false){
         </div> 
 </section> 
 <section id="offers" class="sec-section">
-    <div class="container">
         <h2 class="sec-title">Our Offers</h2>
-        <div class="offers-carousel box-3-carousel">
-        <?php listBoxes($db,array('table'=>'offer'),$texts); ?>
-        </div>
+        <div class="offers-slider content-slider">
+        <?php contentSlider($db,array('table'=>'offer'),$texts); ?> 
     </div>
 </section>
 <section id="facility" class="prim-section">
