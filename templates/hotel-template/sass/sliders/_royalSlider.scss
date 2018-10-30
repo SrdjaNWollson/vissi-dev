@@ -4,16 +4,31 @@
 
 #sliderContainer {
     position: relative;
+    height: 90vh;
+    //overflow: hidden;
+    @include breakpoint(slider-h) {
+        height: auto;
+    }
 }
 .fullSized.royalSlider {
-    height: 900px;
+    height: 90vh;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 100%;//overflow: hidden;
+    @include breakpoint(slider-h) {
+        height: auto;
+    }
+    .rsContent {
+        width: 100%;
+        height: auto;
+        img {
+            width: 100%;
+        }
+    }
 }
 .royalSlider .infoBlock {
-	top: auto;
-    bottom: 200px;
+	top: 30%;
+    //bottom: 200px;
 }
 .royalSlider .infoBlock h1 {
 	margin-bottom: 3.9rem;
@@ -22,6 +37,9 @@
     //font-weight: 600;
     font-size: 72px;
     text-shadow: 2.1px 2.1px 2.9px rgba(123, 123, 123, 0.75);
+    @include breakpoint(mobile) {
+        font-size: 6.5rem;
+    }
 }
 .royalSlider .infoBlock h2 {
 	margin-bottom: 6.2rem;
@@ -30,6 +48,9 @@
     font-size: 28px;
     font-weight: 400;
     text-transform: none;
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+    }
 }
 .royalSlider .infoBlock a {
     text-decoration: none;
@@ -37,25 +58,7 @@
 .royalSlider.rsMinW .rsThumbsArrowDisabled{
     display: block !important;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-    .royalSlider .infoBlock h1 {
-        font-size: 30px;
-    }
-    .royalSlider .infoBlock h2 {
-        font-size: 28px;
-    }
-}
-@media (max-width: 767px) {
-    .royalSlider .infoBlock {
-        top: 20%;
-    }
-    .royalSlider .infoBlock h1 {
-        font-size: 24px;
-    }
-    .royalSlider .infoBlock h2 {
-        font-size: 22px;
-    }
-}
+
 
 /*************** ROYAL SLIDER ****************/
 #full-width-slider {
@@ -149,7 +152,6 @@
         height: auto;
         max-height: 100%;
         min-width: 40%;
-        left: 5px;
         top: 5px;
         right: auto;
         font-size: 12px;

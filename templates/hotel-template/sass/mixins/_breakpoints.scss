@@ -14,7 +14,10 @@
     @if $point == desktop--Large {//max-width = 1700px
         @media (min-width: $desktop)                       { @content; }
     }
-    @if $point == desktop {//max-width = 1400px
+     @if $point == slider-h {//max-width = 1440px
+        @media (max-width: $slider-h)                               { @content; }
+    }
+    @if $point == desktop {//max-width = 1440px
         @media (max-width: $desktop)                               { @content; }
     }
      @if $point == desktop--small {//max-width = 1200px
@@ -32,6 +35,9 @@
     @else if $point == mobile--l {//max-width = 640px
         @media (max-width: $mobile--l)                             { @content; }
     }
+     @else if $point == mobile--s {//max-width = 480px
+        @media (max-width: $mobile--s)                             { @content; }
+    }
     @else if $point == exeptGadgets {
         @media (min-width: $tablet + 1)                     { @content; }
     }
@@ -39,9 +45,11 @@
 
 
 //------MEDIA QUERIES
-$desktop            : 1400px;
+$slider-h           : 1490px;
+$desktop            : 1440px;
 $desktop--small     : 1200px;
 $tablet--landscape  : 1023px;
 $tablet             : 990px;
 $mobile             : 767px; 
 $mobile--l          : 640px; 
+$mobile--s          : 480px; 
