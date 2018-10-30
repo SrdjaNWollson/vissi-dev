@@ -47,5 +47,39 @@ $counter = 0;
     </div>
 </footer>
 <a href="#" id="toTop"><i class="fas fa-fw fa-angle-up"></i></a>
+
+
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
+    <script src=" <?php if(LANG_TAG != "en") : ?>'//rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-<?php echo LANG_TAG; ?>.js',<?php endif; ?>"></script>
+    
+    <script src="<?php echo DOCBASE; ?>common/js/modernizr-2.6.1.min.js"></script>
+    <script src="<?php echo DOCBASE; ?>js/main.js" type="text/javascript"></script>
+    <script src="<?php echo DOCBASE; ?>js/custom.js" type="text/javascript"></script>
+    <script src="<?php echo DOCBASE; ?>js/plugins/imagefill/js/jquery-imagefill.js"></script>
+    <script src="<?php echo DOCBASE; ?>js/plugins/toucheeffect/toucheffects.js"></script>
+    <script src="<?php echo DOCBASE; ?>js/plugins/slick/slick.min.js"></script>
+    <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+
+
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <script type="text/javascript">
+        $('.content-slider').slick();
+    </script>
+
 </body>
 </html>

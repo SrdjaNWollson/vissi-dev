@@ -36,6 +36,76 @@ function get_shortcode_from_text($db,$text){
 }
 
 
+function contentSlider($db, $atts, $texts){ 
+    $table = 'pm_' . $atts['table'];
+    $entity = $atts['table'];
+
+    $result_room = $db->query('SELECT * FROM '.$table.' WHERE lang = '.LANG_ID.' AND checked = 1 AND home = 1 ORDER BY rank');
+    if($result_room !== false){
+        $nb_rooms = $db->last_row_count();
+        
+        $room_id = 0;
+        
+        $result_rate = $db->prepare('SELECT MIN(price) as price FROM pm_rate WHERE id_room = :room_id');
+        $result_rate->bindParam(':room_id', $room_id);
+        
+        $box_class = "col-md-4";
+        $box_class = getBoxClass($nb_rooms);
+        foreach($result_room as $i => $row){
+            $id = $row['id'];
+            $title = $row['title'];
+            $subtitle = $row['subtitle'];
+            $content = $row['descr'];
+            $min_price = $row['price'];
+            $alias = isset($pages[9]['alias']) ? $pages[9]['alias'] : null;
+            $url = DOCBASE.$alias.'/'.text_format($row['alias']);
+
+            $result_room_file = $db->prepare('SELECT * FROM '.$table.'_file WHERE id_item = :room_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
+            $result_room_file->bindParam(':room_id',$id);
+            ?>
+
+            <div class="rooms-slide">
+            <div class="left">  
+                <div class="all-rooms-row">              
+                    <a href="/rooms" class="link-all-rooms"><h4>see all rooms</h4></a>
+                </div>
+                <div class="rooms-title-row">
+                    <h3><?= $title ?></h3>
+                </div>
+                <div class="rooms-content-row">
+                    <p><?= $content ?></p>
+                </div>
+                <div class="rooms-btn-row">
+                    <a itemprop="url" href="<?php echo $url; ?>" class="moreLink"><button>See More</button></a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="rooms-image-box">
+            <?php
+            if($result_room_file->execute() !== false){
+                $row = $result_room_file->fetch(PDO::FETCH_ASSOC);
+                $file_id = $row['id'];
+                $filename = $row['file'];
+                $label = $row['label'];
+
+                $realpath = SYSBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
+                $thumbpath = DOCBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
+                $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
+                //var_dump($realpath);
+                if(is_file($realpath)){ ?>
+                            <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>">
+                    <?php
+                }
+            } ?>
+                </div> <!-- end rooms image box -->
+            </div> <!-- end right -->
+            </div>
+            <?php
+            }
+        }
+}
+
+
 function listBoxes($db,$atts,$texts)
 {
     $table = 'pm_' . $atts['table'];

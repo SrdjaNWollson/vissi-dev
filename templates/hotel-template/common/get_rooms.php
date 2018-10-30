@@ -35,6 +35,8 @@ if(isset($db) && $db !== false){
     $result_rate = $db->prepare('SELECT MIN(price) as price FROM pm_rate WHERE id_room = :id_room');
     $result_rate->bindParam(':id_room', $room_id);
 
+    $html .= '<div class="rooms-container">';
+
     foreach($result_room as $i => $row){
                                 
         $room_id = $row['id'];
@@ -101,6 +103,8 @@ if(isset($db) && $db !== false){
             </div>
         </article>';
     }
+
+    $html .= "</div>";
     if(isset($_POST['ajax']) && $_POST['ajax'] == 1)
         echo json_encode(array('html' => $html));
     else
