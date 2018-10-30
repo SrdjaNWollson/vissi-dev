@@ -98,7 +98,6 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="<?php echo DOCBASE; ?>common/css/shortcodes.css">
-    <link rel="stylesheet" href="<?php echo DOCBASE; ?>js/slick/slick.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" href="<?php echo getFromTemplate("css/style.css"); ?>">
 </head>
