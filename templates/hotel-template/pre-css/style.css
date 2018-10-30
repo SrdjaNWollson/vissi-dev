@@ -1875,19 +1875,44 @@ body:not(#page-1) .fixed #mainHeader,
   background: #e8e8e4; }
 
 ul.navbar-nav > li.primary > a.firstLevel {
+  display: block;
+  position: relative;
   color: #765e51; }
+  @media (max-width: 1200px) {
+    ul.navbar-nav > li.primary > a.firstLevel {
+      display: inline-block; } }
+  ul.navbar-nav > li.primary > a.firstLevel:after {
+    position: absolute;
+    bottom: -1.5px;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    background-color: #765e51;
+    content: "";
+    opacity: 0; }
+    @media (max-width: 1200px) {
+      ul.navbar-nav > li.primary > a.firstLevel:after {
+        display: none; } }
 
 ul.navbar-nav > li.primary > a.firstLevel.active,
 ul.navbar-nav > li.primary > a.firstLevel:hover,
 ul.navbar-nav > li.primary > a.firstLevel:focus {
-  border-bottom: 1px solid #765e51;
-  color: #765e51;
   background: none; }
+  ul.navbar-nav > li.primary > a.firstLevel.active:after,
+  ul.navbar-nav > li.primary > a.firstLevel:hover:after,
+  ul.navbar-nav > li.primary > a.firstLevel:focus:after {
+    opacity: 1;
+    transition: all ease 0.3s; }
   @media (max-width: 1200px) {
     ul.navbar-nav > li.primary > a.firstLevel.active,
     ul.navbar-nav > li.primary > a.firstLevel:hover,
     ul.navbar-nav > li.primary > a.firstLevel:focus {
       border-bottom: none; } }
+
+@media (max-width: 1200px) {
+  ul.navbar-nav > li.primary > a.firstLevel.active:after {
+    display: inline-block;
+    background-color: #fff; } }
 
 @media (max-width: 1200px) {
   .navbar-fixed-top {
@@ -2094,11 +2119,19 @@ ul.navbar-nav > li.primary .dropdown {
     @media (max-width: 990px) {
       .booking-search .form-drop:nth-of-type(4) {
         margin-right: 0; } }
-    @media (max-width: 767px) {
-      .booking-search .form-drop .btn {
-        font-size: 2.2rem; } }
+    .booking-search .form-drop .btn {
+      outline: none !important; }
+      @media (max-width: 480px) {
+        .booking-search .form-drop .btn {
+          padding: 1.8rem 2rem;
+          font-size: 2.2rem; } }
+      .booking-search .form-drop .btn:focus {
+        outline: none !important; }
     .booking-search .form-drop .form-control {
       position: relative; }
+      @media (max-width: 480px) {
+        .booking-search .form-drop .form-control {
+          padding: 0; } }
     .booking-search .form-drop .caret {
       display: none; }
   .booking-search .icon-arrow-down {
@@ -2106,6 +2139,11 @@ ul.navbar-nav > li.primary .dropdown {
     bottom: 16px;
     right: 16px;
     font-size: 8px; }
+    @media (max-width: 480px) {
+      .booking-search .icon-arrow-down {
+        right: 2rem;
+        bottom: 2rem;
+        font-size: 1.4rem; } }
   .booking-search .input-group {
     display: block;
     position: static; }
@@ -2132,9 +2170,11 @@ ul.navbar-nav > li.primary .dropdown {
     border-radius: 0;
     border: none;
     font-weight: 300;
-    color: #c5c4be; }
+    color: #c5c4be;
+    box-shadow: none; }
     @media (max-width: 480px) {
       .booking-search .form-control {
+        padding: 1.8rem 2rem;
         font-size: 2.2rem; } }
   .booking-search .form-code {
     width: 13.561%; }
@@ -2167,7 +2207,8 @@ ul.navbar-nav > li.primary .dropdown {
     letter-spacing: 2.8px; }
     @media (max-width: 480px) {
       .booking-search .btn {
-        height: 6rem; } }
+        height: 6rem;
+        font-size: 2.2rem; } }
   .booking-search .btn-group.open .dropdown-toggle {
     box-shadow: none; }
 
@@ -2175,15 +2216,23 @@ ul.navbar-nav > li.primary .dropdown {
   position: absolute;
   right: 6.5rem;
   bottom: 2rem; }
+  @media (max-width: 480px) {
+    .cancel-reservation {
+      position: static;
+      clear: both; } }
   .cancel-reservation .icon-pen {
     margin-right: 5px;
     vertical-align: middle;
     font-size: 22px; }
   .cancel-reservation a {
     font-size: 12px;
-    font-weght: 300;
+    font-weight: 300;
     line-height: 1.5;
     color: #636363; }
+    @media (max-width: 480px) {
+      .cancel-reservation a {
+        display: block;
+        padding-top: 4rem; } }
 
 .booking-search .btn.dropdown-toggle {
   background: #fff; }
