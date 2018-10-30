@@ -78,7 +78,11 @@ $counter = 0;
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script type="text/javascript">
-        $('.content-slider').slick();
+        $('.content-slider .container').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false
+        });
     </script>
 
 </body>

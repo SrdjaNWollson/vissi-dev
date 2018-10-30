@@ -87,12 +87,15 @@ if($result_slide !== false){
         <h4 class="sec-subtitle">a new vision of comfort</h4>
         <h2 class="sec-title">Our Rooms</h2>
         <div class="rooms-slider content-slider">
-        <?php contentSlider($db,array('table'=>'room'),$texts); ?>
+            <div class="container">
+                <?php contentSlider($db,array('table'=>'room'),$texts); ?>
+            </div>
         </div> 
 </section> 
 <section id="offers" class="sec-section">
     <div class="container">
-        <h2 class="sec-title">Our Offers</h2>
+        <h4 class="sec-subtitle">taste of mediterranean</h4>
+        <h2 class="sec-title">Special Offers</h2>
         <div class="offers-carousel box-3-carousel">
         <?php listBoxes($db,array('table'=>'offer'),$texts); ?>
         </div>

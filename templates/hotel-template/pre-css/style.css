@@ -1986,6 +1986,51 @@ ul.navbar-nav > li.primary .dropdown {
 .breadcrumb {
   background: transparent; }
 
+#rooms {
+  padding-top: 19rem; }
+
+.sec-title {
+  font-family: "ButlerRegular";
+  font-size: 50px;
+  color: #79675a; }
+
+.sec-subtitle {
+  color: #b89f89;
+  text-align: center;
+  text-transform: uppercase; }
+
+.rooms-slider {
+  background-color: #79675a; }
+
+.content-slider h3 {
+  font-family: "ButlerRegular";
+  font-size: 28px;
+  color: #fff; }
+
+.content-slider p {
+  font-weight: 300;
+  font-size: 14px;
+  color: #fff; }
+
+.content-slider .link-all-rooms {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c5ae60; }
+
+.content-slider__right,
+.content-slider__left {
+  float: left; }
+
+.content-slider__left {
+  width: 30%;
+  padding: 5.5rem 0 3.8rem; }
+
+.content-slider__right {
+  width: 70%; }
+
+[class*='-image-box'] img {
+  width: 100%; }
+
 .btn {
   text-transform: uppercase;
   border-radius: 0;
