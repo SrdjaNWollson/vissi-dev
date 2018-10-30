@@ -443,16 +443,46 @@ body:not(#page-1) .fixed #mainHeader,
 // }
 
 ul.navbar-nav > li.primary > a.firstLevel {
+    display: block;
+    position: relative;
     color: #765e51;
+    @include breakpoint(desktop--small) {
+        display: inline-block;
+    }
+    &:after {
+        position: absolute;
+        bottom: -1.5px;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        background-color: $c-mainLight;
+        content: "";
+        opacity: 0;
+        @include breakpoint(desktop--small) {
+            display: none;
+        }
+    }
 }
 ul.navbar-nav > li.primary > a.firstLevel.active,
 ul.navbar-nav > li.primary > a.firstLevel:hover,
 ul.navbar-nav > li.primary > a.firstLevel:focus {
-    border-bottom: 1px solid #765e51;
-    color: #765e51;
     background: none;
+    &:after {
+        opacity: 1;
+        transition: all ease 0.3s;
+    }
     @include breakpoint(desktop--small) {
         border-bottom: none;
+    }
+}
+
+ul.navbar-nav > li.primary > a.firstLevel.active {
+    &:after {
+        @include breakpoint(desktop--small) {
+            display: inline-block;
+            background-color: $c-white;
+        }
+       
     }
 }
 
