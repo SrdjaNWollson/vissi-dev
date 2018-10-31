@@ -57,6 +57,7 @@ $counter = 0;
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -74,14 +75,24 @@ $counter = 0;
     <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
 
-
+    <?php
+    //CSS required by the current model
+    
+    if(isset($javascripts)){
+        foreach($javascripts as $javascript){ ?>
+            <script src="<?php echo $javascript ?>"></script>
+            <?php
+        }
+    } ?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script type="text/javascript">
-        $('.content-slider .container').slick({
+        $('.content-slider ').slick({
+            speed: 1700,
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false
+            arrows: false,
+            dots: true
         });
     </script>
 

@@ -14,7 +14,7 @@
     @if $point == desktop--Large {//max-width = 1700px
         @media (min-width: $desktop)                       { @content; }
     }
-     @if $point == slider-h {//max-width = 1440px
+     @if $point == slider-h {//max-width = 1490px
         @media (max-width: $slider-h)                               { @content; }
     }
     @if $point == desktop {//max-width = 1440px

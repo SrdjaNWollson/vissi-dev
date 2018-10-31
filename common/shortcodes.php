@@ -65,37 +65,39 @@ function contentSlider($db, $atts, $texts){
             ?>
 
             <div class="<?= $entity ?>-slide">
-                <div class="content-slider__left">  
-                      
-                    <a href="/rooms" class="link-all-rooms">see all rooms</a>
-             
-                    <h3><?= $title ?></h3>
-        
-                    <p><?= $content ?></p>
+ 
+                    <div class="content-slider__left">  
+                          
+                        <a href="/rooms" class="link-all-rooms">see all rooms</a>
+                 
+                        <h3><?= $title ?></h3>
+            
+                        <p><?= $content ?></p>
 
-                    <a itemprop="url" href="<?php echo $url; ?>" class="moreLink"><button>See More</button></a>
-        
-                </div>
-            <div class="content-slider__right">
-                <div class="<?= $entity; ?>-image-box">
-            <?php
-            if($result_room_file->execute() !== false){
-                $row = $result_room_file->fetch(PDO::FETCH_ASSOC);
-                $file_id = $row['id'];
-                $filename = $row['file'];
-                $label = $row['label'];
+                        <a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span>See More</span></a>
+            
+                    </div>
+                    <div class="content-slider__right">
+                        <div class="<?= $entity; ?>-image-box">
+                        <?php
+                        if($result_room_file->execute() !== false){
+                            $row = $result_room_file->fetch(PDO::FETCH_ASSOC);
+                            $file_id = $row['id'];
+                            $filename = $row['file'];
+                            $label = $row['label'];
 
-                $realpath = SYSBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
-                $thumbpath = DOCBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
-                $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
-                //var_dump($realpath);
-                if(is_file($realpath)){ ?>
-                            <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>">
-                    <?php
-                }
-            } ?>
-                </div> <!-- end rooms image box -->
-            </div> <!-- end right -->
+                            $realpath = SYSBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
+                            $thumbpath = DOCBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
+                            $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
+                            //var_dump($realpath);
+                            if(is_file($realpath)){ ?>
+                                        <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>">
+                                <?php
+                            }
+                        } ?>
+                        </div> <!-- end rooms image box -->
+                     </div><!-- end right -->
+      
             </div>
             <?php
             }

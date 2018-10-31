@@ -59,7 +59,7 @@ if($result_slide !== false){
                                 <picture>
                                   <source media="(min-width: 650px)" srcset="<?= $zoompath; ?>">
                                   <source media="(min-width: 465px)" srcset="<?= $zoompath; ?>">
-                                  <img src="<?= $zoompath; ?>" alt="Flowers" style="width:auto;" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
+                                  <img src="<?= $zoompath; ?>" alt="Flowers" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
                                 </picture>
                                 <?php
                                 if($slide_legend != ''){ ?>
@@ -88,13 +88,15 @@ if($result_slide !== false){
 <content id="content" class="pt20 pb30">
 
 <section id="rooms" class="prim-section">
-        <h4 class="sec-subtitle">a new vision of comfort</h4>
-        <h2 class="sec-title">Our Rooms</h2>
-        <div class="rooms-slider content-slider">
-            <div class="container">
+    <h4 class="sec-subtitle">a new vision of comfort</h4>
+    <h2 class="sec-title">Our Rooms</h2>
+    <div class="rooms-slider content-slider">
+
+           
                 <?php contentSlider($db,array('table'=>'room'),$texts); ?>
-            </div>
-        </div> 
+        
+
+    </div> 
 </section> 
 <section id="offers" class="sec-section">
     <div class="container">

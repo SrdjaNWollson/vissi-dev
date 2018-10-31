@@ -3,12 +3,15 @@
 //-------------------------
 
 .sec-title {
+	margin: 20px 0 70px;
 	font-family: $butler;
 	font-size: 50px;
 	color: $c-main;
+	text-transform: uppercase;
 }
 
 .sec-subtitle {
+	font-size: 12px;
 	color: $c-mainLighter;
 	text-align: center;
 	text-transform: uppercase;
@@ -18,12 +21,15 @@
 	background-color: $c-main;
 }
 .content-slider {
+	// height: 54.5rem;
 	h3 {
+		margin: 7rem 0 2.8rem;
 		font-family: $butler;
 		font-size: 28px;
 		color: $c-white; 
 	}
 	p {
+		margin-bottom: 35px;
 		font-weight: 300;
 		font-size: 14px;
 		color: $c-white;
@@ -31,9 +37,83 @@
 	.link-all-rooms {
 		font-size: 14px;
 		font-weight: 600;
+		letter-spacing: 2px;
 		color: $c-gold;
+		text-transform: uppercase;
+	}
+	.slick-slide {
+		margin-left: 20px;
+		transition: opacity 1.25s ease-out;
+		// img {
+		// 	width: 100.23rem;
+		// 	//height: 54.5rem;
+		// }
+	}
+	.slick-slide.slick-current.slick-center {
+		opacity: 1;
+	}
+	.container {
+		position: relative;
+		max-width: 1180px;
+		width: 93.4%;
+		@include breakpoint(mobile) {
+	        width: 86.5%;
+	    }
+	}
+	.slick-dots {
+		position: absolute;
+		left: 10px;
+		bottom: 2rem;
+	}
+	.slick-dots li {
+	    position: relative;
+	    display: inline-block;
+	    width: 20px;
+	    height: 20px;
+	    margin: 0 5px;
+	    padding: 0;
+	    cursor: pointer;
+	    &.slick-active {
+	    	button:before {
+	    		color: $c-white;
+	    	}
+	    }
+	}
+	.slick-dots li button {
+	    font-size: 0;
+	    line-height: 0;
+	    display: block;
+	    width: 20px;
+	    height: 20px;
+	    padding: 5px;
+	    cursor: pointer;
+	    color: transparent;
+	    border: 0;
+	    outline: none;
+	    background: transparent;
+	}
+	.slick-dots li button:before {
+	    font-family: 'slick';
+	    font-size: 40px;
+	    line-height: 20px;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 20px;
+	    height: 20px;
+	    content: '•';
+	    text-align: center;
+	    color: #D7D2CE;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+	.btn-gold {
+		position: absolute;
+		bottom: 13.5rem;
 	}
 }
+
+
 
 .content-slider__right,
 .content-slider__left {
@@ -42,7 +122,7 @@
 
 .content-slider__left {
 	width: 30%;
-	padding: 5.5rem 0 3.8rem;
+	padding: 5.5rem 7rem 3.8rem 0;
 }
 
 .content-slider__right {

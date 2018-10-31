@@ -16,9 +16,12 @@ body {
 	max-width: 1140px;
 	width: 90%;
 	margin: 0 auto;
-	padding: 0;
-
+    padding: 0;
     @include breakpoint(mobile) {
         width: 86.5%;
     }
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+    margin: 0;
 }
