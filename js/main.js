@@ -14,19 +14,21 @@ $(document).ready(function(){
     //---------------------------------
 	
 	/*-- Count margin of content slider --*/
-	const sliderMargin = $('.room-slide');
-	const slideDots = $('.slick-dots');
+	const roomMargin = $('.room-slide');
+	const offerMargin = $('.offer-slide');
+	const roomSlideDots = $('#rooms .slick-dots');
 
 	function giveMargin() {
 
 		let fullWidth = $(window).width();
 		if($(window).width() > 1140) {
-			sliderMargin.css('padding-left',((fullWidth - 1140) / 2) +'px');
-			slideDots.css('left',((fullWidth - 1140 + 16) / 2) +'px');
+			roomMargin.css('padding-left',((fullWidth - 1140) / 2) +'px');
+			offerMargin.css('padding-right',((fullWidth - 1140) / 2) +'px');
+			roomSlideDots.css('left',((fullWidth - 1140 + 16) / 2) +'px');
 		}
 		else if ($(window).width() > 990){
-			sliderMargin.css('padding-left', 1  +'%');
-			slideDots.css('left', 4  +'%');
+			roomMargin.css('padding-left', 1  +'%');
+			roomSlideDots.css('left', 4  +'%');
 		}
 	}
 	

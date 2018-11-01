@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 30, 2018 at 11:59 AM
+-- Generation Time: Nov 01, 2018 at 01:45 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -1191,13 +1191,13 @@ CREATE TABLE IF NOT EXISTS `pm_offer` (
 
 INSERT INTO `pm_offer` (`id`, `lang`, `max_children`, `max_adults`, `max_people`, `min_people`, `title`, `subtitle`, `alias`, `descr`, `facilities`, `stock`, `price`, `home`, `checked`, `rank`, `start_lock`, `end_lock`) VALUES
 (11, 1, 3, 2, 5, 2, 'Special Offer 2018', 'Special Offer 2018', 'special-offer-2018', '<p>test</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 1, 1531180800, 1531699200),
-(11, 2, 3, 2, 5, 2, 'Special Offer 2018', 'Special Offer 2018', 'special-offer-2018', '<p>test</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 1, 1531180800, 1531699200),
+(11, 2, 3, 2, 5, 2, 'Special Offer 2018', 'Special Offer 2018', 'special-offer-2018-1', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in volup</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 1, 1531180800, 1531699200),
 (11, 3, 3, 2, 5, 2, 'Special Offer 2018', 'Special Offer 2018', 'special-offer-2018', '<p>test</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 1, 1531180800, 1531699200),
 (14, 1, 2, 4, 6, 1, '', '', '', '', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 2, 1531180800, 1531699200),
-(14, 2, 2, 4, 6, 1, 'Special Offer 2018 2', 'Special Offer 2018 2 ', 'special-offer-2018-2', '<p>dadada</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 2, 1531180800, 1531699200),
+(14, 2, 2, 4, 6, 1, 'Special Offer 2018 2', 'Special Offer 2018 2 ', 'special-offer-2018-2', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in volup</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 2, 1531180800, 1531699200),
 (14, 3, 2, 4, 6, 1, '', '', '', '', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 2, 1531180800, 1531699200),
 (15, 1, 4, 4, 8, 2, '', '', '', '', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 3, 1531180800, 1531699200),
-(15, 2, 4, 4, 8, 2, 'Special Offer 2018 3', 'Special Offer 2018 3', 'special-offer-2018-3', '<p>dadadada</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 3, 1531180800, 1531699200),
+(15, 2, 4, 4, 8, 2, 'Special Offer 2018 3', 'Special Offer 2018 3', 'special-offer-2018-3', '<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>\r\n', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 3, 1531180800, 1531699200),
 (15, 3, 4, 4, 8, 2, '', '', '', '', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39', 3, 100, 1, 1, 3, 1531180800, 1531699200);
 
 -- --------------------------------------------------------
@@ -1220,22 +1220,22 @@ CREATE TABLE IF NOT EXISTS `pm_offer_file` (
   PRIMARY KEY (`id`,`lang`),
   KEY `room_file_fkey` (`id_item`,`lang`),
   KEY `room_file_lang_fkey` (`lang`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pm_offer_file`
 --
 
 INSERT INTO `pm_offer_file` (`id`, `lang`, `id_item`, `home`, `checked`, `rank`, `file`, `label`, `type`) VALUES
-(17, 1, 11, NULL, 1, 1, 'bayshann.jpg', NULL, 'image'),
-(17, 2, 11, NULL, 1, 1, 'bayshann.jpg', NULL, 'image'),
-(17, 3, 11, NULL, 1, 1, 'bayshann.jpg', NULL, 'image'),
-(35, 1, 14, NULL, 1, 2, 'fujitsu.jpg', NULL, 'image'),
-(35, 2, 14, NULL, 1, 2, 'fujitsu.jpg', NULL, 'image'),
-(35, 3, 14, NULL, 1, 2, 'fujitsu.jpg', NULL, 'image'),
-(36, 1, 15, NULL, 1, 3, 'surf.jpg', NULL, 'image'),
-(36, 2, 15, NULL, 1, 3, 'surf.jpg', NULL, 'image'),
-(36, 3, 15, NULL, 1, 3, 'surf.jpg', NULL, 'image');
+(40, 1, 11, NULL, 1, 4, 'room1.jpg', '', 'image'),
+(40, 2, 11, NULL, 1, 4, 'room1.jpg', '', 'image'),
+(40, 3, 11, NULL, 1, 4, 'room1.jpg', '', 'image'),
+(41, 1, 14, NULL, 1, 5, 'room1.jpg', '', 'image'),
+(41, 2, 14, NULL, 1, 5, 'room1.jpg', '', 'image'),
+(41, 3, 14, NULL, 1, 5, 'room1.jpg', '', 'image'),
+(42, 1, 15, NULL, 1, 6, 'room1.jpg', '', 'image'),
+(42, 2, 15, NULL, 1, 6, 'room1.jpg', '', 'image'),
+(42, 3, 15, NULL, 1, 6, 'room1.jpg', '', 'image');
 
 -- --------------------------------------------------------
 
@@ -1479,12 +1479,9 @@ INSERT INTO `pm_room` (`id`, `lang`, `max_children`, `max_adults`, `max_people`,
 (1, 1, 2, 2, 2, 1, 'Chambre Double Deluxe', 'Petit-déjeuner inclus', 'chambre-double-deluxe', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut eleifend diam. Etiam molestie quam at nunc tempus, ac porttitor ante rutrum. Donec ipsum orci, molestie sit amet nibh a, accumsan varius nisl. Suspendisse blandit efficitur interdum. Nulla auctor tortor eu volutpat imperdiet. Nam at tempus sapien, sit amet porttitor neque. Nam lacinia ex libero, vel egestas ante vehicula nec.</p>\r\n\r\n<p>Sed sed dignissim est. Donec egestas nisl eu congue rhoncus. Nulla finibus malesuada mauris, et pellentesque diam scelerisque non. Duis auctor dapibus augue sed malesuada. Nam placerat at libero quis aliquam. Phasellus quam orci, dapibus sit amet finibus a, convallis volutpat arcu. Nullam condimentum quam id urna scelerisque varius. Duis a metus metus.</p>\r\n', '1,5,11,13,17,18,21,23,24,25,27,28,29,32', 4, 145, 1, 1, 1, NULL, NULL),
 (1, 2, 2, 2, 2, 1, 'Deluxe Double Bedroom', 'Breakfast included', 'deluxe-double-bedroom', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut eleifend diam. Etiam molestie quam at nunc tempus, ac porttitor ante rutrum. Donec ipsum orci, molestie sit amet nibh a, accumsan varius nisl. Suspendisse blandit efficitur interdum. Nulla auctor tortor eu volutpat imperdiet. Nam at tempus sapien, sit amet porttitor neque. Nam lacinia ex libero, vel egestas ante vehicula nec.</p>\r\n\r\n<p>Sed sed dignissim est. Donec egestas nisl eu congue rhoncus. Nulla finibus malesuada mauris, et pellentesque diam scelerisque non. Duis auctor dapibus augue sed malesuada. Nam placerat at libero quis aliquam. Phasellus quam orci, dapibus sit amet finibus a, convallis volutpat arcu. Nullam condimentum quam id urna scelerisque varius. Duis a metus metus.</p>\r\n', '1,5,11,13,17,18,21,23,24,25,27,28,29,32', 4, 145, 1, 1, 1, NULL, NULL),
 (1, 3, 2, 2, 2, 1, 'Deluxe Double Bedroom', 'Breakfast included', 'deluxe-double-bedroom', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut eleifend diam. Etiam molestie quam at nunc tempus, ac porttitor ante rutrum. Donec ipsum orci, molestie sit amet nibh a, accumsan varius nisl. Suspendisse blandit efficitur interdum. Nulla auctor tortor eu volutpat imperdiet. Nam at tempus sapien, sit amet porttitor neque. Nam lacinia ex libero, vel egestas ante vehicula nec.</p>\r\n\r\n<p>Sed sed dignissim est. Donec egestas nisl eu congue rhoncus. Nulla finibus malesuada mauris, et pellentesque diam scelerisque non. Duis auctor dapibus augue sed malesuada. Nam placerat at libero quis aliquam. Phasellus quam orci, dapibus sit amet finibus a, convallis volutpat arcu. Nullam condimentum quam id urna scelerisque varius. Duis a metus metus.</p>\r\n', '1,5,11,13,17,18,21,23,24,25,27,28,29,32', 4, 145, 1, 1, 1, NULL, NULL),
-(2, 1, 4, 5, 5, 1, 'Suite Luxueuse', 'Suite avec Piscine & Jacuzzi', 'suite-luxueuse', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et ante in ligula ornare finibus. Sed porttitor leo in felis sodales iaculis. Donec id elit quis erat volutpat viverra. Pellentesque pretium, massa nec pulvinar faucibus, nunc ipsum commodo neque, sit amet fermentum purus enim quis nisi. Nunc ligula est, lacinia non massa quis, consectetur sagittis ex. Nulla facilisi. In mattis diam eu dui egestas faucibus. Duis quis facilisis urna. Vestibulum non nunc quis erat cursus posuere. Quisque tempus porta leo eget ultricies. Praesent rhoncus dolor in risus molestie vulputate. In ac lorem nec metus maximus dictum quis eget eros. In non vestibulum sem, at sollicitudin ligula. <span data-cke-marker=\"1\"> </p>\r\n', '1,2,5,39,35,11,13,36,17,18,21,37,38,23,24,25,26,27,28,32', 5, 390, 1, 1, 2, NULL, NULL),
-(2, 2, 4, 5, 5, 1, 'Luxury suite', 'Pool & Jacuzzi Suite', 'luxury-suite', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et ante in ligula ornare finibus. Sed porttitor leo in felis sodales iaculis. Donec id elit quis erat volutpat viverra. Pellentesque pretium, massa nec pulvinar faucibus, nunc ipsum commodo neque, sit amet fermentum purus enim quis nisi. Nunc ligula est, lacinia non massa quis, consectetur sagittis ex. Nulla facilisi. In mattis diam eu dui egestas faucibus. Duis quis facilisis urna. Vestibulum non nunc quis erat cursus posuere. Quisque tempus porta leo eget ultricies. Praesent rhoncus dolor in risus molestie vulputate. In ac lorem nec metus maximus dictum quis eget eros. In non vestibulum sem, at sollicitudin ligula. <span data-cke-marker=\"1\"> </p>\r\n', '1,2,5,39,35,11,13,36,17,18,21,37,38,23,24,25,26,27,28,32', 5, 390, 1, 1, 2, NULL, NULL),
-(2, 3, 4, 5, 5, 1, 'Luxury suite', 'Pool & Jacuzzi Suite', 'luxury-suite', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et ante in ligula ornare finibus. Sed porttitor leo in felis sodales iaculis. Donec id elit quis erat volutpat viverra. Pellentesque pretium, massa nec pulvinar faucibus, nunc ipsum commodo neque, sit amet fermentum purus enim quis nisi. Nunc ligula est, lacinia non massa quis, consectetur sagittis ex. Nulla facilisi. In mattis diam eu dui egestas faucibus. Duis quis facilisis urna. Vestibulum non nunc quis erat cursus posuere. Quisque tempus porta leo eget ultricies. Praesent rhoncus dolor in risus molestie vulputate. In ac lorem nec metus maximus dictum quis eget eros. In non vestibulum sem, at sollicitudin ligula. <span data-cke-marker=\"1\"> </p>\r\n', '1,2,5,39,35,11,13,36,17,18,21,37,38,23,24,25,26,27,28,32', 5, 390, 1, 1, 2, NULL, NULL),
-(3, 1, 4, 5, 5, 1, 'Suite Royale', 'Suite avec Piscine & Jacuzzi', 'suite-royale', '', '1,2,5,39,35,11,13,36,17,18,21,37,38,23,24,25,27,28,32', 2, 410, 1, 1, 3, NULL, NULL),
-(3, 2, 4, 5, 5, 1, 'Royal suite', 'Pool & Jacuzzi Suite', 'royal-suite', '', '1,2,5,39,35,11,13,36,17,18,21,37,38,23,24,25,27,28,32', 2, 410, 1, 1, 3, NULL, NULL),
-(3, 3, 4, 5, 5, 1, 'Royal suite', 'Pool & Jacuzzi Suite', 'royal-suite', '', '1,2,5,39,35,11,13,36,17,18,21,37,38,23,24,25,27,28,32', 2, 410, 1, 1, 3, NULL, NULL);
+(3, 1, 4, 5, 5, 1, 'Suite Royale', 'Suite avec Piscine & Jacuzzi', 'suite-royale', '', '1,2,5,11,13,17,18,21,23,24,25,27,28,32,35,36,37,38,39', 2, 410, 1, 1, 2, NULL, NULL),
+(3, 2, 4, 5, 5, 1, 'Royal suite', 'Pool & Jacuzzi Suite', 'royal-suite', '', '1,2,5,11,13,17,18,21,23,24,25,27,28,32,35,36,37,38,39', 2, 410, 1, 1, 2, NULL, NULL),
+(3, 3, 4, 5, 5, 1, 'Royal suite', 'Pool & Jacuzzi Suite', 'royal-suite', '', '1,2,5,11,13,17,18,21,23,24,25,27,28,32,35,36,37,38,39', 2, 410, 1, 1, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1506,25 +1503,19 @@ CREATE TABLE IF NOT EXISTS `pm_room_file` (
   PRIMARY KEY (`id`,`lang`),
   KEY `room_file_fkey` (`id_item`,`lang`),
   KEY `room_file_lang_fkey` (`lang`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pm_room_file`
 --
 
 INSERT INTO `pm_room_file` (`id`, `lang`, `id_item`, `home`, `checked`, `rank`, `file`, `label`, `type`) VALUES
-(1, 1, 1, 0, 1, 1, 'deluxe-double-room.jpg', '', 'image'),
-(1, 2, 1, 0, 1, 1, 'deluxe-double-room.jpg', '', 'image'),
-(1, 3, 1, 0, 1, 1, 'deluxe-double-room.jpg', '', 'image'),
-(2, 1, 2, 0, 1, 2, '6515452555-27726c278e-o.jpg', '', 'image'),
-(2, 2, 2, 0, 1, 2, '6515452555-27726c278e-o.jpg', '', 'image'),
-(2, 3, 2, 0, 1, 2, '6515452555-27726c278e-o.jpg', '', 'image'),
-(3, 1, 3, 0, 1, 3, '6515451125-2fd51bd7c5-o.jpg', '', 'image'),
-(3, 2, 3, 0, 1, 3, '6515451125-2fd51bd7c5-o.jpg', '', 'image'),
-(3, 3, 3, 0, 1, 3, '6515451125-2fd51bd7c5-o.jpg', '', 'image'),
-(4, 1, 1, NULL, 1, 4, 'fotografija.jpg', NULL, 'image'),
-(4, 2, 1, NULL, 1, 4, 'fotografija.jpg', NULL, 'image'),
-(4, 3, 1, NULL, 1, 4, 'fotografija.jpg', NULL, 'image');
+(5, 1, 1, NULL, 1, 4, 'room1.jpg', NULL, 'image'),
+(5, 2, 1, NULL, 1, 4, 'room1.jpg', NULL, 'image'),
+(5, 3, 1, NULL, 1, 4, 'room1.jpg', NULL, 'image'),
+(6, 1, 3, NULL, 1, 5, 'room1.jpg', NULL, 'image'),
+(6, 2, 3, NULL, 1, 5, 'room1.jpg', NULL, 'image'),
+(6, 3, 3, NULL, 1, 5, 'room1.jpg', NULL, 'image');
 
 -- --------------------------------------------------------
 

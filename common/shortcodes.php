@@ -103,10 +103,10 @@ function contentSlider($db, $atts, $texts){
                         <h3><?= $title ?></h3>
                         
                         <?php if($entity == "offer") : ?>
-                        <ul>
+                        <ul class="room-details">
                             <li><?= $night_stay; ?></li>
                             <li><?= $max_people; ?></li>
-                            <li>from <?= $min_price; ?></li>
+                            <li class="prices">from <?= $min_price; ?></li>
                         </ul>
                         <?php endif; ?>
 

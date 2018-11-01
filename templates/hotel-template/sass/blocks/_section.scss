@@ -27,6 +27,15 @@
 }
 //------------------------------
 
+//--- Rooms details *(nights, persons, price)
+
+.room-details {
+	list-style: none;
+	li {
+		display: inline-block;
+	}
+}
+
 //--- Section Room slider
 
 #rooms {
@@ -62,7 +71,9 @@
 }
 
 //--- Section Offers slider
+
 #offers {
+	padding-top: 10rem;
 	.content-slider__right,
 	.content-slider__left {
 		float: right;
@@ -74,12 +85,37 @@
 
 	.content-slider__right {
 		width: 38%;
+		padding-left: 5.7rem;
 	}
+	.content-slider {
+		h3 {
+			color: $c-main;
+		}
+		p {
+			color: $c-main;
+		}
+	}
+	.btn-gold {
+		background-color: $c-green;
+		border: 1px solid $c-green;
+	}
+	.slick-dots {
+		left: 52.8%;
+		li button:before {
+			color: #bfbfbf;
+		}
+		li.slick-active button:before {
+		    color: $c-main;
+		}
+	} 
 }
 
 .offers-slider {
 	background-color: $c-offersBg;
 }
+
+
+
 //-- Slider arrows navigation for mobile only
 .content-slider-wrapper {
 	position: relative;
@@ -131,6 +167,7 @@
 		margin-bottom: 35px;
 		font-weight: 300;
 		font-size: 14px;
+		line-height: 1.57;
 		color: $c-white;
 		@include breakpoint(desktop--small) {
 			font-size: 13px;
