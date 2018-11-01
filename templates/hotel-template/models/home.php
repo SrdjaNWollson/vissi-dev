@@ -59,7 +59,7 @@ if($result_slide !== false){
                                 <picture>
                                   <source media="(min-width: 650px)" srcset="<?= $zoompath; ?>">
                                   <source media="(min-width: 465px)" srcset="<?= $zoompath; ?>">
-                                  <img src="<?= $zoompath; ?>" alt="Flowers" style="width:auto;" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
+                                  <img src="<?= $zoompath; ?>" alt="Flowers" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
                                 </picture>
                                 <?php
                                 if($slide_legend != ''){ ?>
@@ -92,7 +92,7 @@ if($result_slide !== false){
         <h2 class="sec-title">Our Rooms</h2>
         <div class="rooms-slider content-slider">
             <div class="container">
-                <?php contentSlider($db,array('table'=>'room'),$texts); ?>
+                <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
             </div>
         </div> 
 </section> 
@@ -100,8 +100,8 @@ if($result_slide !== false){
     <div class="container">
         <h4 class="sec-subtitle">taste of mediterranean</h4>
         <h2 class="sec-title">Special Offers</h2>
-        <div class="offers-carousel box-3-carousel">
-            <?php contentSlider($db,array('table'=>'offer'),$texts); ?> 
+        <div class="offers-slider content-slider">
+            <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
         </div>
     </div>
 </section>

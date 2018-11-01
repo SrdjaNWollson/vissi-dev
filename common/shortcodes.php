@@ -39,6 +39,7 @@ function get_shortcode_from_text($db,$text){
 function contentSlider($db, $atts, $texts){ 
     $table = 'pm_' . $atts['table'];
     $entity = $atts['table'];
+    $type = $atts['section-type'];
 
     $result_room = $db->query('SELECT * FROM '.$table.' WHERE lang = '.LANG_ID.' AND checked = 1 AND home = 1 ORDER BY rank');
     if($result_room !== false){
@@ -62,10 +63,21 @@ function contentSlider($db, $atts, $texts){
 
             $result_room_file = $db->prepare('SELECT * FROM '.$table.'_file WHERE id_item = :room_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
             $result_room_file->bindParam(':room_id',$id);
+            $slide_class = "";
+            $slide_class2 = "";
+            if($type == 1){
+                $slide_class = "left";
+                $slide_class2 = "right";
+            }
+            elseif ($type == 2) {
+                $slide_class = "right";
+                $slide_class2 = "left";                
+            }
+
             ?>
 
             <div class="<?= $entity ?>-slide">
-                <div class="content-slider__left">  
+                <div class="content-slider__<?= $slide_class ?>">  
                       
                     <a href="/rooms" class="link-all-rooms">see all rooms</a>
              
@@ -76,8 +88,7 @@ function contentSlider($db, $atts, $texts){
                     <a itemprop="url" href="<?php echo $url; ?>" class="moreLink"><button>See More</button></a>
         
                 </div>
-            <div class="content-slider__right">
-                <div class="<?= $entity; ?>-image-box">
+            <div class="content-slider__<?= $slide_class2 ?>">
             <?php
             if($result_room_file->execute() !== false){
                 $row = $result_room_file->fetch(PDO::FETCH_ASSOC);
@@ -90,7 +101,9 @@ function contentSlider($db, $atts, $texts){
                 $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
                 //var_dump($realpath);
                 if(is_file($realpath)){ ?>
-                            <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>">
+                    <div class="<?= $entity; ?>-image-box" style="background-image: <?php echo $thumbpath; ?>">
+                        <?php /*<img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>"> */ ?>
+                    </div>
                     <?php
                 }
             } ?>
