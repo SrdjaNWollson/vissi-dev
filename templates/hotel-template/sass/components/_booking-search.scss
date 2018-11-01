@@ -312,6 +312,9 @@ body.header-type-1 #search-home-wrapper{
     top: 70px!important;
     width: 100%;
     z-index: 555;
+    @include breakpoint(mobile--s) {
+        top: 11rem!important;
+    }
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -372,6 +375,12 @@ body.header-type-1 #search-home-wrapper{
     display: none;
 }
 
+.ui-datepicker td a {
+    @include breakpoint(mobile--s) {
+        font-size: 2.2rem;
+    }
+}
+
 .ui-state-hover.ui-datepicker-next,
 .ui-state-hover.ui-datepicker-prev {
     background: none;
@@ -405,6 +414,11 @@ a.ui-state-default.ui-state-active {
 
 .dropdown-menu>li>a {
     color: $c-main;
+}
+
+#from_picker,
+#to_picker {
+    cursor: pointer!important;
 }
 
 

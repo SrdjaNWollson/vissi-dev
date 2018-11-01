@@ -28,6 +28,27 @@
 //------------------------------
 
 //--- Section Room slider
+
+#rooms {
+	padding-top: 18rem;
+	background-image: url('../images/visi-darte-logo-bg.png');
+	background-repeat: no-repeat;
+	background-position: 120% -80px;
+	background-size: 40%;
+	@include breakpoint(tablet) {
+		padding-top: 390px;
+	    background-position: 120% 51px;
+	}
+	@include breakpoint(tablet) {
+		padding-top: 360px;
+	    background-position: 120% 51px;
+	}
+	@include breakpoint(mobile) {
+		padding-top: 10rem;
+		background-position: 136% -222px;
+		background-size: 50%;
+	}
+}
 .rooms-slider {
 	background-color: $c-main;
 }
@@ -37,6 +58,53 @@
 		display: flex!important;
 		flex-direction: column;
 		padding-left: 0!important;
+	}
+}
+
+//--- Section Offers slider
+#offers {
+	.content-slider__right,
+	.content-slider__left {
+		float: right;
+	}
+	.content-slider__left {
+		width: 62%;
+		padding: 0;
+	}
+
+	.content-slider__right {
+		width: 38%;
+	}
+}
+
+.offers-slider {
+	background-color: $c-offersBg;
+}
+//-- Slider arrows navigation for mobile only
+.content-slider-wrapper {
+	position: relative;
+	.slider-nav {
+		display: none;
+		@include breakpoint(mobile) {
+			display: block;
+			position: absolute;
+			top: 50%;
+			width: 5.4rem;
+			height: 5.4rem;
+			background-color: #f4f3f0;
+			cursor: pointer;
+		}
+		&:before {
+			@include absolute(center);
+			color: $c-gold;
+			font-size: 2.6rem;
+		}
+	}
+	.icon-right-arrow {
+		right: 0;
+	}
+	.icon-left-arrow {
+		left: 0;
 	}
 }
 
@@ -99,7 +167,7 @@
 		}
 	}
 	.slick-slide {
-		margin-left: 20px;
+		//margin-left: 20px;
 		transition: opacity 1.25s ease-out;
 		@include breakpoint(desktop--small) {
 			margin-left: 0;
@@ -217,7 +285,7 @@
 }
 
 .content-slider__left {
-	width: 30%;
+	width: 25%;
 	padding: 5.5rem 7rem 3.8rem 0;
 	@include breakpoint(tablet) {
 		order: 2;
@@ -230,7 +298,7 @@
 }
 
 .content-slider__right {
-	width: 70%;
+	width: 75%;
 	@include breakpoint(tablet) {
 		order: 1;
 		width: 100%;

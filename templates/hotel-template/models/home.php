@@ -86,23 +86,25 @@ if($result_slide !== false){
 	}
 } ?>
 <content id="content" class="pt20 pb30">
-
+<!-- rooms -->
 <section id="rooms" class="prim-section">
     <h4 class="sec-subtitle">a new vision of comfort</h4>
     <h2 class="sec-title">Our Rooms</h2>
-    <div class="rooms-slider content-slider">
-       
-                <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
-
-    </div> 
-</section> 
-<section id="offers" class="sec-section">
-    <div class="container">
-        <h4 class="sec-subtitle">taste of mediterranean</h4>
-        <h2 class="sec-title">Special Offers</h2>
-        <div class="offers-slider content-slider">
-            <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
+    <!-- rooms slider -->
+    <div class="content-slider-wrapper">    
+        <div class="rooms-slider content-slider">   
+            <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
         </div>
+        <span class="icon-left-arrow slider-nav"></span>
+        <span class="icon-right-arrow slider-nav"></span>
+    </div> 
+</section>
+<!-- offers --> 
+<section id="offers" class="sec-section">
+    <h4 class="sec-subtitle">taste of mediterranean</h4>
+    <h2 class="sec-title">Special Offers</h2>
+    <div class="offers-slider content-slider">
+        <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
     </div>
 </section>
 <section id="facility" class="prim-section">

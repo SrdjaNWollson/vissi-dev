@@ -87,12 +87,42 @@ $counter = 0;
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script type="text/javascript">
-        $('.content-slider ').slick({
+        //-- ROOMS slider
+        $('.rooms-slider').slick({
             speed: 1700,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            dots: true
+            dots: true,
+            responsive: [
+                {
+                breakpoint: 767,
+                    settings: {
+                        arrows: true,
+                        prevArrow: $('.icon-left-arrow'),
+                        nextArrow: $('.icon-right-arrow')
+                    }             
+                }
+            ]
+        });
+
+         //-- ROOMS slider
+        $('.offers-slider').slick({
+            speed: 1700,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+            responsive: [
+                {
+                breakpoint: 767,
+                    settings: {
+                        arrows: true,
+                        prevArrow: $('.icon-left-arrow'),
+                        nextArrow: $('.icon-right-arrow')
+                    }             
+                }
+            ]
         });
     </script>
 
