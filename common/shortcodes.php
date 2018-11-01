@@ -109,7 +109,6 @@ function contentSlider($db, $atts, $texts){
             } ?>
                 </div> <!-- end rooms image box -->
             </div> <!-- end right -->
-            </div>
             <?php
             }
         }

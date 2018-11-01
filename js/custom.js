@@ -614,9 +614,9 @@ $(document).ready(function(){
      */
     if($('.royalSlider').length){
         function royalSliderInit(){
-            //var height = $(window).height() - parseInt($('body').css('padding-top')) - parseInt($('header.header-type-1').height());
-            //console.log(height);
-            //var width = $(window).width();
+            var height = $(window).height() - parseInt($('body').css('padding-top')) - parseInt($('header.header-type-1').height());
+            console.log(height);
+            var width = $(window).width();
             //$('.royalSlider').height(height);
             var sliderArray = {
                     arrowsNav: true,
@@ -626,10 +626,10 @@ $(document).ready(function(){
                     controlsInside: false,
                     imageScaleMode: 'fill',
                     arrowsNavAutoHide: false,
-                    autoHeight: false,
+                    autoHeight: true,
                     autoScaleSlider: false,
-                    //autoScaleSliderWidth: width,     
-                    //autoScaleSliderHeight: height,
+                    autoScaleSliderWidth: 1600,     
+                    autoScaleSliderHeight: 950,
                     controlNavigation: 'bullets', 
                     thumbsFitInViewport: false,
                     navigateByClick: true,

@@ -88,6 +88,7 @@ if($result_slide !== false){
 <content id="content" class="pt20 pb30">
 
 <section id="rooms" class="prim-section">
+<<<<<<< HEAD
         <h4 class="sec-subtitle">a new vision of comfort</h4>
         <h2 class="sec-title">Our Rooms</h2>
         <div class="rooms-slider content-slider">
@@ -95,6 +96,17 @@ if($result_slide !== false){
                 <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
             </div>
         </div> 
+=======
+    <h4 class="sec-subtitle">a new vision of comfort</h4>
+    <h2 class="sec-title">Our Rooms</h2>
+    <div class="rooms-slider content-slider">
+
+           
+                <?php contentSlider($db,array('table'=>'room'),$texts); ?>
+        
+
+    </div> 
+>>>>>>> 25c3d38152a3a74580df540e468bc0e57d975a4b
 </section> 
 <section id="offers" class="sec-section">
     <div class="container">

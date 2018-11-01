@@ -7,12 +7,7 @@ body {
 body:not(#page-1) {
     background: url("../images/page-header.jpg") no-repeat center 0;
 }
-h1, h2, h3, .h1, .h2, .h3, .widget-title {
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    word-spacing: 4px;
-}
+
 h1, .h1 {
     font-weight: 400;
 }
