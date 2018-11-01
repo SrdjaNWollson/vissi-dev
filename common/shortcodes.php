@@ -57,7 +57,7 @@ function contentSlider($db, $atts, $texts){
             $id = checkIsset($row['id']);
             $title = checkIsset($row['title']);
             $subtitle = checkIsset($row['subtitle']);
-            $content = strWordCut(checkIsset($row['descr']),350); 
+            $content = strWordCut(checkIsset($row['descr']), 180); 
             $min_price = checkIsset($row['price']);
             $max_people = checkIsset($row['max_people']);
             $min_people = checkIsset($row['min_people']);
@@ -105,9 +105,9 @@ function contentSlider($db, $atts, $texts){
                         
                         <?php if($entity == "offer") : ?>
                         <ul class="room-details">
-                            <li><?= $night_stay; ?></li>
-                            <li><?= $max_people; ?></li>
-                            <li class="prices">from <?= $min_price; ?> <?= CURRENCY_SIGN ?></li>
+                            <li><i class="icon-moon"></i><span class="cen-vertical"><?= $night_stay; ?></span></li>
+                            <li><i class="icon-person"></i><span class="cen-vertical"><?= $max_people; ?></span></li>
+                            <li class="prices"><span class="cen-vertical">from</span> <span class="num"><?= $min_price; ?><?= CURRENCY_SIGN ?></span></li>
                         </ul>
                         <?php endif; ?>
 

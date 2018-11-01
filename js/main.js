@@ -21,12 +21,12 @@ $(document).ready(function(){
 	function giveMargin() {
 
 		let fullWidth = $(window).width();
-		if($(window).width() > 1140) {
+		if(fullWidth > 1140) {
 			roomMargin.css('padding-left',((fullWidth - 1140) / 2) +'px');
 			offerMargin.css('padding-right',((fullWidth - 1140) / 2) +'px');
 			roomSlideDots.css('left',((fullWidth - 1140 + 16) / 2) +'px');
 		}
-		else if ($(window).width() > 990){
+		else if (fullWidth > 990 && fullWidth < 1140){
 			roomMargin.css('padding-left', 1  +'%');
 			roomSlideDots.css('left', 4  +'%');
 		}
@@ -39,10 +39,22 @@ $(document).ready(function(){
 	});
 	//----------------------------
 
-	// /*-- Disable datepicker keyboard on mobile and tablet devices--*/
+	// /*-- Find and put at right position green btn of offers section --*/
 
-	// if($(window).width() < 991){
-	// 	$('#from_picker, #to_picker').attr('readonly','readonly');
-	// }
+
+	let offersBtn = $('#offers .btn-gold');
+	let winWidth = $(window);
+	let dots = $('#offers .slick-dots');
+
+	function placeOffersDots(){
+		let btnPosition = winWidth.width() - Math.abs(offersBtn.offset().left);
+		dots.css('left', btnPosition - 8 +'px');
+	}
+
+	placeOffersDots();
+
+	$(window).resize(function(){
+	    placeOffersDots();
+	});
 
 });
