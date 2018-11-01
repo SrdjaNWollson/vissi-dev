@@ -58,6 +58,12 @@ function contentSlider($db, $atts, $texts){
             $subtitle = $row['subtitle'];
             $content = strWordCut($row['descr'],165); 
             $min_price = $row['price'];
+            $max_people = $row['max_people'];
+            $min_people = $row['min_people'];
+            $max_children = $row['max_children'];
+            $night_stay = "2";
+
+
             $alias = isset($pages[9]['alias']) ? $pages[9]['alias'] : null;
             $url = DOCBASE.$alias.'/'.text_format($row['alias']);
 
@@ -65,6 +71,16 @@ function contentSlider($db, $atts, $texts){
             $result_room_file->bindParam(':room_id',$id);
             $slide_class = "";
             $slide_class2 = "";
+            $btn_text = "Submit";
+
+            if($entity == "room"){
+                $btn_text = "See More";
+            }
+            elseif($entity == "offer"){
+                $btn_text = "Book Now";
+            }
+
+
             if($type == 1){
                 $slide_class = "left";
                 $slide_class2 = "right";
@@ -78,14 +94,25 @@ function contentSlider($db, $atts, $texts){
 
             <div class="<?= $entity ?>-slide"> 
                     <div class="content-slider__<?= $slide_class ?>">   
-                          
+                        <?php if($entity == "room") : ?>
+
                         <div class="btn-holder"><a href="/rooms" class="link-all-rooms">see all rooms <i class="icon-right-arrow"></i></a></div>
-                 
+
+                        <?php endif; ?>
+                        
                         <h3><?= $title ?></h3>
-            
+                        
+                        <?php if($entity == "offer") : ?>
+                        <ul>
+                            <li><?= $night_stay; ?></li>
+                            <li><?= $max_people; ?></li>
+                            <li>from <?= $min_price; ?></li>
+                        </ul>
+                        <?php endif; ?>
+
                         <p><?= $content ?></p>
 
-                        <div class="btn-holder"><a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span>See More</span></a></div>
+                        <div class="btn-holder"><a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span><?= $btn_text; ?></span></a></div>
             
                     </div>
                     <div class="content-slider__<?= $slide_class2 ?>"> 
@@ -102,7 +129,7 @@ function contentSlider($db, $atts, $texts){
                             $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
                             //var_dump($realpath);
                             if(is_file($realpath)){ ?>
-                                        <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>">
+                                        <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>">
                                 <?php
                             }
                         } ?>
