@@ -2,12 +2,18 @@
 //-------- SECTION
 //-------------------------
 
+
+//-- Title and subtitle for all sections
 .sec-title {
 	margin: 20px 0 70px;
 	font-family: $butler;
 	font-size: 50px;
 	color: $c-main;
 	text-transform: uppercase;
+	@include breakpoint(mobile) {
+		margin: 2.5rem 0 7.9rem;
+		font-size: 6rem;
+	}
 }
 
 .sec-subtitle {
@@ -15,39 +21,89 @@
 	color: $c-mainLighter;
 	text-align: center;
 	text-transform: uppercase;
+	@include breakpoint(mobile) {
+		font-size: 1.5rem;
+	}
 }
+//------------------------------
 
+//--- Section Room slider
 .rooms-slider {
 	background-color: $c-main;
 }
+
+.room-slide {
+	@include breakpoint(tablet) {
+		display: flex!important;
+		flex-direction: column;
+		padding-left: 0!important;
+	}
+}
+
+//--- Common for section sliders 
 .content-slider {
-	// height: 54.5rem;
+//-- Content slider Title	
 	h3 {
 		margin: 7rem 0 2.8rem;
 		font-family: $butler;
 		font-size: 28px;
 		color: $c-white; 
+		@include breakpoint(desktop--small) {
+			margin: 4rem 0 2.2rem;
+			font-size: 26px;
+		}
+		@include breakpoint(mobile) {
+			margin: 5rem 0;
+			font-size: 3.2rem;
+			text-align: center;
+		}
 	}
+//-- Content slider Text	
 	p {
 		margin-bottom: 35px;
 		font-weight: 300;
 		font-size: 14px;
 		color: $c-white;
+		@include breakpoint(desktop--small) {
+			font-size: 13px;
+		}
+		@include breakpoint(mobile) {
+			margin-bottom: 6rem;
+			font-size: 2.5rem;
+			line-height: 1.7;
+			text-align: center;
+		}
 	}
+//-- Link to all rooms offer
 	.link-all-rooms {
 		font-size: 14px;
 		font-weight: 600;
 		letter-spacing: 2px;
 		color: $c-gold;
 		text-transform: uppercase;
+		@include breakpoint(desktop--small) {
+			font-size: 12px;
+		}
+		@include breakpoint(mobile) {
+			font-size: 1.5rem;
+			letter-spacing: 0.3rem;
+		}
+		.icon-right-arrow {
+			position: relative;
+			top: 0.08px;
+			font-size: 12px;
+			vertical-align: top;
+			@include breakpoint(mobile) {
+				font-size: 1.2rem;
+			}
+		}
 	}
 	.slick-slide {
 		margin-left: 20px;
 		transition: opacity 1.25s ease-out;
-		// img {
-		// 	width: 100.23rem;
-		// 	//height: 54.5rem;
-		// }
+		@include breakpoint(desktop--small) {
+			margin-left: 0;
+		}
 	}
 	.slick-slide.slick-current.slick-center {
 		opacity: 1;
@@ -64,6 +120,15 @@
 		position: absolute;
 		left: 10px;
 		bottom: 2rem;
+		@include breakpoint(tablet) {
+			position: static;
+			padding-bottom: 4rem;
+			margin-left: 3.6%;
+		}
+		@include breakpoint(mobile) {
+			margin-left: 0;
+			text-align: center;
+		}
 	}
 	.slick-dots li {
 	    position: relative;
@@ -77,6 +142,9 @@
 	    	button:before {
 	    		color: $c-white;
 	    	}
+	    }
+	    @include breakpoint(mobile) {
+	    	margin: 0 0.9rem;
 	    }
 	}
 	.slick-dots li button {
@@ -106,10 +174,34 @@
 	    color: #D7D2CE;
 	    -webkit-font-smoothing: antialiased;
 	    -moz-osx-font-smoothing: grayscale;
+	    @include breakpoint(desktop--small) {
+			font-size: 36px;
+		}
+		@include breakpoint(mobile) {
+			font-size: 5rem;
+		}
 	}
+	.btn-holder {
+		@include breakpoint(mobile) {
+			text-align: center;
+		}
+	}
+//-- Sections slider button	
 	.btn-gold {
 		position: absolute;
 		bottom: 13.5rem;
+		@include breakpoint(desktop--small) {
+			bottom: 10rem;
+			font-size: 12px;
+		}
+		@include breakpoint(tablet) {
+			position: static;
+		}
+		@include breakpoint(mobile) {
+		    display: inline-block;
+    		float: none;
+    		font-size: 1.75rem;
+    	}
 	}
 }
 
@@ -118,15 +210,31 @@
 .content-slider__right,
 .content-slider__left {
 	float: left;
+	@include breakpoint(tablet) {
+		float: none;
+		clear: both;
+	}
 }
 
 .content-slider__left {
 	width: 30%;
 	padding: 5.5rem 7rem 3.8rem 0;
+	@include breakpoint(tablet) {
+		order: 2;
+		width: 90%;
+		margin: 0 auto;
+	}
+	@include breakpoint(mobile) {
+		padding: 6.6rem 0rem 3.8rem 0;
+	}
 }
 
 .content-slider__right {
 	width: 70%;
+	@include breakpoint(tablet) {
+		order: 1;
+		width: 100%;
+	}
 }
 
 [class*='-image-box'] {

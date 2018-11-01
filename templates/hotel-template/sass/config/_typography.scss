@@ -90,8 +90,8 @@ html {
     @include breakpoint (desktop--Large) {
         font-size: 10px; // > 1400
     }
-    @include breakpoint (desktop) {
-        font-size: 0.7142857142857143vw; //10px - 1400px
+    @include breakpoint (desktop-fit) {//1600
+        font-size: 0.625vw; 
     }
     @include breakpoint (tablet) {
         font-size: 1.01010101010101vw;//10px - 768px

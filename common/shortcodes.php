@@ -68,13 +68,13 @@ function contentSlider($db, $atts, $texts){
  
                     <div class="content-slider__left">  
                           
-                        <a href="/rooms" class="link-all-rooms">see all rooms</a>
+                        <div class="btn-holder"><a href="/rooms" class="link-all-rooms">see all rooms <i class="icon-right-arrow"></i></a></div>
                  
                         <h3><?= $title ?></h3>
             
                         <p><?= $content ?></p>
 
-                        <a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span>See More</span></a>
+                        <div class="btn-holder"><a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span>See More</span></a></div>
             
                     </div>
                     <div class="content-slider__right">
