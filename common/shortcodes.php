@@ -1,4 +1,5 @@
 <?php
+require_once 'functions.php';
 /* Shortcode generator made by Srdjan Nezic */
 
 function get_shortcode_from_text($db,$text){
@@ -53,16 +54,16 @@ function contentSlider($db, $atts, $texts){
         $box_class = "col-md-4";
         $box_class = getBoxClass($nb_rooms);
         foreach($result_room as $i => $row){
-            $id = $row['id'];
-            $title = $row['title'];
-            $subtitle = $row['subtitle'];
-            $content = strWordCut($row['descr'],165); 
-            $min_price = $row['price'];
-            $max_people = $row['max_people'];
-            $min_people = $row['min_people'];
-            $max_children = $row['max_children'];
-            $night_stay = "2";
-
+            $id = checkIsset($row['id']);
+            $title = checkIsset($row['title']);
+            $subtitle = checkIsset($row['subtitle']);
+            $content = strWordCut(checkIsset($row['descr']),165); 
+            $min_price = checkIsset($row['price']);
+            $max_people = checkIsset($row['max_people']);
+            $min_people = checkIsset($row['min_people']);
+            $max_children = checkIsset($row['max_children']);
+            $night_stay = checkIsset($row['min_nights']);
+ 
 
             $alias = isset($pages[9]['alias']) ? $pages[9]['alias'] : null;
             $url = DOCBASE.$alias.'/'.text_format($row['alias']);
