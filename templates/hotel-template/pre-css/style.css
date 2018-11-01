@@ -52,7 +52,6 @@
   margin: 0; }
 
 section.prim-section, section.sec-section {
-  padding: 60px 0px;
   overflow-y: auto;
   overflow-x: hidden; }
 
@@ -772,9 +771,6 @@ body {
 
 section.prim-section {
   background-color: #fff; }
-
-section.sec-section {
-  background-color: #f0f0f0; }
 
 section.third-section {
   background-color: #999; }
@@ -1959,26 +1955,6 @@ ul.navbar-nav > li.primary .dropdown {
 .breadcrumb {
   background: transparent; }
 
-#rooms {
-  padding-top: 18rem;
-  background-image: url("../images/visi-darte-logo-bg.png");
-  background-repeat: no-repeat;
-  background-position: 120% -80px;
-  background-size: 40%; }
-  @media (max-width: 990px) {
-    #rooms {
-      padding-top: 390px;
-      background-position: 120% 51px; } }
-  @media (max-width: 990px) {
-    #rooms {
-      padding-top: 360px;
-      background-position: 120% 51px; } }
-  @media (max-width: 767px) {
-    #rooms {
-      padding-top: 10rem;
-      background-position: 136% -222px;
-      background-size: 50%; } }
-
 .sec-title {
   margin: 20px 0 70px;
   font-family: "ButlerRegular";
@@ -1999,6 +1975,26 @@ ul.navbar-nav > li.primary .dropdown {
     .sec-subtitle {
       font-size: 1.5rem; } }
 
+#rooms {
+  padding-top: 18rem;
+  background-image: url("../images/visi-darte-logo-bg.png");
+  background-repeat: no-repeat;
+  background-position: 120% -80px;
+  background-size: 40%; }
+  @media (max-width: 990px) {
+    #rooms {
+      padding-top: 390px;
+      background-position: 120% 51px; } }
+  @media (max-width: 990px) {
+    #rooms {
+      padding-top: 360px;
+      background-position: 120% 51px; } }
+  @media (max-width: 767px) {
+    #rooms {
+      padding-top: 10rem;
+      background-position: 136% -222px;
+      background-size: 50%; } }
+
 .rooms-slider {
   background-color: #79675a; }
 
@@ -2007,6 +2003,49 @@ ul.navbar-nav > li.primary .dropdown {
     display: flex !important;
     flex-direction: column;
     padding-left: 0 !important; } }
+
+#offers .content-slider__right,
+#offers .content-slider__left {
+  float: right; }
+
+#offers .content-slider__left {
+  width: 62%;
+  padding: 0; }
+
+#offers .content-slider__right {
+  width: 38%; }
+
+.offers-slider {
+  background-color: #ecebe4; }
+
+.content-slider-wrapper {
+  position: relative; }
+  .content-slider-wrapper .slider-nav {
+    display: none; }
+    @media (max-width: 767px) {
+      .content-slider-wrapper .slider-nav {
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 5.4rem;
+        height: 5.4rem;
+        background-color: #f4f3f0;
+        cursor: pointer; } }
+    .content-slider-wrapper .slider-nav:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      color: #c5ae60;
+      font-size: 2.6rem; }
+  .content-slider-wrapper .icon-right-arrow {
+    right: 0; }
+  .content-slider-wrapper .icon-left-arrow {
+    left: 0; }
 
 .content-slider h3 {
   margin: 7rem 0 2.8rem;
@@ -2061,7 +2100,6 @@ ul.navbar-nav > li.primary .dropdown {
         font-size: 1.2rem; } }
 
 .content-slider .slick-slide {
-  margin-left: 20px;
   transition: opacity 1.25s ease-out; }
   @media (max-width: 1200px) {
     .content-slider .slick-slide {
@@ -2170,7 +2208,7 @@ ul.navbar-nav > li.primary .dropdown {
       clear: both; } }
 
 .content-slider__left {
-  width: 30%;
+  width: 25%;
   padding: 5.5rem 7rem 3.8rem 0; }
   @media (max-width: 990px) {
     .content-slider__left {
@@ -2182,7 +2220,7 @@ ul.navbar-nav > li.primary .dropdown {
       padding: 6.6rem 0rem 3.8rem 0; } }
 
 .content-slider__right {
-  width: 70%; }
+  width: 75%; }
   @media (max-width: 990px) {
     .content-slider__right {
       order: 1;
@@ -2539,6 +2577,10 @@ body.header-type-1 #search-home-wrapper {
   top: 70px !important;
   width: 100%;
   z-index: 555; }
+  @media (max-width: 480px) {
+    #fromDate-holder,
+    #toDate-holder {
+      top: 11rem !important; } }
 
 .ui-datepicker .ui-datepicker-header {
   padding: 5px 0; }
@@ -2594,6 +2636,10 @@ body.header-type-1 #search-home-wrapper {
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
   display: none; }
 
+@media (max-width: 480px) {
+  .ui-datepicker td a {
+    font-size: 2.2rem; } }
+
 .ui-state-hover.ui-datepicker-next,
 .ui-state-hover.ui-datepicker-prev {
   background: none;
@@ -2618,6 +2664,10 @@ a.ui-state-default.ui-state-active {
 
 .dropdown-menu > li > a {
   color: #79675a; }
+
+#from_picker,
+#to_picker {
+  cursor: pointer !important; }
 
 #sliderContainer {
   position: relative;

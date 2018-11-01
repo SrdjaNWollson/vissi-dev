@@ -11,9 +11,9 @@ $(document).ready(function(){
 		$('#mainMenu').toggle();
 		$('html').toggleClass('noScroll');
 	});
-
+    //---------------------------------
 	
-
+	/*-- Count margin of content slider --*/
 	const sliderMargin = $('.room-slide');
 	const slideDots = $('.slick-dots');
 
@@ -35,6 +35,12 @@ $(document).ready(function(){
 	$(window).resize(function(){
 	    giveMargin();
 	});
-	
+	//----------------------------
+
+	// /*-- Disable datepicker keyboard on mobile and tablet devices--*/
+
+	// if($(window).width() < 991){
+	// 	$('#from_picker, #to_picker').attr('readonly','readonly');
+	// }
 
 });
