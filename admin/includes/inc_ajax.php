@@ -1,6 +1,8 @@
 <?php
-define('SYSBASE', str_replace('\\', '/', realpath(dirname(__FILE__).'/../../').'/'));
- 
+if(!defined('SYSBASE')){
+	define('SYSBASE', str_replace('\\', '/', realpath(dirname(__FILE__).'/../../').'/'));
+}
+
 require_once(SYSBASE.'common/lib.php');
 require_once(SYSBASE.'common/define.php');
 if($db != false){

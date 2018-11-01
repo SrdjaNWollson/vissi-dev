@@ -174,7 +174,7 @@ function getFieldsFromNode($db, $itemList)
                     
                     $query_option .= $query_option_cond;
                     
-                    if($order != '') $query_option .= ' ORDER BY '.$order;
+                    if(isset($order) && $order != "") $query_option .= ' ORDER BY '.$order;
                     //var_dump($query_option);
                     $result_option = $db->query($query_option);
                     if($result_option !== false){
