@@ -73,7 +73,7 @@
                 <option value="6">[SATURDAY]</option>
                 <option value="7">[SUNDAY]</option>
             </options>  
-        </field>
+        </field> 
         <field multi="0" label="[MIN_NIGHTS]" name="min_nights" type="text" required="0" unique="0" validation="numeric" comment="[MIN_NIGHTS_NOTICE]"/>
         <field multi="0" label="[MAX_NIGHTS]" name="max_nights" type="text" required="0" unique="0" validation="numeric" comment="[MAX_NIGHTS_NOTICE]"/>
 		<field multi="1" label="[DESCRIPTION]" name="descr" type="textarea" editor="1" required="0" unique="0" validation="none"/>

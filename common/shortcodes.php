@@ -107,7 +107,7 @@ function contentSlider($db, $atts, $texts){
                         <ul class="room-details">
                             <li><?= $night_stay; ?></li>
                             <li><?= $max_people; ?></li>
-                            <li class="prices">from <?= $min_price; ?></li>
+                            <li class="prices">from <?= $min_price; ?> <?= CURRENCY_SIGN ?></li>
                         </ul>
                         <?php endif; ?>
 
