@@ -155,9 +155,11 @@ if($result_slide !== false){
                 } ?>
             ];
         </script>
+s
         <div class="location__info">
             <h4>Experience luxary in the city centre</h4>
             <h3>Best location</h3>
+
             <p><?= $location_text; ?> </p>
         </div>
         <div class="location__map">
@@ -166,7 +168,8 @@ if($result_slide !== false){
     </div>
 </section>
 <section id="articles"class="prim-section">
-    <div class="container">
+    <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>
+    <div class="testimonial-slider content-slider">
         <?php listArticles($db,$page_id,$pages,$texts); ?>
     </div>
 </section>

@@ -301,6 +301,8 @@ function listArticles($db, $page_id, $pages, $texts){
             foreach($result_article as $i => $row){
                 $article_id = $row['id'];
                 $article_title = $row['title'];
+                $article_subtitle = $row['subtitle'];
+                $location = $row['location'];
                 $article_alias = $row['alias'];
                 $char_limit = ($i == 0) ? 1200 : 500;
                 $article_text = strtrunc(strip_tags($row['text'], '<p><br>'), $char_limit, true, '');
@@ -343,11 +345,15 @@ function listArticles($db, $page_id, $pages, $texts){
                             </div>
                             <div class="col-sm-12">
                                 <div class="text-overflow">
-                                    <h3 itemprop="name"><?php echo $article_title; ?></h3>
-                                    <?php echo $article_text; ?>
+                                    <h3 class="sec-subtitle" itemprop="name"><?php echo $article_subtitle; ?></h3>
+                                    <p class="article-text"><?php echo $article_text; ?></p>
+                                    <p class="article-location"><?= $location; ?></p>
+                                    <?php /*
                                     <div class="more-btn">
                                         <span class="btn btn-primary"><?php echo $texts['READMORE']; ?></span>
-                                    </div>
+                                    </div> */
+                                    ?>
+                                    <h4></h4>
                                 </div>
                             </div>
                         </a>

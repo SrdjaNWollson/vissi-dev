@@ -18,6 +18,7 @@
 	<form>
 		<field multi="1" label="[TITLE]" name="title" type="text" required="1" unique="0" validation="none"/>
 		<field multi="1" label="[SUBTITLE]" name="subtitle" type="text" required="0" unique="0" validation="none"/>
+		<field multi="1" label="[LOCATION]" name="location" type="text" required="0" unique="0" validation="none"/>
 		<field multi="1" label="[ALIAS]" name="alias" type="alias" required="1" unique="1" validation="none" comment="[ARTICLE_ALIAS_NOTICE]"/>
 		<field multi="1" label="[MAIN_TEXT]" name="text" type="textarea" editor="1" required="0" unique="0" validation="none"/>
 		<field multi="1" label="[URL]" name="url" type="text" required="0" unique="0" validation="none"/>

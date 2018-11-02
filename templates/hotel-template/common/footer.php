@@ -124,6 +124,15 @@ $counter = 0;
                 }
             ]
         });
+
+         //-- Testimonial slider
+        $('.testimonial-slider').slick({
+            speed: 1700,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true
+        });
     </script>
 
 </body>
