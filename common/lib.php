@@ -244,25 +244,25 @@ function add_defaultAppearance($db){
 }
 
 function getBoxClass($num){
-    $box_class = "col-md-4";
+    $box_class = "items-3";
         switch ($num) {
             case 1:
-                $box_class = "col-md-12";
+                $box_class = "items-1";
                 break;
             case 2:
-                $box_class = "col-md-6";
+                $box_class = "items-2";
                 break;
             case 3:
-                $box_class = "col-md-4";
+                $box_class = "items-3";
                 break;
             case 4:
-                $box_class = "col-md-3";
+                $box_class = "items-4";
                 break;
             case 5:
-                $box_class = "col-md-25";
+                $box_class = "items-5";
                 break;
             case 6:
-                $box_class = "col-md-2";
+                $box_class = "items-3";
                 break;
         }
     return $box_class;

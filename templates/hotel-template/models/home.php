@@ -121,13 +121,17 @@ if($result_slide !== false){
         <a href="#dummy">See all offers <i class="icon-right-arrow"></i></a>
     </div>
 </section>
-<!-- amenities -->
+<!-- facilitys -->
 <section id="facility" class="prim-section">
     <div class="container">
+        <h4 class="sec-subtitle">why choose our hotel</h4>
         <h2 class="sec-title">AMENITIES HIGHLIGHTS</h2>
-        <?php listItemsInColumns($db,array('table'=>'facility','columns'=>3),$texts); ?>
+        <div class="facility__items">
+            <?php listItemsInColumns($db, array('table'=>'facility','columns'=>3), $texts); ?>
+        </div>
     </div>
 </section> 
+<!-- location -->
 <section id="location" class="sec-section">
     <div class="container">
         <?php
@@ -151,13 +155,14 @@ if($result_slide !== false){
                 } ?>
             ];
         </script>
-        <div class="col-md-6 col-xs-12">
-            <h3 class="sec-subtitle">experience luxury 
-             in the city centre</h3>
-            <h2 class="sec-title">BEST LOCATION</h2>
+s
+        <div class="location__info">
+            <h4>Experience luxary in the city centre</h4>
+            <h3>Best location</h3>
+
             <p><?= $location_text; ?> </p>
         </div>
-        <div class="col-md-6 col-xs-12">
+        <div class="location__map">
             <div id="mapWrapper" data-marker="<?php echo getFromTemplate('images/marker.png'); ?>"></div>
         </div>
     </div>

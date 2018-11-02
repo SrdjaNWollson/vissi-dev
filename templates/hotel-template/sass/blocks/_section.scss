@@ -25,6 +25,24 @@
 		font-size: 1.5rem;
 	}
 }
+
+.sec-link {
+	padding: 6.6rem 0 10rem;
+	text-align: center;
+	@include breakpoint(mobile) {
+		paddding: 8rem 0 10rem;
+	}
+	a {
+		font-size: 14px;
+		font-weight: 600;
+		color: $c-gold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		@include breakpoint(mobile) {
+			font-size: 1.5rem;
+		}
+	}
+}
 //------------------------------
 
 //--- Offers Rooms details *(nights, persons, price)
@@ -182,6 +200,56 @@
 	background-color: $c-offersBg;
 }
 
+//--- Section Facilityes
+
+#facility {
+	padding: 10rem 0;
+	background-color: $c-offersBg;
+	@include breakpoint(mobile) {
+		padding: 8rem 0;
+	} 
+	.facility__items {
+		margin-top: 7rem;
+		height: auto;
+		overflow: hidden;
+	}
+}
+
+//--- Section Location 
+
+#location {
+	background-color: $c-main;
+	@extend .content-slider;
+	.location__info {
+		@extend .content-slider__left;
+		padding-top: 10rem!important;
+		h3 {
+			margin-top: 2.4rem;
+			margin-bottom: 2rem;
+			text-transform: initial;
+		}
+		h4 {
+			font-size: 12px;
+			text-transform: uppercase;
+			color: $c-gold;
+			line-height: 1.6;
+			letter-spacing: 2px;
+			@include breakpoint(mobile) {
+				padding: 0 6rem;
+				font-size: 1.5rem;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.location__info, 
+.location__map {
+	float: left;
+}
+
+
+
 
 
 //-- Slider arrows navigation for mobile only
@@ -284,12 +352,12 @@
 		opacity: 1;
 	}
 	.container {
-		position: relative;
-		max-width: 1180px;
-		width: 93.4%;
-		@include breakpoint(mobile) {
-	        width: 86.5%;
-	    }
+		// position: relative;
+		// max-width: 1180px;
+		// width: 93.4%;
+		// @include breakpoint(mobile) {
+	 //        width: 86.5%;
+	 //    }
 	}
 	.slick-dots {
 		position: absolute;
