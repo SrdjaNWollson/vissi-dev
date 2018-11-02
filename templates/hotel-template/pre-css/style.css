@@ -1950,6 +1950,7 @@ ul.navbar-nav > li.primary .dropdown {
 .sec-subtitle {
   font-size: 12px;
   color: #b89f89;
+  letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase; }
   @media (max-width: 767px) {
@@ -2231,69 +2232,6 @@ ul.navbar-nav > li.primary .dropdown {
 .content-slider .slick-slide.slick-current.slick-center, #location .slick-slide.slick-current.slick-center {
   opacity: 1; }
 
-.content-slider .slick-dots, #location .slick-dots {
-  position: absolute;
-  left: 10px;
-  bottom: 2rem; }
-  @media (max-width: 990px) {
-    .content-slider .slick-dots, #location .slick-dots {
-      position: static;
-      padding-bottom: 4rem;
-      margin-left: 3.6%;
-      margin-top: 3rem; } }
-  @media (max-width: 767px) {
-    .content-slider .slick-dots, #location .slick-dots {
-      margin-left: 0;
-      text-align: center; } }
-
-.content-slider .slick-dots li, #location .slick-dots li {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer; }
-  .content-slider .slick-dots li.slick-active button:before, #location .slick-dots li.slick-active button:before {
-    color: #fff; }
-  @media (max-width: 767px) {
-    .content-slider .slick-dots li, #location .slick-dots li {
-      margin: 0 0.9rem; } }
-
-.content-slider .slick-dots li button, #location .slick-dots li button {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
-  cursor: pointer;
-  color: transparent;
-  border: 0;
-  outline: none;
-  background: transparent; }
-
-.content-slider .slick-dots li button:before, #location .slick-dots li button:before {
-  font-family: 'slick';
-  font-size: 40px;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  content: '•';
-  text-align: center;
-  color: #D7D2CE;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  @media (max-width: 1200px) {
-    .content-slider .slick-dots li button:before, #location .slick-dots li button:before {
-      font-size: 36px; } }
-  @media (max-width: 767px) {
-    .content-slider .slick-dots li button:before, #location .slick-dots li button:before {
-      font-size: 5rem; } }
-
 @media (max-width: 767px) {
   .content-slider .btn-holder, #location .btn-holder {
     text-align: center; } }
@@ -2313,6 +2251,69 @@ ul.navbar-nav > li.primary .dropdown {
       display: inline-block;
       float: none;
       font-size: 1.75rem; } }
+
+.slick-dots {
+  position: absolute;
+  left: 10px;
+  bottom: 2rem; }
+  @media (max-width: 990px) {
+    .slick-dots {
+      position: static;
+      padding-bottom: 4rem;
+      margin-left: 3.6%;
+      margin-top: 3rem; } }
+  @media (max-width: 767px) {
+    .slick-dots {
+      margin-left: 0;
+      text-align: center; } }
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer; }
+  .slick-dots li.slick-active button:before {
+    color: #fff; }
+  @media (max-width: 767px) {
+    .slick-dots li {
+      margin: 0 0.9rem; } }
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent; }
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 40px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  color: #D7D2CE;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  @media (max-width: 1200px) {
+    .slick-dots li button:before {
+      font-size: 36px; } }
+  @media (max-width: 767px) {
+    .slick-dots li button:before {
+      font-size: 5rem; } }
 
 .content-slider__right,
 .content-slider__left,
@@ -2353,6 +2354,67 @@ ul.navbar-nav > li.primary .dropdown {
 
 [class*='-image-box'] img {
   width: 100%; }
+
+#testimonial {
+  position: relative;
+  padding: 24rem 0 10rem;
+  background-image: url("../images/visi-darte-logo-bg.png");
+  background-repeat: no-repeat;
+  background-position: 124% -380px;
+  background-size: 40%; }
+  @media (max-width: 767px) {
+    #testimonial {
+      padding: 23rem 0 8rem; } }
+  @media (max-width: 767px) {
+    #testimonial .sec-subtitle {
+      margin-bottom: 5rem; } }
+  #testimonial .quotes p {
+    margin-bottom: 5.3rem;
+    padding: 0 10rem;
+    font-family: "ButlerRegular";
+    font-size: 21px;
+    color: #636363;
+    line-height: 1.7;
+    text-align: center; }
+    @media (max-width: 767px) {
+      #testimonial .quotes p {
+        padding: 0 3rem;
+        font-size: 2.5rem; } }
+  #testimonial .author {
+    margin-bottom: 5.3rem;
+    font-size: 18px;
+    color: #636363;
+    font-weight: 700;
+    text-align: center; }
+    @media (max-width: 767px) {
+      #testimonial .author {
+        font-size: 2.5rem; } }
+    #testimonial .author span {
+      font-weight: normal; }
+      @media (max-width: 767px) {
+        #testimonial .author span {
+          display: block; } }
+  #testimonial .slick-dots {
+    position: static;
+    padding-bottom: 0;
+    margin: 0;
+    text-align: center; }
+    #testimonial .slick-dots li button:before {
+      color: #bfbfbf; }
+    #testimonial .slick-dots li.slick-active button:before {
+      color: #79675a; }
+  #testimonial .quotes-sign {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 8rem; }
+    @media (max-width: 767px) {
+      #testimonial .quotes-sign img {
+        width: 8rem; } }
 
 .btn {
   text-transform: uppercase;

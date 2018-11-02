@@ -89,7 +89,6 @@ $counter = 0;
     <script type="text/javascript">
         //-- ROOMS slider
         $('.rooms-slider').slick({
-            speed: 1700,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
@@ -108,7 +107,6 @@ $counter = 0;
 
          //-- ROOMS slider
         $('.offers-slider').slick({
-            speed: 1700,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
@@ -127,7 +125,6 @@ $counter = 0;
 
          //-- Testimonial slider
         $('.testimonial-slider').slick({
-            speed: 1700,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
