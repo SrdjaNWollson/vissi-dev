@@ -904,63 +904,6 @@ aside h3 {
   border-color: #adadad;
   color: #333; }
 
-/******************* FOOTER ******************/
-#footerRights {
-  background: #000; }
-
-footer {
-  background: #344860; }
-
-footer, footer h3, footer .widget-title, footer a {
-  color: #fff; }
-
-footer p.lead {
-  color: #5381BA; }
-
-footer .searchWrapper, footer .dropdown, footer .dropup {
-  background: rgba(0, 0, 0, 0.5); }
-
-footer .dropup .btn, footer .dropup.open .btn {
-  color: #fff;
-  border: 0 none;
-  background: none; }
-
-#toTop {
-  background: #fff;
-  border: 1px solid #ddd; }
-
-#toTop:hover {
-  background: #5381BA;
-  color: #fff; }
-
-footer .searchWrapper .form-control {
-  color: #fff; }
-
-footer .searchWrapper .form-control::-webkit-input-placeholder {
-  color: #ddd; }
-
-footer .searchWrapper .form-control:-moz-placeholder {
-  color: #ddd; }
-
-footer .searchWrapper .form-control::-moz-placeholder {
-  color: #ddd; }
-
-footer .searchWrapper .form-control:-ms-input-placeholder {
-  color: #ddd; }
-
-/******************* LOADER ******************/
-#loader-wrapper {
-  background: #fff; }
-
-#loader {
-  border-top-color: #888; }
-
-#loader:before {
-  border-top-color: #5381BA; }
-
-#loader:after {
-  border-top-color: #5381BA; }
-
 /****************** GENERAL ******************/
 body {
   padding: 0; }
@@ -2415,6 +2358,45 @@ ul.navbar-nav > li.primary .dropdown {
     @media (max-width: 767px) {
       #testimonial .quotes-sign img {
         width: 8rem; } }
+
+.footer {
+  background-color: #79675a; }
+  .footer .logo-wrapper {
+    width: 180px; }
+  .footer-main {
+    padding: 9rem 0 8rem; }
+  .footer .items {
+    width: 33.33%;
+    float: left; }
+  .footer__nav li {
+    display: block;
+    margin: 2.5rem 0;
+    list-style: none; }
+    .footer__nav li a {
+      font-size: 12px;
+      color: #ecebe4;
+      text-transform: uppercase; }
+
+#toTop {
+  background: #fff;
+  border: 1px solid #ddd; }
+
+#toTop:hover {
+  background: #5381BA;
+  color: #fff; }
+
+/******************* LOADER ******************/
+#loader-wrapper {
+  background: #fff; }
+
+#loader {
+  border-top-color: #888; }
+
+#loader:before {
+  border-top-color: #5381BA; }
+
+#loader:after {
+  border-top-color: #5381BA; }
 
 .btn {
   text-transform: uppercase;
