@@ -1320,7 +1320,8 @@ body {
   padding: 0; }
   @media (max-width: 767px) {
     .container {
-      width: 86.5%; } }
+      width: 100%;
+      padding: 0 3.5rem; } }
 
 h4, .h4, h5, .h5, h6, .h6 {
   margin: 0; }
@@ -1986,25 +1987,54 @@ ul.navbar-nav > li.primary .dropdown {
 .room-details {
   margin-bottom: 4.8rem;
   list-style: none; }
+  @media (max-width: 767px) {
+    .room-details {
+      padding: 0 1.9rem;
+      height: auto;
+      overflow: hidden; } }
   .room-details li {
     display: inline-block;
     margin-right: 4.6rem;
     font-size: 14px;
     font-weight: 600;
     color: #79675a; }
+    @media (max-width: 767px) {
+      .room-details li {
+        float: left;
+        font-size: 2rem;
+        margin-right: 2.5rem; } }
     .room-details li i {
       font-size: 3rem; }
+      @media (max-width: 767px) {
+        .room-details li i {
+          font-size: 5rem; } }
     .room-details li .cen-vertical {
       position: relative;
       top: -0.5rem;
       margin: 0 1rem; }
+      @media (max-width: 767px) {
+        .room-details li .cen-vertical {
+          top: -1rem; } }
   .room-details .prices {
     margin-left: 3.4rem;
     font-size: 1.4rem;
     text-transform: uppercase;
     color: #c5ae60; }
+    @media (max-width: 767px) {
+      .room-details .prices {
+        float: right; } }
+    @media (max-width: 767px) {
+      .room-details .prices .cen-vertical {
+        top: -0.5rem; } }
+    @media (max-width: 767px) {
+      .room-details .prices {
+        margin-right: 0;
+        margin-left: 0; } }
     .room-details .prices .num {
       font-size: 3rem; }
+      @media (max-width: 767px) {
+        .room-details .prices .num {
+          font-size: 3.75rem; } }
 
 #rooms {
   padding-top: 18rem;
@@ -2053,8 +2083,14 @@ ul.navbar-nav > li.primary .dropdown {
     padding-left: 5.7rem; }
     @media (max-width: 990px) {
       #offers .content-slider__right {
+        order: 2;
+        width: 90%;
+        margin: 0 auto;
+        padding-left: 0rem; } }
+    @media (max-width: 767px) {
+      #offers .content-slider__right {
         width: 100%;
-        order: 2; } }
+        padding: 0 3.5rem; } }
   #offers .content-slider h3 {
     color: #79675a; }
   #offers .content-slider p {
@@ -2128,6 +2164,7 @@ ul.navbar-nav > li.primary .dropdown {
   @media (max-width: 767px) {
     .content-slider p {
       margin-bottom: 6rem;
+      padding: 0 1.9rem;
       font-size: 2.5rem;
       line-height: 1.7;
       text-align: center; } }
@@ -2179,7 +2216,8 @@ ul.navbar-nav > li.primary .dropdown {
     .content-slider .slick-dots {
       position: static;
       padding-bottom: 4rem;
-      margin-left: 3.6%; } }
+      margin-left: 3.6%;
+      margin-top: 3rem; } }
   @media (max-width: 767px) {
     .content-slider .slick-dots {
       margin-left: 0;
@@ -2272,7 +2310,8 @@ ul.navbar-nav > li.primary .dropdown {
       margin: 0 auto; } }
   @media (max-width: 767px) {
     .content-slider__left {
-      padding: 6.6rem 0rem 3.8rem 0; } }
+      width: 100%;
+      padding: 6.6rem 3.5rem 3.8rem; } }
 
 .content-slider__right {
   width: 75%; }

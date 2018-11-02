@@ -99,8 +99,8 @@ $counter = 0;
                 breakpoint: 767,
                     settings: {
                         arrows: true,
-                        prevArrow: $('.icon-left-arrow'),
-                        nextArrow: $('.icon-right-arrow')
+                        prevArrow: $('#rooms .icon-left-arrow'),
+                        nextArrow: $('#rooms .icon-right-arrow')
                     }             
                 }
             ]
@@ -118,8 +118,8 @@ $counter = 0;
                 breakpoint: 767,
                     settings: {
                         arrows: true,
-                        prevArrow: $('.icon-left-arrow'),
-                        nextArrow: $('.icon-right-arrow')
+                        prevArrow: $('#offers .icon-left-arrow'),
+                        nextArrow: $('#offers .icon-right-arrow')
                     }             
                 }
             ]
