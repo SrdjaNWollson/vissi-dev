@@ -88,8 +88,10 @@ if($result_slide !== false){
 <content id="content" class="pt20 pb30">
 <!-- rooms -->
 <section id="rooms" class="prim-section">
-    <h4 class="sec-subtitle">a new vision of comfort</h4>
-    <h2 class="sec-title">Our Rooms</h2>
+    <div class="container">
+        <h4 class="sec-subtitle">a new vision of comfort</h4>
+        <h2 class="sec-title">Our Rooms</h2>
+    </div>
     <!-- rooms slider -->
     <div class="content-slider-wrapper">    
         <div class="rooms-slider content-slider">   
@@ -101,12 +103,25 @@ if($result_slide !== false){
 </section>
 <!-- offers --> 
 <section id="offers" class="sec-section">
-    <h4 class="sec-subtitle">taste of mediterranean</h4>
-    <h2 class="sec-title">Special Offers</h2>
-    <div class="offers-slider content-slider">
-        <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
+    <div class="container">
+        <h4 class="sec-subtitle">taste of mediterranean</h4>
+        <h2 class="sec-title">Special Offers</h2>
+    </div>
+    <div class="content-slider-wrapper">
+        <div class="offers-slider content-slider">
+            <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
+        </div>
+        <span class="icon-left-arrow slider-nav"></span>
+        <span class="icon-right-arrow slider-nav"></span>
     </div>
 </section>
+<!-- link to all offers -->
+<section class="sec-link">
+    <div class="container">
+        <a href="#dummy">See all offers <i class="icon-right-arrow"></i></a>
+    </div>
+</section>
+<!-- amenities -->
 <section id="facility" class="prim-section">
     <div class="container">
         <h2 class="sec-title">AMENITIES HIGHLIGHTS</h2>

@@ -18,7 +18,8 @@ body {
 	margin: 0 auto;
     padding: 0;
     @include breakpoint(mobile) {
-        width: 86.5%;
+        width: 100%;
+        padding: 0 3.5rem;
     }
 }
 

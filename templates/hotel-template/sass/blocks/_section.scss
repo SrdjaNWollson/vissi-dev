@@ -27,24 +27,40 @@
 }
 //------------------------------
 
-//--- Rooms details *(nights, persons, price)
+//--- Offers Rooms details *(nights, persons, price)
 
 .room-details {
 	margin-bottom: 4.8rem;
 	list-style: none;
+	@include breakpoint(mobile) {
+		padding: 0 1.9rem;
+		height: auto;
+    	overflow: hidden;	
+	}
 	li {
 		display: inline-block;
 		margin-right: 4.6rem;
 		font-size: 14px;
 		font-weight: 600;
 		color: $c-main;
+		@include breakpoint(mobile) {
+			float: left;
+			font-size: 2rem;
+			margin-right: 2.5rem;
+		}
 		i {
 			font-size: 3rem;
+			@include breakpoint(mobile) {
+				font-size: 5rem;
+			}
 		}
 		.cen-vertical {
 			position: relative;
 			top: -0.5rem;
 			margin: 0 1rem;
+			@include breakpoint(mobile) {
+				top: -1rem;
+			}
 		}
 	}
 	.prices {
@@ -52,8 +68,23 @@
 		font-size: 1.4rem;
 		text-transform: uppercase;
 		color: $c-gold;
+		@include breakpoint(mobile) {
+			float: right;
+		}
+		.cen-vertical {
+			@include breakpoint(mobile) {
+				top: -0.5rem;
+			}
+		}
+		@include breakpoint(mobile) {
+			margin-right: 0;
+			margin-left: 0;
+		}
 		.num {
 			font-size: 3rem;
+			@include breakpoint(mobile) {
+				font-size: 3.75rem;
+			}
 		}
 	}
 }
@@ -114,8 +145,14 @@
 		width: 38%;
 		padding-left: 5.7rem;
 		@include breakpoint(tablet) {
-			width: 100%;
 			order: 2;
+			width: 90%;
+    		margin: 0 auto;
+    		padding-left: 0rem;
+		}
+		@include breakpoint(mobile) {
+			width: 100%;
+			padding: 0 3.5rem;
 		}
 	}
 	.content-slider {
@@ -203,20 +240,10 @@
 		@include breakpoint(desktop--small) {
 			font-size: 13px;
 		}
-		// @include breakpoint(desktop-fit) {
-		// 	overflow: hidden;
-		// 	text-overflow: ellipsis;
-		// 	display: -webkit-box;
-		// 	display: box;
-		// 	line-height: 1.57;     /* fallback */
-		// 	max-height: 9rem; 
-		// 	-moz-line-clamp: 4; 
-		// 	-moz-box-orient: vertical;    /* fallback */
-		// 	-webkit-line-clamp: 4; /* number of lines to show */
-		// 	-webkit-box-orient: vertical;
-		// }
+		
 		@include breakpoint(mobile) {
 			margin-bottom: 6rem;
+			padding: 0 1.9rem;
 			font-size: 2.5rem;
 			line-height: 1.7;
 			text-align: center;
@@ -272,6 +299,7 @@
 			position: static;
 			padding-bottom: 4rem;
 			margin-left: 3.6%;
+		    margin-top: 3rem;
 		}
 		@include breakpoint(mobile) {
 			margin-left: 0;
@@ -373,7 +401,8 @@
 		margin: 0 auto;
 	}
 	@include breakpoint(mobile) {
-		padding: 6.6rem 0rem 3.8rem 0;
+		width: 100%;
+		padding: 6.6rem 3.5rem 3.8rem;
 	}
 }
 
