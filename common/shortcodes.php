@@ -252,17 +252,15 @@ function listItemsInColumns($db, $atts, $texts){
 
     $box_class = getBoxClass($num_rows);
     $counter = 0;
+    ?>
+    <ul class="items-<?= $columns ?>">
+    <?php
     foreach ($result_room as $i => $row) {
         $name = $row['name'];
         $item_id = $row['id'];
         //var_dump($item_id);
         $result_item_file = $db->prepare('SELECT * FROM '.$table.'_file WHERE id_item = :item_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
         $result_item_file->bindParam(':item_id',$item_id);
-
-        if($counter % $columns == 0) {
-            if($counter > 0) { echo "</ul></div>"; }
-            ?> <div class="<?= $box_class; ?>"><ul> <?php
-        }
         ?>       
         <li><?php 
         //var_dump($result_item_file->execute()); 
@@ -284,7 +282,9 @@ function listItemsInColumns($db, $atts, $texts){
         <?php
         $counter++;
     }
-    echo "</ul>";
+    ?>
+    </ul>
+    <?php
 } 
 
 function listArticles($db, $page_id, $pages, $texts){ 
