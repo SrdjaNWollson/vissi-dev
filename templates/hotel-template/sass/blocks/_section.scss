@@ -19,6 +19,7 @@
 .sec-subtitle {
 	font-size: 12px;
 	color: $c-mainLighter;
+	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
 	@include breakpoint(mobile) {
@@ -359,72 +360,7 @@
 	 //        width: 86.5%;
 	 //    }
 	}
-	.slick-dots {
-		position: absolute;
-		left: 10px;
-		bottom: 2rem;
-		@include breakpoint(tablet) {
-			position: static;
-			padding-bottom: 4rem;
-			margin-left: 3.6%;
-		    margin-top: 3rem;
-		}
-		@include breakpoint(mobile) {
-			margin-left: 0;
-			text-align: center;
-		}
-	}
-	.slick-dots li {
-	    position: relative;
-	    display: inline-block;
-	    width: 20px;
-	    height: 20px;
-	    margin: 0 5px;
-	    padding: 0;
-	    cursor: pointer;
-	    &.slick-active {
-	    	button:before {
-	    		color: $c-white;
-	    	}
-	    }
-	    @include breakpoint(mobile) {
-	    	margin: 0 0.9rem;
-	    }
-	}
-	.slick-dots li button {
-	    font-size: 0;
-	    line-height: 0;
-	    display: block;
-	    width: 20px;
-	    height: 20px;
-	    padding: 5px;
-	    cursor: pointer;
-	    color: transparent;
-	    border: 0;
-	    outline: none;
-	    background: transparent;
-	}
-	.slick-dots li button:before {
-	    font-family: 'slick';
-	    font-size: 40px;
-	    line-height: 20px;
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 20px;
-	    height: 20px;
-	    content: '•';
-	    text-align: center;
-	    color: #D7D2CE;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	    @include breakpoint(desktop--small) {
-			font-size: 36px;
-		}
-		@include breakpoint(mobile) {
-			font-size: 5rem;
-		}
-	}
+	
 	.btn-holder {
 		@include breakpoint(mobile) {
 			text-align: center;
@@ -446,6 +382,73 @@
     		float: none;
     		font-size: 1.75rem;
     	}
+	}
+}
+
+.slick-dots {
+	position: absolute;
+	left: 10px;
+	bottom: 2rem;
+	@include breakpoint(tablet) {
+		position: static;
+		padding-bottom: 4rem;
+		margin-left: 3.6%;
+	    margin-top: 3rem;
+	}
+	@include breakpoint(mobile) {
+		margin-left: 0;
+		text-align: center;
+	}
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    &.slick-active {
+    	button:before {
+    		color: $c-white;
+    	}
+    }
+    @include breakpoint(mobile) {
+    	margin: 0 0.9rem;
+    }
+}
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 40px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    color: #D7D2CE;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include breakpoint(desktop--small) {
+		font-size: 36px;
+	}
+	@include breakpoint(mobile) {
+		font-size: 5rem;
 	}
 }
 
@@ -487,3 +490,76 @@
 		width: 100%;
 	}
 }
+
+//--- Testimonials
+
+#testimonial {
+	position: relative;
+	padding: 24rem 0 10rem;
+	background-image: url('../images/visi-darte-logo-bg.png');
+	background-repeat: no-repeat;
+	background-position: 124% -380px;
+	background-size: 40%;
+	@include breakpoint(mobile) {
+		padding: 23rem 0 8rem;
+	}
+	.sec-subtitle {
+		@include breakpoint(mobile) {
+			margin-bottom: 5rem;
+		}
+	}
+	.quotes {
+		p {
+			margin-bottom: 5.3rem;
+			padding: 0 10rem;
+			font-family: $butler;
+			font-size: 21px;
+			color: #636363;
+			line-height: 1.7;
+			text-align: center;
+			@include breakpoint(mobile) {
+				padding: 0 3rem;
+				font-size: 2.5rem;
+			}
+		}
+	}
+	.author {
+		margin-bottom: 5.3rem;
+		font-size: 18px;
+		color: #636363;
+		font-weight: 700;
+		text-align: center;
+		@include breakpoint(mobile) {
+			font-size: 2.5rem;
+		}
+		span {
+			font-weight: normal;
+			@include breakpoint(mobile) {
+				display: block;
+			}
+		}
+	}
+	.slick-dots {
+		position: static;
+		padding-bottom: 0;
+		margin: 0;
+		text-align: center;
+		li button:before {
+			color: #bfbfbf;
+		}
+		li.slick-active button:before {
+		    color: $c-main;
+		}
+	}
+	.quotes-sign {
+		@include absolute(center-horizontal);
+		top: 8rem;
+		img {
+			@include breakpoint(mobile) {
+				width: 8rem;
+			}
+		}
+		
+	}
+}
+

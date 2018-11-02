@@ -312,7 +312,6 @@ function listArticles($db, $page_id, $pages, $texts){
                 $article_alias = DOCBASE.$pages[$article_page]['alias'].'/'.text_format($article_alias); ?>
                 
                 <article id="article-<?php echo $article_id; ?>" class="col-sm-4" itemscope itemtype="http://schema.org/Article">
-                    <div class="row">
                         <a itemprop="url" href="<?php echo $article_alias; ?>" class="moreLink">
                             <div class="col-sm-12 mb20">
                                 <?php
@@ -343,21 +342,19 @@ function listArticles($db, $page_id, $pages, $texts){
                                     }
                                 } ?>
                             </div>
-                            <div class="col-sm-12">
-                                <div class="text-overflow">
-                                    <h3 class="sec-subtitle" itemprop="name"><?php echo $article_subtitle; ?></h3>
-                                    <p class="article-text"><?php echo $article_text; ?></p>
-                                    <p class="article-location"><?= $location; ?></p>
-                                    <?php /*
-                                    <div class="more-btn">
-                                        <span class="btn btn-primary"><?php echo $texts['READMORE']; ?></span>
-                                    </div> */
-                                    ?>
-                                    <h4></h4>
-                                </div>
+                            <div class="quotes">
+                               
+                                <?php echo $article_text; ?>
+                                <h3 class="author" itemprop="name"><?php echo $article_subtitle; ?>, <span class="author-location"><?= $location; ?></span></h3>
+                               
+                                <?php /*
+                                <div class="more-btn">
+                                    <span class="btn btn-primary"><?php echo $texts['READMORE']; ?></span>
+                                </div> */
+                                ?>
+                                <h4></h4>
                             </div>
                         </a>
-                    </div>
                 </article>
                 <?php
             }

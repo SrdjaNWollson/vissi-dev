@@ -155,7 +155,6 @@ if($result_slide !== false){
                 } ?>
             ];
         </script>
-s
         <div class="location__info">
             <h4>Experience luxary in the city centre</h4>
             <h3>Best location</h3>
@@ -167,10 +166,16 @@ s
         </div>
     </div>
 </section>
-<section id="articles"class="prim-section">
-    <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>
-    <div class="testimonial-slider content-slider">
-        <?php listArticles($db,$page_id,$pages,$texts); ?>
+<!-- testimonials -->
+<section id="testimonial">
+    <div class="quotes-sign">
+        <img src="/vissi-dev/templates/hotel-template/images/quotes-sign.png" alt="">
+    </div>
+    <div class="container">
+        <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>
+        <div class="testimonial-slider">
+            <?php listArticles($db,$page_id,$pages,$texts); ?>
+        </div>
     </div>
 </section>
 
