@@ -4,8 +4,9 @@ $footer_cols = $appearance['footer_columns'];
 $boxClass = getBoxClass($footer_cols);
 $counter = 0;
 ?>
-<section id="booknow" class="third-section">
-    <div id="search-home" class="container">
+<!-- book now -->
+<section id="search-home-bottom" class="third-section">
+    <div class="container">
         <?php include(getFromTemplate('common/search.php', false));
          ?>
     </div>
@@ -16,6 +17,19 @@ $counter = 0;
         <div class="footer__info items">
             <div class="logo-wrapper">
                 <img src="/vissi-dev/templates/hotel-template/images/vissi-darte-logo-grey.svg" alt="logos">
+            </div>
+            <div class="contact-info">
+                <address>Mediteranska 33, 354789 <br>Budva, Montenegro</address>
+                <ul class="connect">
+                    <li>Phone: +381 62 555 66 89</li>
+                    <li>Fax: +381 62 55 66 89</li>
+                    <li>Email: hotel@vissidarte.com</li>
+                </ul>
+                <ul class="social-links">
+                    <li><a href="#dummy"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-instagram"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-twitter"></i></a></li>
+                </ul>
             </div>
         </div>
         <div class="footer__nav items">
@@ -46,13 +60,23 @@ $counter = 0;
                 </li>
             </ul>
         </div>
-        <div class="footer__connect items">
-            
+        <div class="footer__subscribe items">
+            <h4>The special gift for any case</h4>
+            <a class="btn btn-purchase" href="#dummy"><span>Purchase voucher</span><i class="icon-right-arrow"></i></a>
+            <h4>Subscribe to our ewsletter</h4>
+            <form action="">
+                <div class="input-wrapper">
+                    <input type="email" nam="sub-email" placeholder="Email address">
+                </div>
+                <button class="btn btn-sub" type="submit"><span>Sign up</span></button>
+            </form>
         </div>
     </div>
-    <div class="footer-bottom container">
-        <div class="footer__copyright">
-            <span>All rights reserved Copyright 2018</span>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer__copyright">
+                <span>All rights reserved Copyright 2018</span>
+            </div>
         </div>
     </div>
 </footer>

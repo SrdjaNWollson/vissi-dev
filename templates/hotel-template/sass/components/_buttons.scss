@@ -26,7 +26,8 @@
     color: #555;
 }
 
-.btn-gold {
+.btn-gold,
+.btn-green {
     position: relative;
     display: block;
     float: left;
@@ -35,6 +36,44 @@
     color: $c-white;
     font-size: 14px;
     letter-spacing: 2px;
+}
+
+.btn-purchase {
+    position: relative;
+    width: 34.4rem;
+    height: 43px;
+    font-size: 14px;
+    color: $c-white;
+    letter-spacing: 2.8px;
+    background-color: $c-gold;
+    @include breakpoint(tablet) {
+        height: 6rem;
+    }
+
+    span {
+        @include absolute(center-vertical);
+        left: 2.8rem;
+    }
+    .icon-right-arrow {
+        @include absolute(center-vertical);
+        right: 1.4rem;
+    }
+}
+
+.btn-sub {
+    position: absolute;
+    right: 0;
+    padding: 14px 5rem;
+    background-color: transparent;
+    border: 1px solid $c-gold;
+    color: $c-white;
+    span {
+        line-height: 1;
+        letter-spacing: 2.8px;
+    }
+    @include breakpoint(tablet) {
+        padding: 2.25rem 6.5rem;
+    }
 }
 
 //--- Explore royal slider button

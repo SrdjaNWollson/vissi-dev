@@ -75,6 +75,7 @@ if($result_slide !== false){
                 } ?>
             </div>
         <?php if($appearance['booking_search_position'] == 2 || $appearance == NULL)  : ?>
+        <!-- book now -->
         <div id="search-home-wrapper">
             <div id="search-home" class="container">
                 <?php include(getFromTemplate('common/search.php', false)); ?>

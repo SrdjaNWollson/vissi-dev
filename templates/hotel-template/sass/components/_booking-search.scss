@@ -146,7 +146,7 @@
         }
     }
     .form-btn {
-        width: 18.016%;
+        width: 18.8%;
         padding-top: 27px;
         margin-right: 0;
         @include breakpoint(tablet){
@@ -205,7 +205,8 @@
 .booking-search .btn.dropdown-toggle {
     background: #fff;
 }
-#search-home {
+#search-home,
+#search-home-bottom {
     position: relative;
     background-color: $c-blackWhite;
 }
@@ -258,11 +259,28 @@ body.header-type-1 #search-home-wrapper{
     }
 }
 
-#search-home {
+#search-home,
+#search-home-bottom {
     padding: 45px 5.5rem 6.3rem;
     text-align: center;
     @include breakpoint(mobile--s) {
         padding: 6rem 5.4rem 11.7rem;
+    }
+    .form-btn {
+        float: right;
+    }
+}
+
+#search-home-bottom {
+    .container {
+        position: relative;
+        @include breakpoint(mobile) {
+            padding: 0;
+        }
+    }
+    .cancel-reservation {
+        right: 0;
+        bottom: -4rem;
     }
 }
 #search-page .container {

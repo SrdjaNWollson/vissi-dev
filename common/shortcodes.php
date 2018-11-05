@@ -94,27 +94,30 @@ function contentSlider($db, $atts, $texts){
             ?>
 
             <div class="<?= $entity ?>-slide"> 
-                    <div class="content-slider__<?= $slide_class ?>">   
-                        <?php if($entity == "room") : ?>
+                    <div class="content-slider__<?= $slide_class ?>">
+                        <div class="container">
+                        <div class="content-holder">   
+                            <?php if($entity == "room") : ?>
 
-                        <div class="btn-holder"><a href="/rooms" class="link-all-rooms">see all rooms <i class="icon-right-arrow"></i></a></div>
+                            <div class="btn-holder"><a href="/rooms" class="link-all-rooms">see all rooms <i class="icon-right-arrow"></i></a></div>
 
-                        <?php endif; ?>
-                        
-                        <h3><?= $title ?></h3>
-                        
-                        <?php if($entity == "offer") : ?>
-                        <ul class="room-details">
-                            <li><i class="icon-moon"></i><span class="cen-vertical"><?= $night_stay; ?></span></li>
-                            <li><i class="icon-person"></i><span class="cen-vertical"><?= $max_people; ?></span></li>
-                            <li class="prices"><span class="cen-vertical">from</span> <span class="num"><?= $min_price; ?><?= CURRENCY_SIGN ?></span></li>
-                        </ul>
-                        <?php endif; ?>
+                            <?php endif; ?>
+                            
+                            <h3><?= $title ?></h3>
+                            
+                            <?php if($entity == "offer") : ?>
+                            <ul class="room-details">
+                                <li><i class="icon-moon"></i><span class="cen-vertical"><?= $night_stay; ?></span></li>
+                                <li><i class="icon-person"></i><span class="cen-vertical"><?= $max_people; ?></span></li>
+                                <li class="prices"><span class="cen-vertical">from</span> <span class="num"><?= $min_price; ?><?= CURRENCY_SIGN ?></span></li>
+                            </ul>
+                            <?php endif; ?>
 
-                        <p><?= $content ?></p>
+                            <p><?= $content ?></p>
 
-                        <div class="btn-holder"><a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span><?= $btn_text; ?></span></a></div>
-            
+                            <div class="btn-holder"><a itemprop="url" href="<?php echo $url; ?>" class="moreLink btn btn-gold"><span><?= $btn_text; ?></span></a></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="content-slider__<?= $slide_class2 ?>"> 
                         <div class="<?= $entity; ?>-image-box">
