@@ -21,6 +21,16 @@ require(getFromTemplate("common/header.php", false)); ?>
                     <?php
                 } ?>
             </div>
+                        <!-- facilitys -->
+            <section id="facility" class="prim-section">
+                <div class="container">
+                    <h4 class="sec-subtitle">why choose our hotel</h4>
+                    <h2 class="sec-title">AMENITIES HIGHLIGHTS</h2>
+                    <div class="facility__items">
+                        <?php listItemsInColumns($db, array('table'=>'facility','columns'=>3), $texts); ?>
+                    </div>
+                </div>
+            </section> 
             <div class="row">
                 <?php
                 $lz_offset = 1;

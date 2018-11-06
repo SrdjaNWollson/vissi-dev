@@ -130,6 +130,14 @@ $counter = 0;
             arrows: false,
             dots: true
         });
+
+    jQuery(document).ready(function($) {
+        $(".royalSlider").royalSlider({
+            keyboardNavEnabled: true,
+            arrowsNav:false,
+            controlNavigation:'none'
+        });  
+    });
     </script>
 
 </body>

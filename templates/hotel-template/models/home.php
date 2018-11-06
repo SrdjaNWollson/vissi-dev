@@ -32,7 +32,7 @@ if($result_slide !== false){
 		<?php endif; ?>
 		<div id="sliderContainer">
             
-            <div class="royalSlider <?= $arrowClass; ?> rsMinW fullSized clearfix">
+            <div class="royalSlider rsMinW fullSized clearfix">
                 <?php
                 foreach($result_slide as $i => $row){
                     $slide_id = $row['id'];
