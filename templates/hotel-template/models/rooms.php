@@ -8,12 +8,12 @@ $javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";
 
 require(getFromTemplate("common/header.php", false)); ?>
 
-<section id="page">
+<main id="page">
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
     
-    <div id="content" class="pt30 pb20">
-        <div class="container">
+    <div id="content">
+
             <div class="row">
                 <?php
                 if($page['text'] != ""){ ?>
@@ -21,6 +21,16 @@ require(getFromTemplate("common/header.php", false)); ?>
                     <?php
                 } ?>
             </div>
+            <!-- facilitys -->
+            <section id="facility" class="prim-section">
+                <div class="container">
+                    <h4 class="sec-subtitle">why choose our hotel</h4>
+                    <h2 class="sec-title">AMENITIES HIGHLIGHTS</h2>
+                    <div class="facility__items">
+                        <?php listItemsInColumns($db, array('table'=>'facility','columns'=>3), $texts); ?>
+                    </div>
+                </div>
+            </section> 
             <div class="row">
                 <?php
                 $lz_offset = 1;
@@ -39,7 +49,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                     <?php
                 } ?>
             </div>
-        </div>
+
     </div>
-</section>
+</main>
 

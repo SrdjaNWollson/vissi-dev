@@ -4,6 +4,11 @@
 
 
 //-- Title and subtitle for all sections
+
+.sec-title, 
+.sec-subtitle {
+	text-align: center;
+}
 .sec-title {
 	margin: 20px 0 70px;
 	font-family: $butler;
@@ -30,8 +35,17 @@
 .sec-link {
 	padding: 6.6rem 0 10rem;
 	text-align: center;
+	background-image: url('../images/visi-darte-logo-bg.png');
+	background-repeat: no-repeat;
+	background-position: -20% -14rem;
+	background-size: 40%;
+	@include breakpoint(tablet) {
+		background-position: 117% 3rem;
+	}
 	@include breakpoint(mobile) {
-		paddding: 8rem 0 10rem;
+		padding: 8rem 0 10rem;
+		background-position: 144% 6rem;
+		background-size: 60%;
 	}
 	a {
 		font-size: 14px;
@@ -202,6 +216,12 @@
 
 #offers {
 	padding-top: 10rem;
+	@include breakpoint(mobile) {
+		background-image: url('../images/visi-darte-logo-bg.png');
+		background-repeat: no-repeat;
+	    background-position: -57% 17rem;
+    	background-size: 53%;
+	}
 	.slick-slide {
 		display: flex;
 	}

@@ -47,10 +47,6 @@
 .btn:hover *, .btn {
   transition: none; }
 
-.page-header h1, #page h1,
-.page-header .h1, #page .h1 {
-  margin: 0; }
-
 section.prim-section, section.sec-section {
   overflow-y: auto;
   overflow-x: hidden; }
@@ -235,29 +231,6 @@ li.Nactive > .dropdown-btn:after {
   -webkit-box-shadow: none;
   -ms-box-shadow: none;
   -o-box-shadow: none; }
-
-.page-header {
-  margin: 0;
-  padding: 15px 0;
-  border: none; }
-
-.page-header h1,
-.page-header p.main-title {
-  margin: 0;
-  font-weight: 300;
-  font-size: 36px; }
-
-.breadcrumb {
-  text-align: right;
-  background: transparent;
-  margin: 0;
-  padding-right: 0; }
-
-.breadcrumb a::after {
-  font-family: "Font Awesome 5 Free";
-  content: "";
-  padding: 0 4px 0 6px;
-  font-weight: 900; }
 
 /***************** HOMEPAGE ******************/
 .iconBlocHome {
@@ -760,9 +733,6 @@ body[dir="rtl"] #loader {
 body {
   color: #333; }
 
-#page {
-  background: #fff; }
-
 section.prim-section {
   background-color: #fff; }
 
@@ -904,9 +874,6 @@ aside h3 {
 /****************** GENERAL ******************/
 body {
   padding: 0; }
-
-body:not(#page-1) {
-  background: url("../images/page-header.jpg") no-repeat center 0; }
 
 h1, .h1 {
   font-weight: 400; }
@@ -1465,7 +1432,7 @@ header, header * {
   clear: none; }
 
 @media (min-width: 768px) {
-  #page-1 header:not(.fixed) .navbar-brand {
+  header:not(.fixed) .navbar-brand {
     float: none;
     text-align: center;
     clear: both;
@@ -1606,16 +1573,16 @@ body[dir="rtl"] #mainMenu {
   position: relative;
   z-index: 1; }
 
-#page-1 .navbar-brand {
+.navbar-brand {
   margin-left: -13px; }
   @media (max-width: 990px) {
-    #page-1 .navbar-brand {
+    .navbar-brand {
       margin-left: -1.4rem; } }
   @media (max-width: 640px) {
-    #page-1 .navbar-brand {
+    .navbar-brand {
       margin-left: -1.4rem; } }
   @media (max-width: 767px) {
-    #page-1 .navbar-brand {
+    .navbar-brand {
       display: block;
       height: auto;
       padding: 5px 0;
@@ -1624,7 +1591,7 @@ body[dir="rtl"] #mainMenu {
       float: left;
       clear: none; } }
   @media (max-width: 640px) {
-    #page-1 .navbar-brand {
+    .navbar-brand {
       width: 25rem; } }
 
 @media (max-width: 767px) {
@@ -1670,13 +1637,13 @@ ul.navbar-nav > li.primary .dropdown-menu {
   .navbar-brand {
     padding: 10px 0; } }
 
-#page-1 .fixed .navbar-brand {
+.fixed .navbar-brand {
   width: 180px; }
   @media (max-width: 767px) {
-    #page-1 .fixed .navbar-brand {
+    .fixed .navbar-brand {
       width: 18rem; } }
   @media (max-width: 640px) {
-    #page-1 .fixed .navbar-brand {
+    .fixed .navbar-brand {
       width: 20rem; } }
 
 .navbar {
@@ -1762,13 +1729,6 @@ ul.navbar-nav > li.primary .dropdown-menu li a {
 
 #preHeader a {
   color: #fff; }
-
-body:not(#page-1) #mainHeader, #mainHeader {
-  background: #e8e8e4; }
-
-body:not(#page-1) .fixed #mainHeader,
-.fixed #mainHeader {
-  background: #e8e8e4; }
 
 ul.navbar-nav > li.primary > a.firstLevel {
   display: block;
@@ -1865,16 +1825,12 @@ ul.navbar-nav > li.primary .dropdown {
 .searchWrapper button:hover {
   background: #5381BA; }
 
-.page-header {
-  background-color: #506f9e;
-  color: #fff;
-  border: none; }
-
-.page-header h1, .page-header .h1, .page-header a {
-  color: #fff; }
-
 .breadcrumb {
   background: transparent; }
+
+.sec-title,
+.sec-subtitle {
+  text-align: center; }
 
 .sec-title {
   margin: 20px 0 70px;
@@ -1899,10 +1855,19 @@ ul.navbar-nav > li.primary .dropdown {
 
 .sec-link {
   padding: 6.6rem 0 10rem;
-  text-align: center; }
+  text-align: center;
+  background-image: url("../images/visi-darte-logo-bg.png");
+  background-repeat: no-repeat;
+  background-position: -20% -14rem;
+  background-size: 40%; }
+  @media (max-width: 990px) {
+    .sec-link {
+      background-position: 117% 3rem; } }
   @media (max-width: 767px) {
     .sec-link {
-      paddding: 8rem 0 10rem; } }
+      padding: 8rem 0 10rem;
+      background-position: 144% 6rem;
+      background-size: 60%; } }
   .sec-link a {
     font-size: 14px;
     font-weight: 600;
@@ -2046,6 +2011,12 @@ ul.navbar-nav > li.primary .dropdown {
 
 #offers {
   padding-top: 10rem; }
+  @media (max-width: 767px) {
+    #offers {
+      background-image: url("../images/visi-darte-logo-bg.png");
+      background-repeat: no-repeat;
+      background-position: -57% 17rem;
+      background-size: 53%; } }
   #offers .slick-slide {
     display: flex; }
   #offers .content-slider__left, #offers #location .location__info, #location #offers .location__info {
@@ -3234,6 +3205,9 @@ ul[class^="items-"] li span {
 
 .items-6 li {
   width: 33.33%; }
+
+.page_header {
+  padding: 6rem 0; }
 
 #sliderContainer {
   position: relative;
