@@ -10,6 +10,9 @@
 
 .teaser {
 	padding-bottom: 12.4rem;
+	@include breakpoint(mobile) {
+		padding-bottom: 9.6rem;
+	}
 	@extend .content-slider;
 	h3, p {
 		color: $c-main;
@@ -18,6 +21,9 @@
 		position: relative;
 		@include breakpoint(tablet) {
 			width: 100%;
+		}
+		@include breakpoint(mobile) {
+			padding: 0;
 		}
 	}
 	.imgSlider {
@@ -49,14 +55,31 @@
 			margin: 0 auto;
 			margin-top: 10rem;
 		}
+		@include breakpoint(mobile) {
+			margin-top: 12.25rem;
+			width: 100%;
+			padding: 0 3.5rem;
+		}
 		h3 {
 			@include breakpoint(tablet) {
 				font-size: 5rem;
+			}
+			@include breakpoint(mobile) {
+				margin-top: 0;
+				margin-bottom: 4rem;
+				padding: 0 1.9rem;
+				font-size: 3.25rem;
+				text-align: left;
 			}
 		}
 		p {
 			@include breakpoint(tablet) {
 				font-size: 3rem;
+			}
+			@include breakpoint(mobile) {
+				margin-bottom: 0;
+				font-size: 2.5rem;
+				text-align: left;
 			}
 		}
 	}
@@ -85,6 +108,9 @@
 	padding-top: 11.4rem;
 	.container {
 		width: 100%;
+		@include breakpoint(mobile) {
+			padding: 0;
+		}
 	}
 	.listBox {
 		width: 46.5%;
@@ -102,25 +128,55 @@
 			font-size: 1.2rem;
 			color: $c-mainLighter;
 			text-transform: uppercase;
+			@include breakpoint(tablet) {
+				font-size: 2rem;
+			}
+			@include breakpoint(mobile) {
+				font-size: 1.5rem;
+			}
 		}
 		h3 {
 			margin: 1rem 0 2.4rem;
 			font-family: $butler;
 			font-size: 3.6rem;
 			color: $c-main;
+			@include breakpoint(tablet) {
+				font-size: 5rem;
+			}
+			@include breakpoint(mobile) {
+				margin: 2rem 0 4rem;
+				font-size: 3.25rem;
+			}
 		}
 		.prices {
 			position: absolute;
 			top: 3rem;
 			right: 0;
+			@include breakpoint(tablet) {
+				font-size: 4rem;
+			}
+			@include breakpoint(mobile) {
+				position: static;
+				float: none;
+			}
 			.cen-vertical {
 				position: relative;
 				top: -0.3rem;
 				margin-right: 1rem;
 				font-size: 1.2rem;
+				@include breakpoint(tablet) {
+					top: -0.6rem;
+					font-size: 1.6rem;
+				}
 			}
 			.num {
 				font-size: 2.4rem;
+				@include breakpoint(tablet) {
+					font-size: 3.2rem;
+				}
+				@include breakpoint(mobile) {
+					font-size: 3.75rem; 
+				}
 			}
 		}
 		p {
@@ -129,12 +185,27 @@
 			font-weight: 300;
 			line-height: 1.57;
 			color: #636363;
+			@include breakpoint(tablet) {
+				font-size: 2.4rem;
+			}
+			@include breakpoint(mobile) {
+				margin: 5.8rem 0;
+				font-size: 2.5rem;
+				line-height: 1.7;
+			}
+			&:empty {
+				display: none;
+			}
 		}
 		.btn-green {
 			position: absolute;
 			bottom: 0;
 			right: 0;
 			float: right;
+			@include breakpoint(mobile) {
+				position: static;
+
+			}
 		}
 		&__content {
 			position: relative;
@@ -142,7 +213,13 @@
 			overflow: hidden;
 			@include breakpoint(tablet) {
 				width: 90%;
+				height: 50rem;
 				margin: 0 auto;
+			}
+			@include breakpoint(mobile) {
+				width: 100%;
+				padding: 0 5.4rem;
+				height: auto;
 			}
 		}
 	}
@@ -158,6 +235,9 @@
 		margin-bottom: 4rem;
 		@include breakpoint(tablet) {
 			margin-bottom: 8rem;
+		}
+		@include breakpoint(mobile) {
+			margin-bottom: 6.3rem;
 		}
 		img {
 			width: 100%;
