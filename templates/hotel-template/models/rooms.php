@@ -59,9 +59,9 @@ require(getFromTemplate("common/header.php", false)); ?>
                         $lz_pages = ceil($num_records/$lz_limit);
                     }
                     if($num_records > 0){ ?>
-                        <div class=" ">
-                            <?php include(getFromTemplate("common/get_rooms.php", false)); ?>
-                        </div>
+     
+                        <?php include(getFromTemplate("common/get_rooms.php", false)); ?>
+             
                         <?php
                     } ?>
                 </div>

@@ -35,8 +35,6 @@ if(isset($db) && $db !== false){
     $result_rate = $db->prepare('SELECT MIN(price) as price FROM pm_rate WHERE id_room = :id_room');
     $result_rate->bindParam(':id_room', $room_id);
 
-    $html .= '<div class="rooms-container">';
-
     foreach($result_room as $i => $row){
                                 
         $room_id = $row['id'];
@@ -44,6 +42,7 @@ if(isset($db) && $db !== false){
         $room_subtitle = $row['subtitle'];
         $room_price = $row['price'];
         $room_alias = $row['alias'];
+        $content = $row['descr'];
         
         $room_alias = DOCBASE.$page_alias.'/'.text_format($room_alias);
         
@@ -64,11 +63,8 @@ if(isset($db) && $db !== false){
                         
                         if(is_file($realpath)){
                             $html .= '
-                            <figure class="more-link img-container md">
+                            <figure class="more-link img-container">
                                 <img alt="'.$label.'" src="'.$thumbpath.'">
-                                <span class="more-action">
-                                    <span class="more-icon"></span>
-                                </span>
                             </figure>';
                         }
                     }
@@ -83,26 +79,23 @@ if(isset($db) && $db !== false){
                             if($price > 0) $min_price = $price;
                         }
                         $html .= '
- 
-                            <div class="col-xs-6">
-                                <div class="price text-primary">
-                                    '.$texts['FROM_PRICE'].'
-                                    <span itemprop="priceRange">
-                                        '.formatPrice($min_price*CURRENCY_RATE).'
-                                    </span>
-                                </div>
-                                <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
-                            </div>
-                            <div class="col-xs-6">
-                                <span class="btn btn-primary mt5 pull-right">'.$texts['MORE_DETAILS'].'</span>
-                            </div>
+                            <div class="prices">
+                                <span class="cen-vertical">'.$texts['FROM_PRICE'].'</span>
+                                <span itemprop="priceRange" class="num">
+                                    '.formatPrice($min_price*CURRENCY_RATE).'
+                                </span>
+                            </div>';
+                            $html .= '<p>'.$content.'</p>';
+                            $html .= '
+                            <a href="#dummy" class="link-more"><span>See more</span><i class="icon-right-arrow"></i></a>
+                            <a class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
+               
 
                     </div>
                 </a>
         </article>';
     }
 
-    $html .= "</div>";
     if(isset($_POST['ajax']) && $_POST['ajax'] == 1)
         echo json_encode(array('html' => $html));
     else

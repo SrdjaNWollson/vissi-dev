@@ -98,7 +98,11 @@
 			}
 		}
 	}
-	.prices {
+	
+}
+
+li.prices,
+.prices {
 		margin-left: 3.4rem;
 		font-size: 1.4rem;
 		text-transform: uppercase;
@@ -123,7 +127,6 @@
 			}
 		}
 	}
-}
 
 //--- Section Room slider
 
@@ -487,30 +490,7 @@
 			text-align: center;
 		}
 	}
-//-- Link to all rooms offer
-	.link-all-rooms {
-		font-size: 14px;
-		font-weight: 600;
-		letter-spacing: 2px;
-		color: $c-gold;
-		text-transform: uppercase;
-		@include breakpoint(desktop--small) {
-			font-size: 12px;
-		}
-		@include breakpoint(mobile) {
-			font-size: 1.5rem;
-			letter-spacing: 0.3rem;
-		}
-		.icon-right-arrow {
-			position: relative;
-			top: 0.08px;
-			font-size: 12px;
-			vertical-align: top;
-			@include breakpoint(mobile) {
-				font-size: 1.2rem;
-			}
-		}
-	}
+
 	.slick-slide {
 		//margin-left: 20px;
 		transition: opacity 1.25s ease-out;
@@ -551,6 +531,31 @@
     		float: none;
     		font-size: 1.75rem;
     	}
+	}
+}
+
+//-- Link to all rooms offer
+.link-all-rooms {
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: $c-gold;
+	text-transform: uppercase;
+	@include breakpoint(desktop--small) {
+		font-size: 12px;
+	}
+	@include breakpoint(mobile) {
+		font-size: 1.5rem;
+		letter-spacing: 0.3rem;
+	}
+	.icon-right-arrow {
+		position: relative;
+		top: 0.08px;
+		font-size: 12px;
+		vertical-align: top;
+		@include breakpoint(mobile) {
+			font-size: 1.2rem;
+		}
 	}
 }
 

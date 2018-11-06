@@ -26,16 +26,25 @@
     color: #555;
 }
 
+.btn-green {
+    background-color: $c-green;
+    border: 1px solid $c-green;
+}
+
 .btn-gold,
 .btn-green {
     position: relative;
     display: block;
     float: left;
     padding: 2.2rem 6rem 2rem;
-    border: 1px solid $c-gold;
+   
     color: $c-white;
     font-size: 14px;
     letter-spacing: 2px;
+}
+
+.btn-gold {
+    border: 1px solid $c-gold;
 }
 
 .btn-purchase {

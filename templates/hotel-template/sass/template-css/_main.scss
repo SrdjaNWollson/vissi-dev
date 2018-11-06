@@ -167,10 +167,7 @@ aside h4 {
 .booking-result .btn-default {
     text-transform: none;
 }
-.img-container,
-.hb-calendar:not(.loaded) {
-    background: rgba(0, 0, 0, 0) url("../images/loading.gif") no-repeat scroll center center;
-}
+
 @media (min-width: 768px){
     .activity-result .sep {
         display: table;
