@@ -4,9 +4,9 @@
  * ==============================================
  */
 
-$stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/royalslider.css', 'media' => 'all');
-$stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/skins/minimal-white/rs-minimal-white.css', 'media' => 'all');
-$javascripts[] = DOCBASE.'js/plugins/royalslider/jquery.royalslider.min.js';
+// $stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/royalslider.css', 'media' => 'all');
+// $stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/skins/minimal-white/rs-minimal-white.css', 'media' => 'all');
+// $javascripts[] = DOCBASE.'js/plugins/royalslider/jquery.royalslider.min.js';
 
 require(getFromTemplate('common/header.php', false));
 
@@ -32,7 +32,7 @@ if($result_slide !== false){
 		<?php endif; ?>
 		<div id="sliderContainer">
             
-            <div class="royalSlider rsMinW fullSized clearfix">
+            <div class="introSlider">
                 <?php
                 foreach($result_slide as $i => $row){
                     $slide_id = $row['id'];
@@ -75,6 +75,7 @@ if($result_slide !== false){
                 } ?>
             </div>
         <?php if($appearance['booking_search_position'] == 2 || $appearance == NULL)  : ?>
+        <!-- book now -->
         <div id="search-home-wrapper">
             <div id="search-home" class="container">
                 <?php include(getFromTemplate('common/search.php', false)); ?>
@@ -121,7 +122,7 @@ if($result_slide !== false){
         <a href="#dummy">See all offers <i class="icon-right-arrow"></i></a>
     </div>
 </section>
-<!-- facilitys -->
+<!-- facilities -->
 <section id="facility" class="prim-section">
     <div class="container">
         <h4 class="sec-subtitle">why choose our hotel</h4>
@@ -178,5 +179,4 @@ if($result_slide !== false){
         </div>
     </div>
 </section>
-
 </content>

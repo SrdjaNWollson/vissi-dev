@@ -96,7 +96,7 @@ header, header * {
 }
 
 @media (min-width: 768px) {
-    #page-1 header:not(.fixed) .navbar-brand {
+    header:not(.fixed) .navbar-brand {
         float: none;
         text-align: center;
         clear: both;
@@ -255,7 +255,7 @@ body[dir="rtl"] #mainMenu {
     position: relative;
     z-index: 1;
 }
-#page-1 .navbar-brand {
+.navbar-brand {
     margin-left: -13px;
      @include breakpoint(tablet) {
         margin-left: -1.4rem;
@@ -326,7 +326,7 @@ ul.navbar-nav > li.primary .dropdown-menu {
         padding: 10px 0;
     }
 }
-#page-1 .fixed .navbar-brand {
+.fixed .navbar-brand {
     width: 180px;
     @include breakpoint(mobile) {
         width: 18rem;
@@ -428,20 +428,6 @@ ul.navbar-nav > li.primary .dropdown-menu li a {
 #preHeader a {
     color: #fff;
 }
-body:not(#page-1) #mainHeader, #mainHeader {
-    background: #e8e8e4;
-}
-body:not(#page-1) .fixed #mainHeader,
-.fixed #mainHeader {
-    background: #e8e8e4;
-}
-// header:not(.fixed) #mainHeader {
-//     background: transparent;
-//     background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
-//     background: -o-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
-//     background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), transparent);
-//     background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
-// }
 
 ul.navbar-nav > li.primary > a.firstLevel {
     display: block;
@@ -551,14 +537,7 @@ ul.navbar-nav > li.primary .dropdown {
 .searchWrapper button:hover {
     background: #5381BA;
 }
-.page-header {
-    background-color: #506f9e;
-    color: #fff;
-    border: none;
-}
-.page-header h1, .page-header .h1, .page-header a {
-    color: #fff;
-}
+
 .breadcrumb {
     background: transparent;
 }

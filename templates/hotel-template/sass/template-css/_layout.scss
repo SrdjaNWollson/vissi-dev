@@ -8,11 +8,6 @@
     transition: none;
 }
 
-
-.page-header h1, #page h1,
-.page-header .h1, #page .h1 {
-    margin: 0;
-}
 section.prim-section,section.sec-section{
     overflow-y: auto;
     overflow-x: hidden; 
@@ -205,29 +200,6 @@ li.Nactive > .dropdown-btn:after {
     -webkit-box-shadow: none;
     -ms-box-shadow: none;
     -o-box-shadow: none;
-}
-.page-header {
-    margin: 0;
-    padding: 15px 0;
-    border: none;
-}
-.page-header h1,
-.page-header p.main-title {
-    margin: 0;
-    font-weight: 300;
-    font-size: 36px;
-}
-.breadcrumb {
-    text-align: right;
-    background: transparent;
-    margin: 0;
-    padding-right: 0;
-}
-.breadcrumb a::after {
-    font-family: "Font Awesome 5 Free";
-    content: "";
-    padding: 0 4px 0 6px;
-    font-weight: 900;
 }
 
 /***************** HOMEPAGE ******************/
@@ -491,9 +463,7 @@ body[dir="rtl"] .labels {
 .hotBox a {
     margin-top: 0;
 }
-#mapWrapper {
-    height: 300px;
-}
+
 #pages-list {
     list-style: none;
     padding: 0;

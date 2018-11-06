@@ -37,7 +37,7 @@
  //------BLOCKS
 @import 'blocks/mainHeader';
 @import 'blocks/section';
-// @import 'blocks/footer';
+@import 'blocks/footer';
 
 
 //------COMPONENTS
@@ -47,8 +47,11 @@
 //------FACILITY
 @import 'facility/items-grid';
 
+//------PAGES
+@import 'pages/pages';
+
 
 // //------SLIDER±S
-@import 'sliders/royalSlider';
+@import 'sliders/introSlider';
 @import 'sliders/slick';
 

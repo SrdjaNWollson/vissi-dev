@@ -4,44 +4,78 @@ $footer_cols = $appearance['footer_columns'];
 $boxClass = getBoxClass($footer_cols);
 $counter = 0;
 ?>
-<footer>
-    <section id="booknow" class="third-section">
-        <div id="search-home" class="container">
-            <?php include(getFromTemplate('common/search.php', false));
-             ?>
-        </div>
-    </section>
-    <section id="mainFooter">
-        <div class="container" id="footer">
-            <div class="row">
-            <?php while($counter < $footer_cols) : $counter++; ?>
-                <div class="<?= $boxClass ?>">
-                    <?php displayWidgets("footer_col_".$counter, $page_id); ?>
-                </div>
-            <?php endwhile; ?>
+<!-- book now -->
+<section id="search-home-bottom" class="third-section">
+    <div class="container">
+        <?php include(getFromTemplate('common/search.php', false));
+         ?>
+    </div>
+</section>
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-main container">
+        <div class="footer__info items">
+            <div class="logo-wrapper">
+                <img src="/vissi-dev/templates/hotel-template/images/vissi-darte-logo-grey.svg" alt="logos">
+            </div>
+            <div class="contact-info">
+                <address>Mediteranska 33, 354789 <br>Budva, Montenegro</address>
+                <ul class="connect">
+                    <li>Phone: +381 62 555 66 89</li>
+                    <li>Fax: +381 62 55 66 89</li>
+                    <li>Email: hotel@vissidarte.com</li>
+                </ul>
+                <ul class="social-links">
+                    <li><a href="#dummy"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-instagram"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-twitter"></i></a></li>
+                </ul>
             </div>
         </div>
-    </section>
-    <div id="footerRights">
+        <div class="footer__nav items">
+            <ul>
+                <li>
+                    <a href="/vissi-dev/rooms" title="Rooms &amp; Suites">Rooms &amp; Suites</a>
+                </li>
+                <li>
+                    <a href="/vissi-dev/special-offers" title="Special Offers">Special Offers</a>
+                </li>
+                <li>
+                    <a href="/vissi-dev/conferences-events" title="Activities">Conferences &amp; Events</a>
+                </li>
+                <li>
+                    <a href="/vissi-dev/your-beach" title="Your beach">Your beach</a>
+                </li>
+                <li>
+                    <a href="/vissi-dev/gallery" title="Gallery">Gallery</a>
+                </li>
+                <li>
+                    <a href="/vissi-dev/about-us" title="About The Hotel">About The Hotel</a>
+                </li>
+                <li>
+                    <a href="#dummy" title="Contact">Contact</a>
+                </li>
+                  <li>
+                    <a href="#dummy" title="Terms and Conditions">Terms & Conditions</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__subscribe items">
+            <h4>The special gift for any case</h4>
+            <a class="btn btn-purchase" href="#dummy"><span>Purchase voucher</span><i class="icon-right-arrow"></i></a>
+            <h4>Subscribe to our ewsletter</h4>
+            <form action="">
+                <div class="input-wrapper">
+                    <input type="email" nam="sub-email" placeholder="Email address">
+                </div>
+                <button class="btn btn-sub" type="submit"><span>Sign up</span></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        &copy; <?php echo date("Y"); ?>
-                        <?php echo OWNER." ".$texts['ALL_RIGHTS_RESERVED']; ?>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p class="text-right">
-                        <a href="<?php echo DOCBASE; ?>feed/" target="_blank" title="<?php echo $texts['RSS_FEED']; ?>"><i class="fas fa-fw fa-rss"></i></a>
-                        <?php
-                        foreach($menus['footer'] as $nav_id => $nav){ ?>
-                            <a href="<?php echo $nav['href']; ?>" title="<?php echo $nav['title']; ?>"><?php echo $nav['name']; ?></a>
-                            &nbsp;&nbsp;
-                            <?php
-                        } ?>
-                    </p>
-                </div>
+            <div class="footer__copyright">
+                <span>All rights reserved Copyright 2018</span>
             </div>
         </div>
     </div>
@@ -58,7 +92,7 @@ $counter = 0;
     <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<!--     <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -69,10 +103,10 @@ $counter = 0;
     <script src="<?php echo DOCBASE; ?>common/js/modernizr-2.6.1.min.js"></script>
     <script src="<?php echo DOCBASE; ?>js/main.js" type="text/javascript"></script>
     <script src="<?php echo DOCBASE; ?>js/custom.js" type="text/javascript"></script>
-    <script src="<?php echo DOCBASE; ?>js/plugins/imagefill/js/jquery-imagefill.js"></script>
-    <script src="<?php echo DOCBASE; ?>js/plugins/toucheeffect/toucheffects.js"></script>
+   <!--  <script src="<?php /*echo DOCBASE;*/ ?>js/plugins/imagefill/js/jquery-imagefill.js"></script> -->
+    <!-- <script src="<?php /*echo DOCBASE;*/ ?>js/plugins/toucheeffect/toucheffects.js"></script> -->
     <script src="<?php echo DOCBASE; ?>js/plugins/slick/slick.min.js"></script>
-    <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+  <!--   <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
 
 
     <?php
@@ -87,6 +121,14 @@ $counter = 0;
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script type="text/javascript">
+
+        //-- Intro slider
+        $('.introSlider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false
+        });
         //-- ROOMS slider
         $('.rooms-slider').slick({
             slidesToShow: 1,
@@ -123,7 +165,7 @@ $counter = 0;
             ]
         });
 
-         //-- Testimonial slider
+        //-- Testimonial slider
         $('.testimonial-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
