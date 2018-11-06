@@ -420,23 +420,21 @@
    
 }
 
-
-
-
-
 //-- Slider arrows navigation for mobile only
-.content-slider-wrapper {
+.content-slider-wrapper,
+.teaser {
 	position: relative;
 	.slider-nav {
 		display: none;
+
+		position: absolute;
+		top: 50%;
+		width: 5.4rem;
+		height: 5.4rem;
+		background-color: #f4f3f0;
+		cursor: pointer;
 		@include breakpoint(mobile) {
 			display: block;
-			position: absolute;
-			top: 50%;
-			width: 5.4rem;
-			height: 5.4rem;
-			background-color: #f4f3f0;
-			cursor: pointer;
 		}
 		&:before {
 			@include absolute(center);

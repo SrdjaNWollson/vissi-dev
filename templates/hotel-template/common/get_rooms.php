@@ -48,8 +48,7 @@ if(isset($db) && $db !== false){
         $room_alias = DOCBASE.$page_alias.'/'.text_format($room_alias);
         
         $html .= '
-        <article class="col-sm-4 isotopeItem" itemscope itemtype="http://schema.org/LodgingBusiness">
-            <div class="isotopeInner">
+        <article class="listBox">
                 <a itemprop="url" href="'.$room_alias.'">';
                     
                     if($result_room_file->execute() !== false && $db->last_row_count() > 0){
@@ -68,15 +67,15 @@ if(isset($db) && $db !== false){
                             <figure class="more-link img-container md">
                                 <img alt="'.$label.'" src="'.$thumbpath.'">
                                 <span class="more-action">
-                                    <span class="more-icon"><i class="fa fa-link"></i></span>
+                                    <span class="more-icon"></span>
                                 </span>
                             </figure>';
                         }
                     }
                     $html .= '
-                    <div class="isotopeContent">
-                        <h3 itemprop="name">'.$room_title.'</h3>
-                        <h4>'.$room_subtitle.'</h4>';
+                    <div class="listBox__content">
+                        <h4>'.$room_subtitle.'</h4>
+                        <h3 itemprop="name">'.$room_title.'</h3>';
                         $min_price = $room_price;
                         if($result_rate->execute() !== false && $db->last_row_count() > 0){
                             $row = $result_rate->fetch();
@@ -84,7 +83,7 @@ if(isset($db) && $db !== false){
                             if($price > 0) $min_price = $price;
                         }
                         $html .= '
-                        <div class="row">
+ 
                             <div class="col-xs-6">
                                 <div class="price text-primary">
                                     '.$texts['FROM_PRICE'].'
@@ -97,10 +96,9 @@ if(isset($db) && $db !== false){
                             <div class="col-xs-6">
                                 <span class="btn btn-primary mt5 pull-right">'.$texts['MORE_DETAILS'].'</span>
                             </div>
-                        </div>
+
                     </div>
                 </a>
-            </div>
         </article>';
     }
 
