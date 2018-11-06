@@ -3,5 +3,42 @@
 //-------------------------
 
 .page_header {
-	padding: 6rem 0;
+	padding: 6rem 0 0;
+}
+
+//-- TEASER
+
+.teaser {
+	padding-bottom: 12.4rem;
+	@extend .content-slider;
+	h3, p {
+		color: $c-main;
+	}
+	.container {
+		position: relative;
+	}
+	.imgSlider {
+		position: relative;
+		float: left;
+		width: 74%;
+		margin-right: 6rem;
+		.img-slide {
+			width: 100%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	&__content {
+		@include absolute(center-vertical);
+		right: 0;
+		width: 21%;
+	}
+	.slider-nav {
+		@include absolute(center-vertical);
+	}
+	.slick-dots {
+		width: 100%;
+		text-align: center;
+	}
 }

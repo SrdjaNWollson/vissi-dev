@@ -147,7 +147,7 @@ $counter = 0;
             ]
         });
 
-         //-- ROOMS slider
+         //-- Offers slider
         $('.offers-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -171,6 +171,16 @@ $counter = 0;
             slidesToScroll: 1,
             arrows: false,
             dots: true
+        });
+
+        //-- Teaser slider
+        $('.teaser .imgSlider__wrapper').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            prevArrow: $('.teaser .icon-left-arrow'),
+            nextArrow: $('.teaser .icon-right-arrow')
         });
     </script>
 
