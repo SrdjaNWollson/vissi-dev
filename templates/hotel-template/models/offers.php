@@ -33,9 +33,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                     $lz_pages = ceil($num_records/$lz_limit);
                 }
                 if($num_records > 0){ ?>
-                    <div class="isotopeWrapper clearfix isotope lazy-wrapper" data-loader="<?php echo getFromTemplate("common/get_offers.php"); ?>" data-mode="click" data-limit="<?php echo $lz_limit; ?>" data-pages="<?php echo $lz_pages; ?>" data-more_caption="<?php echo $texts['LOAD_MORE']; ?>" data-is_isotope="true" data-variables="page_id=<?php echo $page_id; ?>&page_alias=<?php echo $page['alias']; ?>">
                         <?php include(getFromTemplate("common/get_offers.php", false)); ?>
-                    </div>
                     <?php
                 } ?>
             </div>
