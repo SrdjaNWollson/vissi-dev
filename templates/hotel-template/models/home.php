@@ -4,9 +4,9 @@
  * ==============================================
  */
 
-$stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/royalslider.css', 'media' => 'all');
-$stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/skins/minimal-white/rs-minimal-white.css', 'media' => 'all');
-$javascripts[] = DOCBASE.'js/plugins/royalslider/jquery.royalslider.min.js';
+// $stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/royalslider.css', 'media' => 'all');
+// $stylesheets[] = array('file' => DOCBASE.'js/plugins/royalslider/skins/minimal-white/rs-minimal-white.css', 'media' => 'all');
+// $javascripts[] = DOCBASE.'js/plugins/royalslider/jquery.royalslider.min.js';
 
 require(getFromTemplate('common/header.php', false));
 
@@ -32,7 +32,7 @@ if($result_slide !== false){
 		<?php endif; ?>
 		<div id="sliderContainer">
             
-            <div class="royalSlider <?= $arrowClass; ?> rsMinW fullSized clearfix">
+            <div class="introSlider">
                 <?php
                 foreach($result_slide as $i => $row){
                     $slide_id = $row['id'];
@@ -179,5 +179,4 @@ if($result_slide !== false){
         </div>
     </div>
 </section>
-s
 </content>

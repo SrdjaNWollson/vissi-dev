@@ -3242,26 +3242,27 @@ ul[class^="items-"] li span {
     #sliderContainer {
       height: auto; } }
 
-.fullSized.royalSlider {
+.introSlider {
   height: 90vh;
   overflow: hidden;
   position: relative;
   width: 100%; }
   @media (max-width: 1490px) {
-    .fullSized.royalSlider {
+    .introSlider {
       height: auto; } }
-  .fullSized.royalSlider .rsContent {
+  .introSlider .rsContent {
+    position: relative;
     width: 100%;
     height: auto; }
-    .fullSized.royalSlider .rsContent img {
+    .introSlider .rsContent img {
       width: 100%; }
-  .fullSized.royalSlider .rsSlide {
+  .introSlider .rsSlide {
     position: static; }
 
-.royalSlider .infoBlock {
+.introSlider .infoBlock {
   top: 30%; }
 
-.royalSlider .infoBlock h1 {
+.introSlider .infoBlock h1 {
   margin-bottom: 3.9rem;
   font-family: "ButlerRegular";
   color: #fff;
@@ -3269,10 +3270,10 @@ ul[class^="items-"] li span {
   text-shadow: 2.1px 2.1px 2.9px rgba(123, 123, 123, 0.75);
   text-transform: uppercase; }
   @media (max-width: 767px) {
-    .royalSlider .infoBlock h1 {
+    .introSlider .infoBlock h1 {
       font-size: 6.5rem; } }
 
-.royalSlider .infoBlock h2 {
+.introSlider .infoBlock h2 {
   margin-bottom: 6.2rem;
   color: #fff;
   font-family: "ButlerRegular";
@@ -3280,13 +3281,13 @@ ul[class^="items-"] li span {
   font-weight: 400;
   text-transform: none; }
   @media (max-width: 767px) {
-    .royalSlider .infoBlock h2 {
+    .introSlider .infoBlock h2 {
       font-size: 3rem; } }
 
-.royalSlider .infoBlock a {
+.introSlider .infoBlock a {
   text-decoration: none; }
 
-.royalSlider.rsMinW .rsThumbsArrowDisabled {
+.introSlider.rsMinW .rsThumbsArrowDisabled {
   display: block !important; }
 
 /*************** ROYAL SLIDER ****************/
@@ -3355,23 +3356,23 @@ ul[class^="items-"] li span {
   width: 100%;
   margin: 0 auto 24px; }
 
-.fullWidth.royalSlider {
+.fullWidth.introSlider {
   width: 100%;
   overflow: hidden; }
 
 @media screen and (min-width: 960px) and (min-height: 660px) {
   .heroSlider .rsOverflow,
-  .royalSlider.heroSlider {
+  .introSlider.heroSlider {
     height: 520px !important; } }
 
 @media screen and (min-width: 960px) and (min-height: 1000px) {
   .heroSlider .rsOverflow,
-  .royalSlider.heroSlider {
+  .introSlider.heroSlider {
     height: 660px !important; } }
 
 @media screen and (min-width: 0px) and (max-width: 800px) {
-  .royalSlider.heroSlider,
-  .royalSlider.heroSlider .rsOverflow {
+  .introSlider.heroSlider,
+  .introSlider.heroSlider .rsOverflow {
     height: 300px !important; }
   .infoBlock {
     padding: 10px;
