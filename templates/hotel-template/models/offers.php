@@ -12,31 +12,22 @@ require(getFromTemplate("common/header.php", false)); ?>
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
     
-    <div id="content" class="pt30 pb20">
+    <div id="content">
 
-            <div class="row">
-                <?php
-                if($page['text'] != ""){ ?>
-                    <div class="col-md-12"><?php echo $page['text']; ?></div>
-                    <?php
-                } ?>
-            </div>
-            <div class="row">
-                <?php
-                $lz_offset = 1;
-                $lz_limit = 9;
-                $lz_pages = 0;
-                $num_records = 0;
-                $result = $db->query("SELECT count(*) FROM pm_offer WHERE checked = 1 AND lang = ".LANG_ID);
-                if($result !== false){
-                    $num_records = $result->fetchColumn(0);
-                    $lz_pages = ceil($num_records/$lz_limit);
-                }
-                if($num_records > 0){ ?>
-                        <?php include(getFromTemplate("common/get_offers.php", false)); ?>
-                    <?php
-                } ?>
-            </div>
+        <?php
+        $lz_offset = 1;
+        $lz_limit = 9;
+        $lz_pages = 0;
+        $num_records = 0;
+        $result = $db->query("SELECT count(*) FROM pm_offer WHERE checked = 1 AND lang = ".LANG_ID);
+        if($result !== false){
+            $num_records = $result->fetchColumn(0);
+            $lz_pages = ceil($num_records/$lz_limit);
+        }
+        if($num_records > 0){ ?>
+                <?php include(getFromTemplate("common/get_offers.php", false)); ?>
+            <?php
+        } ?>
 
     </div>
 </main>

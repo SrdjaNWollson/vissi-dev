@@ -56,61 +56,54 @@ if(isset($db) && $db !== false){
             $offer_pos = "right-side";
 
         $html .= '
-        <article class="'.$offer_pos.'">
-            <div class="isotopeInner">
-                <a itemprop="url" href="'.$offer_alias.'">';
-                    
-                    if($result_offer_file->execute() !== false && $db->last_row_count() > 0){
-                        $html .= "<div class='rooms-slider'>";
-                        foreach($result_offer_file->fetchAll(PDO::FETCH_ASSOC) as $row){
-                            //var_dump('test');
-                            $file_id = $row['id']; 
-                            $filename = $row['file'];
-                            $label = $row['label'];
-                            
-                            $realpath = SYSBASE.'medias/offer/medium/'.$file_id.'/'.$filename;
-                            $thumbpath = DOCBASE.'medias/offer/medium/'.$file_id.'/'.$filename;
-                            $zoompath = DOCBASE.'medias/offer/big/'.$file_id.'/'.$filename;
-                            
-                            if(is_file($realpath)){
-                                $html .= '
-                                <figure class="more-link img-container md">
+        <article class="content-slider '.$offer_pos.'">';
+
+            if($result_offer_file->execute() !== false && $db->last_row_count() > 0){
+                $html .= "<div class='imgSlider content-slider__left'><div class='imgSlider__wrapper'>";
+                    foreach($result_offer_file->fetchAll(PDO::FETCH_ASSOC) as $row){
+                        //var_dump('test');
+                        $file_id = $row['id']; 
+                        $filename = $row['file'];
+                        $label = $row['label'];
+                        
+                        $realpath = SYSBASE.'medias/offer/medium/'.$file_id.'/'.$filename;
+                        $thumbpath = DOCBASE.'medias/offer/medium/'.$file_id.'/'.$filename;
+                        $zoompath = DOCBASE.'medias/offer/big/'.$file_id.'/'.$filename;
+                        
+                        if(is_file($realpath)){
+                            $html .= '
+                                <figure class="img-container">
                                     <img alt="'.$label.'" src="'.$thumbpath.'">
-                                    <span class="more-action">
-                                        <span class="more-icon"><i class="fa fa-link"></i></span>
-                                    </span>
                                 </figure>';
-                            }
                         }
-                        $html .= "</div>";
                     }
-                    $html .= '
-                    <div class="isotopeContent">
-                        <h3 itemprop="name">'.$offer_title.'</h3>
-                        <h4>'.$offer_subtitle.'</h4>';
-                        $min_price = $offer_price;
-                        if($result_rate->execute() !== false && $db->last_row_count() > 0){
-                            $row = $result_rate->fetch();
-                            $price = $row['price'];
-                            if($price > 0) $min_price = $price;
-                        }
-                        $html .= '
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <div class="price text-primary">
-                                    '.$texts['FROM_PRICE'].'
-                                    <span itemprop="priceRange">
-                                        '.formatPrice($min_price*CURRENCY_RATE).'
-                                    </span>
-                                </div>
-                                <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
-                            </div>
-                            <div class="col-xs-6">
-                                <span class="btn btn-green">'.$texts['BOOK_NOW'].'</span>
-                            </div>
-                        </div>
+                $html .= "</div></div>";
+            }
+            $html .= '
+            <div class="content-slider__right">
+                <h3 itemprop="name">'.$offer_title.'</h3>
+                <h4>'.$offer_subtitle.'</h4>';
+                $min_price = $offer_price;
+                if($result_rate->execute() !== false && $db->last_row_count() > 0){
+                    $row = $result_rate->fetch();
+                    $price = $row['price'];
+                    if($price > 0) $min_price = $price;
+                }
+                $html .= '
+                <div class="row">
+                 
+                    <div class="price">
+                        '.$texts['FROM_PRICE'].'
+                        <span itemprop="priceRange">
+                            '.formatPrice($min_price*CURRENCY_RATE).'
+                        </span>
                     </div>
-                </a>
+                    <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
+              
+                    <div class="col-xs-6">
+                        <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
+                    </div>
+                </div>
             </div>
         </article>';
 

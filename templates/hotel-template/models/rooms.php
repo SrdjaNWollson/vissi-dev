@@ -65,7 +65,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                         <?php
                     } ?>
                 </div>
-            </sections>
+            </section>
 
     </div>
 </main>
