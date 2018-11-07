@@ -84,20 +84,23 @@ if(isset($db) && $db !== false){
                                 if($price > 0) $min_price = $price;
                             }
                             $html .= '
-                            <div class="row">
-                                '.$night_stay.'
-                                '.$min_people.'
-                                <div class="price">
-                                    '.$texts['FROM_PRICE'].'
-                                    <span itemprop="priceRange">
-                                        '.formatPrice($min_price*CURRENCY_RATE).'
-                                    </span>
-                                </div>
-                                <div>'.$content.'</div>
-                                <div class="col-xs-6">
-                                    <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
-                                </div>
+
+                            <ul class="room-details">
+                                <li><i class="icon-moon"></i><span class="cen-vertical">'.$night_stay.'</span></li>
+                                <li><i class="icon-person"></i><span class="cen-vertical">'.$min_people.'</span></li>
+
+                            <li class="prices">
+                                <span class="cen-vertical">'.$texts['FROM_PRICE'].'</span>
+                                <span itemprop="priceRange" class="num">
+                                    '.formatPrice($min_price*CURRENCY_RATE).'
+                                </span>
+                            </li>
+                            </ul>
+                            <p>'.$content.'</p>
+                            <div class="btn-holder">
+                                <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
                             </div>
+                   
                         </div>
                     </div>
                 </div>';

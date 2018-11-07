@@ -599,12 +599,10 @@ p:empty {
   content: "\e907"; }
 
 .icon-moon:before {
-  content: "\e908";
-  color: #79675a; }
+  content: "\e908"; }
 
 .icon-person:before {
-  content: "\e909";
-  color: #79675a; }
+  content: "\e909"; }
 
 .icon-pen:before {
   content: "\e900";
@@ -1427,6 +1425,9 @@ li.prices,
       padding: 0;
       margin: 0;
       max-width: 33.5rem; }
+      @media (max-width: 1200px) {
+        #offers .content-slider__right .container {
+          max-width: 44rem; } }
       @media (max-width: 767px) {
         #offers .content-slider__right .container {
           width: 100%;
@@ -2605,10 +2606,18 @@ ul[class^="items-"] li span {
   padding: 6rem 0 0; }
 
 .teaser {
-  padding-bottom: 12.4rem; }
+  padding-bottom: 12.4rem;
+  background-image: url("../images/visi-darte-logo-bg.png");
+  background-repeat: no-repeat;
+  background-position: 130% 329px;
+  background-size: 40%; }
+  @media (max-width: 990px) {
+    .teaser {
+      background-position: 123% 136%; } }
   @media (max-width: 767px) {
     .teaser {
-      padding-bottom: 9.6rem; } }
+      padding-bottom: 9.6rem;
+      background-position: 123% 120%; } }
   .teaser h3, .teaser p {
     color: #79675a; }
   .teaser .container {
@@ -2831,26 +2840,106 @@ ul[class^="items-"] li span {
 .right-side .content-slider__right {
   float: right; }
 
+.left-side .imgSlider,
+.right-side .imgSlider {
+  width: 62%;
+  max-width: 1100px; }
+  @media (max-width: 990px) {
+    .left-side .imgSlider,
+    .right-side .imgSlider {
+      width: 100%;
+      float: none; } }
+
+.left-side .content-holder,
+.right-side .content-holder {
+  max-width: 330px; }
+  @media (max-width: 1200px) {
+    .left-side .content-holder,
+    .right-side .content-holder {
+      max-width: 44rem; } }
+  @media (max-width: 767px) {
+    .left-side .content-holder,
+    .right-side .content-holder {
+      max-width: 100%; } }
+
+.left-side .slick-dots,
+.right-side .slick-dots {
+  width: 100%;
+  text-align: center; }
+  @media (max-width: 990px) {
+    .left-side .slick-dots,
+    .right-side .slick-dots {
+      position: absolute;
+      margin-left: 0;
+      left: 0; } }
+  @media (max-width: 767px) {
+    .left-side .slick-dots,
+    .right-side .slick-dots {
+      padding-bottom: 0; } }
+
+.left-side h3,
+.right-side h3 {
+  margin-top: 8rem; }
+
+@media (max-width: 767px) {
+  .left-side .btn-green,
+  .right-side .btn-green {
+    display: inline-block;
+    float: none; } }
+
 .left-side {
   position: relative;
   background-color: #79675a; }
-  .left-side .content-slider__right {
-    width: 62%; }
+  @media (max-width: 990px) {
+    .left-side {
+      display: flex;
+      flex-direction: column; } }
   .left-side .content-slider__left, .left-side #location .location__info, #location .left-side .location__info {
     position: absolute;
     width: 100%;
+    height: 100%;
     padding: 0; }
+    @media (max-width: 990px) {
+      .left-side .content-slider__left, .left-side #location .location__info, #location .left-side .location__info {
+        position: static;
+        order: 2;
+        padding-bottom: 8rem; } }
+    .left-side .content-slider__left .container, .left-side #location .location__info .container, #location .left-side .location__info .container {
+      height: 100%; }
+  @media (max-width: 990px) {
+    .left-side .content-slider__right {
+      order: 1; } }
+  .left-side .room-details li {
+    color: #fff; }
+    .left-side .room-details li.prices {
+      color: #c5ae60; }
+  .left-side p {
+    color: #fff; }
 
 .right-side {
+  display: flex;
+  flex-direction: column;
   background-color: #ecebe4; }
   
   .right-side .content-slider__left,
   .right-side #location .location__info,
   #location .right-side .location__info {
-    width: 62%;
-    padding: 0; }
+    float: left;
+    padding: 0;
+    order: 1; }
   .right-side .content-slider__right {
-    width: 38%; }
+    width: 38%;
+    order: 2; }
+    @media (max-width: 990px) {
+      .right-side .content-slider__right {
+        width: 100%;
+        float: none;
+        padding-bottom: 8rem; } }
+    .right-side .content-slider__right .container {
+      width: 100%;
+      padding-left: 5.7rem; }
+  .right-side h3, .right-side p {
+    color: #79675a; }
 
 .img-container img {
   width: 100%; }
