@@ -26,3 +26,7 @@ body {
 h4, .h4, h5, .h5, h6, .h6 {
     margin: 0;
 }
+
+p:empty {
+    display: none;
+}

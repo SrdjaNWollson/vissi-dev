@@ -29,6 +29,9 @@
 .btn-green {
     background-color: $c-green;
     border: 1px solid $c-green;
+    @include breakpoint(mobile) {
+        font-size: 1.75rem;
+    }
 }
 
 .btn-gold,
