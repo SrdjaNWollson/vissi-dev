@@ -13,6 +13,10 @@ if($article_id > 0){
     $edit_date = $article['edit_date'];
 }
 
+$gallery_id = false;
+if(isset($_GET['id'])){
+    $gallery_id = $_GET['id'];
+}
 
 $stylesheets[] = array('file' => DOCBASE.'js/plugins/isotope/css/style.css', 'media' => 'all');
 $javascripts[] = '//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js';
@@ -44,22 +48,27 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="alert alert-danger" style="display:none;"></div>
             
 
-            <div class="row">
                 <?php
                 $result = $db->query('SELECT count(*) FROM pm_article WHERE id_page = '.$page_id.' AND checked = 1 AND (publish_date IS NULL || publish_date <= '.time().') AND (unpublish_date IS NULL || unpublish_date > '.time().') AND lang = '.LANG_ID);
                 if($result !== false){
                     $num_records = $result->fetchColumn(0);
                 }
                 if($num_records > 0){?>
-                    <div class="col-md-3">
+                    <div class="gallery-categories">
                         <div class="isotopeWrapper clearfix isotope lazy-wrapper" data-loader="<?php echo getFromTemplate('common/get_galleries.php'); ?>" data-mode="click" data-more_caption="<?php echo $texts['LOAD_MORE']; ?>" data-is_isotope="true" data-variables="page_id=<?php echo $page_id; ?>&page_alias=<?php echo $page['alias']; ?>">
                             <?php include(getFromTemplate('common/get_galleries.php', false)); ?>
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <div>
-                            <?php include(getFromTemplate('common/get_gallery.php', false)); ?>
-                        </div>
+                    <div class="gallery-slider">
+                        <section class="teaser">
+                            <div class="container">
+                                <div class="imgSlider">
+                                    <div class="imgSlider__wrapper">
+                                        <?php getImagesFromTable($db, 'pm_article_file', 'article', $gallery_id); ?> 
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                     <?php
                 } ?>

@@ -519,9 +519,10 @@ function db_selectWhere($db,$table,$where='',$order=''){
     return $result;
 }
 
-function getImagesFromTable($db,$table,$entity){
+function getImagesFromTable($db,$table,$entity,$id_item=false){
 
     $query = "SELECT * FROM {$table} WHERE lang = " . LANG_ID . " AND type = 'image'"; 
+    if($id_item) $query .= " AND id_item = " . $id_item; 
     $images = $db->query($query);
 
     foreach ($images->fetchAll(PDO::FETCH_ASSOC) as $image) {
