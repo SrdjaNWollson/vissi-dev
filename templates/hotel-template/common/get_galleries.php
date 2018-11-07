@@ -16,6 +16,9 @@ if(isset($_POST['ajax']) && $_POST['ajax'] == 1){
         $page_alias = $_POST['page_alias'];
     }
 }
+
+$active_class = "";
+
 if(isset($db) && $db !== false){
     
     if(isset($page_id) && isset($pages[$page_id]['alias'])) $page_alias = $pages[$page_id]['alias'];
@@ -24,6 +27,7 @@ if(isset($db) && $db !== false){
     $article_id = 0;
     $result_article_file = $db->prepare("SELECT * FROM pm_article_file WHERE id_item = :article_id AND checked = 1 AND lang = ".DEFAULT_LANG." AND type = 'image' AND file != '' ORDER BY rank LIMIT 1");
     $result_article_file->bindParam(":article_id", $article_id);
+    $counter = 0;
     
     foreach($result_article as $i => $row){
                                 
@@ -36,9 +40,16 @@ if(isset($db) && $db !== false){
         if($article_tags != "") $article_tags = " tag".str_replace(","," tag",$article_tags);
         
         $article_alias = DOCBASE.$page_alias."/".text_format($article_alias);
+
+        if( ( !isset($_GET['id']) && $counter == 0 ) || ( isset($_GET['id']) && $article_id == $_GET['id'] )){
+            $active_class = "active";
+        }
+        else{
+            $active_class = "";
+        }
         
         $html .= "
-        <li class=\"isotopeItem".$article_tags."\">
+        <li class='". $active_class."'>
             <a itemprop=\"url\" href=\"".$article_alias. "?id=" . $article_id . "\">";
             $html .= "
 
@@ -47,6 +58,7 @@ if(isset($db) && $db !== false){
 
             </a>
         </li>";
+        $counter ++; 
     }
     if(isset($_POST['ajax']) && $_POST['ajax'] == 1)
         echo json_encode(array("html" => $html));
