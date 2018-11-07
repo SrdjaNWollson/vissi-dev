@@ -519,6 +519,24 @@ function db_selectWhere($db,$table,$where='',$order=''){
     return $result;
 }
 
+function getImagesFromTable($db,$table,$entity){
+
+    $query = "SELECT * FROM {$table} WHERE lang = " . LANG_ID . " AND type = 'image'"; 
+    $images = $db->query($query);
+
+    foreach ($images->fetchAll(PDO::FETCH_ASSOC) as $image) {
+        $filename = $image['file'];
+        $file_id = $image['id'];
+
+        $realpath = SYSBASE.'medias/'.$entity.'/medium/'.$file_id.'/'.$filename;
+        $thumbpath = DOCBASE.'medias/'.$entity.'/medium/'.$file_id.'/'.$filename;
+        $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
+
+        echo '<div class="img-slide"><img src="'.$zoompath.'" alt=""></div>';
+    }
+}
+
+
 function db_getRequestSelect($db, $table, $cols, $q, $condition_sup = '', $order = '', $limit = '', $offset = '')
 {
     $result = $db->query('SELECT * FROM '.$table.' LIMIT 1');
@@ -835,6 +853,7 @@ function format_string($str, $accents = true, $alpha = false)
     $str = preg_replace('/\s\s+/', ' ', $str);
     return $str;
 }
+
 /***********************************************************************
  * format_string() formats a string for a research
  *
@@ -1619,3 +1638,5 @@ function getAltText($singular, $plural, $value, $mode = 'lc')
     $string = ($value > 1) ? $plural : $singular;
     return mb_convert_case($string, $mode, 'UTF-8');
 }
+
+

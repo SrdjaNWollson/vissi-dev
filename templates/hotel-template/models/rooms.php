@@ -19,12 +19,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                 <div class="container">
                     <div class="imgSlider">
                         <div class="imgSlider__wrapper">
-                            <div class="img-slide"> 
-                                <img src="templates/hotel-template/images/rooms-and-suites/roomsandsuites-teaser.jpg" alt="">
-                            </div>
-                            <div class="img-slide"> 
-                                <img src="templates/hotel-template/images/rooms-and-suites/roomandsuites2.jpg" alt="">
-                            </div>
+                            <?php getImagesFromTable($db,'pm_room_file','room'); ?>
                         </div>
                         <span class="icon-left-arrow slider-nav"></span>
                         <span class="icon-right-arrow slider-nav"></span>
