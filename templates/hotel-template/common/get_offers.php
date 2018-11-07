@@ -48,9 +48,17 @@ if(isset($db) && $db !== false){
         $offer_alias = $row['alias'];
         
         $offer_alias = DOCBASE.$page_alias.'/'.text_format($offer_alias);
+
+        if($current % 2 == 0){
+            $offer_pos = "left-side";
+        }
+        else{
+            $offer_pos = "right-side";
+        }
+
         
         $html .= '
-        <article>
+        <article class="'.$offer_pos.'">
             <div class="isotopeInner">
                 <a itemprop="url" href="'.$offer_alias.'">';
                     
@@ -107,6 +115,7 @@ if(isset($db) && $db !== false){
                 </a>
             </div>
         </article>';
+        $current++;
     }
     if(isset($_POST['ajax']) && $_POST['ajax'] == 1)
         echo json_encode(array('html' => $html));
