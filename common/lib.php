@@ -537,6 +537,11 @@ function getImagesFromTable($db,$table,$entity,$id_item=false){
     }
 }
 
+function getPageIntro($db,$table,$page_id){
+    $query = "SELECT * FROM {$table} WHERE lang = " . LANG_ID . " AND id = " . $page_id . " LIMIT 1";
+    $intro = $db->query($query);
+}
+
 
 function db_getRequestSelect($db, $table, $cols, $q, $condition_sup = '', $order = '', $limit = '', $offset = '')
 {
