@@ -91,11 +91,35 @@
 			}
 		}
 	}
-	.slider-nav {
+	.slick-arrow {
+		@extend .slider-nav;
+		border: none;
+		font-size: 0;
+		z-index: 5;
 		@include absolute(center-vertical);
+		&:before {
+			@include absolute(center);
+			display: block;
+		}
+	}
+	.slick-next {
+		right: 0;
+	}
+	.slick-prev {
+		left: 0;
+	}
+	.slick-next:before {
+		font-family: 'icomoon';
+		content: "\e907";
+
+	}
+	.slick-prev:before {
+		font-family: 'icomoon';
+		content: "\e906";
 	}
 	.slick-dots {
 		width: 100%;
+		left: 0;
 		text-align: center;
 		bottom: 4.5rem;
 		@include breakpoint(tablet) {
@@ -115,6 +139,8 @@
 		opacity: 0.7;
 	}
 }
+
+
 
 //-- Teaser LIST
 
@@ -203,7 +229,7 @@
 				font-size: 2.4rem;
 			}
 			@include breakpoint(mobile) {
-				margin: 5.8rem 0;
+				margin: 5rem 0;
 				font-size: 2.5rem;
 				line-height: 1.7;
 			}
@@ -373,6 +399,9 @@
 		.container {
 			width: 100%;
 			padding-left: 5.7rem;
+			@include breakpoint(mobile) {
+				padding-left: 3.5rem;
+			}
 		}
 	}
 	h3,p {
@@ -395,6 +424,25 @@
 	li {
 		display: inline-block;
 		margin-right: 1.4rem;
+		&.active {
+			a {
+				color: $c-gold;
+			}
+			@include breakpoint(mobile) {
+				position: relative;
+			}
+			&:after {
+				@include breakpoint(mobile) {
+					display: block;
+					position: absolute;
+					content: "";
+					left: 0;
+					height: 2px;
+					width: 100%;
+					background-color: $c-gold;
+				}
+			}
+		}
 		@include breakpoint(mobile) {
 			margin-right: 3.2rem;
 		}

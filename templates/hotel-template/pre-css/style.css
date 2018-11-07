@@ -784,6 +784,9 @@ h1 {
   padding-right: 0; }
 
 /****************** HEADERS ******************/
+.navbar-fixed-top {
+  position: fixed; }
+
 header, header * {
   transition: all 0.3s; }
 
@@ -827,7 +830,6 @@ ul.navbar-nav > li.primary > a.firstLevel {
     padding-right: 8px; } }
 
 header.header-type-1 {
-  position: relative;
   height: 100px; }
 
 header.header-type-1.fixed {
@@ -1201,6 +1203,12 @@ ul.navbar-nav > li.primary .dropdown {
 .breadcrumb {
   background: transparent; }
 
+.header--holder {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100px; }
+
 .sec-title,
 .sec-subtitle {
   text-align: center; }
@@ -1563,8 +1571,9 @@ li.prices,
 .content-slider-wrapper,
 .teaser {
   position: relative; }
-  .content-slider-wrapper .slider-nav,
-  .teaser .slider-nav {
+  .content-slider-wrapper .slider-nav, .content-slider-wrapper .teaser .slick-arrow, .teaser .content-slider-wrapper .slick-arrow,
+  .teaser .slider-nav,
+  .teaser .slick-arrow {
     display: none;
     position: absolute;
     top: 50%;
@@ -1573,11 +1582,13 @@ li.prices,
     background-color: #f4f3f0;
     cursor: pointer; }
     @media (max-width: 767px) {
-      .content-slider-wrapper .slider-nav,
-      .teaser .slider-nav {
+      .content-slider-wrapper .slider-nav, .content-slider-wrapper .teaser .slick-arrow, .teaser .content-slider-wrapper .slick-arrow,
+      .teaser .slider-nav,
+      .teaser .slick-arrow {
         display: block; } }
-    .content-slider-wrapper .slider-nav:before,
-    .teaser .slider-nav:before {
+    .content-slider-wrapper .slider-nav:before, .content-slider-wrapper .teaser .slick-arrow:before, .teaser .content-slider-wrapper .slick-arrow:before,
+    .teaser .slider-nav:before,
+    .teaser .slick-arrow:before {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -2686,7 +2697,10 @@ ul[class^="items-"] li span {
         margin-bottom: 0;
         font-size: 2.5rem;
         text-align: left; } }
-  .teaser .slider-nav {
+  .teaser .slick-arrow {
+    border: none;
+    font-size: 0;
+    z-index: 5;
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -2694,8 +2708,29 @@ ul[class^="items-"] li span {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
+    .teaser .slick-arrow:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      display: block; }
+  .teaser .slick-next {
+    right: 0; }
+  .teaser .slick-prev {
+    left: 0; }
+  .teaser .slick-next:before {
+    font-family: 'icomoon';
+    content: "\e907"; }
+  .teaser .slick-prev:before {
+    font-family: 'icomoon';
+    content: "\e906"; }
   .teaser .slick-dots {
     width: 100%;
+    left: 0;
     text-align: center;
     bottom: 4.5rem; }
     @media (max-width: 990px) {
@@ -2791,7 +2826,7 @@ ul[class^="items-"] li span {
           font-size: 2.4rem; } }
       @media (max-width: 767px) {
         .teaser-list .listBox p {
-          margin: 5.8rem 0;
+          margin: 5rem 0;
           font-size: 2.5rem;
           line-height: 1.7; } }
       .teaser-list .listBox p:empty {
@@ -2949,6 +2984,9 @@ ul[class^="items-"] li span {
     .right-side .content-slider__right .container {
       width: 100%;
       padding-left: 5.7rem; }
+      @media (max-width: 767px) {
+        .right-side .content-slider__right .container {
+          padding-left: 3.5rem; } }
   .right-side h3, .right-side p {
     color: #79675a; }
 
@@ -2961,6 +2999,20 @@ ul[class^="items-"] li span {
   .gallery-categories li {
     display: inline-block;
     margin-right: 1.4rem; }
+    .gallery-categories li.active a {
+      color: #c5ae60; }
+    @media (max-width: 767px) {
+      .gallery-categories li.active {
+        position: relative; } }
+    @media (max-width: 767px) {
+      .gallery-categories li.active:after {
+        display: block;
+        position: absolute;
+        content: "";
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #c5ae60; } }
     @media (max-width: 767px) {
       .gallery-categories li {
         margin-right: 3.2rem; } }

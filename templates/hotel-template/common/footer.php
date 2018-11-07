@@ -178,9 +178,7 @@ $counter = 0;
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
-            dots: true,
-            prevArrow: $('.teaser .icon-left-arrow'),
-            nextArrow: $('.teaser .icon-right-arrow')
+            dots: true
         });
 
         //-- Special offers

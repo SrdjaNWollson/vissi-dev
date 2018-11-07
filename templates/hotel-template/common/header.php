@@ -429,3 +429,5 @@ if($appearance['header_sticky'] == 1){
         </div>
     </div>
 </header>
+<div class="header--holder"></div>
+

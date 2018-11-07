@@ -15,12 +15,10 @@ require(getFromTemplate("common/header.php", false)); ?>
                             getImagesFromTable($db,'pm_activity_file','activity');
                              ?>
                         </div>
-                        <span class="icon-left-arrow slider-nav"></span>
-                        <span class="icon-right-arrow slider-nav"></span>
                     </div>
                     <div class="teaser__content">
-                        <h3>Our rooms</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+                        <h3>Perfect place for ...</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet perferendis nobis commodi enim neque, hic magnam rem optio modi accusantium tenetur totam asperiores aperiam voluptates ullam. Quia inventore, magnam accusamus.</p>
                     </div>
                 </div>
             </section>

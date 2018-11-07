@@ -21,8 +21,6 @@ require(getFromTemplate("common/header.php", false)); ?>
                         <div class="imgSlider__wrapper">
                             <?php getImagesFromTable($db,'pm_room_file','room'); ?>
                         </div>
-                        <span class="icon-left-arrow slider-nav"></span>
-                        <span class="icon-right-arrow slider-nav"></span>
                     </div>
                     <div class="teaser__content">
                         <h3>Our rooms</h3>
