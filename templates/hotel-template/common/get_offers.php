@@ -36,6 +36,8 @@ if(isset($db) && $db !== false){
     $result_rate->bindParam(':id_offer', $offer_id);
 
     $offer_pos = "left-side";
+    $content_pos = "slider__left";
+    $image_pos = "slider__right";
 
     $current = 0;
 
@@ -50,16 +52,51 @@ if(isset($db) && $db !== false){
         $offer_alias = DOCBASE.$page_alias.'/'.text_format($offer_alias);
 
             
-        if($current % 2 == 0)
+        if($current % 2 == 0){
             $offer_pos = "left-side";
-        else
+            $content_pos = "slider__left";
+            $image_pos = "slider__right";
+        }
+        else{
             $offer_pos = "right-side";
+            $content_pos = "slider__right";
+            $image_pos = "slider__left";
+        }
 
         $html .= '
         <article class="content-slider '.$offer_pos.'">';
 
             if($result_offer_file->execute() !== false && $db->last_row_count() > 0){
-                $html .= "<div class='imgSlider content-slider__left'><div class='imgSlider__wrapper'>";
+                $html .= '
+                <div class="content-'.$content_pos.'">
+                    <div class="container">
+                        <h3 itemprop="name">'.$offer_title.'</h3>
+                        <h4>'.$offer_subtitle.'</h4>';
+                        $min_price = $offer_price;
+                        if($result_rate->execute() !== false && $db->last_row_count() > 0){
+                            $row = $result_rate->fetch();
+                            $price = $row['price'];
+                            if($price > 0) $min_price = $price;
+                        }
+                        $html .= '
+                        <div class="row">
+                         
+                            <div class="price">
+                                '.$texts['FROM_PRICE'].'
+                                <span itemprop="priceRange">
+                                    '.formatPrice($min_price*CURRENCY_RATE).'
+                                </span>
+                            </div>
+                            <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
+                      
+                            <div class="col-xs-6">
+                                <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+
+                $html .= "<div class='imgSlider content-".$image_pos."'><div class='imgSlider__wrapper'>";
                     foreach($result_offer_file->fetchAll(PDO::FETCH_ASSOC) as $row){
                         //var_dump('test');
                         $file_id = $row['id']; 
@@ -79,33 +116,9 @@ if(isset($db) && $db !== false){
                     }
                 $html .= "</div></div>";
             }
-            $html .= '
-            <div class="content-slider__right">
-                <h3 itemprop="name">'.$offer_title.'</h3>
-                <h4>'.$offer_subtitle.'</h4>';
-                $min_price = $offer_price;
-                if($result_rate->execute() !== false && $db->last_row_count() > 0){
-                    $row = $result_rate->fetch();
-                    $price = $row['price'];
-                    if($price > 0) $min_price = $price;
-                }
-                $html .= '
-                <div class="row">
-                 
-                    <div class="price">
-                        '.$texts['FROM_PRICE'].'
-                        <span itemprop="priceRange">
-                            '.formatPrice($min_price*CURRENCY_RATE).'
-                        </span>
-                    </div>
-                    <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
-              
-                    <div class="col-xs-6">
-                        <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
-                    </div>
-                </div>
-            </div>
-        </article>';
+            $html .= '</article>';
+
+
 
         $current ++;
 
