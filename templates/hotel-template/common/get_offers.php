@@ -48,6 +48,11 @@ if(isset($db) && $db !== false){
         $offer_subtitle = $row['subtitle'];
         $offer_price = $row['price'];
         $offer_alias = $row['alias'];
+        $content = strWordCut(checkIsset($row['descr']), 180); 
+        $max_people = checkIsset($row['max_people']);
+        $min_people = checkIsset($row['min_people']);
+        $max_children = checkIsset($row['max_children']);
+        $night_stay = checkIsset($row['min_nights']);
         
         $offer_alias = DOCBASE.$page_alias.'/'.text_format($offer_alias);
 
@@ -71,8 +76,7 @@ if(isset($db) && $db !== false){
                 <div class="content-'.$content_pos.'">
                     <div class="container">
                         <div class="content-holder">
-                            <h3 itemprop="name">'.$offer_title.'</h3>
-                            <h4>'.$offer_subtitle.'</h4>';
+                            <h3 itemprop="name">'.$offer_title.'</h3>';
                             $min_price = $offer_price;
                             if($result_rate->execute() !== false && $db->last_row_count() > 0){
                                 $row = $result_rate->fetch();
@@ -81,15 +85,15 @@ if(isset($db) && $db !== false){
                             }
                             $html .= '
                             <div class="row">
-                             
+                                '.$night_stay.'
+                                '.$min_people.'
                                 <div class="price">
                                     '.$texts['FROM_PRICE'].'
                                     <span itemprop="priceRange">
                                         '.formatPrice($min_price*CURRENCY_RATE).'
                                     </span>
                                 </div>
-                                <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
-                          
+                                <div>'.$content.'</div>
                                 <div class="col-xs-6">
                                     <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
                                 </div>
