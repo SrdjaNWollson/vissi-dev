@@ -182,6 +182,14 @@ $counter = 0;
             prevArrow: $('.teaser .icon-left-arrow'),
             nextArrow: $('.teaser .icon-right-arrow')
         });
+
+        //-- Special offers
+        $('article .imgSlider__wrapper').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true
+        });
     </script>
 
 </body>

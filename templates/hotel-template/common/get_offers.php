@@ -70,27 +70,29 @@ if(isset($db) && $db !== false){
                 $html .= '
                 <div class="content-'.$content_pos.'">
                     <div class="container">
-                        <h3 itemprop="name">'.$offer_title.'</h3>
-                        <h4>'.$offer_subtitle.'</h4>';
-                        $min_price = $offer_price;
-                        if($result_rate->execute() !== false && $db->last_row_count() > 0){
-                            $row = $result_rate->fetch();
-                            $price = $row['price'];
-                            if($price > 0) $min_price = $price;
-                        }
-                        $html .= '
-                        <div class="row">
-                         
-                            <div class="price">
-                                '.$texts['FROM_PRICE'].'
-                                <span itemprop="priceRange">
-                                    '.formatPrice($min_price*CURRENCY_RATE).'
-                                </span>
-                            </div>
-                            <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
-                      
-                            <div class="col-xs-6">
-                                <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
+                        <div class="content-holder">
+                            <h3 itemprop="name">'.$offer_title.'</h3>
+                            <h4>'.$offer_subtitle.'</h4>';
+                            $min_price = $offer_price;
+                            if($result_rate->execute() !== false && $db->last_row_count() > 0){
+                                $row = $result_rate->fetch();
+                                $price = $row['price'];
+                                if($price > 0) $min_price = $price;
+                            }
+                            $html .= '
+                            <div class="row">
+                             
+                                <div class="price">
+                                    '.$texts['FROM_PRICE'].'
+                                    <span itemprop="priceRange">
+                                        '.formatPrice($min_price*CURRENCY_RATE).'
+                                    </span>
+                                </div>
+                                <div class="text-muted">'.$texts['PRICE'].' / '.$texts['NIGHT'].'</div>
+                          
+                                <div class="col-xs-6">
+                                    <a href="'.$offer_alias.'" class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
+                                </div>
                             </div>
                         </div>
                     </div>

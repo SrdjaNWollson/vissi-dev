@@ -245,3 +245,55 @@
 	}
 }
 
+//-- SPECIAL OFFERS
+
+.left-side,
+.right-side {
+	@extend %clearfix;
+	.slick-arrow {
+		position: absolute;
+		z-index: 5;
+		display: none!important;
+	}
+	.content-slider__left,
+	.content-slider__right {
+		float: right;
+	}
+}
+
+.left-side {
+	position: relative;
+	background-color: $c-main;
+	
+	.content-slider__right {
+		width: 62%;
+	}
+	.content-slider__left {
+		position: absolute;
+		width: 100%;
+		padding: 0;
+		.container {
+			
+		}
+	}
+}
+
+.right-side {
+	background-color: $c-offersBg;
+	.content-slider__left {
+		width: 62%;
+		padding: 0;
+	}
+	.content-slider__right {
+		width: 38%;
+	}
+}
+
+
+
+.img-container {
+	img {
+		width: 100%;
+	}
+}
+
