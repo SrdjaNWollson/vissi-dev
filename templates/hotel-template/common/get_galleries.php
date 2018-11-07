@@ -38,19 +38,15 @@ if(isset($db) && $db !== false){
         $article_alias = DOCBASE.$page_alias."/".text_format($article_alias);
         
         $html .= "
-        <article class=\"col-sm-12 isotopeItem".$article_tags."\" itemscope itemtype=\"http://schema.org/Article\">
-            <div class=\"isotopeInner\">
-                <a itemprop=\"url\" href=\"".$article_alias. "?id=" . $article_id . "\">";
-                    $html .= "
-                    <div class=\"isotopeContent\">
-                        <div class=\"gallery-cat\">
-                            <h3 itemprop=\"name\">".$article_title."</h3>";
-                            $html .= "
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </article>";
+        <li class=\"isotopeItem".$article_tags."\">
+            <a itemprop=\"url\" href=\"".$article_alias. "?id=" . $article_id . "\">";
+            $html .= "
+
+                <span itemprop=\"name\">".$article_title."</span>";
+                $html .= "
+
+            </a>
+        </li>";
     }
     if(isset($_POST['ajax']) && $_POST['ajax'] == 1)
         echo json_encode(array("html" => $html));

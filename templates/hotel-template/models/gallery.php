@@ -36,44 +36,46 @@ require(getFromTemplate('common/send_comment.php', false));
 
 require(getFromTemplate('common/header.php', false)); ?>
 
-<section id="page">
+<main id="page">
 
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
 
-    <div id="content" class="pt30 pb20">
+    <div id="content">
 
-        <div class="container" itemprop="text">
 
-            <div class="alert alert-success" style="display:none;"></div>
-            <div class="alert alert-danger" style="display:none;"></div>
-            
+        <div class="alert alert-success" style="display:none;"></div>
+        <div class="alert alert-danger" style="display:none;"></div>
+        
 
-                <?php
-                $result = $db->query('SELECT count(*) FROM pm_article WHERE id_page = '.$page_id.' AND checked = 1 AND (publish_date IS NULL || publish_date <= '.time().') AND (unpublish_date IS NULL || unpublish_date > '.time().') AND lang = '.LANG_ID);
-                if($result !== false){
-                    $num_records = $result->fetchColumn(0);
-                }
-                if($num_records > 0){?>
-                    <div class="gallery-categories">
-                        <div class="isotopeWrapper clearfix isotope lazy-wrapper" data-loader="<?php echo getFromTemplate('common/get_galleries.php'); ?>" data-mode="click" data-more_caption="<?php echo $texts['LOAD_MORE']; ?>" data-is_isotope="true" data-variables="page_id=<?php echo $page_id; ?>&page_alias=<?php echo $page['alias']; ?>">
-                            <?php include(getFromTemplate('common/get_galleries.php', false)); ?>
-                        </div>
-                    </div>
-                    <div class="gallery-slider">
-                        <section class="teaser">
-                            <div class="container">
-                                <div class="imgSlider">
-                                    <div class="imgSlider__wrapper">
-                                        <?php getImagesFromTable($db, 'pm_article_file', 'article', $gallery_id); ?> 
-                                    </div>
+            <?php
+            $result = $db->query('SELECT count(*) FROM pm_article WHERE id_page = '.$page_id.' AND checked = 1 AND (publish_date IS NULL || publish_date <= '.time().') AND (unpublish_date IS NULL || unpublish_date > '.time().') AND lang = '.LANG_ID);
+            if($result !== false){
+                $num_records = $result->fetchColumn(0);
+            }
+            if($num_records > 0){?>
+                <!--gallery categories-->
+                <nav class="gallery-categories">
+                    <ul class="" data-loader="<?php echo getFromTemplate('common/get_galleries.php'); ?>" data-mode="click" data-more_caption="<?php echo $texts['LOAD_MORE']; ?>" data-is_isotope="true" data-variables="page_id=<?php echo $page_id; ?>&page_alias=<?php echo $page['alias']; ?>">
+                        <?php include(getFromTemplate('common/get_galleries.php', false)); ?>
+                    </ul>
+                </nav>
+                <!--gallery slider-->
+                <div class="gallery-slider">
+                    <section class="teaser">
+                        <div class="container">
+                            <div class="imgSlider">
+                                <div class="imgSlider__wrapper">
+                                    <?php getImagesFromTable($db, 'pm_article_file', 'article', $gallery_id); ?> 
                                 </div>
+                                <span class="icon-left-arrow slider-nav"></span>
+                                <span class="icon-right-arrow slider-nav"></span>
                             </div>
-                        </section>
-                    </div>
-                    <?php
-                } ?>
-            </div>
-            
+                        </div>
+                    </section>
+                </div>
+                <?php
+            } ?>
         </div>
+            
     </div>
-</section>
+</main>

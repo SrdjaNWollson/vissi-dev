@@ -97,6 +97,7 @@
 	.slick-dots {
 		width: 100%;
 		text-align: center;
+		bottom: 4.5rem;
 		@include breakpoint(tablet) {
 			position: absolute;
 			bottom: -64px;
@@ -106,7 +107,12 @@
 		}
 	}
 	.slick-dots li.slick-active button:before {
-		color: $c-main;
+	    opacity: 1;
+	    color: $c-white;
+	}
+	.slick-dots li button:before {
+		color: $c-white;
+		opacity: 0.7;
 	}
 }
 
@@ -269,7 +275,7 @@
 	}
 	.imgSlider {
 		width: 62%;
-		max-width: 1100px;
+		max-width: 1050px;
 		@include breakpoint(tablet) {
 			width: 100%;
 			float: none;
@@ -346,8 +352,11 @@
 
 .right-side {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	background-color: $c-offersBg;
+	@include breakpoint(tablet) {
+		flex-direction: column;
+	}
 	.content-slider__left {
 		float: left;
 		padding: 0;
@@ -371,11 +380,44 @@
 	}
 }
 
-
-
 .img-container {
 	img {
 		width: 100%;
+	}
+}
+
+//-- GALLERY SLIDER
+
+
+.gallery-categories {
+	margin-bottom: 5.7rem;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin-right: 1.4rem;
+		@include breakpoint(mobile) {
+			margin-right: 3.2rem;
+		}
+		a {
+			font-size: 14px;
+			font-weight: 700;
+			color: $c-main;
+			@include breakpoint(mobile) {
+				font-size: 2.2rem;
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.gallery-slider {
+	.imgSlider {
+		width: 100%;
+	}
+	.teaser {
+		background-size: 50%;
+		background-position: -35% 11rem;
 	}
 }
 
