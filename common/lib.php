@@ -283,9 +283,11 @@ function img_resize($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
 {
     $return = false;
     if(substr($dest_dir, 0,-1) != '/') $dest_dir .= '/';
-    
+    if(!is_dir($dest_dir)){
+        mkdir($dest_dir); 
+    }
     if(is_file($source_file) && is_dir($dest_dir)){
-        
+        var_dump('test');
         $pos = strrpos($source_file, '/');
         if($pos !== false)
             $filename = substr($source_file, $pos+1);
@@ -388,6 +390,120 @@ function img_resize($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
     }
     return $return;
 }
+
+function img_crop($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
+{
+    $return = false;
+    if(substr($dest_dir, 0,-1) != '/') $dest_dir .= '/';
+    //var_dump($dest_dir);
+    if(!is_dir($dest_dir)){
+        mkdir($dest_dir); 
+    }
+    if(is_file($source_file) && is_dir($dest_dir)){
+        var_dump('test');
+        $pos = strrpos($source_file, '/');    
+        if($pos !== false)
+            $filename = substr($source_file, $pos+1);
+        else
+            $filename = $source_file;
+    
+        $im_size = getimagesize($source_file);
+        $w = $im_size[0];
+        $h = $im_size[1];
+        $im_type = $im_size[2];
+        
+        if($h<$max_h){
+            if($w<$max_w){
+                $new_w=$w;
+                $new_h=$h;
+            }else{
+                $new_w=$max_w;
+                $new_h=$max_h;
+            }
+        }else{
+            $new_w=$max_w;
+            $new_h=$max_h;
+            
+            if($new_h > $max_h){
+                $new_h=$max_h;
+                $new_w=$max_w;
+            }
+        }
+        
+        if(!is_null($stamp_file) && is_file($stamp_file)){
+            
+            $margin_right = 10;
+            $margin_bottom = 10;
+            
+            $stamp_size = getimagesize($stamp_file);
+            $sw = $stamp_size[0];
+            $sh = $stamp_size[1];
+            $s_type = $stamp_size[2];
+            
+            $new_sw = round($sw*$new_w/MAX_W_BIG);
+            $new_sh = $new_sw*$sh/$sw;
+                
+            switch($s_type){
+                case IMAGETYPE_JPEG : $tmp_stamp = imagecreatefromjpeg($stamp_file); break;
+                case IMAGETYPE_PNG : $tmp_stamp = imagecreatefrompng($stamp_file); break;
+                case IMAGETYPE_GIF : $tmp_stamp = imagecreatefromgif($stamp_file); break;
+            }
+            
+            $new_stamp = imagecreatetruecolor($new_sw, $new_sh);
+            
+            if($s_type == IMAGETYPE_PNG){
+                imagesavealpha($new_stamp, true);
+                $trans_colour = imagecolorallocatealpha($new_stamp, 0, 0, 0, 127);
+                imagefill($new_stamp, 0, 0, $trans_colour);
+                
+                $im = imagecreatetruecolor($new_sw, $new_sh);
+                $bg = imagecolorallocate($im, 0, 0, 0);
+                imagecolortransparent($new_stamp, $bg);
+                imagedestroy($im);
+            }
+            
+            imagecopyresampled($new_stamp, $tmp_stamp, 0, 0, 0, 0, $new_sw, $new_sh, $sw, $sh);
+        }
+
+        switch($im_type){
+            case IMAGETYPE_JPEG : $tmp_image = imagecreatefromjpeg($source_file); break;
+            case IMAGETYPE_PNG : $tmp_image = imagecreatefrompng($source_file); break;
+            case IMAGETYPE_GIF : $tmp_image = imagecreatefromgif($source_file); break;
+        }
+        
+        $new_image = imagecreatetruecolor($new_w, $new_h);
+        
+        if($im_type == IMAGETYPE_PNG){
+            imagesavealpha($new_image, true);
+            $trans_colour = imagecolorallocatealpha($new_image, 0, 0, 0, 127);
+            imagefill($new_image, 0, 0, $trans_colour);
+            
+            $im = imagecreatetruecolor($new_w, $new_h);
+            $bg = imagecolorallocate($im, 0, 0, 0);
+            imagecolortransparent($new_image, $bg);
+            imagedestroy($im);
+        }
+        
+        if(imagecopyresampled($new_image, $tmp_image, 0, 0, 0, 0, $new_w, $new_h, $w, $h)){
+            if(isset($tmp_stamp)) imagecopy($new_image, $new_stamp, $new_w-$new_sw-$margin_right, $new_h-$new_sh-$margin_bottom, 0, 0, $new_sw, $new_sh);
+            
+            switch($im_type){
+                case IMAGETYPE_JPEG : imagejpeg($new_image, $dest_dir.$filename, 80); break;
+                case IMAGETYPE_PNG : imagepng($new_image, $dest_dir.$filename, 8); break;
+                case IMAGETYPE_GIF : imagegif($new_image, $dest_dir.$filename); break;
+            }
+            
+            if(chmod($dest_dir.$filename, 0664)) $return = $dest_dir.$filename;
+        }
+        
+        if(isset($new_image)) imagedestroy($new_image);
+        if(isset($tmp_image)) imagedestroy($tmp_image);
+        if(isset($new_stamp)) imagedestroy($new_stamp);
+        if(isset($tmp_stamp)) imagedestroy($tmp_stamp);
+    }
+    return $return;
+}
+
 /***********************************************************************
  * getFileMimeType() returns the mime type of a file
  *
