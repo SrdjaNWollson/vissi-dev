@@ -52,13 +52,17 @@ if($result_slide !== false){
                         $realpath = SYSBASE.'medias/slide/big/'.$file_id.'/'.$filename;
                         $thumbpath = DOCBASE.'medias/slide/small/'.$file_id.'/'.$filename;
                         $zoompath = DOCBASE.'medias/slide/big/'.$file_id.'/'.$filename;
-                            
-                        if(is_file($realpath)){ ?>
+
+                        img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 780);
+
+                        
+                        $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+                        //var_dump($custompath);
+                        if(is_file($realpath)){ ?> 
                         
                             <div class="rsContent">
                                 <picture>
-                                  <source media="(min-width: 650px)" srcset="<?= $zoompath; ?>">
-                                  <source media="(min-width: 465px)" srcset="<?= $zoompath; ?>">
+                                  <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
                                   <img src="<?= $zoompath; ?>" alt="Flowers" alt=""<?php if($url_video != '') echo ' data-rsVideo="'.$url_video.'"'; ?>>
                                 </picture>
                                 <?php

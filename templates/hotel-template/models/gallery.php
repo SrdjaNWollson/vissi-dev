@@ -13,7 +13,7 @@ if($article_id > 0){
     $edit_date = $article['edit_date'];
 }
 
-$gallery_id = false;
+$gallery_id = 4;
 if(isset($_GET['id'])){
     $gallery_id = $_GET['id'];
 }
