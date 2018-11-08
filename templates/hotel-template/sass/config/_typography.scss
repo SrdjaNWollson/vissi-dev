@@ -55,7 +55,6 @@
 }
 .icon-pen:before {
   content: "\e900";
-  color: #c5c4be;
 }
 .icon-calendar:before {
   content: "\e901";
@@ -85,7 +84,7 @@
 //------FONT-SIZE
 
 body {
-    font-size: 100%;
+    font-size: 0!important; 
     color: black;
 }
 
@@ -113,9 +112,6 @@ html {
 
 
 //------GLOBAL FONT SETTINGS
-body {
-    font-size: 100%;
-}
 
 //------DEFAULT STYLES
 b,

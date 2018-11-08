@@ -36,6 +36,7 @@
 	}
 	.holder-btn-book {
 		display: inline-block;
+        z-index: 5;
 		@include absolute(center-vertical);
         right: 0;
 		vertical-align: super;
@@ -50,6 +51,10 @@
 		padding: 11px 13px 10px;
 		font-size: 11px;
 		font-weight: 600;
+        cursor: pointer;
+        &:hover {
+            background-color: $c-greenDark!important;
+        }
 	}
 }
 
@@ -132,7 +137,7 @@ header.header-type-1{
 header.header-type-1.fixed{
 	position:fixed;
     height: 65px;
-     box-shadow: 0px 1px 16px -6px rgba(0,0,0,0.49);
+    box-shadow: 0px 1px 16px -6px rgba(0,0,0,0.49);
 }
 
 header.header-type-1 #mainHeader{
@@ -299,11 +304,7 @@ body[dir="rtl"] #mainMenu {
         border-bottom: none;
     }
 }
-ul.navbar-nav > li.primary > a.firstLevel.active, ul.navbar-nav > li.primary > a.firstLevel:hover, ul.navbar-nav > li.primary > a.firstLevel:focus {
-    @include breakpoint(mobile) {
-        border-bottom: none;
-    }
-}
+
 
 ul.navbar-nav > li.primary .dropdown-menu {
     max-width: 320px;
@@ -370,13 +371,6 @@ ul.navbar-nav > li.primary .dropdown-menu {
 #mainMenu {
     position: relative;
 }
-@media(max-width:767px) {
-    ul.navbar-nav > li.primary > a.firstLevel.active,
-    ul.navbar-nav > li.primary > a.firstLevel:hover,
-    ul.navbar-nav > li.primary > a.firstLevel:focus {
-        border-bottom: none;
-    }
-}
 
 .navbar-nav ul li a {
     display: block;
@@ -436,6 +430,7 @@ ul.navbar-nav > li.primary > a.firstLevel {
     display: block;
     position: relative;
     color: #765e51;
+    transition: all ease 0.2s;
     @include breakpoint(desktop--small) {
         display: inline-block;
     }
@@ -453,13 +448,22 @@ ul.navbar-nav > li.primary > a.firstLevel {
         }
     }
 }
+
+ul.navbar-nav > li.primary > a.firstLevel:focus,
+ul.navbar-nav > li.primary > a.firstLevel.active {
+    &:after {
+        @include breakpoint(tablet) {
+            opacity: 1;
+        }
+    }
+}
 ul.navbar-nav > li.primary > a.firstLevel.active,
 ul.navbar-nav > li.primary > a.firstLevel:hover,
 ul.navbar-nav > li.primary > a.firstLevel:focus {
     background: none;
-    &:after {
-        opacity: 1;
-        transition: all ease 0.3s;
+    @include breakpoint(exeptGadgets) {
+        color: $c-gold!important;
+        transition: all ease 0.2s;
     }
     @include breakpoint(desktop--small) {
         border-bottom: none;

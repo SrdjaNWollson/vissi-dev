@@ -63,7 +63,7 @@ $counter = 0;
         <div class="footer__subscribe items">
             <h4>The special gift for any case</h4>
             <a class="btn btn-purchase" href="#dummy"><span>Purchase voucher</span><i class="icon-right-arrow"></i></a>
-            <h4>Subscribe to our ewsletter</h4>
+            <h4>Subscribe to our newsletter</h4>
             <form action="">
                 <div class="input-wrapper">
                     <input type="email" nam="sub-email" placeholder="Email address">

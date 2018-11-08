@@ -7,6 +7,10 @@ ul[class^="items-"] {
 		float: left;
 		padding: 1.4rem 0;
 		list-style-type: none;
+		@include breakpoint(tablet) {
+			position: relative;
+			height: 15rem;
+		}
 		img {
 			margin-right: 6.5rem;
 		}
@@ -17,6 +21,9 @@ ul[class^="items-"] {
 		color: #636363;
 		@include breakpoint(tablet) {
 			display: block;
+			@include absolute(center-horizontal);
+			bottom: 0;
+			width: 100%;
 			font-size: 3rem;
 		}
 		@include breakpoint(mobile) {

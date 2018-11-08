@@ -13,19 +13,6 @@ h3, .h3, .widget-title {
 }
 
 
-/***************** BOOTSTRAP *****************/
-
-.input-number {
-    padding: 2px;
-    height: 34px;
-    text-align: center;
-}
-label small {
-    font-weight: 400;
-}
-
-
-
 /******************* FOOTER ******************/
 footer {
     position: relative;
@@ -42,141 +29,8 @@ footer .searchWrapper, footer .dropdown, footer .dropup {
     margin-right: 20px;
     margin-left: 0;
 }
-@media(min-width: 768px){
-    footer .widget.footer-form {
-        width: 66.6667%;
-    }
-}
-/*************** MISCELLANEOUS ***************/
-aside h3 {
-    font-size: 16px;
-}
-aside h4 {
-    font-size: 14px;
-}
-.more-content {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: 15px;
-    text-align: center;
-}
-.more-content h3 {
-    position: relative;
-    top: 36%;
-    z-index: 1;
-    font-weight: 400;
-    font-size: 18px;
-    padding: 10px;
-    display: inline-block;
-    text-transform: none;
-}
-.more-link:hover .more-content h3 {
-    font-size: 20px;
-    top: 18%;
-}
-.more-content .more-descr {
-    position: absolute;
-    bottom: 20px;
-    right: -15px;
-    z-index: 1;
-    line-height: 20px;
-    font-weight: 200;
-    font-size: 18px;
-    padding: 10px;
-    text-transform: none;
-}
-.more-content .more-descr .price span {
-    font-size: 20px;
-}
-.more-link:hover .more-content .more-descr {
-    bottom: 60px;
-    right: 0;
-    width: 100%;
-    background: none;
-    -webkit-transition: all 0.3s ease, background 0s;
-            transition: all 0.3s ease, background 0s;
-}
-.text-overflow {
-    min-height: 108px;
-    max-height: 400px;
-    overflow: hidden;
-    position: relative;
-}
-.more-btn {
-    background: url("../images/more-bg.png") repeat-x 0 bottom;
-    position: absolute;
-    bottom: 0;
-    padding-top: 60px;
-    width: 100%;
-    height: 108px;
-    text-align: center;
-}
-.articleFocus h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.boxed {
-    padding: 20px;
-}
-/************* BOOKING RESULTS ***************/
-#booking-summary .col-md-6 {
-    padding: 30px;
-}
-#booking-summary big,
-#booking-summary p.lead {
-    font-size: 20px;
-}
-.facility-icon {
-    border-radius: 5px;
-    display: inline-block;
-    margin: 2px 2px 2px 0;
-    padding: 5px;
-    width: 31px;
-    height: 31px;
-    text-align: center;
-}
-.facility-icon a {
-    display: block;
-    width: 19px;
-    height: 19px;
-    line-height: 19px;
-    float: left;
-}
-.facility-icon img {
-    width: 19px;
-    height: 19px;
-    display: block;
-    opacity: 0.7;
-}
-@media (min-width: 768px) {
-    .booking-result > .sep {
-        height: 245px;
-    }
-}
-.img-container {
-    border-radius: 0;
-}
-@media (max-width: 991px) {
-    .booking-result .img-container.md {
-        margin-bottom: 10px;
-    }
-}
-.booking-result .btn-danger,
-.booking-result .btn-default {
-    text-transform: none;
-}
 
-@media (min-width: 768px){
-    .activity-result .sep {
-        display: table;
-    }
-    .checkbox-container {
-        display: table-cell;
-        vertical-align: middle;
-    }
-}
+
 .checkbox-container {
     width: 30px;
     height: 30px;
@@ -211,23 +65,7 @@ aside h4 {
 .activity-result .amount {
     font-size: 22px;
 }
-.activity-result .hb-d-start,
-.activity-result .hb-d-end {
-    background: #EA8A8A!important;
-}
-.activity-result .hb-day.hb-d-free {
-    cursor: pointer;
-}
-.activity-result .hb-day.hb-d-free:hover,
-.session-date-caption:hover {
-    background: #4edb87!important;
-    color: #fff;
-}
-.activity-result .hb-day.hb-d-free.active,
-.session-date-caption.active {
-    background: #FF9600!important;
-    color: #fff;
-}
+
 .input-group-sm select.form-control,
 .input-group-sm .input-group-addon {
     padding: 5px 6px;
@@ -260,27 +98,4 @@ aside h4 {
 .activity-result.active .activity-data {
     visibility: visible;
 }
-.price span {
-    font-weight: 600;
-    font-size: 26px;
-}
-.isotopeContent .price span {
-    font-size: 20px;
-}
-#booking-breadcrumb {
-    text-align: center;
-}
-#booking-breadcrumb .breadcrumb-item {
-    padding: 20px;
-}
-#booking-breadcrumb span {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
-#booking-breadcrumb svg {
-    width: 40px;
-    height: 40px;
-}
+

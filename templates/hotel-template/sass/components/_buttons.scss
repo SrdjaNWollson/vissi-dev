@@ -6,6 +6,7 @@
     text-transform: uppercase;
     border-radius: 0;
     line-height: 1;
+    transition: all ease-in-out 0.3s;
 }
 .btn-number {
     padding: 2px;
@@ -32,6 +33,11 @@
     @include breakpoint(mobile) {
         font-size: 1.75rem;
     }
+    &:hover {
+        border: 1px solid $c-greenDark;
+        background-color: $c-greenDark;
+        color: $c-white;
+    }
 }
 
 .btn-gold,
@@ -48,6 +54,10 @@
 
 .btn-gold {
     border: 1px solid $c-gold;
+    &:hover {
+        border: 1px solid $c-blackWhite;
+        color: $c-white;
+    }
 }
 
 .btn-purchase {
@@ -61,7 +71,10 @@
     @include breakpoint(tablet) {
         height: 6rem;
     }
-
+    &:hover {
+        background-color: $c-blackWhite;
+        color: $c-gold;
+    }
     span {
         @include absolute(center-vertical);
         left: 2.8rem;
@@ -86,6 +99,10 @@
     @include breakpoint(tablet) {
         padding: 2.25rem 6.5rem;
     }
+    &:hover {
+        border: 1px solid $c-blackWhite;
+        color: $c-offersBg;
+    }
 }
 
 //--- Explore royal slider button
@@ -93,6 +110,11 @@
 .btn-royalSlider {
     padding: 22px 68px; 
     background-color: $c-white;
+    box-shadow: 0px 5px 16px -6px rgba(0,0,0,0.75);
+    &:hover {
+        background-color: rgba(255,255,255,0.9);
+        box-shadow: none;
+    }
     span {
         font-size: 14px;
         color: $c-gold;

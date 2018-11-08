@@ -5,6 +5,13 @@
 
 //-- Title and subtitle for all sections
 
+h3 {
+	font-family: $butler;
+}
+p {
+	font-size: 14px;
+	line-height: 1.57;
+}
 .sec-title, 
 .sec-subtitle {
 	text-align: center;
@@ -262,9 +269,11 @@ li.prices,
 			@include breakpoint(desktop--small) {
 				max-width: 44rem;
 			}
+			@include breakpoint(tablet) {
+				max-width: 100%;
+			}
 			@include breakpoint(mobile) {
 				width: 100%;
-				max-width: 100%;
 			}
 		}
 	}
@@ -279,6 +288,11 @@ li.prices,
 	.btn-gold {
 		background-color: $c-green;
 		border: 1px solid $c-green;
+		&:hover {
+	        border: 1px solid $c-greenDark;
+	        background-color: $c-greenDark;
+	        color: $c-white;
+	    }
 	}
 	.slick-dots {
 		width: 100%;
@@ -461,12 +475,14 @@ li.prices,
 //-- Content slider Title	
 	h3 {
 		margin: 7rem 0 2.8rem;
-		font-family: $butler;
 		font-size: 28px;
 		color: $c-white; 
 		@include breakpoint(desktop--small) {
 			margin: 4rem 0 2.2rem;
 			font-size: 26px;
+		}
+		@include breakpoint(tablet) {
+			font-size: 5rem;
 		}
 		@include breakpoint(mobile) {
 			margin: 5rem 0;
@@ -478,11 +494,12 @@ li.prices,
 	p {
 		margin-bottom: 3.5rem;
 		font-weight: 300;
-		font-size: 14px;
-		line-height: 1.57;
 		color: $c-white;
 		@include breakpoint(desktop--small) {
 			font-size: 13px;
+		}
+		@include breakpoint(tablet) {
+			font-size: 3rem;
 		}
 		
 		@include breakpoint(mobile) {
@@ -551,6 +568,9 @@ li.prices,
 		font-size: 1.5rem;
 		letter-spacing: 0.3rem;
 	}
+	&:hover {
+        color: $c-blackWhite;
+    }
 	.icon-right-arrow {
 		position: relative;
 		top: 0.08px;

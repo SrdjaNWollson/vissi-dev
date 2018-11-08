@@ -9,7 +9,7 @@ $javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";
 
 require(getFromTemplate("common/header.php", false)); ?>
 
-<main id="page">
+<main id="page" class="pg-rooms-suites">
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
     

@@ -182,9 +182,9 @@
     bottom: 2rem;
     @include breakpoint(mobile--s) {
         position: static;
-        clear: both;
-        
+        clear: both;   
     }
+
     .icon-pen {
         margin-right: 5px;
         vertical-align: middle;
@@ -199,7 +199,17 @@
             display: block;
             padding-top: 4rem;
         }
+        &:hover {   
+            color: $c-black;
+            .icon-pen {
+                color: $c-black;
+            }
+        }
     }
+}
+
+span.filter-option {
+    color: $c-quillGrey;
 }
 
 .booking-search .btn.dropdown-toggle {
@@ -215,8 +225,10 @@
 }
 
 .booking-search .btn-primary:hover {
-    background: #5381BA;
-    border-color: #5381BA;
+    &:hover {
+        background-color: $c-greenDark;
+        color: $c-white;
+    }
 }
 
 
@@ -281,6 +293,7 @@ body.header-type-1 #search-home-wrapper{
     .cancel-reservation {
         right: 0;
         bottom: -4rem;
+        transition: all ease-in-out 0.3s;
     }
 }
 #search-page .container {

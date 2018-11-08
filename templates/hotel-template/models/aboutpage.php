@@ -22,7 +22,7 @@ require(getFromTemplate('common/send_comment.php', false));
 
 require(getFromTemplate('common/header.php', false)); ?>
 
-<main id="page">
+<main id="page" class="pg-about">
 
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
 
@@ -42,79 +42,28 @@ require(getFromTemplate('common/header.php', false)); ?>
             </div>
         </section>
 
-
-        
-            <?php include(getFromTemplate('common/slider.php', false)); ?>
-
-            <div class="alert alert-success" style="display:none;"></div>
-            <div class="alert alert-danger" style="display:none;"></div>
-            
-            <div class="our_story">
-                <?php
-                $widgetsLeft = getWidgets('left', $page_id);
-                $widgetsRight = getWidgets('right', $page_id);
-                
-                if(!empty($widgetsLeft)){ ?>
-                    <div class="col-sm-3">
-                        <?php displayWidgets('left', $page_id); ?>
+        <!--Our story-->
+        <section class="our-story">
+            <div class="container">
+                <article class="our-story__box">
+                    <div class="inner-container">
+                        <h3>Our philosophy</h3>
+                        <p>We do not offer just accommodation and services but also unforgettable  guest experience. We take care about our guest from the moment he reserves his suite until his departure home. Hospitable  and dedicated to guests our staff is really at their full service . Also, we are hotel with high smart technology standard, perfect wi fi and every apartment has got tablet which easily manage all wishes of the guests.</p>
                     </div>
-                    <?php
-                } ?>
-                
-                <div class="ff">
-                    <?php echo $page['text']; ?>
-                </div>
-                
-                <?php
-                if(!empty($widgetsRight)){ ?>
-                    <div class="col-sm-3">
-                        <?php displayWidgets('right', $page_id); ?>
+                </article>
+                <article class="our-story__box">
+                    <div class="inner-container">
+                        <h3>Our values</h3>
+                        <p>We redefined our traditional values - Innovation, Spirit of Conquest, Respect, Trust - and formulated two new values: Guest Passion, which reasserts our passion for hospitality and the strength of our humanist roots, and Sustainable Performance, which reminds us that we are part of a community, driven by a vision that does not take the short-term view, and that our business growth must also benefit the community at large over the long term</p>
                     </div>
-                    <?php
-                } ?>
+                </article>
             </div>
-
-            <div class="row">
-                <?php
-                $lz_offset = 1;
-                $lz_limit = 9;
-                $lz_pages = 0;
-                $num_records = 0;
-                $result = $db->query('SELECT count(*) FROM pm_article WHERE id_page = '.$page_id.' AND checked = 1 AND (publish_date IS NULL || publish_date <= '.time().') AND (unpublish_date IS NULL || unpublish_date > '.time().') AND lang = '.LANG_ID);
-                if($result !== false){
-                    $num_records = $result->fetchColumn(0);
-                    $lz_pages = ceil($num_records/$lz_limit);
-                }
-                if($num_records > 0){
-                    
-                    $result_tag = $db->query('SELECT * FROM pm_tag WHERE pages REGEXP \'(^|,)'.$page_id.'(,|$)\' AND checked = 1 AND lang = '.LANG_ID.' ORDER BY rank');
-                    if($result_tag !== false){
-                        $nb_tags = $db->last_row_count();
-                        
-                        if($nb_tags > 0){ ?>
-                    
-                            <nav id="filter" class="text-center mt20">
-                                <div class="btn-group">
-                                    <a href="" class="btn btn-default" data-filter="*"><?php echo $texts['ALL']; ?></a>
-                                    <?php
-                                    foreach($result_tag as $i => $row){
-                                        $tag_id = $row['id'];
-                                        $tag_value = $row['value']; ?>
-                                        
-                                        <a href="" class="btn btn-default" data-filter=".tag<?php echo $tag_id; ?>"><?php echo $tag_value; ?></a>
-                                        
-                                        <?php
-                                    } ?>
-                                </div>
-                            </nav>
-                            <?php
-                        }
-                    } ?>
-                    
-                    <?php
-                } ?>
-            </div>
-        
+            <div class="bgHolder">
+                <div class="bg-left"></div>
+                <div class="bg-right"></div>
+            </div>    
+        </section>
+                
         <!--teaser-->    
         <section class="teaser">
             <div class="container">
