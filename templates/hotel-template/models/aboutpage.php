@@ -22,38 +22,34 @@ require(getFromTemplate('common/send_comment.php', false));
 
 require(getFromTemplate('common/header.php', false)); ?>
 
-<section id="page">
+<main id="page">
 
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
 
     <div id="content">
-            <!--teaser-->    
-            <section class="teaser">
-                <div class="container">
-                    <div class="imgSlider">
-                        <div class="imgSlider__wrapper">
-                            <?php getImagesFromTable($db,'pm_page_file','page'); ?>
-                        </div>
-                        <span class="icon-left-arrow slider-nav"></span>
-                        <span class="icon-right-arrow slider-nav"></span>
-                    </div>
-                    <div class="teaser__content">
-                        <h3>Our rooms</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+        <!--teaser-->    
+        <section class="teaser">
+            <div class="container">
+                <div class="imgSlider">
+                    <div class="imgSlider__wrapper">
+                        <?php getImagesFromTable($db,'pm_page_file','page'); ?>
                     </div>
                 </div>
-            </section>
+                <div class="teaser__content">
+                    <h3>Our rooms</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+                </div>
+            </div>
+        </section>
 
-    <div id="content" class="pt30 pb20">
 
-        <div class="container" itemprop="text">
         
             <?php include(getFromTemplate('common/slider.php', false)); ?>
 
             <div class="alert alert-success" style="display:none;"></div>
             <div class="alert alert-danger" style="display:none;"></div>
             
-            <div class="row">
+            <div class="our_story">
                 <?php
                 $widgetsLeft = getWidgets('left', $page_id);
                 $widgetsRight = getWidgets('right', $page_id);
@@ -65,7 +61,7 @@ require(getFromTemplate('common/header.php', false)); ?>
                     <?php
                 } ?>
                 
-                <div class="col-sm-<?php if(!empty($widgetsLeft) && !empty($widgetsRight)) echo 6; elseif(!empty($widgetsLeft) || !empty($widgetsRight)) echo 9; else echo 12; ?>">
+                <div class="ff">
                     <?php echo $page['text']; ?>
                 </div>
                 
@@ -119,24 +115,19 @@ require(getFromTemplate('common/header.php', false)); ?>
                 } ?>
             </div>
         
-        </div>
-
-    <div id="content">
-            <!--teaser-->    
-            <section class="teaser">
-                <div class="container">
-                    <div class="imgSlider">
-                        <div class="imgSlider__wrapper">
-                            <?php getImagesFromTable($db,'pm_article_file','article'); ?>
-                        </div>
-                        <span class="icon-left-arrow slider-nav"></span>
-                        <span class="icon-right-arrow slider-nav"></span>
-                    </div>
-                    <div class="teaser__content">
-                        <h3>Our rooms</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+        <!--teaser-->    
+        <section class="teaser">
+            <div class="container">
+                <div class="imgSlider">
+                    <div class="imgSlider__wrapper">
+                        <?php getImagesFromTable($db,'pm_article_file','article'); ?>
                     </div>
                 </div>
-            </section>
+                <div class="teaser__content">
+                    <h3>Our rooms</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
+</main>

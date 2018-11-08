@@ -67,8 +67,6 @@ require(getFromTemplate('common/header.php', false)); ?>
                                 <div class="imgSlider__wrapper">
                                     <?php getImagesFromTable($db, 'pm_article_file', 'article', $gallery_id); ?> 
                                 </div>
-                                <span class="icon-left-arrow slider-nav"></span>
-                                <span class="icon-right-arrow slider-nav"></span>
                             </div>
                         </div>
                     </section>
