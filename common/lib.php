@@ -400,7 +400,6 @@ function img_crop($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
         mkdir($dest_dir); 
     }
     if(is_file($source_file) && is_dir($dest_dir)){
-        var_dump('test');
         $pos = strrpos($source_file, '/');    
         if($pos !== false)
             $filename = substr($source_file, $pos+1);
