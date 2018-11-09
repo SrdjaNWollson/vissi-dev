@@ -170,7 +170,8 @@ $counter = 0;
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            dots: true
+            dots: true,
+            adaptiveHeight: true
         });
 
         //-- Teaser slider

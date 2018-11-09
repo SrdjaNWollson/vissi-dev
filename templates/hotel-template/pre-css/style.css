@@ -895,7 +895,7 @@ p {
   text-transform: uppercase; }
   @media (max-width: 767px) {
     .sec-title {
-      margin: 2.5rem 0 7.9rem;
+      margin: 1rem 0 7rem;
       font-size: 6rem; } }
 
 .sec-subtitle {
@@ -921,7 +921,7 @@ p {
       background-position: 117% 3rem; } }
   @media (max-width: 767px) {
     .sec-link {
-      padding: 8rem 0 10rem;
+      padding: 7.5rem 0 10rem;
       background-position: 144% 6rem;
       background-size: 60%; } }
   .sec-link a {
@@ -939,6 +939,7 @@ p {
   list-style: none; }
   @media (max-width: 767px) {
     .room-details {
+      margin-bottom: 3.8rem;
       padding: 0 1.9rem;
       height: auto;
       overflow: hidden; } }
@@ -1037,6 +1038,9 @@ li.prices,
       @media (max-width: 990px) {
         #rooms .content-slider__left .content-holder, #rooms #location .location__info .content-holder, #location #rooms .location__info .content-holder {
           width: 100%; } }
+      @media (max-width: 767px) {
+        #rooms .content-slider__left .content-holder, #rooms #location .location__info .content-holder, #location #rooms .location__info .content-holder {
+          margin-bottom: 4rem; } }
   #rooms .slick-dots {
     max-width: 1140px;
     width: 90%;
@@ -1122,6 +1126,10 @@ li.prices,
           width: 100%; } }
   #offers .content-slider h3, #offers #location h3, #offers .teaser h3 {
     color: #79675a; }
+    @media (max-width: 767px) {
+      #offers .content-slider h3, #offers #location h3, #offers .teaser h3 {
+        margin-top: 5.5rem;
+        margin-bottom: 6rem; } }
   #offers .content-slider p, #offers #location p, #offers .teaser p {
     color: #79675a; }
   #offers .btn-gold {
@@ -1154,7 +1162,7 @@ li.prices,
   background-color: #ecebe4; }
   @media (max-width: 767px) {
     #facility {
-      padding: 8rem 0; } }
+      padding: 7.5rem 0; } }
   #facility .facility__items {
     margin-top: 7rem;
     height: auto;
@@ -1192,7 +1200,8 @@ li.prices,
     @media (max-width: 767px) {
       #location .location__info {
         width: 100% !important;
-        padding-right: 3.5rem !important; } }
+        padding-right: 3.5rem !important;
+        padding-bottom: 6rem !important; } }
     #location .location__info h3 {
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -1200,6 +1209,9 @@ li.prices,
       @media (max-width: 990px) {
         #location .location__info h3 {
           font-size: 3.25rem; } }
+      @media (max-width: 767px) {
+        #location .location__info h3 {
+          margin-top: 4rem; } }
     #location .location__info h4 {
       font-size: 12px;
       text-transform: uppercase;
@@ -1248,6 +1260,9 @@ li.prices,
   @media (max-width: 1440px) {
     #mapWrapper {
       height: 50rem; } }
+  @media (max-width: 767px) {
+    #mapWrapper {
+      height: 36rem; } }
 
 .content-slider-wrapper,
 .imgSlider {
@@ -1305,7 +1320,7 @@ li.prices,
       font-size: 5rem; } }
   @media (max-width: 767px) {
     .content-slider h3, #location h3, .teaser h3 {
-      margin: 5rem 0;
+      margin: 4rem 0 3rem;
       font-size: 3.2rem;
       text-align: center; } }
 
@@ -1321,7 +1336,7 @@ li.prices,
       font-size: 3rem; } }
   @media (max-width: 767px) {
     .content-slider p, #location p, .teaser p {
-      margin-bottom: 6rem;
+      margin-bottom: 5rem;
       padding: 0 1.9rem;
       font-size: 2.5rem;
       line-height: 1.7;
@@ -1392,7 +1407,9 @@ li.prices,
       margin-top: 3rem; } }
   @media (max-width: 767px) {
     .slick-dots {
+      margin-top: 0.5rem;
       margin-left: 0;
+      padding-bottom: 7rem;
       text-align: center; } }
 
 .slick-dots li {
@@ -1466,7 +1483,7 @@ li.prices,
     .content-slider__left,
     #location .location__info {
       width: 100%;
-      padding: 6.6rem 3.5rem 3.8rem; } }
+      padding: 6rem 3.5rem 3.8rem; } }
 
 @media (max-width: 990px) {
   .content-slider__right {
@@ -1499,6 +1516,7 @@ li.prices,
     text-align: center; }
     @media (max-width: 767px) {
       #testimonial .quotes p {
+        margin-bottom: 4rem;
         padding: 0 3rem;
         font-size: 2.5rem; } }
   #testimonial .author {
@@ -1548,12 +1566,12 @@ li.prices,
       .footer .logo-wrapper {
         width: 27.5rem;
         margin: 0 auto;
-        margin-bottom: 7.5rem; } }
+        margin-bottom: 6.5rem; } }
   .footer-main {
     padding: 9rem 0 6rem; }
     @media (max-width: 990px) {
       .footer-main {
-        padding: 8rem 3.5rem 10rem; } }
+        padding: 6rem 3.5rem 10rem; } }
   .footer .items {
     width: 33.33%;
     float: left; }
@@ -1566,7 +1584,7 @@ li.prices,
     @media (max-width: 990px) {
       .footer__nav {
         padding-left: 0;
-        margin-bottom: 18rem; } }
+        margin-bottom: 10rem; } }
     .footer__nav li:first-child {
       margin-top: 2.5rem; }
     .footer__nav li {
@@ -1629,7 +1647,7 @@ li.prices,
   list-style: none; }
   @media (max-width: 990px) {
     .social-links {
-      margin-bottom: 10rem; } }
+      margin-bottom: 8rem; } }
   .social-links li {
     margin-right: 1.6rem;
     font-size: 30px;
@@ -1664,6 +1682,7 @@ li.prices,
         font-size: 11px; } }
     @media (max-width: 990px) {
       .footer__subscribe .btn-purchase {
+        margin-bottom: 6.8rem;
         font-size: 2.25rem;
         width: 65%; } }
     @media (max-width: 767px) {
@@ -1846,6 +1865,9 @@ li.prices,
   padding: 22px 68px;
   background-color: #fff;
   box-shadow: 0px 5px 16px -6px rgba(0, 0, 0, 0.75); }
+  @media (max-width: 767px) {
+    .btn-royalSlider {
+      padding: 2.2rem 4rem; } }
   .btn-royalSlider:hover {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: none; }
@@ -1853,6 +1875,9 @@ li.prices,
     font-size: 14px;
     color: #c5ae60;
     letter-spacing: 2.8px; }
+    @media (max-width: 767px) {
+      .btn-royalSlider span {
+        font-size: 2.8rem; } }
 
 .ham-menu-btn {
   display: none;
@@ -2058,6 +2083,22 @@ li.prices,
   .booking-search .ui-widget-content {
     border: 1px solid #eee;
     box-shadow: 0px 2px 3px -3px rgba(0, 0, 0, 0.75); }
+  .booking-search .ui-datepicker .ui-datepicker-title {
+    font-family: "ButlerRegular"; }
+    @media (max-width: 990px) {
+      .booking-search .ui-datepicker .ui-datepicker-title {
+        font-size: 1.8rem; } }
+    @media (max-width: 767px) {
+      .booking-search .ui-datepicker .ui-datepicker-title {
+        font-size: 2.2rem; } }
+  .booking-search .ui-datepicker .ui-datepicker-prev, .booking-search .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
 
 .cancel-reservation {
   position: absolute;
@@ -2242,16 +2283,23 @@ body.header-type-1 #search-home-wrapper {
 
 .ui-datepicker-next, .ui-datepicker-prev {
   font-family: icomoon !important;
-  top: 5px !important;
-  border-radius: 50%;
   width: 1.7em !important;
-  height: 1.7em !important; }
+  height: 1.7em !important;
+  cursor: pointer; }
 
 .ui-datepicker table {
   font-size: 11px; }
 
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
   display: none; }
+
+@media (max-width: 990px) {
+  .ui-datepicker td a {
+    font-size: 1.6rem; } }
+
+@media (max-width: 767px) {
+  .ui-datepicker td a {
+    font-size: 1.2rem; } }
 
 @media (max-width: 480px) {
   .ui-datepicker td a {
@@ -2268,7 +2316,8 @@ body.header-type-1 #search-home-wrapper {
   background-color: #E7E6DD !important; }
 
 .ui-datepicker-today {
-  background-color: #79675a;
+  background-color: transparent;
+  border: 1px solid #7a9e1a !important;
   color: #fff; }
 
 a.ui-state-default.ui-state-active {
@@ -2293,7 +2342,7 @@ ul[class^="items-"] li {
   @media (max-width: 990px) {
     ul[class^="items-"] li {
       position: relative;
-      height: 15rem; } }
+      height: 13rem; } }
   ul[class^="items-"] li img {
     margin-right: 6.5rem; }
 
@@ -2331,7 +2380,7 @@ ul[class^="items-"] li span {
     .items-3 li {
       width: 50%;
       text-align: center;
-      margin-bottom: 7rem; } }
+      margin-bottom: 4rem; } }
   .items-3 li:nth-child(3n-1) {
     padding-left: 7rem; }
     @media (max-width: 990px) {
@@ -3121,6 +3170,9 @@ ul[class^="items-"] li span {
 
 .introSlider .infoBlock {
   top: 30%; }
+  @media (max-width: 767px) {
+    .introSlider .infoBlock {
+      top: 16%; } }
 
 .introSlider .infoBlock h1 {
   margin-bottom: 3.9rem;
@@ -3132,6 +3184,7 @@ ul[class^="items-"] li span {
   animation: fadeOutRight 1s both; }
   @media (max-width: 767px) {
     .introSlider .infoBlock h1 {
+      margin-bottom: 5.5rem;
       font-size: 6.5rem; } }
 
 .introSlider .infoBlock h2 {
@@ -3143,6 +3196,7 @@ ul[class^="items-"] li span {
   text-transform: none; }
   @media (max-width: 767px) {
     .introSlider .infoBlock h2 {
+      margin-bottom: 8.2rem;
       font-size: 3rem; } }
 
 .introSlider .infoBlock a {
