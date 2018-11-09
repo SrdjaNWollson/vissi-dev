@@ -32,6 +32,9 @@
 }
 .introSlider .infoBlock {
 	top: 30%;
+    @include breakpoint(mobile) {
+        top: 16%;
+    }
     //bottom: 200px;
 }
 .introSlider .infoBlock h1 {
@@ -44,6 +47,7 @@
     text-transform: uppercase;
     animation:fadeOutRight 1s both;
     @include breakpoint(mobile) {
+        margin-bottom: 5.5rem;
         font-size: 6.5rem;
     }
 }
@@ -55,6 +59,7 @@
     font-weight: 400;
     text-transform: none;
     @include breakpoint(mobile) {
+        margin-bottom: 8.2rem;
         font-size: 3rem;
     }
 }

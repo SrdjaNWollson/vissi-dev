@@ -9,7 +9,7 @@ ul[class^="items-"] {
 		list-style-type: none;
 		@include breakpoint(tablet) {
 			position: relative;
-			height: 15rem;
+			height: 13rem;
 		}
 		img {
 			margin-right: 6.5rem;
@@ -44,7 +44,7 @@ ul[class^="items-"] {
 	@include breakpoint(tablet) {
 		width: 50%;
 		text-align: center;
-		margin-bottom: 7rem;
+		margin-bottom: 4rem;
 	}
 	&:nth-child(3n-1) {
 		padding-left: 7rem;
