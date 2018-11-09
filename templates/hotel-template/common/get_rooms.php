@@ -69,9 +69,11 @@ if(isset($db) && $db !== false){
                         }
                     }
                     $html .= '
+                </a>
                     <div class="listBox__content">
                         <h4>'.$room_subtitle.'</h4>
-                        <h3 itemprop="name">'.$room_title.'</h3>';
+                        <a itemprop="url" href="'.$room_alias.'">
+                        <h3 itemprop="name">'.$room_title.'</h3></a>';
                         $min_price = $room_price;
                         if($result_rate->execute() !== false && $db->last_row_count() > 0){
                             $row = $result_rate->fetch();
@@ -92,7 +94,7 @@ if(isset($db) && $db !== false){
                
 
                     </div>
-                </a>
+              
         </article>';
     }
 

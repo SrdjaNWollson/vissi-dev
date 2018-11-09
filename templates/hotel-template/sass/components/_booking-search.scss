@@ -12,6 +12,11 @@
             color: $c-quillGrey;
         }
     }
+    .input-wrapper {
+        height: auto;
+        overflow: hidden;
+        background-color: $c-white;
+    }
 
     .row {
         margin: 0;
@@ -120,8 +125,8 @@
         }
     }
     .form-control {
-        position: static;
-        background: #fff;
+        position: relative;
+        background: transparent;
         border-color: $c-blackWhite;
         border-radius: 0;
         border: none;
@@ -143,6 +148,9 @@
             width: 100%;
             margin-right: 0;
             margin-bottom: 7.5rem;
+        }
+        .form-control {
+            background-color: $c-white;
         }
     }
     .form-btn {
@@ -172,6 +180,10 @@
     }
     .btn-group.open .dropdown-toggle {
         box-shadow: none;
+    }
+    .ui-widget-content {
+        border: 1px solid #eee;
+        box-shadow: 0px 2px 3px -3px rgba(0,0,0,0.75);
     }
 
 }
@@ -374,7 +386,7 @@ body.header-type-1 #search-home-wrapper{
     left: 50%;
     font-size: 12px;
     content: "\e906";
-    color: $c-main;
+    color: $c-white;
 }
 
 .ui-datepicker-next:after {
@@ -392,7 +404,6 @@ body.header-type-1 #search-home-wrapper{
 .ui-datepicker-next, .ui-datepicker-prev {
     font-family: icomoon!important;
     top: 5px!important;
-    background: white!important;
     border-radius: 50%;
     width: 1.7em!important;
     height: 1.7em!important;
@@ -430,7 +441,7 @@ body.header-type-1 #search-home-wrapper{
 }
 
 a.ui-state-default.ui-state-active {
-    background-color: $c-main!important;
+    background-color: $c-green!important;
     color: $c-white;
 }
 

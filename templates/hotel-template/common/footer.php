@@ -174,20 +174,24 @@ $counter = 0;
         });
 
         //-- Teaser slider
-        $('.teaser .imgSlider__wrapper').slick({
+        $('.imgSlider__wrapper').on('init', function() {
+            $(this).css("visibility", "visible");
+        });
+
+        $('.imgSlider__wrapper').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
             dots: true
         });
 
-        //-- Special offers
-        $('article .imgSlider__wrapper').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: true
-        });
+        // //-- Special offers
+        // $('article .imgSlider__wrapper').slick({
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        //     arrows: true,
+        //     dots: true
+        // });
     </script>
 
 </body>

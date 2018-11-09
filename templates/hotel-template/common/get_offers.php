@@ -76,7 +76,7 @@ if(isset($db) && $db !== false){
                 <div class="content-'.$content_pos.'">
                     <div class="container">
                         <div class="content-holder">
-                            <h3 itemprop="name">'.$offer_title.'</h3>';
+                            <a href="'.$offer_alias.'"><h3 itemprop="name">'.$offer_title.'</h3></a>';
                             $min_price = $offer_price;
                             if($result_rate->execute() !== false && $db->last_row_count() > 0){
                                 $row = $result_rate->fetch();

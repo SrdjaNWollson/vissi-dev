@@ -246,6 +246,7 @@ header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMe
         min-height: 700px;
         width: 100%;
         padding-top: 100px;
+        z-index: 6;
         background-color: $c-main;
     }
 }

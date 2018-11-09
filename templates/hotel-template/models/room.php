@@ -48,7 +48,9 @@ require(getFromTemplate('common/header.php', false)); ?>
 <main id="page" class="pg-single-room">
     
     <div id="content">
-        
+        <h3 class="sec-subtitle">
+            <?php echo $room['subtitle']; ?>
+        </h3> 
         <h2 class="sec-title">
             <?php echo $room['title']; ?>
         </h2>
@@ -82,18 +84,10 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="container">
                 <aside class="single-sidebar">
                     <ul class="single__details">
-                        <li><i class="icon-moon"></i><span class="cen-vertical">Minimum Stay:</span><span class="num">1</span></li>
-                        <li><i class="icon-person"></i><span class="cen-vertical">Minimum Persons:</span><span class="num">1</span></li>
+                        <li><i class="icon-person"></i><span class="cen-vertical">Adults:</span><span class="num">1</span></li>
+                        <li><i class="icon-person"></i><span class="cen-vertical">Children:</span><span class="num">1</span></li>
                         <li><i class="icon-price-tag"></i><span class="cen-vertical">Price From:</span><span class="num">199</span></li>
                     </ul>
-                    <div class="active-period">Active for the period: <span class="period">15 Sep- 31 Mar</span></div>
-                    <div class="info">
-                        <ul>
-                            <li>Information and reservation:</li>
-                            <li>office@vissidarte.com</li>
-                            <li>+382 00 000 0000</li>
-                        </ul>
-                    </div>
                 </aside>
 
                 <div class="single-main">

@@ -24,7 +24,9 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
             <label class="sr-only" for="from"></label>
             <div class="input-group">
                 <div class="input-group-addon"> <?php echo $texts['ARRIVAL_DATE']; ?></div>
-                <input type="text" class="form-control" id="from_picker" name="from_date" value="<?php echo $from_date; ?>" autocomplete="off" readonly>
+                <div class="input-wrapper">
+                    <input type="text" class="form-control" id="from_picker" name="from_date" value="<?php echo $from_date; ?>" autocomplete="off" readonly>
+                </div>
                 <div id="fromDate-holder"></div>
                 <i class="icon-calendar"></i>
             </div>
@@ -35,7 +37,9 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
         <div class="form-group form-date">
             <div class="input-group">
                 <div class="input-group-addon"> <?php echo $texts['DEPARTURE_DATE']; ?></div>
-                <input type="text" class="form-control" id="to_picker" name="to_date" value="<?php echo $to_date; ?>" autocomplete="off" readonly>
+                <div class="input-wrapper">
+                    <input type="text" class="form-control" id="to_picker" name="to_date" value="<?php echo $to_date; ?>" autocomplete="off" readonly>
+                </div>
                 <div id="toDate-holder"></div>
                 <i class="icon-calendar"></i>
             </div>
