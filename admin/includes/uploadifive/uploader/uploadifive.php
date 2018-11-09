@@ -52,9 +52,11 @@ if(isset($_POST['uniqid']) && isset($_POST['timestamp']) && isset($_POST['dir'])
         // file type checking
         $fileTypes = unserialize(stripslashes($_POST['exts'])); // files extensions
         $fileParts = pathinfo($_FILES['Filedata']['name']);
-        
+        //var_dump($fileTypes);
+        //var_dump(mb_strtolower($fileParts['extension'], 'UTF-8'));
         if(in_array(mb_strtolower($fileParts['extension'], 'UTF-8'), $fileTypes)){
-                        
+            
+
             move_uploaded_file($tempFile, $targetFile);
             
             $dim = @getimagesize($targetFile);

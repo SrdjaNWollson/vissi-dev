@@ -263,5 +263,6 @@ $allowable_file_exts = array(
     'jpeg' => 'img.png',
     'png' => 'img.png',
     'gif' => 'img.png',
-    'swf' => 'swf.png'
+    'swf' => 'swf.png',
+    'svg' => 'svg.png'
 );

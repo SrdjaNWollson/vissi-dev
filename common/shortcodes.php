@@ -128,12 +128,20 @@ function contentSlider($db, $atts, $texts){
                             $filename = $row['file'];
                             $label = $row['label'];
 
-                            $realpath = SYSBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
+                            $realpath = SYSBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
                             $thumbpath = DOCBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
                             $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
                             //var_dump($realpath);
-                            if(is_file($realpath)){ ?>
-                                        <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>">
+
+                            img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+
+                        
+                            $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+                            if(is_file($realpath)){ ?> 
+                            <picture> 
+                                <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+                                        <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>" />
+                            </picture>
                                 <?php
                             }
                         } ?>

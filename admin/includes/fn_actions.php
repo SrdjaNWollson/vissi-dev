@@ -97,6 +97,8 @@ function upload_files($db, $id, $id_lang, $dir)
                     $error = true;
                     
                     $id_file = $db->lastInsertId();
+
+                    //var_dump($type);
                 
                     if($type == 'other'){
                         
