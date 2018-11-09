@@ -42,6 +42,7 @@
     font-size: 72px;
     text-shadow: 2.1px 2.1px 2.9px rgba(123, 123, 123, 0.75);
     text-transform: uppercase;
+    animation:fadeOutRight 1s both;
     @include breakpoint(mobile) {
         font-size: 6.5rem;
     }

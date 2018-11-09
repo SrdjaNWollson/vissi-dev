@@ -616,6 +616,24 @@
 	ul[class^="items-"] {
 		@extend %clearfix;
 		margin-bottom: 6.6rem;
+		@include breakpoint(mobile) {
+			margin-top: 18rem;
+		}
+	}.imgSlider {
+		.container {
+			width: 100%;
+			@include breakpoint(mobile) {
+				padding: 0;
+			}
+		}
+	}
+	.item
+	.items-3 li {
+		width: 33.33%;
+		margin-bottom: 3.5rem;
+		@include breakpoint(mobile) {
+			width: 50%;
+		}
 	}
 }
 
@@ -623,36 +641,81 @@
 	@extend .wrapUp;
 	@extend %clearfix;
 	padding-bottom: 15.5rem;
+	@include breakpoint(mobile) {
+		position: relative;
+		padding-bottom: 20rem;
+	}
 }
 .single-sidebar {
 	width: 26%;
 	font-size: 14px;
 	border-right: 1px solid $c-gold;
+	@include breakpoint(desktop--small) {
+		font-size: 12px;
+	}
+	@include breakpoint(tablet) {
+		width: 100%;
+		border-right: none;
+		border-bottom: 2px solid $c-gold;
+		margin-bottom: 5rem;
+	}
+	@include breakpoint(mobile) {
+		margin-bottom: 8rem;
+		border-bottom: 0.45rem solid $c-gold;
+	}
 	ul {
 		list-style: none;
 	}
 	.info li {
-		margin-bottom: 0.5rem;
 		line-height: 1.57;
 		color: #636363;
+		@include breakpoint(tablet) {
+			display: none;
+		}
 	}
 }
 
 .single-main {
 	width: 74%;
 	padding-left: 8rem;
+	@include breakpoint(tablet) {
+		padding-left: 0;
+		width: 100%;
+	}
+	@include breakpoint(mobile) {
+		text-align: center;
+	}
 	h5 {
-		margin-bottom: 3.5rem;
+		margin-bottom: 2.5rem;
 		color: #636363;
 		font-weight: 300;
+		@include breakpoint(tablet) {
+			font-size: 2rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 2.5rem;
+			line-height: 1.7;
+		}
 	}
 	p {
 		color: #636363;
 		font-weight: 300;
 		margin-bottom: 6.5rem;
+		text-align: left;
+		@include breakpoint(tablet) {
+			font-size: 2rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 2.5rem;
+			line-height: 1.7;
+		}
 	}
 	.btn-green {
 		float: right;
+		@include breakpoint(mobile) {
+			float: none;
+			display: inline-block;
+		}
 	}
 }
 
@@ -660,26 +723,49 @@
 	float: left;
 	font-size: 14px;
 	font-weight: 700;
+	letter-spacing: 2.8px;
 	color: $c-gold;
 	text-transform: uppercase;
 	span {
 		margin-left: 1rem;
+	}
+	@include breakpoint(mobile) {
+		@include absolute(center-horizontal);
+		bottom: 11rem;
+		font-size: 1.5rem;
 	}
 }
 
 .single-sidebar,
 .single-main {
 	float: left;
+	@include breakpoint(tablet) {
+		float: none;
+	}
 }
 
-.single__details {
+.pg-single-room .single__details {
 	font-size: 14px;
+	@extend %clearfix;
+	@include breakpoint(desktop--small) {
+		font-size: 12px;
+	}
 	li {
-		margin-bottom: 6rem;
+		margin-bottom: 4rem;
+		@include breakpoint(tablet) {
+			float: left;
+			margin-right: 3rem;
+		}
+		@include breakpoint(mobile) {
+			margin-bottom: 6rem;
+		}
 		i {
 			margin-right: 3rem;
 			font-size: 3rem;
 			color: $c-gold;
+			@include breakpoint(mobile) {
+				font-size: 4.2rem;
+			}
 		}
 		span {
 			position: relative;
@@ -696,12 +782,25 @@
 		font-size: 14px;
 		font-weight: 700;
 		color: #636363;
+		@include breakpoint(desktop--small) {
+			font-size: 12px;
+		}
+		@include breakpoint(tablet) {
+			font-size: 2rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 2.3rem;
+		}
 	} 
 }
 
 .active-period {
-	margin-bottom: 6.6rem;
+	margin-top: 6.8rem;
+	margin-bottom: 6rem;
 	font-weight: 700;
+	@include breakpoint(tablet) {
+		display: none;
+	}
 	.period {
 		font-weight: normal;
 	}
