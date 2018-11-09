@@ -13,6 +13,7 @@ var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var browserSync = require("browser-sync");
+var cssnano = require('gulp-cssnano');
 var reload = browserSync.reload;
 
 
@@ -26,6 +27,7 @@ gulp.task('styles', function(){
     .pipe(sass()) // Using gulp-sass
     .pipe(gulp.dest('pre-css'))
     .pipe(minifyCSS())
+    .pipe(cssnano())
     .pipe(gulp.dest('css'))
     .pipe(reload({stream:true}));
 });

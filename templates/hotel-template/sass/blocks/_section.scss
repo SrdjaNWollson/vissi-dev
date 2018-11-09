@@ -181,9 +181,6 @@ li.prices,
 			@include breakpoint(tablet) {
 				width: 100%;
 			}
-			@include breakpoint(mobile) {
-				margin-bottom: 4rem;
-			}
 		}
 	}
 	.slick-dots {
@@ -279,6 +276,11 @@ li.prices,
 			}
 			@include breakpoint(mobile) {
 				width: 100%;
+			}
+			.content-holder {
+				@include breakpoint(mobile) {
+					margin-bottom: 4rem;
+				}
 			}
 		}
 	}

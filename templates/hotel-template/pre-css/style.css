@@ -1038,9 +1038,6 @@ li.prices,
       @media (max-width: 990px) {
         #rooms .content-slider__left .content-holder, #rooms #location .location__info .content-holder, #location #rooms .location__info .content-holder {
           width: 100%; } }
-      @media (max-width: 767px) {
-        #rooms .content-slider__left .content-holder, #rooms #location .location__info .content-holder, #location #rooms .location__info .content-holder {
-          margin-bottom: 4rem; } }
   #rooms .slick-dots {
     max-width: 1140px;
     width: 90%;
@@ -1124,6 +1121,9 @@ li.prices,
       @media (max-width: 767px) {
         #offers .content-slider__right .container {
           width: 100%; } }
+      @media (max-width: 767px) {
+        #offers .content-slider__right .container .content-holder {
+          margin-bottom: 4rem; } }
   #offers .content-slider h3, #offers #location h3, #offers .teaser h3 {
     color: #79675a; }
     @media (max-width: 767px) {
@@ -1605,6 +1605,8 @@ li.prices,
         @media (max-width: 990px) {
           .footer__nav li a {
             font-size: 2.5rem; } }
+        .footer__nav li a:hover {
+          color: #c5ae60; }
 
 .contact-info address {
   margin-bottom: 2.6rem; }
@@ -2090,7 +2092,7 @@ li.prices,
         font-size: 1.8rem; } }
     @media (max-width: 767px) {
       .booking-search .ui-datepicker .ui-datepicker-title {
-        font-size: 2.2rem; } }
+        font-size: 2.8rem; } }
   .booking-search .ui-datepicker .ui-datepicker-prev, .booking-search .ui-datepicker .ui-datepicker-next {
     position: absolute;
     top: 50%;
@@ -2612,7 +2614,8 @@ ul[class^="items-"] li span {
       position: absolute;
       bottom: 0;
       right: 0;
-      float: right; }
+      float: right;
+      padding: 2.2rem 4rem 2rem; }
       @media (max-width: 767px) {
         .teaser-list .listBox .btn-green {
           position: static; } }

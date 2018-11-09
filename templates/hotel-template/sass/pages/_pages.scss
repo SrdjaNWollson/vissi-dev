@@ -238,6 +238,7 @@
 			bottom: 0;
 			right: 0;
 			float: right;
+			padding: 2.2rem 4rem 2rem;
 			@include breakpoint(mobile) {
 				position: static;
 
