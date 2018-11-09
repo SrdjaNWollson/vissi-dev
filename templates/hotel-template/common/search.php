@@ -81,7 +81,7 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
             <label class="sr-only" for="from"></label>
             <div class="input-group">
                  <div class="input-group-addon"> <?php echo $texts['PROMO_CODE']; ?></div>
-                <input type="text" class="form-control" placeholder="000000">
+                <input type="number" class="form-control" placeholder="000000">
             </div>
         </div>
 

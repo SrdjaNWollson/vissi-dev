@@ -231,7 +231,7 @@ ul {
 
 @font-face {
   font-family: "ButlerRegular";
-  src: url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"); }
+  src: url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"), url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.woff") format("woff"); }
 
 @font-face {
   font-family: 'icomoon';
@@ -2336,6 +2336,14 @@ a.ui-state-default.ui-state-active {
 #from_picker,
 #to_picker {
   cursor: pointer !important; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
 
 ul[class^="items-"] li {
   float: left;
