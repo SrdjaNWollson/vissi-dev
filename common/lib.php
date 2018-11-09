@@ -287,7 +287,6 @@ function img_resize($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
         mkdir($dest_dir); 
     }
     if(is_file($source_file) && is_dir($dest_dir)){
-        var_dump('test');
         $pos = strrpos($source_file, '/');
         if($pos !== false)
             $filename = substr($source_file, $pos+1);
@@ -377,11 +376,13 @@ function img_resize($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
             switch($im_type){
                 case IMAGETYPE_JPEG : imagejpeg($new_image, $dest_dir.$filename, 80); break;
                 case IMAGETYPE_PNG : imagepng($new_image, $dest_dir.$filename, 8); break;
-                case IMAGETYPE_GIF : imagegif($new_image, $dest_dir.$filename); break;
+                case IMAGETYPE_GIF : imagegif($new_image, $dest_dir.$filename); break;            
             }
             
             if(chmod($dest_dir.$filename, 0664)) $return = $dest_dir.$filename;
         }
+
+
         
         if(isset($new_image)) imagedestroy($new_image);
         if(isset($tmp_image)) imagedestroy($tmp_image);
@@ -399,8 +400,8 @@ function img_crop($source_file, $dest_dir, $new_w, $new_h)
     if(!is_dir($dest_dir)){
         mkdir($dest_dir); 
     }
-
     if(is_file($source_file) && is_dir($dest_dir)){
+
         $pos = strrpos($source_file, '/');    
         if($pos !== false)
             $filename = substr($source_file, $pos+1);
@@ -432,8 +433,7 @@ function img_crop($source_file, $dest_dir, $new_w, $new_h)
             imagedestroy($im);
         }
         
-        if($new_image = imagecrop($tmp_image, array('x'=>0,'y'=>0, 'width'=>$new_w, 'height'=>$new_h))) {
-            
+        if($new_image = imagecrop($tmp_image, array('x'=>0,'y'=>0, 'width'=>$new_w, 'height'=>$new_h))) {      
             switch($im_type){
                 case IMAGETYPE_JPEG : imagejpeg($new_image, $dest_dir.$filename, 80); break;
                 case IMAGETYPE_PNG : imagepng($new_image, $dest_dir.$filename, 8); break;

@@ -366,6 +366,8 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                         $data.uploads.current++;
                         $data.uploads.attempted++;
 
+                        //console.log('test');
+
                         // Create a new AJAX request
                         xhr = file.xhr = new XMLHttpRequest();
 
@@ -390,6 +392,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                             // On progress function
                             xhr.upload.addEventListener('progress', function(e) {
                                 if (e.lengthComputable) {
+                                    //console.log($data); 
                                     $data.progress(e, file);
                                 }
                             }, false);
@@ -415,6 +418,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                             });
 
                             // Send the form data (multipart/form-data)
+                            console.log(formData);
                             xhr.send(formData);
 
                         } else {
