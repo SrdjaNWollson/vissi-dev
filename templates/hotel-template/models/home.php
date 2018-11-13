@@ -119,7 +119,7 @@ if($result_slide !== false){
     <!-- link to all offers -->
     <section class="sec-link">
         <div class="container">
-            <a href="#dummy">See all offers <i class="icon-right-arrow"></i></a>
+            <a href="/special-offers">See all offers <i class="icon-right-arrow"></i></a>
         </div>
     </section>
     <!-- facilities -->

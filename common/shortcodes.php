@@ -133,13 +133,13 @@ function contentSlider($db, $atts, $texts){
                             $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
                             //var_dump($realpath);
 
-                            img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+                            //img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
 
                         
-                            $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+                            //$custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
                             if(is_file($realpath)){ ?> 
                             <picture> 
-                                <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+                                <source media="(max-width: 900px)" srcset="<?= $zoompath; ?>">
                                         <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>" />
                             </picture>
                                 <?php
@@ -329,7 +329,6 @@ function listArticles($db, $page_id, $pages, $texts){
                 $article_alias = DOCBASE.$pages[$article_page]['alias'].'/'.text_format($article_alias); ?>
                 
                 <article id="article-<?php echo $article_id; ?>" class="col-sm-4" itemscope itemtype="http://schema.org/Article">
-                        <a itemprop="url" href="<?php echo $article_alias; ?>" class="moreLink">
                             <div class="col-sm-12 mb20">
                                 <?php
                                 if($result_article_file->execute() !== false && $db->last_row_count() == 1){
@@ -371,7 +370,6 @@ function listArticles($db, $page_id, $pages, $texts){
                                 ?>
                                 <h4></h4>
                             </div>
-                        </a>
                 </article>
                 <?php
             }

@@ -7,7 +7,9 @@ $javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.sloppy-masonry.min.j
 $stylesheets[] = array("file" => DOCBASE."js/plugins/lazyloader/lazyloader.css", "media" => "all");
 $javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";
 
-require(getFromTemplate("common/header.php", false)); ?>
+require(getFromTemplate("common/header.php", false)); 
+
+?>
 
 <main id="page" class="pg-rooms-suites">
     
@@ -23,8 +25,8 @@ require(getFromTemplate("common/header.php", false)); ?>
                         </div>
                     </div>
                     <div class="teaser__content">
-                        <h3>Our rooms</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+                        <h3><?= $page['intro']; ?></h3>
+                        <p><?= $page['text']; ?></p>
                     </div>
                 </div>
             </section>
