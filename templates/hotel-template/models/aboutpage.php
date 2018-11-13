@@ -20,7 +20,14 @@ $javascripts[] = DOCBASE.'js/plugins/royalslider/jquery.royalslider.min.js';
 
 require(getFromTemplate('common/send_comment.php', false));
 
-require(getFromTemplate('common/header.php', false)); ?>
+require(getFromTemplate('common/header.php', false)); 
+
+$widget = getWidgets('left', $page_id);
+
+$w = $widget['left'][0];
+
+
+?>
 
 <main id="page" class="pg-about">
 
@@ -36,8 +43,8 @@ require(getFromTemplate('common/header.php', false)); ?>
                     </div>
                 </div>
                 <div class="teaser__content">
-                    <h3>Our rooms</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+                    <h3><?= $page['intro']; ?></h3>
+                    <?= $page['text']; ?>
                 </div>
             </div>
         </section>
@@ -47,14 +54,12 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="container">
                 <article class="our-story__box">
                     <div class="inner-container">
-                        <h3>Our philosophy</h3>
-                        <p>We do not offer just accommodation and services but also unforgettable  guest experience. We take care about our guest from the moment he reserves his suite until his departure home. Hospitable  and dedicated to guests our staff is really at their full service . Also, we are hotel with high smart technology standard, perfect wi fi and every apartment has got tablet which easily manage all wishes of the guests.</p>
+                        <?= $w['content']; ?>
                     </div>
                 </article>
                 <article class="our-story__box">
                     <div class="inner-container">
-                        <h3>Our values</h3>
-                        <p>We redefined our traditional values - Innovation, Spirit of Conquest, Respect, Trust - and formulated two new values: Guest Passion, which reasserts our passion for hospitality and the strength of our humanist roots, and Sustainable Performance, which reminds us that we are part of a community, driven by a vision that does not take the short-term view, and that our business growth must also benefit the community at large over the long term</p>
+                        <?= $w['text1']; ?>
                     </div>
                 </article>
             </div>
@@ -73,8 +78,7 @@ require(getFromTemplate('common/header.php', false)); ?>
                     </div>
                 </div>
                 <div class="teaser__content">
-                    <h3>Our rooms</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos.</p>
+                    <?= $w['text2']; ?>
                 </div>
             </div>
         </section>

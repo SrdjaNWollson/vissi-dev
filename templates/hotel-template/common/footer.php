@@ -1,8 +1,11 @@
 <?php debug_backtrace() || die ("Direct access not permitted"); 
-$footer_cols = $appearance['footer_columns'];
-
-$boxClass = getBoxClass($footer_cols);
 $counter = 0;
+
+$widget = getWidgets('footer_col_1',$page_id);
+$widget2 = getWidgets('footer_col_3',$page_id);
+$footer_col1 = $widget['footer_col_1'][0];
+$footer_col3 = $widget2['footer_col_3'][0]; 
+//$social = 
 ?>
 <!-- book now -->
 <section id="search-home-bottom" class="third-section">
@@ -23,57 +26,25 @@ $counter = 0;
                 <img src="/vissi-dev/templates/hotel-template/images/vissi-darte-logo-grey.svg" alt="logos">
             </div>
             <div class="contact-info">
-                <address>Mediteranska 33, 354789 <br>Budva, Montenegro</address>
-                <ul class="connect">
-                    <li>Phone: +381 62 555 66 89</li>
-                    <li>Fax: +381 62 55 66 89</li>
-                    <li>Email: hotel@vissidarte.com</li>
-                </ul>
+                <?= $footer_col1['content']; ?>
                 <ul class="social-links">
-                    <li><a href="#dummy"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#dummy"><i class="icon-instagram"></i></a></li>
-                    <li><a href="#dummy"><i class="icon-twitter"></i></a></li>
+                    <?php getSocialLinks($db); ?>
                 </ul>
             </div>
         </div>
         <div class="footer__nav items">
             <ul>
+            <?php
+            foreach($menus['footer'] as $nav_id => $nav){ ?>
                 <li>
-                    <a href="/vissi-dev/rooms" title="Rooms &amp; Suites">Rooms &amp; Suites</a>
+                    <a href="<?php echo $nav['href']; ?>" title="<?php echo $nav['title']; ?>"><?php echo $nav['name']; ?></a>
                 </li>
-                <li>
-                    <a href="/vissi-dev/special-offers" title="Special Offers">Special Offers</a>
-                </li>
-                <li>
-                    <a href="/vissi-dev/conferences-events" title="Activities">Conferences &amp; Events</a>
-                </li>
-                <li>
-                    <a href="/vissi-dev/your-beach" title="Your beach">Your beach</a>
-                </li>
-                <li>
-                    <a href="/vissi-dev/gallery" title="Gallery">Gallery</a>
-                </li>
-                <li>
-                    <a href="/vissi-dev/about-us" title="About The Hotel">About The Hotel</a>
-                </li>
-                <li>
-                    <a href="/vissi-dev/contact" title="Contact">Contact</a>
-                </li>
-                  <li>
-                    <a href="/vissi-dev/terms-and-conditions" title="Terms and Conditions">Terms & Conditions</a>
-                </li>
+                <?php 
+            } ?>
             </ul>
         </div>
         <div class="footer__subscribe items">
-            <h4>The special gift for any case</h4>
-            <a class="btn btn-purchase" href="#dummy"><span>Purchase voucher</span><i class="icon-right-arrow"></i></a>
-            <h4>Subscribe to our newsletter</h4>
-            <form action="">
-                <div class="input-wrapper">
-                    <input type="email" nam="sub-email" placeholder="Email address">
-                </div>
-                <button class="btn btn-sub" type="submit"><span>Sign up</span></button>
-            </form>
+            <?= $footer_col3['content']; ?>
         </div>
     </div>
     <div class="footer-bottom">

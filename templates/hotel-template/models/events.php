@@ -17,8 +17,8 @@ require(getFromTemplate("common/header.php", false)); ?>
                         </div>
                     </div>
                     <div class="teaser__content">
-                        <h3>Perfect place for ...</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet perferendis nobis commodi enim neque, hic magnam rem optio modi accusantium tenetur totam asperiores aperiam voluptates ullam. Quia inventore, magnam accusamus.</p>
+                        <h3><?= $page['intro']; ?></h3>
+                        <?= $page['text']; ?>
                     </div>
                 </div>
             </section>

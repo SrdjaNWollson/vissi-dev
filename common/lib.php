@@ -580,6 +580,18 @@ function db_selectWhere($db,$table,$where='',$order=''){
     return $result;
 }
 
+
+function getSocialLinks($db){
+    $query = "SELECT * FROM pm_social";
+
+    $links = $db->query($query);
+
+    foreach($links as $link) : 
+        ?>
+        <li><a href="#dummy"><i class="icon-<?= $link['type']; ?>"></i></a></li>
+    <?php endforeach;
+}
+
 function getImagesFromTable($db,$table,$entity,$id_item=false){
 
     $query = "SELECT * FROM {$table} WHERE lang = " . LANG_ID . " AND type = 'image'"; 
