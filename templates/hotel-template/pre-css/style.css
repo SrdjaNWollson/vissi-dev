@@ -1935,6 +1935,23 @@ li.prices,
       .ham-menu-btn.is-active .line:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg); } }
 
+.book-mob-fix {
+  display: none; }
+  @media (max-width: 767px) {
+    .book-mob-fix {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      padding: 1.4rem;
+      text-align: center;
+      background-color: #fff;
+      z-index: 99999; } }
+  .book-mob-fix .btn-green {
+    float: none;
+    padding: 1.2rem 3.6rem;
+    display: inline-block; }
+
 .booking-search {
   padding: 0px; }
   .booking-search input,

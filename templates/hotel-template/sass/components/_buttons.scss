@@ -185,3 +185,25 @@
         }
     }
 } 
+
+//-- Book mibile fixed to the bottom always
+
+.book-mob-fix {
+    display: none;
+    @include breakpoint(mobile) {
+        // display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.4rem;
+        text-align: center;
+        background-color: $c-white;
+        z-index: 99999;
+    }
+    .btn-green {
+        float: none;
+        padding: 1.2rem 3.6rem;
+        display: inline-block;
+    }
+}

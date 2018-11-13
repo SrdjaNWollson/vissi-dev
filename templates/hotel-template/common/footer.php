@@ -11,6 +11,10 @@ $counter = 0;
          ?>
     </div>
 </section>
+<!-- book mobile btn -->
+<div class="book-mob-fix">
+    <a href="#dummy" class="btn btn-green"><span>Book Now</span></a>
+</div>
 <!-- footer -->
 <footer class="footer">
     <div class="footer-main container">

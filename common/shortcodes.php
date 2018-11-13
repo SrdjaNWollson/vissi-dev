@@ -270,7 +270,7 @@ function listItemsInColumns($db, $atts, $texts){
         $name = $row['name'];
         $item_id = $row['id'];
         //var_dump($item_id);
-        $result_item_file = $db->prepare('SELECT * FROM '.$table.'_file WHERE id_item = :item_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
+        $result_item_file = $db->prepare('SELECT * FROM '.$table.'_file WHERE id_item = :item_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND file != \'\' ORDER BY rank LIMIT 1');
         $result_item_file->bindParam(':item_id',$item_id);
         ?>       
         <li><?php 
@@ -281,8 +281,14 @@ function listItemsInColumns($db, $atts, $texts){
             $filename = $file['file'];
             $label = $file['label'];
 
-            $realpath = SYSBASE.'medias/'.$entity.'/small/'.$file_id.'/'.$filename;
+            $realpath = SYSBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
             $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
+
+
+            if(!is_file($realpath)){
+                $realpath = SYSBASE.'medias/'.$entity.'/other/'.$file_id.'/'.$filename;
+                $zoompath = DOCBASE.'medias/'.$entity.'/other/'.$file_id.'/'.$filename;
+            }
             ?>
             <img alt="<?= $label; ?>" src="<?php echo $zoompath; ?>" width="30" />
             <?php
