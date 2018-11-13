@@ -26,7 +26,7 @@ require(getFromTemplate("common/header.php", false));
                     </div>
                     <div class="teaser__content">
                         <h3><?= $page['intro']; ?></h3>
-                        <p><?= $page['text']; ?></p>
+                        <?= $page['text']; ?>
                     </div>
                 </div>
             </section>

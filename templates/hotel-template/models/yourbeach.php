@@ -17,8 +17,8 @@ require(getFromTemplate("common/header.php", false)); ?>
                         </div>
                     </div>
                     <div class="teaser__content">
-                        <h3>Explore mediterranean jewels</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque nesciunt dolorem quibusdam dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quisquam nam ratione ex optio quia? Eum praesentium, saepe veritatis numquam totam nisi similique debitis corporis.</p>
+                        <h3><?= $page['intro']; ?></h3>
+                        <?= $page['text']; ?>
                     </div>
                 </div>
             </section>
