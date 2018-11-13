@@ -31,14 +31,14 @@
     } 
 }
 .introSlider .infoBlock {
-	top: 30%;
+	top: 29%;
     @include breakpoint(mobile) {
         top: 16%;
     }
     //bottom: 200px;
 }
 .introSlider .infoBlock h1 {
-	margin-bottom: 3.9rem;
+	margin-bottom: 2.9rem;
     font-family: $butler;
     color: #fff;
     //font-weight: 600;
@@ -55,9 +55,10 @@
 	margin-bottom: 6.2rem;
     color: #fff;
     font-family: $butler;
-    font-size: 28px;
+    font-size: 21px;
     font-weight: 400;
     text-transform: none;
+    text-shadow: 2.1px 2.1px 2.9px rgba(123, 123, 123, 0.75);
     @include breakpoint(mobile) {
         margin-bottom: 8.2rem;
         font-size: 3rem;

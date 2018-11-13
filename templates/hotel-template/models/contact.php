@@ -89,14 +89,14 @@ require(getFromTemplate('common/header.php', false)); ?>
     ];
 </script>
 
-<section id="page">
+<main id="page" class="contact">
     
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
     
     <div id="content" class="clearfix">
         <div id="mapWrapper" data-marker="<?php echo getFromTemplate('images/marker.png'); ?>"></div>
-        <div class="container pt30 pb15">
-            
+        <section class="contact__main">
+            <div class="container">
             <?php
             if($page['text'] != ''){ ?>
                 <div class="clearfix mb20"><?php echo $page['text']; ?></div>
@@ -106,67 +106,62 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="alert alert-success" style="display:none;"></div>
             <div class="alert alert-danger" style="display:none;"></div>
             
-            <div class="row">
-                <form method="post" action="<?php echo DOCBASE.$page['alias']; ?>">
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fas fa-fw fa-user"></i></div>
-                                <input type="text" class="form-control" name="name" value="<?php echo htmlentities($name, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?php echo $texts['LASTNAME']." ".$texts['FIRSTNAME']; ?> *">
+                <div class="contact__form">
+                    <form method="post" action="<?php echo DOCBASE.$page['alias']; ?>">
+                        <div class="form-part">
+
+                            <div class="input-wrapper">
+                                <input type="text" name="name" value="<?php echo htmlentities($name, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?php echo $texts['LASTNAME']." ".$texts['FIRSTNAME']; ?> *">
                             </div>
                             <div class="field-notice" rel="name"></div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fas fa-fw fa-envelope"></i></div>
-                                <input type="text" class="form-control" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $texts['EMAIL']; ?> *">
+
+              
+                            <div class="input-wrapper">
+                                <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $texts['EMAIL']; ?> *">
                             </div>
                             <div class="field-notice" rel="email"></div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fas fa-fw fa-home"></i></div>
-                                <textarea class="form-control" name="address" placeholder="<?php echo $texts['ADDRESS'].", ".$texts['POSTCODE'].", ".$texts['CITY']; ?>"><?php echo htmlentities($address, ENT_QUOTES, 'UTF-8'); ?></textarea>
+             
+               
+                            <div class="input-wrapper text-address">
+                                <textarea name="address" placeholder="<?php echo $texts['ADDRESS'].", ".$texts['POSTCODE'].", ".$texts['CITY']; ?>"><?php echo htmlentities($address, ENT_QUOTES, 'UTF-8'); ?></textarea>
                             </div>
                             <div class="field-notice" rel="address"></div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fas fa-fw fa-phone"></i></div>
-                                <input type="text" class="form-control" name="phone" value="<?php echo htmlentities($phone, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?php echo $texts['PHONE']; ?>">
+               
+              
+                            <div class="input-wrapper">
+                                <input type="text" name="phone" value="<?php echo htmlentities($phone, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?php echo $texts['PHONE']; ?>">
                             </div>
                             <div class="field-notice" rel="phone"></div>
+                 
                         </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fas fa-fw fa-question"></i></div>
-                                <input type="text" class="form-control" name="subject" value="<?php echo htmlentities($subject, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?php echo $texts['SUBJECT']; ?> *">
-                            </div>
-                            <div class="field-notice" rel="subject"></div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fas fa-fw fa-quote-left"></i></div>
-                                <textarea class="form-control" name="msg" placeholder="<?php echo $texts['MESSAGE']; ?> *" rows="4"><?php echo htmlentities($msg, ENT_QUOTES, 'UTF-8'); ?></textarea>
-                            </div>
-                            <div class="field-notice" rel="msg"></div>
-                        </div>
-                        <?php
-                        if(CAPTCHA_PKEY != '' && CAPTCHA_SKEY != ''){ ?>
+                        <div class="form-part">
                             <div class="form-group">
-                                <div class="input-group mb5"></div>
-                                <div class="g-recaptcha" data-sitekey="<?php echo CAPTCHA_PKEY; ?>"></div>
+                                <div class="input-wrapper">
+                                    <input type="text" name="subject" value="<?php echo htmlentities($subject, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?php echo $texts['SUBJECT']; ?> *">
+                                </div>
+                                <div class="field-notice" rel="subject"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-wrapper text-message">
+                                    <textarea name="msg" placeholder="<?php echo $texts['MESSAGE']; ?> *" rows="4"><?php echo htmlentities($msg, ENT_QUOTES, 'UTF-8'); ?></textarea>
+                                </div>
+                                <div class="field-notice" rel="msg"></div>
                             </div>
                             <?php
-                        } ?>   
-                        <div class="form-group row">
-                            <span class="col-sm-12"><button type="submit" class="btn btn-primary" name="send"><i class="fas fa-fw fa-paper-plane"></i> <?php echo $texts['SEND']; ?></button> <i> * <?php echo $texts['REQUIRED_FIELD']; ?></i></span>
+                            if(CAPTCHA_PKEY != '' && CAPTCHA_SKEY != ''){ ?>
+                                <div class="form-group">
+                                    <div class="input-group"></div>
+                                    <div class="g-recaptcha" data-sitekey="<?php echo CAPTCHA_PKEY; ?>"></div>
+                                </div>
+                                <?php
+                            } ?>   
+                            <div class="form-group">
+                                <span class="btn-holder"><button type="submit" class="btn btn-green" name="send"> <?php echo $texts['SEND']; ?></button> <i> * <?php echo $texts['REQUIRED_FIELD']; ?></i></span>
+                            </div>
                         </div>
-                    </div>
-                </form>
-                <div class="col-sm-3">
+                    </form>
+                </div>
+                <div class="contact__info">
                     <div class="hotBox" itemscope itemtype="http://schema.org/Corporation">
                         <h2 itemprop="name"><?php echo OWNER; ?></h2>
                         <address>
@@ -180,6 +175,6 @@ require(getFromTemplate('common/header.php', false)); ?>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-</section>
+</main>

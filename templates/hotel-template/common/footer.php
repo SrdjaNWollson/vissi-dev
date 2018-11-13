@@ -53,10 +53,10 @@ $counter = 0;
                     <a href="/vissi-dev/about-us" title="About The Hotel">About The Hotel</a>
                 </li>
                 <li>
-                    <a href="#dummy" title="Contact">Contact</a>
+                    <a href="/vissi-dev/contact title="Contact">Contact</a>
                 </li>
                   <li>
-                    <a href="#dummy" title="Terms and Conditions">Terms & Conditions</a>
+                    <a href="/vissi-dev/terms-and-conditions" title="Terms and Conditions">Terms & Conditions</a>
                 </li>
             </ul>
         </div>
@@ -80,7 +80,7 @@ $counter = 0;
         </div>
     </div>
 </footer>
-<a href="#" id="toTop"><i class="fas fa-fw fa-angle-up"></i></a>
+<!-- <a href="#" id="toTop"><i class="fas fa-fw fa-angle-up"></i></a> -->
 
 
     <!--[if lt IE 9]>

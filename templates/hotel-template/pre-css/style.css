@@ -229,6 +229,9 @@ p:empty {
 ul {
   margin-bottom: 0; }
 
+div#cookies-notice {
+  display: none; }
+
 @font-face {
   font-family: "ButlerRegular";
   src: url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"), url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.woff") format("woff"); }
@@ -1244,7 +1247,7 @@ li.prices,
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;
+  width: 63%;
   overflow: hidden; }
   @media (max-width: 1440px) {
     .location__map {
@@ -1559,7 +1562,7 @@ li.prices,
   background-color: #79675a; }
   .footer .logo-wrapper {
     width: 18rem;
-    margin-bottom: 4rem; }
+    margin-bottom: 5rem; }
     .footer .logo-wrapper img {
       width: 100%; }
     @media (max-width: 990px) {
@@ -2090,7 +2093,7 @@ li.prices,
     @media (max-width: 990px) {
       .booking-search .ui-datepicker .ui-datepicker-title {
         font-size: 1.8rem; } }
-    @media (max-width: 767px) {
+    @media (max-width: 480px) {
       .booking-search .ui-datepicker .ui-datepicker-title {
         font-size: 2.8rem; } }
   .booking-search .ui-datepicker .ui-datepicker-prev, .booking-search .ui-datepicker .ui-datepicker-next {
@@ -3155,6 +3158,119 @@ ul[class^="items-"] li span {
   .active-period .period {
     font-weight: normal; }
 
+.contact__main {
+  padding: 8rem 0; }
+  @media (max-width: 767px) {
+    .contact__main .container {
+      display: flex;
+      flex-direction: column; } }
+  .contact__main .form-control {
+    border-radius: 0; }
+  .contact__main .input-group-addon {
+    border-radius: 0; }
+
+.contact__form {
+  float: left;
+  width: 70%; }
+  @media (max-width: 990px) {
+    .contact__form {
+      width: 50%; } }
+  @media (max-width: 767px) {
+    .contact__form {
+      float: none;
+      order: 2;
+      width: 100%; } }
+  .contact__form .input-wrapper {
+    width: 100%;
+    height: 43px;
+    margin-bottom: 20px;
+    border: 1px solid #ecebe4; }
+    .contact__form .input-wrapper input, .contact__form .input-wrapper textarea {
+      padding: 0 12px;
+      width: 100%;
+      height: 100%;
+      color: #c5c4be;
+      font-size: 14px;
+      outline: none;
+      border: none; }
+      .contact__form .input-wrapper input::placeholder, .contact__form .input-wrapper textarea::placeholder {
+        color: #c5c4be; }
+  .contact__form .text-address {
+    height: 80px; }
+    .contact__form .text-address textarea {
+      padding: 12px; }
+  .contact__form .text-message {
+    height: 144px; }
+    .contact__form .text-message textarea {
+      padding: 12px; }
+  .contact__form .btn-green {
+    padding: 0;
+    height: 43px;
+    width: 100%; }
+
+.contact__info {
+  float: left;
+  width: 30%;
+  padding-left: 3rem;
+  color: #79675a; }
+  @media (max-width: 990px) {
+    .contact__info {
+      width: 50%; } }
+  @media (max-width: 767px) {
+    .contact__info {
+      float: none;
+      order: 1;
+      width: 100%;
+      margin-bottom: 4rem;
+      padding-left: 0;
+      text-align: center; } }
+  .contact__info h2 {
+    font-family: "ButlerRegular";
+    margin-top: 0; }
+    @media (max-width: 767px) {
+      .contact__info h2 {
+        font-size: 4rem; } }
+  @media (max-width: 767px) {
+    .contact__info address p {
+      font-size: 2rem; } }
+  .contact__info a {
+    color: #c5ae60; }
+
+.form-part {
+  float: left;
+  width: 48%;
+  margin-right: 4%; }
+  @media (max-width: 990px) {
+    .form-part {
+      width: 100%; } }
+  .form-part:nth-of-type(2) {
+    margin-right: 0; }
+
+.pg-static {
+  padding-bottom: 12rem;
+  background-image: url("../images/visi-darte-logo-bg.png");
+  background-repeat: no-repeat;
+  background-position: 120% 38rem;
+  background-size: 40%; }
+  @media (max-width: 1200px) {
+    .pg-static {
+      background-position: 120% 50rem; } }
+  @media (max-width: 990px) {
+    .pg-static {
+      background-position: 120% 120%; } }
+  @media (max-width: 767px) {
+    .pg-static {
+      background-position: 120% 108%;
+      background-size: 65%; } }
+  .pg-static p {
+    margin: 0 0 2rem; }
+    @media (max-width: 990px) {
+      .pg-static p {
+        font-size: 16px; } }
+    @media (max-width: 767px) {
+      .pg-static p {
+        font-size: 2rem; } }
+
 #sliderContainer {
   position: relative;
   height: 90vh; }
@@ -3180,13 +3296,13 @@ ul[class^="items-"] li span {
     position: static; }
 
 .introSlider .infoBlock {
-  top: 30%; }
+  top: 29%; }
   @media (max-width: 767px) {
     .introSlider .infoBlock {
       top: 16%; } }
 
 .introSlider .infoBlock h1 {
-  margin-bottom: 3.9rem;
+  margin-bottom: 2.9rem;
   font-family: "ButlerRegular";
   color: #fff;
   font-size: 72px;
@@ -3202,9 +3318,10 @@ ul[class^="items-"] li span {
   margin-bottom: 6.2rem;
   color: #fff;
   font-family: "ButlerRegular";
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 400;
-  text-transform: none; }
+  text-transform: none;
+  text-shadow: 2.1px 2.1px 2.9px rgba(123, 123, 123, 0.75); }
   @media (max-width: 767px) {
     .introSlider .infoBlock h2 {
       margin-bottom: 8.2rem;

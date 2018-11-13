@@ -21,11 +21,11 @@ require(getFromTemplate('common/send_comment.php', false));
 
 require(getFromTemplate('common/header.php', false)); ?>
 
-<section id="page">
+<main id="page" class="pg-static">
 
     <?php include(getFromTemplate('common/page_header.php', false)); ?>
 
-    <div id="content" class="pt30 pb20">
+    <div id="content">
 
         <div class="container" itemprop="text">
         
@@ -117,4 +117,4 @@ require(getFromTemplate('common/header.php', false)); ?>
             include(getFromTemplate('common/comments.php', false)); ?>
         </div>
     </div>
-</section>
+</main>
