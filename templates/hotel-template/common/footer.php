@@ -57,7 +57,7 @@ $counter = 0;
                     <a href="/vissi-dev/about-us" title="About The Hotel">About The Hotel</a>
                 </li>
                 <li>
-                    <a href="/vissi-dev/contact title="Contact">Contact</a>
+                    <a href="/vissi-dev/contact" title="Contact">Contact</a>
                 </li>
                   <li>
                     <a href="/vissi-dev/terms-and-conditions" title="Terms and Conditions">Terms & Conditions</a>
@@ -134,10 +134,10 @@ $counter = 0;
             dots: false
         });
         //-- ROOMS and OFFER slider homepage
-         $('.content-slider').on('init', function() {
+         $('.pg-home .content-slider').on('init', function() {
             $(this).css("visibility", "visible");
         });
-        $('.content-slider').slick({
+        $('.pg-home .content-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
