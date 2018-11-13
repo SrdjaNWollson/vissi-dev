@@ -93,15 +93,15 @@ $counter = 0;
 
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script>
+   <!--  <script src="//rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.min.js"></script> -->
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <!--     <script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+   <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
+  <!--   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script> -->
     <script src=" <?php if(LANG_TAG != "en") : ?>'//rawgit.com/jquery/jquery-ui/master/ui/i18n/datepicker-<?php echo LANG_TAG; ?>.js',<?php endif; ?>"></script>
     
     <script src="<?php echo DOCBASE; ?>common/js/modernizr-2.6.1.min.js"></script>
@@ -133,26 +133,11 @@ $counter = 0;
             arrows: false,
             dots: false
         });
-        //-- ROOMS slider
-        $('.rooms-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true,
-            responsive: [
-                {
-                breakpoint: 767,
-                    settings: {
-                        arrows: true,
-                        prevArrow: $('#rooms .icon-left-arrow'),
-                        nextArrow: $('#rooms .icon-right-arrow')
-                    }             
-                }
-            ]
+        //-- ROOMS and OFFER slider homepage
+         $('.content-slider').on('init', function() {
+            $(this).css("visibility", "visible");
         });
-
-         //-- Offers slider
-        $('.offers-slider').slick({
+        $('.content-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
@@ -162,8 +147,8 @@ $counter = 0;
                 breakpoint: 767,
                     settings: {
                         arrows: true,
-                        prevArrow: $('#offers .icon-left-arrow'),
-                        nextArrow: $('#offers .icon-right-arrow')
+                        // prevArrow: $('#rooms .icon-left-arrow'),
+                        // nextArrow: $('#rooms .icon-right-arrow')
                     }             
                 }
             ]
@@ -190,13 +175,6 @@ $counter = 0;
             dots: true
         });
 
-        // //-- Special offers
-        // $('article .imgSlider__wrapper').slick({
-        //     slidesToShow: 1,
-        //     slidesToScroll: 1,
-        //     arrows: true,
-        //     dots: true
-        // });
     </script>
 
 </body>

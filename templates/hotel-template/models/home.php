@@ -90,97 +90,93 @@ if($result_slide !== false){
 		<?php
 	}
 } ?>
-<content id="content" class="pt20 pb30">
-<!-- rooms -->
-<section id="rooms" class="prim-section">
-    <div class="container">
-        <h4 class="sec-subtitle">a new vision of comfort</h4>
-        <h2 class="sec-title">Our Rooms</h2>
-    </div>
-    <!-- rooms slider -->
-    <div class="content-slider-wrapper">    
-        <div class="rooms-slider content-slider">   
-            <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
+<main id="content">
+    <!-- rooms -->
+    <section id="rooms" class="prim-section">
+        <div class="container">
+            <h4 class="sec-subtitle">a new vision of comfort</h4>
+            <h2 class="sec-title">Our Rooms</h2>
         </div>
-        <span class="icon-left-arrow slider-nav"></span>
-        <span class="icon-right-arrow slider-nav"></span>
-    </div> 
-</section>
-<!-- offers --> 
-<section id="offers" class="sec-section">
-    <div class="container">
-        <h4 class="sec-subtitle">taste of mediterranean</h4>
-        <h2 class="sec-title">Special Offers</h2>
-    </div>
-    <div class="content-slider-wrapper">
-        <div class="offers-slider content-slider">
-            <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
+        <!-- rooms slider -->
+        <div class="content-slider-wrapper">    
+            <div class="rooms-slider content-slider">   
+                <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
+            </div>
+        </div> 
+    </section>
+    <!-- offers --> 
+    <section id="offers" class="sec-section">
+        <div class="container">
+            <h4 class="sec-subtitle">taste of mediterranean</h4>
+            <h2 class="sec-title">Special Offers</h2>
         </div>
-        <span class="icon-left-arrow slider-nav"></span>
-        <span class="icon-right-arrow slider-nav"></span>
-    </div>
-</section>
-<!-- link to all offers -->
-<section class="sec-link">
-    <div class="container">
-        <a href="#dummy">See all offers <i class="icon-right-arrow"></i></a>
-    </div>
-</section>
-<!-- facilities -->
-<section id="facility" class="prim-section">
-    <div class="container">
-        <h4 class="sec-subtitle">why choose our hotel</h4>
-        <h2 class="sec-title">AMENITIES HIGHLIGHTS</h2>
-        <div class="facility__items">
-            <?php listItemsInColumns($db, array('table'=>'facility','columns'=>3), $texts); ?>
+        <div class="content-slider-wrapper">
+            <div class="offers-slider content-slider">
+                <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
+            </div>
         </div>
-    </div>
-</section> 
-<!-- location -->
-<section id="location" class="sec-section">
-    <div class="container">
-        <?php
-        $location_text = ""; ?>
-        <script>
-            var locations = [
-                <?php
-                $result_location = $db->query("SELECT * FROM pm_location WHERE checked = 1 AND pages REGEXP '(^|,)".$page_id."(,|$)'");
-                if($result_location !== false){
-                    $nb_locations = $db->last_row_count();
-                    foreach($result_location as $i => $row){
-                        $location_name = $row['name'];
-                        $location_address = $row['address'];
-                        $location_lat = $row['lat'];
-                        $location_lng = $row['lng'];
-                        $location_text = $row['text'];
+    </section>
+    <!-- link to all offers -->
+    <section class="sec-link">
+        <div class="container">
+            <a href="#dummy">See all offers <i class="icon-right-arrow"></i></a>
+        </div>
+    </section>
+    <!-- facilities -->
+    <section id="facility" class="prim-section">
+        <div class="container">
+            <h4 class="sec-subtitle">why choose our hotel</h4>
+            <h2 class="sec-title">AMENITIES HIGHLIGHTS</h2>
+            <div class="facility__items">
+                <?php listItemsInColumns($db, array('table'=>'facility','columns'=>3), $texts); ?>
+            </div>
+        </div>
+    </section> 
+    <!-- location -->
+    <section id="location" class="sec-section">
+        <div class="container">
+            <?php
+            $location_text = ""; ?>
+            <script>
+                var locations = [
+                    <?php
+                    $result_location = $db->query("SELECT * FROM pm_location WHERE checked = 1 AND pages REGEXP '(^|,)".$page_id."(,|$)'");
+                    if($result_location !== false){
+                        $nb_locations = $db->last_row_count();
+                        foreach($result_location as $i => $row){
+                            $location_name = $row['name'];
+                            $location_address = $row['address'];
+                            $location_lat = $row['lat'];
+                            $location_lng = $row['lng'];
+                            $location_text = $row['text'];
 
-                        echo "['".addslashes($location_name)."', '".addslashes($location_address)."', '".$location_lat."', '".$location_lng."']";
-                        if($i+1 < $nb_locations) echo ',\n';
-                    }
-                } ?>
-            ];
-        </script>
-        <div class="location__info">
-            <h4>Experience luxary in the city centre</h4>
-            <h3>Best location</h3>
+                            echo "['".addslashes($location_name)."', '".addslashes($location_address)."', '".$location_lat."', '".$location_lng."']";
+                            if($i+1 < $nb_locations) echo ',\n';
+                        }
+                    } ?>
+                ];
+            </script>
+            <div class="location__info">
+                <h4>Experience luxary in the city centre</h4>
+                <h3>Best location</h3>
 
-            <p><?= $location_text; ?> </p>
+                <p><?= $location_text; ?> </p>
+            </div>
+            <div class="location__map">
+                <div id="mapWrapper" data-marker="<?php echo getFromTemplate('images/marker.png'); ?>"></div>
+            </div>
         </div>
-        <div class="location__map">
-            <div id="mapWrapper" data-marker="<?php echo getFromTemplate('images/marker.png'); ?>"></div>
+    </section>
+    <!-- testimonials -->
+    <section id="testimonial">
+        <div class="quotes-sign">
+            <img src="/vissi-dev/templates/hotel-template/images/quotes-sign.png" alt="">
         </div>
-    </div>
-</section>
-<!-- testimonials -->
-<section id="testimonial">
-    <div class="quotes-sign">
-        <img src="/vissi-dev/templates/hotel-template/images/quotes-sign.png" alt="">
-    </div>
-    <div class="container">
-        <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>
-        <div class="testimonial-slider">
-            <?php listArticles($db,$page_id,$pages,$texts); ?>
+        <div class="container">
+            <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>
+            <div class="testimonial-slider">
+                <?php listArticles($db,$page_id,$pages,$texts); ?>
+            </div>
         </div>
-    </div>
-</section>
-</content>
+    </section>
+</main>

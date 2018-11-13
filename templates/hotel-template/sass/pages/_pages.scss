@@ -292,31 +292,9 @@
 		visibility: hidden;
 	}
 	.slick-arrow {
-		@extend .slider-nav;
-		border: none;
-		font-size: 0;
-		z-index: 5;
 		@include absolute(center-vertical);
-		&:before {
-			@include absolute(center);
-			display: block;
-		}
 	}
-	.slick-next {
-		right: 0;
-	}
-	.slick-prev {
-		left: 0;
-	}
-	.slick-next:before {
-		font-family: 'icomoon';
-		content: "\e907";
-
-	}
-	.slick-prev:before {
-		font-family: 'icomoon';
-		content: "\e906";
-	}
+	
 	.slick-dots {
 		width: 100%;
 		left: 0;

@@ -1174,7 +1174,8 @@ li.prices,
 #location {
   position: relative;
   background-color: #79675a;
-  height: 45.5rem; }
+  height: 45.5rem;
+  visibility: visible !important; }
   @media (max-width: 1440px) {
     #location {
       height: 50rem; } }
@@ -1270,23 +1271,23 @@ li.prices,
 .content-slider-wrapper,
 .imgSlider {
   position: relative; }
-  .content-slider-wrapper .slider-nav, .content-slider-wrapper .imgSlider .slick-arrow, .imgSlider .content-slider-wrapper .slick-arrow,
-  .imgSlider .slider-nav,
+  .content-slider-wrapper .slick-arrow,
   .imgSlider .slick-arrow {
     display: none;
     position: absolute;
     top: 50%;
     width: 5.4rem;
     height: 5.4rem;
+    border: none;
+    font-size: 0;
+    z-index: 5;
     background-color: #f4f3f0;
     cursor: pointer; }
     @media (max-width: 767px) {
-      .content-slider-wrapper .slider-nav, .content-slider-wrapper .imgSlider .slick-arrow, .imgSlider .content-slider-wrapper .slick-arrow,
-      .imgSlider .slider-nav,
+      .content-slider-wrapper .slick-arrow,
       .imgSlider .slick-arrow {
         display: block; } }
-    .content-slider-wrapper .slider-nav:before, .content-slider-wrapper .imgSlider .slick-arrow:before, .imgSlider .content-slider-wrapper .slick-arrow:before,
-    .imgSlider .slider-nav:before,
+    .content-slider-wrapper .slick-arrow:before,
     .imgSlider .slick-arrow:before {
       position: absolute;
       top: 50%;
@@ -1299,16 +1300,43 @@ li.prices,
       color: #c5ae60;
       font-size: 2.6rem; }
     @media (min-width: 991px) {
-      .content-slider-wrapper .slider-nav:hover, .content-slider-wrapper .imgSlider .slick-arrow:hover, .imgSlider .content-slider-wrapper .slick-arrow:hover,
-      .imgSlider .slider-nav:hover,
+      .content-slider-wrapper .slick-arrow:hover,
       .imgSlider .slick-arrow:hover {
         background-color: rgba(244, 243, 240, 0.6); } }
-  .content-slider-wrapper .icon-right-arrow,
-  .imgSlider .icon-right-arrow {
+  .content-slider-wrapper .slick-arrow,
+  .imgSlider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .content-slider-wrapper .slick-arrow:before,
+    .imgSlider .slick-arrow:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      display: block; }
+  .content-slider-wrapper .slick-next,
+  .imgSlider .slick-next {
     right: 0; }
-  .content-slider-wrapper .icon-left-arrow,
-  .imgSlider .icon-left-arrow {
+  .content-slider-wrapper .slick-prev,
+  .imgSlider .slick-prev {
     left: 0; }
+  .content-slider-wrapper .slick-next:before,
+  .imgSlider .slick-next:before {
+    font-family: 'icomoon';
+    content: "\e907"; }
+  .content-slider-wrapper .slick-prev:before,
+  .imgSlider .slick-prev:before {
+    font-family: 'icomoon';
+    content: "\e906"; }
 
 .content-slider h3, #location h3, .teaser h3 {
   margin: 7rem 0 2.8rem;
@@ -1557,6 +1585,9 @@ li.prices,
     @media (max-width: 767px) {
       #testimonial .quotes-sign img {
         width: 8rem; } }
+
+.content-slider, #location, .teaser {
+  visibility: hidden; }
 
 .footer {
   background-color: #79675a; }
@@ -2684,9 +2715,6 @@ ul[class^="items-"] li span {
   visibility: hidden; }
 
 .imgSlider .slick-arrow {
-  border: none;
-  font-size: 0;
-  z-index: 5;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -2694,30 +2722,6 @@ ul[class^="items-"] li span {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%); }
-  .imgSlider .slick-arrow:before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    display: block; }
-
-.imgSlider .slick-next {
-  right: 0; }
-
-.imgSlider .slick-prev {
-  left: 0; }
-
-.imgSlider .slick-next:before {
-  font-family: 'icomoon';
-  content: "\e907"; }
-
-.imgSlider .slick-prev:before {
-  font-family: 'icomoon';
-  content: "\e906"; }
 
 .imgSlider .slick-dots {
   width: 100%;

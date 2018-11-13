@@ -14,14 +14,15 @@ $(document).ready(function(){
     //---------------------------------
 
     /*-- Book now on mobile fixed bottom  --*/
-    $(document).scroll(function() {
-	  var y = $(this).scrollTop();
-	  if (y > 100) {
-	    $('.book-mob-fix').fadeIn();
-	  } else {
-	    $('.book-mob-fix').fadeOut();
-	  }
-	});
-	
+    if($(window).width() < 768) {
+	    $(document).scroll(function() {
+		  var y = $(this).scrollTop();
+		  if (y > 100) {
+		    $('.book-mob-fix').fadeIn();
+		  } else {
+		    $('.book-mob-fix').fadeOut();
+		  }
+		});
+	}
 
 });

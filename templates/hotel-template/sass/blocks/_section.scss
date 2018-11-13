@@ -349,6 +349,7 @@ li.prices,
 	position: relative;
 	background-color: $c-main;
 	height: 45.5rem;
+	visibility: visible!important;
 	@include breakpoint(desktop) {
 		height: 50rem;
 	}
@@ -462,13 +463,16 @@ li.prices,
 .content-slider-wrapper,
 .imgSlider {
 	position: relative;
-	.slider-nav {
+	.slick-arrow {
 		display: none;
 
 		position: absolute;
 		top: 50%;
 		width: 5.4rem;
 		height: 5.4rem;
+		border: none;
+		font-size: 0;
+		z-index: 5;
 		background-color: #f4f3f0;
 		cursor: pointer;
 		@include breakpoint(mobile) {
@@ -484,12 +488,29 @@ li.prices,
 				background-color: rgba(244, 243, 240, 0.6); 
 			}
 		}
+
 	}
-	.icon-right-arrow {
+	.slick-arrow {
+		@include absolute(center-vertical);
+		&:before {
+			@include absolute(center);
+			display: block;
+		}
+	}
+	.slick-next {
 		right: 0;
 	}
-	.icon-left-arrow {
+	.slick-prev {
 		left: 0;
+	}
+	.slick-next:before {
+		font-family: 'icomoon';
+		content: "\e907";
+
+	}
+	.slick-prev:before {
+		font-family: 'icomoon';
+		content: "\e906";
 	}
 }
 
@@ -543,14 +564,6 @@ li.prices,
 	}
 	.slick-slide.slick-current.slick-center {
 		opacity: 1;
-	}
-	.container {
-		// position: relative;
-		// max-width: 1180px;
-		// width: 93.4%;
-		// @include breakpoint(mobile) {
-	 //        width: 86.5%;
-	 //    }
 	}
 	
 	.btn-holder {
@@ -784,5 +797,9 @@ li.prices,
 		}
 		
 	}
+}
+
+.content-slider {
+	visibility: hidden;
 }
 
