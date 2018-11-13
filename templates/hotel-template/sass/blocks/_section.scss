@@ -799,7 +799,8 @@ li.prices,
 	}
 }
 
-.content-slider {
+//-- On home page init slider when DOM is ready
+.pg-home .content-slider {
 	visibility: hidden;
 }
 
