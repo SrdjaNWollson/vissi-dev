@@ -67,7 +67,7 @@ if($result_slide !== false){
                                 </picture>
                                 <?php
                                 if($slide_legend != ''){ ?>
-                                    <div class="infoBlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
+                                    <div class="infoBlock" data-animation-in="fadeInRight">
                                         <?php echo $slide_legend; ?>
                                     </div>
                                     <?php

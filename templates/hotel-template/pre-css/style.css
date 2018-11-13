@@ -72,6 +72,12 @@ ul {
 div#cookies-notice {
   display: none; }
 
+h1, h2, h3, h4 {
+  font-weight: normal; }
+
+a:hover {
+  text-decoration: none; }
+
 @font-face {
   font-family: "ButlerRegular";
   src: url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"), url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.woff") format("woff"); }
@@ -238,7 +244,7 @@ h1 {
       color: #fff; } }
   @media (max-width: 767px) {
     #mainHeader .navbar-nav > li.primary > a.firstLevel {
-      font-size: 2.4rem; } }
+      font-size: 3rem; } }
 
 #mainHeader .container {
   position: relative; }
@@ -1615,6 +1621,9 @@ li.prices,
     .footer__copyright {
       text-align: center;
       font-size: 1.5rem; } }
+  @media (max-width: 767px) {
+    .footer__copyright {
+      padding-bottom: 7rem; } }
 
 #toTop {
   background: #fff;
@@ -3130,7 +3139,7 @@ ul[class^="items-"] li span {
         font-size: 16px; } }
     @media (max-width: 767px) {
       .pg-static p {
-        font-size: 2rem; } }
+        font-size: 2.2rem; } }
 
 #sliderContainer {
   position: relative;
@@ -3155,12 +3164,22 @@ ul[class^="items-"] li span {
       width: 100%; }
   .introSlider .rsSlide {
     position: static; }
+  .introSlider .slick-slide {
+    -webkit-transform: translate3d(0, 0, 0); }
 
 .introSlider .infoBlock {
-  top: 29%; }
+  top: 29%;
+  opacity: 0;
+  transform: translateX(0px) translateY(20px) translateZ(0px);
+  transition: opacity 1s ease 0s, transform 1s ease 0s; }
   @media (max-width: 767px) {
     .introSlider .infoBlock {
       top: 16%; } }
+
+.introSlider .slick-active .infoBlock {
+  opacity: 1;
+  transform: translateX(0px) translateY(0px) translateZ(0px);
+  transition: opacity 1s ease 0s, transform 1s ease 0s; }
 
 .introSlider .infoBlock h1 {
   margin-bottom: 2.9rem;

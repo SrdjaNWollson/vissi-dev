@@ -29,13 +29,26 @@
     .rsSlide {
         position: static;
     } 
+    .slick-slide {
+       -webkit-transform: translate3d(0,0,0);
+    }
 }
 .introSlider .infoBlock {
 	top: 29%;
+    // transition: opacity 1s ease-in;
+    // opacity: 0;
+    opacity: 0;
+    transform: translateX(0px) translateY(20px) translateZ(0px);
+    transition: opacity 1s ease 0s, transform 1s ease 0s;
     @include breakpoint(mobile) {
         top: 16%;
     }
     //bottom: 200px;
+}
+.introSlider .slick-active .infoBlock {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px) translateZ(0px);
+    transition: opacity 1s ease 0s, transform 1s ease 0s;
 }
 .introSlider .infoBlock h1 {
 	margin-bottom: 2.9rem;

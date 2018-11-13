@@ -219,6 +219,9 @@
 		text-align: center;
 		font-size: 1.5rem;
 	}
+	@include breakpoint(mobile) {
+		padding-bottom: 7rem;
+	}
 }
 
 
