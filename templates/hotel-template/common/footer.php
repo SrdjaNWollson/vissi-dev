@@ -80,6 +80,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
     <script src="<?php echo DOCBASE; ?>js/custom.js" type="text/javascript"></script>
    <!--  <script src="<?php /*echo DOCBASE;*/ ?>js/plugins/imagefill/js/jquery-imagefill.js"></script> -->
     <!-- <script src="<?php /*echo DOCBASE;*/ ?>js/plugins/toucheeffect/toucheffects.js"></script> -->
+    <script src="<?php echo DOCBASE; ?>js/plugins/wow/wow.min.js"></script>
     <script src="<?php echo DOCBASE; ?>js/plugins/slick/slick.min.js"></script>
   <!--   <script src="//use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
 
@@ -146,6 +147,30 @@ $footer_col3 = $widget2['footer_col_3'][0];
             dots: true
         });
 
+    </script>
+
+    <script>
+         wow = new WOW({
+            mobile: false       // default
+            }
+        )
+        //-- WOW init
+        wow.init();
+    </script>
+    <script>
+        (function(){
+             var ovrl = document.getElementById('overlay');
+          
+            function doneLoading(){
+
+              ovrl.style.opacity = 0;
+              setTimeout(function(){ 
+                ovrl.style.display = "none";
+              }, 1200);
+            }
+    
+          document.addEventListener('DOMContentLoaded', doneLoading, false);
+        }());
     </script>
 
 </body>

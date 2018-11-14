@@ -78,6 +78,21 @@ h1, h2, h3, h4 {
 a:hover {
   text-decoration: none; }
 
+#overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #79675a;
+  transition: 1s 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #overlay img {
+    width: 64px; }
+
 @font-face {
   font-family: "ButlerRegular";
   src: url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"), url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.woff") format("woff"); }
@@ -1035,7 +1050,7 @@ li.prices,
       padding: 0;
       width: 100%; } }
   #location .location__info {
-    width: 33.3% !important;
+    width: 32.3% !important;
     padding-top: 10rem !important; }
     @media (max-width: 1440px) {
       #location .location__info {
@@ -1120,6 +1135,7 @@ li.prices,
   .content-slider-wrapper .slick-arrow,
   .imgSlider .slick-arrow {
     display: none;
+    outline: none;
     position: absolute;
     top: 50%;
     width: 5.4rem;
@@ -1478,7 +1494,8 @@ li.prices,
       .footer__nav li a {
         font-size: 11.5px;
         color: #ecebe4;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        transition: all ease-in-out 0.3s; }
         @media (max-width: 1200px) {
           .footer__nav li a {
             font-size: 10px; } }
@@ -3168,18 +3185,10 @@ ul[class^="items-"] li span {
     -webkit-transform: translate3d(0, 0, 0); }
 
 .introSlider .infoBlock {
-  top: 29%;
-  opacity: 0;
-  transform: translateX(0px) translateY(20px) translateZ(0px);
-  transition: opacity 1s ease 0s, transform 1s ease 0s; }
+  top: 29%; }
   @media (max-width: 767px) {
     .introSlider .infoBlock {
       top: 16%; } }
-
-.introSlider .slick-active .infoBlock {
-  opacity: 1;
-  transform: translateX(0px) translateY(0px) translateZ(0px);
-  transition: opacity 1s ease 0s, transform 1s ease 0s; }
 
 .introSlider .infoBlock h1 {
   margin-bottom: 2.9rem;
@@ -3187,8 +3196,7 @@ ul[class^="items-"] li span {
   color: #fff;
   font-size: 72px;
   text-shadow: 2.1px 2.1px 2.9px rgba(123, 123, 123, 0.75);
-  text-transform: uppercase;
-  animation: fadeOutRight 1s both; }
+  text-transform: uppercase; }
   @media (max-width: 767px) {
     .introSlider .infoBlock h1 {
       margin-bottom: 5.5rem;

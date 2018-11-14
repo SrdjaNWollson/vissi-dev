@@ -367,7 +367,7 @@ li.prices,
 	@extend .content-slider;
 	.location__info {
 		@extend .content-slider__left;
-		width: 33.3%!important;
+		width: 32.3%!important;
 		padding-top: 10rem!important;
 		@include breakpoint(desktop) {
 			width: 45%!important;
@@ -465,7 +465,7 @@ li.prices,
 	position: relative;
 	.slick-arrow {
 		display: none;
-
+		outline: none;
 		position: absolute;
 		top: 50%;
 		width: 5.4rem;

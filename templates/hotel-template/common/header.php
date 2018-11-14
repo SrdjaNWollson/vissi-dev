@@ -75,8 +75,24 @@
         <meta name="gmaps_api_key" content="<?php echo GMAPS_API_KEY; ?>">
         <?php
     } ?>
-    
-    <link rel="icon" type="image/png" href="<?php echo getFromTemplate("images/favicon.png"); ?>">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo getFromTemplate("images/favicons/apple-icon-57x57.png"); ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo getFromTemplate("images/favicons/apple-icon-60x60.png"); ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo getFromTemplate("images/favicons/apple-icon-72x72.png"); ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo getFromTemplate("images/favicons/apple-icon-76x76.png"); ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo getFromTemplate("images/favicons/apple-icon-114x114.png"); ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo getFromTemplate("images/favicons/apple-icon-120x120.png"); ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo getFromTemplate("images/favicons/apple-icon-144x144.png"); ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo getFromTemplate("images/favicons/apple-icon-152x152.png"); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo getFromTemplate("images/favicons/apple-icon-180x180.png"); ?>">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo getFromTemplate("images/favicons/android-icon-192x192.png"); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo getFromTemplate("images/favicons/favicon-32x32.png"); ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo getFromTemplate("images/favicons/favicon-96x96.png"); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="c">
+    <link rel="manifest" href="<?php echo getFromTemplate("images/favicons/manifest.json"); ?>">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     
     <link rel="stylesheet" href="<?php echo DOCBASE; ?>common/bootstrap/css/bootstrap.min.css">
     <?php
@@ -99,6 +115,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
    <!--  <link rel="stylesheet" href="<?php //echo DOCBASE; ?>common/css/shortcodes.css"> -->
     <link rel="stylesheet" href="<?php echo getFromTemplate("css/style.css"); ?>">
+    <link rel="stylesheet" href="<?php echo DOCBASE; ?>js/plugins/wow/animate.css">
 </head>
 <body class="header-type-<?= $appearance['header_type'] ?> menu-position-<?= $appearance['menu_position'] ?> logo-position-<?= $appearance['logo_position'] ?> booking-search-position-<?= $appearance['booking_search_position'] ?>" id="page-<?php echo $page_id; ?>" <?php if(RTL_DIR) echo " dir=\"rtl\""; ?>>
 
@@ -111,7 +128,10 @@ if(isset($page_img)){ ?>
     <?php
 } ?>
 
-<div id="loader-wrapper"><div id="loader"></div></div>
+<!-- <div id="loader-wrapper"><div id="loader"></div></div> -->
+<div id="overlay">
+    <img src="<?php echo getFromTemplate("images/vissi-d-arte-white-logo.svg"); ?>" alt="">
+</div>
 
 <?php
 if(ENABLE_COOKIES_NOTICE == 1 && !isset($_COOKIE['cookies_enabled'])){ ?>

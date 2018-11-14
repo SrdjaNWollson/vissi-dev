@@ -47,7 +47,7 @@ if(isset($db) && $db !== false){
         $room_alias = DOCBASE.$page_alias.'/'.text_format($room_alias);
         
         $html .= '
-        <article class="listBox">
+        <article class="listBox wow fadeInUp">
                 <a itemprop="url" href="'.$room_alias.'">';
                     
                     if($result_room_file->execute() !== false && $db->last_row_count() > 0){

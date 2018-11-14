@@ -94,7 +94,7 @@ function contentSlider($db, $atts, $texts){
             ?>
 
             <div class="<?= $entity ?>-slide"> 
-                    <div class="content-slider__<?= $slide_class ?>">
+                    <div class="content-slider__<?= $slide_class ?> wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="container">
                         <div class="content-holder">   
                             <?php if($entity == "room") : ?>
