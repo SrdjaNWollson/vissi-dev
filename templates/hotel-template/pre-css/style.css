@@ -2335,7 +2335,7 @@ ul[class^="items-"] li span {
   width: 33.33%; }
 
 .page_header {
-  padding: 6rem 0 0; }
+  padding: 4rem 0 0; }
 
 @media (max-width: 990px) {
   .pg-rooms-suites .teaser .slick-dots {
@@ -2546,7 +2546,7 @@ ul[class^="items-"] li span {
           position: static; } }
     .teaser-list .listBox__content {
       position: relative;
-      height: 31.8rem;
+      height: 30rem;
       overflow: hidden; }
       @media (max-width: 990px) {
         .teaser-list .listBox__content {
@@ -2567,7 +2567,8 @@ ul[class^="items-"] li span {
       .teaser-list .link-more:hover {
         color: #79675a; } }
   .teaser-list .img-container {
-    margin-bottom: 4rem; }
+    margin-bottom: 4rem;
+    overflow: hidden; }
     @media (max-width: 990px) {
       .teaser-list .img-container {
         margin-bottom: 8rem; } }
@@ -2575,7 +2576,16 @@ ul[class^="items-"] li span {
       .teaser-list .img-container {
         margin-bottom: 6.3rem; } }
     .teaser-list .img-container img {
-      width: 100%; }
+      width: 100%;
+      transform: scale(1.1);
+      transition: all ease-in-out 0.6s;
+      backface-visibility: hidden; }
+      @media (max-width: 990px) {
+        .teaser-list .img-container img {
+          transform: none; } }
+  .teaser-list .listBox:hover .img-container img {
+    transform: scale(1);
+    backface-visibility: hidden; }
 
 .imgSlider__wrapper {
   visibility: hidden; }
@@ -2962,7 +2972,10 @@ ul[class^="items-"] li span {
   font-weight: 700;
   letter-spacing: 2.8px;
   color: #c5ae60;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transition: all ease-in-out 0.3s; }
+  .back-link:hover, .back-link:focus {
+    color: #79675a; }
   .back-link span {
     margin-left: 1rem; }
   .back-link .icon-left-arrow {

@@ -150,10 +150,11 @@ $footer_col3 = $widget2['footer_col_3'][0];
     </script>
 
     <script>
-         wow = new WOW({
+         var wow = new WOW(
+         {
             mobile: false       // default
             }
-        )
+        );
         //-- WOW init
         wow.init();
     </script>

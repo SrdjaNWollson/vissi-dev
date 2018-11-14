@@ -503,29 +503,29 @@ $(document).ready(function(){
      * IMAGE FILL
      * =================================================================
      */
-	if($('.img-container').not('.lazyload').length){
-		$('.img-container').not('.lazyload').imagefill();
-	}
-    $('.panel-collapse').on('shown.bs.collapse', function(e){
-        if($('.img-container').length){
-            $('.img-container').imagefill();
-        }
-    });
+	// if($('.img-container').not('.lazyload').length){
+	// 	$('.img-container').not('.lazyload').imagefill();
+	// }
+ //    $('.panel-collapse').on('shown.bs.collapse', function(e){
+ //        if($('.img-container').length){
+ //            $('.img-container').imagefill();
+ //        }
+ //    });
     /* =================================================================
      * LOAZYLOAD IMAGES
      * =================================================================
-     */
-    if($('img.lazyload').length){
-        $('img.lazyload').lazyload();
-    }
-    if($('.img-container.lazyload').length){
-        $('.img-container.lazyload img').lazyload();
+    //  */
+    // if($('img.lazyload').length){
+    //     $('img.lazyload').lazyload();
+    // }
+    // if($('.img-container.lazyload').length){
+    //     $('.img-container.lazyload img').lazyload();
         
-        $('.img-container.lazyload img').load(function(){
-            if($(this).parents('.img-container').length > 0)
-                $(this).parents('.img-container').imagefill();
-        });
-    }
+    //     $('.img-container.lazyload img').load(function(){
+    //         if($(this).parents('.img-container').length > 0)
+    //             $(this).parents('.img-container').imagefill();
+    //     });
+    // }
     /* =================================================================
      * SHARRRE
      * =================================================================
