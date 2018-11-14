@@ -160,6 +160,7 @@ if($appearance['header_sticky'] == 1){
                 <a class="navbar-brand" href="<?php echo DOCBASE.trim(LANG_ALIAS, "/"); ?>" title="<?php echo $homepage['title']; ?>"><img src="<?php echo getFromTemplate("images/vissi-d-arte-logo-brown.svg"); ?>" alt="<?php echo SITE_TITLE; ?>"></a>
             <?php endif; ?>
             <div id="mainMenu" class="menu-position-<?= $appearance['menu_position'] ?>">
+                <div class="nav-wrapper">
                 <ul class="nav navbar-nav">
                     <?php
                     function subMenu($id_parent, $menu)
@@ -259,7 +260,7 @@ if($appearance['header_sticky'] == 1){
                         </div>
                     </li> */ ?>
                 </ul>
-                    
+                </div> 
                     <?php
                     if(LANG_ENABLED){
                         if(count($langs) > 0){ ?>

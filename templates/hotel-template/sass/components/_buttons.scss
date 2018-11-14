@@ -7,6 +7,10 @@
     border-radius: 0;
     line-height: 1;
     transition: all ease-in-out 0.3s;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
 }
 .btn-number {
     padding: 2px;

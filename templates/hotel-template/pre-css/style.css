@@ -75,8 +75,10 @@ div#cookies-notice {
 h1, h2, h3, h4 {
   font-weight: normal; }
 
-a:hover {
-  text-decoration: none; }
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none; }
 
 #overlay {
   position: fixed;
@@ -443,6 +445,13 @@ header.logo-position-5 .navbar-brand {
 #mainMenu.menu-position-3 {
   float: right; }
 
+@media (max-width: 1200px) {
+  .nav-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center; } }
+
 header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1 #mainMenu.menu-position-3 {
   position: absolute;
   top: 50%;
@@ -457,7 +466,6 @@ header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMe
       height: 100vh;
       min-height: 700px;
       width: 100%;
-      padding-top: 100px;
       z-index: 6;
       background-color: #79675a; } }
 
@@ -473,6 +481,10 @@ body[dir="rtl"] #mainMenu {
 #mainMenu .navbar-nav {
   position: relative;
   z-index: 1; }
+  @media (max-width: 1200px) {
+    #mainMenu,
+    #mainMenu .navbar-nav {
+      margin-bottom: 5rem; } }
 
 .navbar-brand {
   margin-left: -13px; }
@@ -1667,7 +1679,10 @@ li.prices,
   text-transform: uppercase;
   border-radius: 0;
   line-height: 1;
-  transition: all ease-in-out 0.3s; }
+  transition: all ease-in-out 0.3s;
+  outline: none; }
+  .btn:focus {
+    outline: none; }
 
 .btn-number {
   padding: 2px; }

@@ -232,12 +232,21 @@ header.logo-position-5 .navbar-brand{
 #mainMenu.menu-position-3{ 
 	float:right;
 }
+.nav-wrapper {
+    @include breakpoint(desktop--small) {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
 header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1  #mainMenu.menu-position-3{
 	position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0px;
     margin: 0;
+    
     @include breakpoint(desktop--small) {
         position: fixed;
         transform: none;
@@ -245,9 +254,10 @@ header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMe
         height: 100vh;
         min-height: 700px;
         width: 100%;
-        padding-top: 100px;
+        // padding-top: 100px;
         z-index: 6;
         background-color: $c-main;
+
     }
 }
 
@@ -263,6 +273,9 @@ body[dir="rtl"] #mainMenu {
 #mainMenu .navbar-nav {
     position: relative;
     z-index: 1;
+    @include breakpoint(desktop--small) {
+        margin-bottom: 5rem;
+    }
 }
 .navbar-brand {
     margin-left: -13px;
