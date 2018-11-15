@@ -64,7 +64,7 @@
             width: 48%;
             margin-right: 4%;
         }
-
+        
         &:nth-of-type(4) {
             @include breakpoint(tablet) {
                 margin-right: 0;
@@ -83,6 +83,7 @@
         }
         .form-control {
             position: relative;
+            background-color: $c-white;
             @include breakpoint(mobile--s) {
                 padding: 0;
             }
@@ -180,6 +181,9 @@
     }
     .btn-group.open .dropdown-toggle {
         box-shadow: none;
+        &:hover {
+            background-color: $c-white;
+        }
     }
     .ui-widget-content {
         border: 1px solid #eee;
@@ -236,9 +240,7 @@ span.filter-option {
     color: $c-quillGrey;
 }
 
-.booking-search .btn.dropdown-toggle {
-    background: #fff;
-}
+
 #search-home,
 #search-home-bottom {
     position: relative;
@@ -491,6 +493,12 @@ input[type="number"] {
 -moz-appearance: textfield;
 }
 
+.btn-default {
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+}
   
 
 

@@ -1939,7 +1939,8 @@ li.prices,
       .booking-search .form-drop .btn:focus {
         outline: none !important; }
     .booking-search .form-drop .form-control {
-      position: relative; }
+      position: relative;
+      background-color: #fff; }
       @media (max-width: 480px) {
         .booking-search .form-drop .form-control {
           padding: 0; } }
@@ -2024,6 +2025,8 @@ li.prices,
         font-size: 2.2rem; } }
   .booking-search .btn-group.open .dropdown-toggle {
     box-shadow: none; }
+    .booking-search .btn-group.open .dropdown-toggle:hover {
+      background-color: #fff; }
   .booking-search .ui-widget-content {
     border: 1px solid #eee;
     box-shadow: 0px 2px 3px -3px rgba(0, 0, 0, 0.75); }
@@ -2072,9 +2075,6 @@ li.prices,
 
 span.filter-option {
   color: #c5c4be; }
-
-.booking-search .btn.dropdown-toggle {
-  background: #fff; }
 
 #search-home,
 #search-home-bottom {
@@ -2286,6 +2286,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; }
+
+.btn-default:hover, .btn-default:focus {
+  background-color: transparent; }
 
 ul[class^="items-"] li {
   float: left;
