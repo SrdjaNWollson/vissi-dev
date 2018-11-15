@@ -34,32 +34,32 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="alert alert-success" style="display:none;"></div>
             <div class="alert alert-danger" style="display:none;"></div>
             
-            <div class="row">
+            <div class="static__text">
                 <?php
                 $widgetsLeft = getWidgets('left', $page_id);
                 $widgetsRight = getWidgets('right', $page_id);
                 
                 if(!empty($widgetsLeft)){ ?>
-                    <div class="col-sm-3">
+                    <div class="">
                         <?php displayWidgets('left', $page_id); ?>
                     </div>
                     <?php
                 } ?>
                 
-                <div class="col-sm-<?php if(!empty($widgetsLeft) && !empty($widgetsRight)) echo 6; elseif(!empty($widgetsLeft) || !empty($widgetsRight)) echo 9; else echo 12; ?>">
-                    <?php echo $page['text']; ?>
-                </div>
+
+                <?php echo $page['text']; ?>
+
                 
                 <?php
                 if(!empty($widgetsRight)){ ?>
-                    <div class="col-sm-3">
+                    <div class="">
                         <?php displayWidgets('right', $page_id); ?>
                     </div>
                     <?php
                 } ?>
             </div>
 
-            <div class="row">
+            <div class="">
                 <?php
                 $lz_offset = 1;
                 $lz_limit = 9;

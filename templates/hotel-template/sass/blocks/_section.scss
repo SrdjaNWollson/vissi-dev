@@ -475,8 +475,10 @@ li.prices,
 		z-index: 5;
 		background-color: #f4f3f0;
 		cursor: pointer;
+		transition: all ease 0.3s;
 		@include breakpoint(mobile) {
 			display: block;
+			transition: none;
 		}
 		&:before {
 			@include absolute(center);

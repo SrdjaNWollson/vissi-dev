@@ -9,6 +9,9 @@ ul[class^="items-"] {
 		list-style-type: none;
 		@include breakpoint(tablet) {
 			position: relative;
+			height: 15rem;
+		}
+		@include breakpoint(mobile) {
 			height: 13rem;
 		}
 		img {
@@ -19,9 +22,12 @@ ul[class^="items-"] {
 		font-family: $butler;
 		font-size: 16px;
 		color: #636363;
+		position: relative;
+    	top: 0.5rem;
 		@include breakpoint(tablet) {
 			display: block;
 			@include absolute(center-horizontal);
+			top: auto;
 			bottom: 0;
 			width: 100%;
 			font-size: 3rem;

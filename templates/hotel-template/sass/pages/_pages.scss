@@ -671,6 +671,12 @@
 		position: relative;
 		padding-bottom: 20rem;
 	}
+	.container {
+		display: table;
+		@include breakpoint(tablet) {
+			display: block;
+		}
+	}
 }
 .single-sidebar {
 	width: 26%;
@@ -689,6 +695,11 @@
 	}
 	ul {
 		list-style: none;
+	}
+	.info {
+		@include breakpoint(tablet) {
+			display: none;
+		}
 	}
 	.info li {
 		line-height: 1.57;
@@ -773,8 +784,9 @@
 
 .single-sidebar,
 .single-main {
-	float: left;
+	display: table-cell;
 	@include breakpoint(tablet) {
+		display: block;
 		float: none;
 	}
 }
@@ -981,5 +993,14 @@
 		@include breakpoint(mobile) {
 			font-size: 2.2rem;
 		}
+	}
+}
+
+.static__text {
+    column-count: 2;
+    column-gap: 40px;
+    text-align: justify;
+    @include breakpoint(mobile) {
+		column-count: auto;
 	}
 }

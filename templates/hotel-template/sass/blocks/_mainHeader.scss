@@ -276,6 +276,9 @@ body[dir="rtl"] #mainMenu {
     @include breakpoint(desktop--small) {
         margin-bottom: 5rem;
     }
+    @include breakpoint(mobile) {
+        margin-bottom: 20rem;
+    }
 }
 .navbar-brand {
     margin-left: -13px;
