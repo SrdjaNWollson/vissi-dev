@@ -19,6 +19,7 @@ require(getFromTemplate("common/header.php", false));
             <!--teaser-->    
             <section class="teaser">
                 <div class="container">
+                    
                     <div class="imgSlider">
                         <div class="imgSlider__wrapper">
                             <?php getImagesFromTable($db,'pm_room_file','room'); ?>
