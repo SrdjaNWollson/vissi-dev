@@ -985,7 +985,9 @@ li.prices,
   #rooms .content-slider__right {
     width: 61%;
     float: right;
-    max-width: 1100px; }
+    max-width: 1100px;
+    position: relative;
+    z-index: 55; }
     @media (max-width: 990px) {
       #rooms .content-slider__right {
         width: 100%; } }
@@ -1014,7 +1016,9 @@ li.prices,
     width: 62%;
     padding: 0;
     order: 1;
-    max-width: 982px; }
+    max-width: 982px;
+    position: relative;
+    z-index: 55; }
     @media (max-width: 990px) {
       #offers .content-slider__left, #offers #location .location__info, #location #offers .location__info {
         width: 100%;
@@ -2769,7 +2773,7 @@ ul[class^="items-"] li span {
 
 .left-side .content-holder,
 .right-side .content-holder {
-  max-width: 330px; }
+  max-width: 340px; }
   @media (max-width: 1200px) {
     .left-side .content-holder,
     .right-side .content-holder {
