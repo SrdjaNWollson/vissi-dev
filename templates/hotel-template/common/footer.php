@@ -10,7 +10,9 @@ $footer_col3 = $widget2['footer_col_3'][0];
 <!-- book now -->
 <section id="search-home-bottom" class="third-section">
     <div class="container">
-        <?php include(getFromTemplate('common/search.php', false));
+        <?php 
+        $book_id = 1;
+        include(getFromTemplate('common/search.php', false));
          ?>
     </div>
 </section>
