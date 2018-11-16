@@ -307,7 +307,11 @@
 	.slick-arrow {
 		@include absolute(center-vertical);
 	}
-	
+	&.oneImg {
+		.slick-dots {
+			display: none;
+		}
+	}
 	.slick-dots {
 		width: 100%;
 		left: 0;
@@ -353,10 +357,20 @@
 			float: none;
 		}
 	}
+	.container {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	}
 	.content-holder {
+		@include absolute(center-vertical);
 		max-width: 340px;
+		height: auto;
+		overflow: hidden;
 		@include breakpoint(desktop--small) {
 			max-width: 44rem;
+			position: static;
+			transform: none;
 		}
 		@include breakpoint(tablet) {
 			max-width: 100%;
@@ -375,7 +389,13 @@
 		}
 	}
 	h3 {
-		margin-top: 8rem;
+		margin-top: 0rem;
+		@include breakpoint(tablet) {
+			margin-top: 6rem
+		}
+	}
+	p {
+		margin-bottom: 5rem;
 	}
 	.btn-green {
 		@include breakpoint(mobile) {
