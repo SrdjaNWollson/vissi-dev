@@ -1,6 +1,6 @@
 <?php
 debug_backtrace() || die ('Direct access not permitted');
-
+//var_dump($book_id);
 $max_adults_search = 30;
 $max_children_search = 10;
 
@@ -25,9 +25,9 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
             <div class="input-group">
                 <div class="input-group-addon"> <?php echo $texts['ARRIVAL_DATE']; ?></div>
                 <div class="input-wrapper">
-                    <input type="text" class="form-control" id="from_picker" name="from_date" value="<?php echo $from_date; ?>" autocomplete="off" readonly>
+                    <input type="text" class="form-control" id="from_picker<?= $book_id; ?>" name="from_date<?= $book_id; ?>" value="<?php echo $from_date; ?>" autocomplete="off" readonly>
                 </div>
-                <div id="fromDate-holder"></div>
+                <div id="fromDate-holder<?= $book_id; ?>"></div>
                 <i class="icon-calendar"></i>
             </div>
             <div class="field-notice" rel="from_date"></div>
@@ -38,9 +38,9 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
             <div class="input-group">
                 <div class="input-group-addon"> <?php echo $texts['DEPARTURE_DATE']; ?></div>
                 <div class="input-wrapper">
-                    <input type="text" class="form-control" id="to_picker" name="to_date" value="<?php echo $to_date; ?>" autocomplete="off" readonly>
+                    <input type="text" class="form-control" id="to_picker<?= $book_id; ?>" name="to_date<?= $book_id; ?>" value="<?php echo $to_date; ?>" autocomplete="off" readonly>
                 </div>
-                <div id="toDate-holder"></div>
+                <div id="toDate-holder<?= $book_id; ?>"></div>
                 <i class="icon-calendar"></i>
             </div>
             <div class="field-notice" rel="to_date"></div>
@@ -50,7 +50,7 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
         <div class="form-group form-drop">
             <div class="input-group">
                 <div class="input-group-addon"><?php echo $texts['PERSONS']; ?></div>
-                <select name="num_adults" class="selectpicker form-control">
+                <select name="num_adults<?= $book_id; ?>" class="selectpicker form-control">
                     <?php
                     for($i = 1; $i <= $max_adults_search; $i++){
                         $select = ($_SESSION['num_adults'] == $i) ? ' selected="selected"' : '';
@@ -65,7 +65,7 @@ $to_date = (isset($_SESSION['to_date'])) ? $_SESSION['to_date'] : date('j/m/Y', 
         <div class="form-group form-drop">
             <div class="input-group">
                 <div class="input-group-addon"> <?php echo $texts['CHILDREN']; ?></div>
-                <select name="num_children" class="selectpicker form-control">
+                <select name="num_children<?= $book_id; ?>" class="selectpicker form-control">
                     <?php
                     for($i = 0; $i <= $max_children_search; $i++){
                         $select = ($_SESSION['num_children'] == $i) ? ' selected="selected"' : '';

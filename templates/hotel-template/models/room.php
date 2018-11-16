@@ -21,8 +21,8 @@ if($result !== false && $db->last_row_count() > 0){
         $file_id = $row['id'];
         $filename = $row['file'];
         
-        if(is_file(SYSBASE.'medias/room/medium/'.$file_id.'/'.$filename))
-            $page_img = getUrl(true).DOCBASE.'medias/room/medium/'.$file_id.'/'.$filename;
+        if(is_file(SYSBASE.'medias/room/big/'.$file_id.'/'.$filename))
+            $page_img = getUrl(true).DOCBASE.'medias/room/big/'.$file_id.'/'.$filename;
     }
     
 }else err404();
@@ -69,10 +69,18 @@ require(getFromTemplate('common/header.php', false)); ?>
                         $label = $row['label'];
                         
                         $realpath = SYSBASE.'medias/room/big/'.$file_id.'/'.$filename;
-                        $thumbpath = DOCBASE.'medias/room/big/'.$file_id.'/'.$filename;
+                        $zoompath = DOCBASE.'medias/room/big/'.$file_id.'/'.$filename;
                         
+
+                        img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+
+                        $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+
                         if(is_file($realpath)){ ?>
-                            <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>" "/>
+                            <picture> 
+                            <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+                            <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>" "/>
+                            </picture>
                             <?php
                         }
                     }
@@ -97,37 +105,28 @@ require(getFromTemplate('common/header.php', false)); ?>
                         
                         $short_text = strtrunc(strip_tags($room['descr']), 100);
                         $site_url = getUrl(); ?>
-                       
-                        <div id="twitter" data-url="<?php echo $site_url; ?>" data-text="<?php echo $short_text; ?>" data-title="Tweet"></div>
-                        <div id="facebook" data-url="<?php echo $site_url; ?>" data-text="<?php echo $short_text; ?>" data-title="Like"></div>
-                        <div id="googleplus" data-url="<?php echo $site_url; ?>" data-curl="<?php echo DOCBASE.'js/plugins/sharrre/sharrre.php'; ?>" data-text="<?php echo $short_text; ?>" data-title="+1"></div>
-                 
-                        <h5>The package includes:</h5>
+                        
+                        <?php 
 
-                        <ul class="items-3">
+    
+                       $result_facility = $db->query('SELECT * FROM pm_facility WHERE lang = '.LANG_ID.' AND id IN('.$room['facilities'].') ORDER BY id',PDO::FETCH_ASSOC);
+                        if($result_facility !== false && $db->last_row_count() > 0){ ?>              
+                
                         <?php
-                        $result_rating = $db->query('SELECT count(*) as count_rating, AVG(rating) as avg_rating FROM pm_comment WHERE item_type = \'room\' AND id_item = '.$room_id.' AND checked = 1 AND rating > 0 AND rating <= 5');
-                        if($result_rating !== false && $db->last_row_count() > 0){
-                            $row = $result_rating->fetch();
-                            $room_rating = $row['avg_rating'];
-                            $count_rating = $row['count_rating'];
-                            
-                            if($room_rating > 0 && $room_rating <= 5){ ?>
-                            
-                                <input type="hidden" class="rating pull-left" value="<?php echo $room_rating; ?>" data-rtl="<?php echo (RTL_DIR) ? true : false; ?>" data-size="xs" readonly="true" data-default-caption="<?php echo $count_rating.' '.$texts['RATINGS']; ?>" data-show-caption="true">
-                                <?php
-                            }
-                        } ?>
+                        $facility_counter = 0;
 
-                        <?php
-                        $result_facility = $db->query('SELECT * FROM pm_facility WHERE lang = '.LANG_ID.' AND id IN('.$room['facilities'].') ORDER BY id',PDO::FETCH_ASSOC);
-                        if($result_facility !== false && $db->last_row_count() > 0){
                             foreach($result_facility as $i => $row){
                                 $facility_id 	= $row['id'];
                                 $facility_name  = $row['name'];
-                                
+
                                 $result_facility_file = $db->query('SELECT * FROM pm_facility_file WHERE id_item = '.$facility_id.' AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1',PDO::FETCH_ASSOC);
                                 if($result_facility_file !== false && $db->last_row_count() > 0){
+
+                                    //var_dump($facility_counter);
+                                    if($facility_counter == 0){ ?>
+                                    <h5>The package includes:</h5>
+                                    <ul class="items-3">
+                                    <?php }
                                     $row = $result_facility_file->fetch();
                                     
                                     $file_id 	= $row['id'];
@@ -143,11 +142,18 @@ require(getFromTemplate('common/header.php', false)); ?>
                                         </li>
                                         <?php
                                     }
+                                    $facility_counter ++;
                                 }
+                                
+                                
                             }
-                        } ?>
-                        </ul>
-                        <a href="#dummy" class="back-link"><i class="icon-left-arrow"></i><span>Back to offers</span></a>
+                        ?>
+                        
+                        <?php } 
+
+                        if($facility_counter >= 0) echo "</ul>";
+                        ?>
+                        <a href="#dummy" class="back-link"><i class="icon-left-arrow"></i><span>Back to rooms</span></a>
                         <a href="#dummy" class="btn btn-green"><span>Book now</span></a>
                     </div>
                 </div> 

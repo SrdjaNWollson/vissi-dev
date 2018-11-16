@@ -15,6 +15,8 @@ if($appearance['arrow_position'] == 1){
 	$arrowClass = "centerArrow";
 }
 
+$book_id = ""; 
+
 $slide_id = 0;
 $result_slide_file = $db->prepare('SELECT * FROM pm_slide_file WHERE id_item = :slide_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
 $result_slide_file->bindParam('slide_id', $slide_id);
@@ -26,7 +28,9 @@ if($result_slide !== false){
         <?php if($appearance['booking_search_position'] == 1 || $appearance['booking_search_position'] == 3) : ?>
         <div id="search-home-wrapper">
             <div id="search-home" class="container">
-                <?php include(getFromTemplate('common/search.php', false)); ?>
+                <?php 
+
+                include(getFromTemplate('common/search.php', false)); ?>
             </div>
         </div>
 		<?php endif; ?>

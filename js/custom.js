@@ -336,28 +336,28 @@ $(document).ready(function(){
 
     // Datepicker FROM date
         $(function() {
-            $("#fromDate-holder").datepicker({
+            $("#fromDate-holder,#fromDate-holder1").datepicker({
                 startDate: '+1d',
                 rangeSelect: true,
                 onSelect: function(date) {
-                    $("#from_picker").val(date);
-                    $("#fromDate-holder").hide();
+                    $("#from_picker,#from_picker1").val(date);
+                    $("#fromDate-holder,#fromDate-holder1").hide();
                     $(this).closest('form').addClass('selected');
                 }
             }).position({
                 my: "center top",
                 at: "center bottom",
-                of: $("#fromDate-holder"),
+                of: $("#fromDate-holder,#fromDate-holder1"),
                 collision: "flipfit"
             }).hide();
-            $("#from_picker").focus(function() {
-                $("#fromDate-holder").show();
+            $("#from_picker,#from_picker1").focus(function() {
+                $("#fromDate-holder,#fromDate-holder1").show();
             })
         });
         $(document).on('click', function(event) {
             if (!$(event.target).closest('.form-control,.ui-datepicker-prev, .ui-datepicker-next').length) {
                 // Hide the menus.
-                $('#fromDate-holder').hide();
+                $('#fromDate-holder,#fromDate-holder1').hide();
             }
         });
 
