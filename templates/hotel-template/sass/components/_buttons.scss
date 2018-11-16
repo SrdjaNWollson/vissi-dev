@@ -179,11 +179,10 @@
             right: 0rem;
         }
         @include breakpoint(mobile--l) {
-            top: 5rem;    
+            top: 50px; 
+            right: 1rem;   
         }
-         @include breakpoint(mobile--s) {
-            top: 5.5rem;    
-        }
+
         .line {
             background-color: $c-white;
         }
@@ -212,6 +211,11 @@
         }
     }
 } 
+@media screen and(max-width: 375px) {
+    .ham-menu-btn.is-active {
+        top: 55px;
+    }
+}
 
 //-- Book mibile fixed to the bottom always
 
