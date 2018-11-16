@@ -54,8 +54,16 @@ require(getFromTemplate('common/header.php', false)); ?>
         <h2 class="sec-title">
             <?php echo $room['title']; ?>
         </h2>
+        <?php
+            $result_room_file = $db->query('SELECT * FROM pm_room_file WHERE id_item = '.$room_id.' AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank');
 
-        <div class="imgSlider" data-rtl="<?php echo (RTL_DIR) ? 'true' : 'false'; ?>">
+            $bulletClass = "";
+            if($db->last_row_count() <= 1){
+                $bulletClass = "oneImg";
+            }
+
+        ?>
+        <div class="imgSlider <?= $bulletClass; ?>" data-rtl="<?php echo (RTL_DIR) ? 'true' : 'false'; ?>">
             <div class="container">
                 <div class="imgSlider__wrapper">
                 <?php
@@ -92,13 +100,13 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="container">
                 <aside class="single-sidebar">
                     <ul class="single__details">
-                        <li><i class="icon-person"></i><span class="cen-vertical">Adults:</span><span class="num">1</span></li>
-                        <li><i class="icon-person"></i><span class="cen-vertical">Children:</span><span class="num">1</span></li>
-                        <li><i class="icon-price-tag"></i><span class="cen-vertical">Price From:</span><span class="num">199</span></li>
+                        <li><i class="icon-person"></i><span class="cen-vertical">Adults:</span><span class="num"><?= $room['max_adults'] ?></span></li>
+                        <li><i class="icon-person"></i><span class="cen-vertical">Children:</span><span class="num"><?= $room['max_children'] ?></span></li>
+                        <li><i class="icon-price-tag"></i><span class="cen-vertical">Price From:</span><span class="num"><?= formatPrice($room['price']*CURRENCY_RATE); ?></span></li>
                     </ul>
                 </aside>
 
-                <div class="single-main">
+                <div class="single-main"> 
                    
                         <?php
                         echo $room['descr'];

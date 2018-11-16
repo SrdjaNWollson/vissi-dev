@@ -607,6 +607,12 @@ function getSocialLinks($db){
     <?php endforeach;
 }
 
+function numRows($db,$table,$where=NULL){
+    $query = $db->query("SELECT COUNT(*) FROM {$table} {$where}");
+    $num = $query->fetch();
+    return $num;
+}
+
 function getImagesFromTable($db,$table,$entity,$id_item=false){
 
     $query = "SELECT * FROM {$table} WHERE lang = " . LANG_ID . " AND type = 'image'"; 

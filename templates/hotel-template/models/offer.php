@@ -52,12 +52,21 @@ require(getFromTemplate('common/header.php', false)); ?>
         <h2 class="sec-title">
             <?php echo $room['title']; ?>
         </h2>
+        <?php
+            $result_room_file = $db->query('SELECT * FROM pm_offer_file WHERE id_item = '.$room_id.' AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank');
 
-        <article class="imgSlider" data-rtl="<?php echo (RTL_DIR) ? 'true' : 'false'; ?>">
+            $bulletClass = "";
+            if($db->last_row_count() <= 1){
+                $bulletClass = "oneImg";
+            }
+
+        ?>
+        <article class="imgSlider <?= $bulletClass; ?>" data-rtl="<?php echo (RTL_DIR) ? 'true' : 'false'; ?>">
             <div class="container">
+
                 <div class="imgSlider__wrapper">
+                
                 <?php
-                $result_room_file = $db->query('SELECT * FROM pm_offer_file WHERE id_item = '.$room_id.' AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank');
                 if($result_room_file !== false){
                     
                     foreach($result_room_file as $i => $row){
@@ -67,11 +76,18 @@ require(getFromTemplate('common/header.php', false)); ?>
                         $label = $row['label'];
                         
                         $realpath = SYSBASE.'medias/offer/big/'.$file_id.'/'.$filename;
-                        $thumbpath = DOCBASE.'medias/offer/big/'.$file_id.'/'.$filename;
-                        
+                        $zoompath = DOCBASE.'medias/offer/big/'.$file_id.'/'.$filename;
+
+
+                        img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+
+                        $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+
                         if(is_file($realpath)){ ?>
-                            <img alt="<?php echo $label; ?>" src="<?php echo $thumbpath; ?>" "/>
-                            <?php
+                            <picture> 
+                            <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+                            <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>" "/>
+                            </picture>                            <?php
                         }
                     }
                 } ?>
@@ -82,9 +98,9 @@ require(getFromTemplate('common/header.php', false)); ?>
             <div class="container">
                 <aside class="single-sidebar">
                     <ul class="single__details">
-                        <li><i class="icon-moon"></i><span class="cen-vertical">Minimum Stay:</span><span class="num">1</span></li>
-                        <li><i class="icon-person"></i><span class="cen-vertical">Minimum Persons:</span><span class="num">1</span></li>
-                        <li><i class="icon-price-tag"></i><span class="cen-vertical">Price From:</span><span class="num">199</span></li>
+                        <li><i class="icon-moon"></i><span class="cen-vertical">Minimum Stay:</span><span class="num"><?= $room['min_nights'] ?></span></li>
+                        <li><i class="icon-person"></i><span class="cen-vertical">Minimum Persons:</span><span class="num"><?= $room['min_people'] ?></span></li>
+                        <li><i class="icon-price-tag"></i><span class="cen-vertical">Price From:</span><span class="num"><?= formatPrice($room['price']*CURRENCY_RATE); ?></span></li>
                     </ul>
                     <div class="active-period">Active for the period: <span class="period">15 Sep- 31 Mar</span></div>
                     <div class="info">

@@ -106,6 +106,7 @@ if(isset($db) && $db !== false){
                 </div>';
 
                 $html .= "<div class='imgSlider content-".$image_pos."'><div class='imgSlider__wrapper'>";
+                
                     foreach($result_offer_file->fetchAll(PDO::FETCH_ASSOC) as $row){
                         //var_dump('test');
                         $file_id = $row['id']; 
@@ -122,6 +123,7 @@ if(isset($db) && $db !== false){
                         $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
 
                         if(is_file($realpath)){
+                            $html .= '<a itemprop="url" href="'.$offer_alias.'">';
                             $html .= '
                                 <figure class="img-container">
                                 <picture> 
@@ -129,6 +131,7 @@ if(isset($db) && $db !== false){
                                     <img alt="'.$label.'" src="'.$zoompath.'">
                                 </picture>
                                 </figure>';
+                            $html .= '</a>';
                         }
                     }
                 $html .= "</div></div>";
