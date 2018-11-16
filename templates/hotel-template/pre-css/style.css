@@ -2260,6 +2260,7 @@ div[id^="fromDate-holder"],
 div[id^="toDate-holder"] {
   position: absolute !important;
   top: 70px !important;
+  left: 0 !important;
   width: 100%;
   z-index: 555; }
   @media (max-width: 480px) {

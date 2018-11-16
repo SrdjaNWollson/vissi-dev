@@ -363,28 +363,28 @@ $(document).ready(function(){
 
         // Datepicker TO date
         $(function() {
-            $("#toDate-holder").datepicker({
+            $("#toDate-holder,#toDate-holder1").datepicker({
                 startDate: new Date(),
                 rangeSelect: true,
                 onSelect: function(date) {
-                    $("#to_picker").val(date);
-                    $("#toDate-holder").hide();
+                    $("#to_picker, #to_picker1").val(date);
+                    $("#toDate-holder, #toDate-holder1").hide();
                     $(this).closest('form').addClass('selected');
                 }
             }).position({
                 my: "center top",
                 at: "center bottom",
-                of: $("#toDate-holder"),
+                of: $("#toDate-holder, #toDate-holder1"),
                 collision: "flipfit"
             }).hide();
-            $("#to_picker").focus(function() {
-                $("#toDate-holder").show();
+            $("#to_picker, #to_picker1").focus(function() {
+                $("#toDate-holder, #toDate-holder1").show();
             })
         });
         $(document).on('click', function(event) {
             if (!$(event.target).closest('.form-control,.ui-datepicker-prev, .ui-datepicker-next').length) {
                 // Hide the menus.
-                $('#toDate-holder').hide();
+                $('#toDate-holder, #toDate-holder1').hide();
             }
         });
 
