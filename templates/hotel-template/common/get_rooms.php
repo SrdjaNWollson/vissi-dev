@@ -57,14 +57,21 @@ if(isset($db) && $db !== false){
                         $filename = $row['file'];
                         $label = $row['label'];
                         
-                        $realpath = SYSBASE.'medias/room/medium/'.$file_id.'/'.$filename;
+                        $realpath = SYSBASE.'medias/room/big/'.$file_id.'/'.$filename;
                         $thumbpath = DOCBASE.'medias/room/medium/'.$file_id.'/'.$filename;
                         $zoompath = DOCBASE.'medias/room/big/'.$file_id.'/'.$filename;
                         
+                        img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+ 
+                        $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+
                         if(is_file($realpath)){
                             $html .= '
                             <figure class="more-link img-container">
+                            <picture> 
+                                <source media="(max-width: 900px)" srcset="'.$custompath.'">
                                 <img alt="'.$label.'" src="'.$thumbpath.'">
+                            </picture>
                             </figure>';
                         }
                     }

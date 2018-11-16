@@ -407,7 +407,10 @@ function img_crop($source_file, $dest_dir, $new_w, $new_h)
             $filename = substr($source_file, $pos+1);
         else
             $filename = $source_file;
-    
+        //var_dump($dest_dir . $filename);
+
+        $path = $dest_dir . '/' . $filename;
+
         $im_size = getimagesize($source_file);
         $w = $im_size[0];
         $h = $im_size[1];
@@ -435,12 +438,12 @@ function img_crop($source_file, $dest_dir, $new_w, $new_h)
         
         if($new_image = imagecrop($tmp_image, array('x'=>0,'y'=>0, 'width'=>$new_w, 'height'=>$new_h))) {      
             switch($im_type){
-                case IMAGETYPE_JPEG : imagejpeg($new_image, $dest_dir.$filename, 80); break;
-                case IMAGETYPE_PNG : imagepng($new_image, $dest_dir.$filename, 8); break;
-                case IMAGETYPE_GIF : imagegif($new_image, $dest_dir.$filename); break;
+                case IMAGETYPE_JPEG : imagejpeg($new_image, $path, 80); break;
+                case IMAGETYPE_PNG : imagepng($new_image, $path, 8); break;
+                case IMAGETYPE_GIF : imagegif($new_image, $path); break;
             }
             
-            if(chmod($dest_dir.$filename, 0664)) $return = $dest_dir.$filename;
+            if(chmod($path, 0664)) $return = $path;
         }
         
         if(isset($new_image)) imagedestroy($new_image);
@@ -602,11 +605,25 @@ function getImagesFromTable($db,$table,$entity,$id_item=false){
         $filename = $image['file'];
         $file_id = $image['id'];
 
-        $realpath = SYSBASE.'medias/'.$entity.'/medium/'.$file_id.'/'.$filename;
+        $realpath = SYSBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
         $thumbpath = DOCBASE.'medias/'.$entity.'/medium/'.$file_id.'/'.$filename;
         $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
 
-        echo '<div class="img-slide"><img src="'.$zoompath.'" alt=""></div>';
+        img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+
+        $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+
+
+        if(is_file($realpath)) : ?> 
+            <div class="img-slide">
+        <picture> 
+            
+        <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+        <img src="<?= $zoompath ?>" alt="">
+        
+        </picture>
+                </div>
+        <?php endif;
     }
 }
 

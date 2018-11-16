@@ -133,13 +133,13 @@ function contentSlider($db, $atts, $texts){
                             $zoompath = DOCBASE.'medias/'.$entity.'/big/'.$file_id.'/'.$filename;
                             //var_dump($realpath);
 
-                            //img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
+                            img_crop($realpath, SYSBASE.'medias/slide/other/'.$file_id, 540, 465);
 
                         
-                            //$custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
+                            $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
                             if(is_file($realpath)){ ?> 
                             <picture> 
-                                <source media="(max-width: 900px)" srcset="<?= $zoompath; ?>">
+                                <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
                                         <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>" />
                             </picture>
                                 <?php
