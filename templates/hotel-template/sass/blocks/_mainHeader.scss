@@ -273,13 +273,18 @@ header.header-type-1.fixed {
             }
             @include breakpoint(mobile--l) {
                 background-size: 23rem;
-                background-position: 3rem 1.5rem;
+                background-position: 3rem 8px;
             }
-            @include breakpoint(mobile--l) {
+            @include breakpoint(mobile--s) {
                 background-size: 23rem;
-                background-position: 3rem 30px;
+                background-position: 3rem 20px;
             }
         }
+    }
+}
+@media screen and (max-width: 375px) {
+    .nav-wrapper:after {
+        background-position: 3rem 30px;
     }
 }
 // @media screen and (max-device-width: 1200px) and (orientation: landscape) {
@@ -294,19 +299,14 @@ header.header-type-1.fixed {
 //         background-position: 6rem 0.8rem;
 //     }
 // }
-// @media screen and (max-device-width: 990px) and (orientation: landscape) {
-//    .nav-wrapper {
-//         min-height: 1000px;
-//         &:after {
-//             background-size: 20rem;
-//             background-position: 1rem 1rem;
-//         }
-//    }
-//    header.header-type-1.fixed .nav-wrapper:after {
-//         background-size: 16rem;
-//         background-position: 1rem 0rem;
-//     }
-// }
+@media screen and (max-device-width: 990px) and (orientation: landscape) {
+   .nav-wrapper {
+        min-height: 800px;
+   }
+   .nav-wrapper:after {
+        height: 10rem;
+   }
+}
 header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1  #mainMenu.menu-position-3{
 	position: absolute;
     top: 50%;

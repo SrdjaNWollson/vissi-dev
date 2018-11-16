@@ -486,11 +486,21 @@ header.header-type-1.fixed .nav-wrapper {
     @media (max-width: 1200px) and (max-width: 640px) {
       .nav-wrapper:after {
         background-size: 23rem;
-        background-position: 3rem 1.5rem; } }
-    @media (max-width: 1200px) and (max-width: 640px) {
+        background-position: 3rem 8px; } }
+    @media (max-width: 1200px) and (max-width: 480px) {
       .nav-wrapper:after {
         background-size: 23rem;
-        background-position: 3rem 30px; } }
+        background-position: 3rem 20px; } }
+
+@media screen and (max-width: 375px) {
+  .nav-wrapper:after {
+    background-position: 3rem 30px; } }
+
+@media screen and (max-device-width: 990px) and (orientation: landscape) {
+  .nav-wrapper {
+    min-height: 800px; }
+  .nav-wrapper:after {
+    height: 10rem; } }
 
 header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1 #mainMenu.menu-position-3 {
   position: absolute;
@@ -1882,10 +1892,8 @@ li.prices,
         right: 0rem; } }
     @media (max-width: 640px) {
       .ham-menu-btn.is-active {
-        top: 5rem; } }
-    @media (max-width: 480px) {
-      .ham-menu-btn.is-active {
-        top: 5.5rem; } }
+        top: 50px;
+        right: 1rem; } }
     .ham-menu-btn.is-active .line {
       background-color: #fff; }
   .ham-menu-btn.is-active .line:nth-child(2) {
@@ -1906,6 +1914,10 @@ li.prices,
     @media (max-width: 767px) {
       .ham-menu-btn.is-active .line:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg); } }
+
+@media screen and (max-width: 375px) {
+  .ham-menu-btn.is-active {
+    top: 55px; } }
 
 .book-mob-fix {
   display: none; }
