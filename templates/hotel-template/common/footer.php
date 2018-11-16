@@ -37,8 +37,10 @@ $footer_col3 = $widget2['footer_col_3'][0];
         <div class="footer__nav items">
             <ul>
             <?php
-            foreach($menus['footer'] as $nav_id => $nav){ ?>
-                <li>
+            foreach($menus['footer'] as $nav){ 
+                $menu_class = get_active_class($nav['id_item'],$page_id);
+                ?>
+                <li class="<?= $menu_class; ?>">
                     <a href="<?php echo $nav['href']; ?>" title="<?php echo $nav['title']; ?>"><?php echo $nav['name']; ?></a>
                 </li>
                 <?php 

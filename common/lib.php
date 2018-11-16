@@ -36,6 +36,18 @@ if(version_compare(PHP_VERSION, '5.1.2', '>=')){
     }
 }
 
+function get_active_class($curr_page_id,$menu_id){
+    $return = "";
+    if($curr_page_id == $menu_id){
+        $return = "active";
+    }
+    else{
+        $return = "";
+    }
+
+    return $return;
+}
+
 function is_session_started()
 {
     if(php_sapi_name() !== 'cli'){

@@ -66,7 +66,7 @@ function contentSlider($db, $atts, $texts){
  
 
             $alias = isset($pages[9]['alias']) ? $pages[9]['alias'] : null;
-            $url = DOCBASE.$alias.'/'.text_format($row['alias']);
+            $url = DOCBASE.$entity.'s'.$alias.'/'.text_format($row['alias']);
 
             $result_room_file = $db->prepare('SELECT * FROM '.$table.'_file WHERE id_item = :room_id AND checked = 1 AND lang = '.DEFAULT_LANG.' AND type = \'image\' AND file != \'\' ORDER BY rank LIMIT 1');
             $result_room_file->bindParam(':room_id',$id);
@@ -120,6 +120,7 @@ function contentSlider($db, $atts, $texts){
                         </div>
                     </div>
                     <div class="content-slider__<?= $slide_class2 ?>"> 
+                        <a itemprop="url" href="<?php echo $url; ?>" >
                         <div class="<?= $entity; ?>-image-box">
                         <?php
                         if($result_room_file->execute() !== false){
@@ -146,6 +147,7 @@ function contentSlider($db, $atts, $texts){
                             }
                         } ?>
                         </div> <!-- end rooms image box -->
+                        </a>
                      </div><!-- end right -->
                   </div>
             <?php
