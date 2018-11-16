@@ -96,7 +96,7 @@ if(isset($db) && $db !== false){
                             </div>';
                             $html .= '<p>'.$content.'</p>';
                             $html .= '
-                            <a href="#dummy" class="link-more"><span>See more</span><i class="icon-right-arrow"></i></a>
+                            <a href="'.$room_alias.'" class="link-more"><span>See more</span><i class="icon-right-arrow"></i></a>
                             <a class="btn btn-green"><span>'.$texts['BOOK_NOW'].'</span></a>
                
 
