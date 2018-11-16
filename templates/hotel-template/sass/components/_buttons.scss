@@ -83,7 +83,9 @@
     @include breakpoint(tablet) {
         height: 6rem;
     }
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         background-color: $c-blackWhite;
         color: $c-gold;
     }
@@ -111,7 +113,9 @@
     @include breakpoint(tablet) {
         padding: 2.25rem 6.5rem;
     }
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         border: 1px solid $c-blackWhite;
         color: $c-offersBg;
     }
@@ -231,7 +235,7 @@
         text-align: center;
         background-color: $c-white;
         z-index: 99999;
-        border-top: 1px solid #79675a;
+        border-top: 1px solid $c-offersBg;
     }
     .btn-green {
         float: none;

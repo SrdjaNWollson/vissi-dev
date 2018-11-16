@@ -398,7 +398,7 @@ li.prices,
 		h4 {
 			font-size: 12px;
 			text-transform: uppercase;
-			color: $c-gold;
+			color: $c-mainLighter;
 			line-height: 1.6;
 			letter-spacing: 2px;
 			@include breakpoint(tablet) {
@@ -413,6 +413,7 @@ li.prices,
 			display: none;
 		}
 		p {
+			color: $c-offersBg;
 			@include breakpoint(tablet) {
 				width: 80%;
 				margin: 0 auto;
@@ -466,8 +467,6 @@ li.prices,
 	.slick-arrow {
 		display: none;
 		outline: none;
-		position: absolute;
-		top: 50%;
 		width: 5.4rem;
 		height: 5.4rem;
 		border: none;
@@ -589,6 +588,18 @@ li.prices,
     		float: none;
     		font-size: 1.75rem;
     	}
+	}
+	.slick-arrow {
+		top: 45.2rem;
+		@include breakpoint(mobile--s) {
+			top: 46.5rem;
+		}
+	}
+}
+
+.offers-slider {
+	.slick-arrow {
+		background-color: $c-main;
 	}
 }
 
@@ -739,6 +750,14 @@ li.prices,
 	background-repeat: no-repeat;
 	background-position: 124% -380px;
 	background-size: 40%;
+	@include breakpoint(tablet) {
+		background-position: -13rem -21rem;
+   		background-size: 40%;
+	}
+	@include breakpoint(mobile) {
+	    background-position: -13rem -21rem;
+   		background-size: 65%;
+	}
 	@include breakpoint(mobile) {
 		padding: 23rem 0 8rem;
 	}

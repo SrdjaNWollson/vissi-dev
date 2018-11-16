@@ -895,6 +895,7 @@
 			font-size: 14px;
 			outline: none;
 			border: none;
+			resize: none;
 			&::placeholder {
 				color: $c-quillGrey;
 			}
@@ -916,6 +917,13 @@
 		padding: 0;
 		height: 43px;
 		width: 100%;
+		background-color: $c-mainLighter;
+		border: 1px solid $c-mainLighter;
+		color: $c-white;
+		&:hover {
+			background-color: #a38978;
+			border: 1px solid #a38978;
+		}
 	}
 }
 

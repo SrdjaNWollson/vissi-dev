@@ -1142,7 +1142,7 @@ li.prices,
     #location .location__info h4 {
       font-size: 12px;
       text-transform: uppercase;
-      color: #c5ae60;
+      color: #b89f89;
       line-height: 1.6;
       letter-spacing: 2px; }
       @media (max-width: 990px) {
@@ -1153,16 +1153,18 @@ li.prices,
           padding: 0 6rem; } }
     #location .location__info p:empty {
       display: none; }
-    @media (max-width: 990px) {
-      #location .location__info p {
-        width: 80%;
-        margin: 0 auto;
-        margin-bottom: 3.5rem;
-        font-size: 2.5rem; } }
-    @media (max-width: 767px) {
-      #location .location__info p {
-        width: 100%;
-        padding: 0 3.5rem; } }
+    #location .location__info p {
+      color: #ecebe4; }
+      @media (max-width: 990px) {
+        #location .location__info p {
+          width: 80%;
+          margin: 0 auto;
+          margin-bottom: 3.5rem;
+          font-size: 2.5rem; } }
+      @media (max-width: 767px) {
+        #location .location__info p {
+          width: 100%;
+          padding: 0 3.5rem; } }
 
 .location__info {
   float: left; }
@@ -1198,8 +1200,6 @@ li.prices,
   .imgSlider .slick-arrow {
     display: none;
     outline: none;
-    position: absolute;
-    top: 50%;
     width: 5.4rem;
     height: 5.4rem;
     border: none;
@@ -1327,6 +1327,15 @@ li.prices,
       display: inline-block;
       float: none;
       font-size: 1.75rem; } }
+
+.content-slider .slick-arrow, #location .slick-arrow, .teaser .slick-arrow {
+  top: 45.2rem; }
+  @media (max-width: 480px) {
+    .content-slider .slick-arrow, #location .slick-arrow, .teaser .slick-arrow {
+      top: 46.5rem; } }
+
+.offers-slider .slick-arrow {
+  background-color: #79675a; }
 
 .link-all-rooms, .teaser-list .link-more {
   font-size: 14px;
@@ -1457,6 +1466,14 @@ li.prices,
   background-repeat: no-repeat;
   background-position: 124% -380px;
   background-size: 40%; }
+  @media (max-width: 990px) {
+    #testimonial {
+      background-position: -13rem -21rem;
+      background-size: 40%; } }
+  @media (max-width: 767px) {
+    #testimonial {
+      background-position: -13rem -21rem;
+      background-size: 65%; } }
   @media (max-width: 767px) {
     #testimonial {
       padding: 23rem 0 8rem; } }
@@ -1568,6 +1585,8 @@ li.prices,
             font-size: 2.5rem; } }
         .footer__nav li a:hover {
           color: #c5ae60; }
+      .footer__nav li.active a {
+        color: #c5ae60; }
 
 .contact-info address {
   margin-bottom: 2.6rem; }
@@ -1795,7 +1814,7 @@ li.prices,
   @media (max-width: 990px) {
     .btn-purchase {
       height: 6rem; } }
-  .btn-purchase:hover {
+  .btn-purchase:hover, .btn-purchase:active, .btn-purchase:focus {
     background-color: #E7E6DD;
     color: #c5ae60; }
   .btn-purchase span {
@@ -1830,7 +1849,7 @@ li.prices,
   @media (max-width: 990px) {
     .btn-sub {
       padding: 2.25rem 6.5rem; } }
-  .btn-sub:hover {
+  .btn-sub:hover, .btn-sub:focus, .btn-sub:active {
     border: 1px solid #E7E6DD;
     color: #ecebe4; }
 
@@ -1931,7 +1950,7 @@ li.prices,
       text-align: center;
       background-color: #fff;
       z-index: 99999;
-      border-top: 1px solid #79675a; } }
+      border-top: 1px solid #ecebe4; } }
   .book-mob-fix .btn-green {
     float: none;
     padding: 1.2rem 3.6rem;
@@ -2147,7 +2166,7 @@ span.filter-option {
 #search-page .container {
   background: #6197d8; }
 
-.booking-search .btn-primary:hover:hover, .booking-search .btn-primary:hover:active, .booking-search .btn-primary:hover:focus {
+.booking-search .btn-primary:hover, .booking-search .btn-primary:active, .booking-search .btn-primary:focus {
   background-color: #6D910D;
   color: #fff; }
 
@@ -2237,15 +2256,15 @@ body.header-type-1 #search-home-wrapper {
   font-family: "Muli", sans-serif;
   font-size: 14px; }
 
-#fromDate-holder,
-#toDate-holder {
+div[id^="fromDate-holder"],
+div[id^="toDate-holder"] {
   position: absolute !important;
   top: 70px !important;
   width: 100%;
   z-index: 555; }
   @media (max-width: 480px) {
-    #fromDate-holder,
-    #toDate-holder {
+    div[id^="fromDate-holder"],
+    div[id^="toDate-holder"] {
       top: 11rem !important; } }
 
 .ui-datepicker .ui-datepicker-header {
@@ -2338,8 +2357,8 @@ a.ui-state-default.ui-state-active {
 .dropdown-menu > li > a {
   color: #79675a; }
 
-#from_picker,
-#to_picker {
+input[id^="from_picke"],
+input[id^="to_picker"] {
   cursor: pointer !important; }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -2350,7 +2369,13 @@ input[type=number]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; }
 
-.btn-default:hover, .btn-default:focus {
+.btn-default:hover, .btn-default:focus, .btn-default:active,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:active {
+  background-color: transparent; }
+
+.open > .dropdown-toggle.btn-default {
   background-color: transparent; }
 
 ul[class^="items-"] li {
@@ -3198,7 +3223,8 @@ ul[class^="items-"] li span {
       color: #c5c4be;
       font-size: 14px;
       outline: none;
-      border: none; }
+      border: none;
+      resize: none; }
       .contact__form .input-wrapper input::placeholder, .contact__form .input-wrapper textarea::placeholder {
         color: #c5c4be; }
   .contact__form .text-address {
@@ -3212,7 +3238,13 @@ ul[class^="items-"] li span {
   .contact__form .btn-green {
     padding: 0;
     height: 43px;
-    width: 100%; }
+    width: 100%;
+    background-color: #b89f89;
+    border: 1px solid #b89f89;
+    color: #fff; }
+    .contact__form .btn-green:hover {
+      background-color: #a38978;
+      border: 1px solid #a38978; }
 
 .contact__info {
   float: left;

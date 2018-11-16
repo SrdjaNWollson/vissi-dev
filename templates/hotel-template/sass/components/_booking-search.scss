@@ -250,7 +250,7 @@ span.filter-option {
     background: #6197d8;
 }
 
-.booking-search .btn-primary:hover {
+.booking-search .btn-primary{
     &:hover,
     &:active,
     &:focus {
@@ -365,8 +365,10 @@ body.header-type-1 #search-home-wrapper{
     font-size: 14px;
 }
 
-#fromDate-holder,
-#toDate-holder {
+
+
+div[id^="fromDate-holder"],
+div[id^="toDate-holder"] {
     position: absolute!important;
     top: 70px!important;
     width: 100%;
@@ -480,8 +482,9 @@ a.ui-state-default.ui-state-active {
     color: $c-main;
 }
 
-#from_picker,
-#to_picker {
+
+input[id^="from_picke"],
+input[id^="to_picker"] {
     cursor: pointer!important;
 }
 
@@ -495,12 +498,18 @@ input[type="number"] {
 -moz-appearance: textfield;
 }
 
-.btn-default {
+.btn-default,
+.open>.dropdown-toggle.btn-default {
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         background-color: transparent;
     }
 }
+
+.open>.dropdown-toggle.btn-default {
+    background-color: transparent;
+} 
   
 
 
