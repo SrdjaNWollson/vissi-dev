@@ -261,7 +261,9 @@ h1 {
   @media (max-width: 1200px) {
     #mainHeader .navbar-nav > li.primary > a.firstLevel {
       font-size: 24px;
-      color: #fff; } }
+      color: #fff;
+      font-family: "ButlerRegular";
+      font-weight: normal; } }
   @media (max-width: 767px) {
     #mainHeader .navbar-nav > li.primary > a.firstLevel {
       font-size: 3rem; } }
@@ -448,12 +450,47 @@ header.logo-position-5 .navbar-brand {
 #mainMenu.menu-position-3 {
   float: right; }
 
+header.header-type-1.fixed .nav-wrapper {
+  background-size: 20rem;
+  background-position: 3rem 1rem; }
+
 @media (max-width: 1200px) {
   .nav-wrapper {
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: center; } }
+    justify-content: center; }
+    .nav-wrapper:after {
+      display: block;
+      position: fixed;
+      top: 0rem;
+      left: 2rem;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 15rem;
+      content: "";
+      background-image: url("../images/vissi-darte-logo-grey.svg");
+      background-repeat: no-repeat;
+      background-size: 200px;
+      background-color: #79675a;
+      background-position: -0px 20px;
+      z-index: 55; } }
+    @media (max-width: 1200px) and (max-width: 767px) {
+      .nav-wrapper:after {
+        width: 100%;
+        left: 0;
+        transform: none;
+        background-size: 20rem;
+        background-position: 3rem 0.5rem; } }
+    @media (max-width: 1200px) and (max-width: 640px) {
+      .nav-wrapper:after {
+        background-size: 23rem;
+        background-position: 3rem 1.5rem; } }
+    @media (max-width: 1200px) and (max-width: 640px) {
+      .nav-wrapper:after {
+        background-size: 23rem;
+        background-position: 3rem 30px; } }
 
 header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1 #mainMenu.menu-position-3 {
   position: absolute;
@@ -467,7 +504,7 @@ header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMe
       transform: none;
       top: 0;
       height: 100vh;
-      min-height: 700px;
+      overflow-y: scroll;
       width: 100%;
       z-index: 6;
       background-color: #79675a; } }
@@ -484,14 +521,10 @@ body[dir="rtl"] #mainMenu {
 #mainMenu .navbar-nav {
   position: relative;
   z-index: 1; }
-  @media (max-width: 1200px) {
+  @media (max-width: 480px) {
     #mainMenu,
     #mainMenu .navbar-nav {
-      margin-bottom: 5rem; } }
-  @media (max-width: 767px) {
-    #mainMenu,
-    #mainMenu .navbar-nav {
-      margin-bottom: 20rem; } }
+      margin-bottom: 3rem; } }
 
 .navbar-brand {
   margin-left: -13px; }
@@ -544,7 +577,7 @@ ul.navbar-nav > li.primary .dropdown-menu {
   height: auto;
   padding: 10px 0;
   position: relative;
-  z-index: 10; }
+  z-index: 1; }
 
 .navbar-brand img {
   width: 100%; }
@@ -1298,7 +1331,7 @@ li.prices,
     .link-all-rooms, .teaser-list .link-more {
       font-size: 1.5rem;
       letter-spacing: 0.3rem; } }
-  .link-all-rooms:hover, .teaser-list .link-more:hover {
+  .link-all-rooms:hover, .teaser-list .link-more:hover, .link-all-rooms:active, .teaser-list .link-more:active, .link-all-rooms:focus, .teaser-list .link-more:focus {
     color: #E7E6DD; }
   .link-all-rooms .icon-right-arrow, .teaser-list .link-more .icon-right-arrow {
     position: relative;
@@ -1689,9 +1722,10 @@ li.prices,
   border-radius: 0;
   line-height: 1;
   transition: all ease-in-out 0.3s;
-  outline: none; }
-  .btn:focus {
-    outline: none; }
+  outline: none !important; }
+  .btn:focus, .btn:active, .btn:visited {
+    outline: none;
+    box-shadow: none; }
 
 .btn-number {
   padding: 2px; }
@@ -1736,6 +1770,9 @@ li.prices,
   .btn-gold:hover {
     border: 1px solid #E7E6DD;
     color: #fff; }
+  .btn-gold:focus, .btn-gold:active {
+    color: #fff;
+    outline-offset: 0px; }
 
 .btn-purchase {
   position: relative;
@@ -1834,7 +1871,21 @@ li.prices,
       height: 4px;
       margin: 6px auto; } }
   .ham-menu-btn.is-active {
-    z-index: 55; }
+    z-index: 55;
+    top: 7rem; }
+    @media (max-width: 990px) {
+      .ham-menu-btn.is-active {
+        top: 55px; } }
+    @media (max-width: 767px) {
+      .ham-menu-btn.is-active {
+        top: 3.5rem;
+        right: 0rem; } }
+    @media (max-width: 640px) {
+      .ham-menu-btn.is-active {
+        top: 5rem; } }
+    @media (max-width: 480px) {
+      .ham-menu-btn.is-active {
+        top: 5.5rem; } }
     .ham-menu-btn.is-active .line {
       background-color: #fff; }
   .ham-menu-btn.is-active .line:nth-child(2) {
@@ -2084,7 +2135,7 @@ span.filter-option {
 #search-page .container {
   background: #6197d8; }
 
-.booking-search .btn-primary:hover:hover {
+.booking-search .btn-primary:hover:hover, .booking-search .btn-primary:hover:active, .booking-search .btn-primary:hover:focus {
   background-color: #6D910D;
   color: #fff; }
 

@@ -26,6 +26,8 @@
         @include breakpoint(desktop--small) {
             font-size: 24px;
             color: $c-white;
+            font-family: $butler;
+            font-weight: normal;
         }
         @include breakpoint(mobile) {
             font-size: 3rem;
@@ -232,14 +234,79 @@ header.logo-position-5 .navbar-brand{
 #mainMenu.menu-position-3{ 
 	float:right;
 }
+
+header.header-type-1.fixed {
+    .nav-wrapper {
+        background-size: 20rem;
+        background-position: 3rem 1rem;
+    }
+}
 .nav-wrapper {
     @include breakpoint(desktop--small) {
         display: flex;
         height: 100%;
+        
         align-items: center;
         justify-content: center;
+        &:after {
+            display: block;
+            position: fixed;
+            top: 0rem;
+            left: 2rem;
+            width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 15rem;
+            content: "";
+            background-image: url('../images/vissi-darte-logo-grey.svg');
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-color: $c-main;
+            background-position: -0px 20px;
+            z-index: 55;
+            @include breakpoint(mobile) {
+                width: 100%;
+                left: 0;
+                transform: none;
+                background-size: 20rem;
+                background-position: 3rem 0.5rem;
+            }
+            @include breakpoint(mobile--l) {
+                background-size: 23rem;
+                background-position: 3rem 1.5rem;
+            }
+            @include breakpoint(mobile--l) {
+                background-size: 23rem;
+                background-position: 3rem 30px;
+            }
+        }
     }
 }
+// @media screen and (max-device-width: 1200px) and (orientation: landscape) {
+//      .nav-wrapper {
+//         &:after {
+//             background-size: 30rem;
+//             background-position: 5.5rem 3rem;
+//         }
+//     }
+//     header.header-type-1.fixed .nav-wrapper:after {
+//         background-size: 28rem;
+//         background-position: 6rem 0.8rem;
+//     }
+// }
+// @media screen and (max-device-width: 990px) and (orientation: landscape) {
+//    .nav-wrapper {
+//         min-height: 1000px;
+//         &:after {
+//             background-size: 20rem;
+//             background-position: 1rem 1rem;
+//         }
+//    }
+//    header.header-type-1.fixed .nav-wrapper:after {
+//         background-size: 16rem;
+//         background-position: 1rem 0rem;
+//     }
+// }
 header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-1, header.logo-position-3 #mainMenu.menu-position-3, header.logo-position-1  #mainMenu.menu-position-3{
 	position: absolute;
     top: 50%;
@@ -252,7 +319,8 @@ header.logo-position-5 #mainMenu.menu-position-1, header.logo-position-3 #mainMe
         transform: none;
         top: 0;
         height: 100vh;
-        min-height: 700px;
+        overflow-y: scroll;
+        //min-height: 700px;
         width: 100%;
         // padding-top: 100px;
         z-index: 6;
@@ -274,10 +342,10 @@ body[dir="rtl"] #mainMenu {
     position: relative;
     z-index: 1;
     @include breakpoint(desktop--small) {
-        margin-bottom: 5rem;
+        //margin-bottom: 5rem;
     }
-    @include breakpoint(mobile) {
-        margin-bottom: 20rem;
+    @include breakpoint(mobile--s) {
+        margin-bottom: 3rem;
     }
 }
 .navbar-brand {
@@ -337,7 +405,7 @@ ul.navbar-nav > li.primary .dropdown-menu {
     height: auto;
     padding: 10px 0;
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
 .navbar-brand img {
     width: 100%;
@@ -393,6 +461,7 @@ ul.navbar-nav > li.primary .dropdown-menu {
     display: block;
     font-size: 12px;
     padding: 11px;
+
 }
 @media(min-width:768px) {
     .navbar-nav ul {

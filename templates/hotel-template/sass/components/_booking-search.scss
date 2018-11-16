@@ -251,7 +251,9 @@ span.filter-option {
 }
 
 .booking-search .btn-primary:hover {
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         background-color: $c-greenDark;
         color: $c-white;
     }

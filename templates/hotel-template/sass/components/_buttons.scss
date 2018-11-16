@@ -7,9 +7,12 @@
     border-radius: 0;
     line-height: 1;
     transition: all ease-in-out 0.3s;
-    outline: none;
-    &:focus {
+    outline: none!important;
+    &:focus,
+    &:active,
+    &:visited {
         outline: none;
+        box-shadow: none;
     }
 }
 .btn-number {
@@ -61,6 +64,11 @@
     &:hover {
         border: 1px solid $c-blackWhite;
         color: $c-white;
+    }
+    &:focus,
+    &:active {
+        color: $c-white;
+        outline-offset: 0px;
     }
 }
 
@@ -158,9 +166,24 @@
             height: 4px;
             margin: 6px auto;
         }
+
     }
     &.is-active {
         z-index: 55;
+        top: 7rem;
+        @include breakpoint(tablet) {
+            top: 55px;
+        }
+        @include breakpoint(mobile) {
+            top: 3.5rem;
+            right: 0rem;
+        }
+        @include breakpoint(mobile--l) {
+            top: 5rem;    
+        }
+         @include breakpoint(mobile--s) {
+            top: 5.5rem;    
+        }
         .line {
             background-color: $c-white;
         }
