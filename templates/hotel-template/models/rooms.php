@@ -1,11 +1,11 @@
 <?php
-$stylesheets[] = array("file" => DOCBASE."js/plugins/isotope/css/style.css", "media" => "all");
-$javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.min.js";
-$javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.sloppy-masonry.min.js";
+// $stylesheets[] = array("file" => DOCBASE."js/plugins/isotope/css/style.css", "media" => "all");
+// $javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.min.js";
+// $javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.sloppy-masonry.min.js";
 
 
-$stylesheets[] = array("file" => DOCBASE."js/plugins/lazyloader/lazyloader.css", "media" => "all");
-$javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";
+// $stylesheets[] = array("file" => DOCBASE."js/plugins/lazyloader/lazyloader.css", "media" => "all");
+// $javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";
 
 require(getFromTemplate("common/header.php", false)); 
 
