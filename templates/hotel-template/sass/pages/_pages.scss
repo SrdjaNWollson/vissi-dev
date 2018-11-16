@@ -307,7 +307,11 @@
 	.slick-arrow {
 		@include absolute(center-vertical);
 	}
-	
+	&.oneImg {
+		.slick-dots {
+			display: none;
+		}
+	}
 	.slick-dots {
 		width: 100%;
 		left: 0;

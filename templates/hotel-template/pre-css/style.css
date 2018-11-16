@@ -2726,6 +2726,9 @@ ul[class^="items-"] li span {
   -o-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+.imgSlider.oneImg .slick-dots {
+  display: none; }
+
 .imgSlider .slick-dots {
   width: 100%;
   left: 0;
