@@ -19,8 +19,15 @@ require(getFromTemplate("common/header.php", false));
             <!--teaser-->    
             <section class="teaser">
                 <div class="container">
-                    
-                    <div class="imgSlider">
+                    <?php 
+                    $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
+                    $num_rows = numRows($db, 'pm_room_file', $where );
+                    $bulletClass = "";
+                    if($num_rows <= 1){
+                        $bulletClass = "oneImg";
+                    }
+                    ?>
+                    <div class="imgSlider <?= $bulletClass; ?>">
                         <div class="imgSlider__wrapper">
                             <?php getImagesFromTable($db,'pm_room_file','room'); ?>
                         </div>

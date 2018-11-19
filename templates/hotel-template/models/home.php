@@ -123,7 +123,7 @@ if($result_slide !== false){
     <!-- link to all offers -->
     <section class="sec-link">
         <div class="container">
-            <a href="/special-offers">See all offers <i class="icon-right-arrow"></i></a>
+            <a href="<?= BASE ?>/special-offers">See all offers <i class="icon-right-arrow"></i></a>
         </div>
     </section>
     <!-- facilities -->
@@ -174,7 +174,7 @@ if($result_slide !== false){
     <!-- testimonials -->
     <section id="testimonial">
         <div class="quotes-sign">
-            <img src="/vissi-dev/templates/hotel-template/images/quotes-sign.png" alt="">
+            <img src="<?= BASE ?>/templates/hotel-template/images/quotes-sign.png" alt="">
         </div>
         <div class="container">
             <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>

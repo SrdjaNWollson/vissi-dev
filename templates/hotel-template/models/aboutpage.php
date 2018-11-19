@@ -37,7 +37,15 @@ $w = $widget['left'][0];
         <!--teaser-->    
         <section class="teaser">
             <div class="container">
-                <div class="imgSlider">
+                <?php 
+                $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
+                $num_rows = numRows($db, 'pm_page_file', $where );
+                $bulletClass = "";
+                if($num_rows <= 1){
+                    $bulletClass = "oneImg";
+                }
+                ?>
+                <div class="imgSlider <?= $bulletClass ?>">
                     <div class="imgSlider__wrapper">
                         <?php getImagesFromTable($db,'pm_page_file','page'); ?>
                     </div>
@@ -72,7 +80,15 @@ $w = $widget['left'][0];
         <!--teaser-->    
         <section class="teaser">
             <div class="container">
-                <div class="imgSlider">
+                <?php 
+                $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
+                $num_rows = numRows($db, 'pm_article_file', $where );
+                $bulletClass = "";
+                if($num_rows <= 1){
+                    $bulletClass = "oneImg";
+                }
+                ?>
+                <div class="imgSlider <?= $bulletClass; ?>">
                     <div class="imgSlider__wrapper">
                         <?php getImagesFromTable($db,'pm_article_file','article'); ?>
                     </div>
