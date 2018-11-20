@@ -99,7 +99,7 @@ function contentSlider($db, $atts, $texts){
                         <div class="content-holder">   
                             <?php if($entity == "room") : ?>
 
-                            <div class="btn-holder"><a href="/rooms" class="link-all-rooms">see all rooms <i class="icon-right-arrow"></i></a></div>
+                            <div class="btn-holder"><a href="<?= BASE ?>/rooms" class="link-all-rooms">see all rooms <i class="icon-right-arrow"></i></a></div>
 
                             <?php endif; ?>
                             

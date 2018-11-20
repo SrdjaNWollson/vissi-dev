@@ -161,7 +161,7 @@ require(getFromTemplate('common/header.php', false)); ?>
 
                         if($facility_counter >= 0) echo "</ul>";
                         ?>
-                        <a href="#dummy" class="back-link"><i class="icon-left-arrow"></i><span>Back to rooms</span></a>
+                        <a href="<?= BASE ?>/rooms" class="back-link"><i class="icon-left-arrow"></i><span>Back to rooms</span></a>
                         <a href="#dummy" class="btn btn-green"><span>Book now</span></a>
                     </div>
                 </div> 

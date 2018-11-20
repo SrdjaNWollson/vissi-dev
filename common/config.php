@@ -51,3 +51,4 @@ define('TOURIST_TAX_TYPE', 'fixed');
 define('ALLOW_COMMENTS', '1');
 define('ALLOW_RATINGS', '1'); // If comments enabled
 define('ENABLE_BOOKING_REQUESTS', '0'); // Possibility to make a reservation request if no availability
+define('BASE', '/vissi-dev');
