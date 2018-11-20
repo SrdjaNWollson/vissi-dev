@@ -175,7 +175,7 @@ if($result_slide !== false){
     <!-- testimonials -->
     <section id="testimonial">
         <div class="quotes-sign">
-            <img src="<?= BASE ?>/templates/hotel-template/images/quotes-sign.png" alt="">
+            <img src="<?= BASE ?>templates/hotel-template/images/quotes-sign.png" alt="">
         </div>
         <div class="container">
             <h3 class="sec-subtitle">COMMENTS FROM TRAVEL EXPERTS</h3>
