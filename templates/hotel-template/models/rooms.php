@@ -21,7 +21,7 @@ require(getFromTemplate("common/header.php", false));
                 <div class="container">
                     
                     <div class="imgSlider">
-                        <div class="imgSlider__wrapper">
+                        <div class="imgSlider__wrapper s-play">
                             <?php getImagesFromTable($db,'pm_room_file','room'); ?>
                         </div>
                     </div>

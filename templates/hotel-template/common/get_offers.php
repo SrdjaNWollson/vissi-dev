@@ -69,7 +69,7 @@ if(isset($db) && $db !== false){
         }
 
         $html .= '
-        <article class="content-slider '.$offer_pos.'">';
+        <article class="content-slider '.$offer_pos.' wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.5s" data-wow-offset="100">';
 
             if($result_offer_file->execute() !== false && $db->last_row_count() > 0){
                 $html .= '
@@ -105,7 +105,7 @@ if(isset($db) && $db !== false){
                     </div>
                 </div>';
 
-                $html .= "<div class='imgSlider content-".$image_pos."'><div class='imgSlider__wrapper'>";
+                $html .= "<div class='imgSlider content-".$image_pos."'><div class='imgSlider__wrapper s-play'>";
                 
                     foreach($result_offer_file->fetchAll(PDO::FETCH_ASSOC) as $row){
                         //var_dump('test');

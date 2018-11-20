@@ -36,7 +36,7 @@ if($result_slide !== false){
 		<?php endif; ?>
 		<div id="sliderContainer">
             
-            <div class="introSlider">
+            <div class="introSlider" id="vissi_parallax">
                 <?php
                 foreach($result_slide as $i => $row){
                     $slide_id = $row['id'];
@@ -82,6 +82,7 @@ if($result_slide !== false){
                     }
                 } ?>
             </div>
+           
         <?php if($appearance['booking_search_position'] == 2 || $appearance == NULL)  : ?>
         <!-- book now -->
         <div id="search-home-wrapper">
@@ -98,12 +99,12 @@ if($result_slide !== false){
     <!-- rooms -->
     <section id="rooms" class="prim-section">
         <div class="container">
-            <h4 class="sec-subtitle">a new vision of comfort</h4>
-            <h2 class="sec-title">Our Rooms</h2>
+            <h4 class="sec-subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">a new vision of comfort</h4>
+            <h2 class="sec-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Our Rooms</h2>
         </div>
         <!-- rooms slider -->
         <div class="content-slider-wrapper">    
-            <div class="rooms-slider content-slider">   
+            <div class="rooms-slider content-slider s-play">   
                 <?php contentSlider($db,array('table'=>'room','section-type'=>'1'),$texts); ?>
             </div>
         </div> 
@@ -111,11 +112,11 @@ if($result_slide !== false){
     <!-- offers --> 
     <section id="offers" class="sec-section">
         <div class="container">
-            <h4 class="sec-subtitle">taste of mediterranean</h4>
-            <h2 class="sec-title">Special Offers</h2>
+            <h4 class="sec-subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">taste of mediterranean</h4>
+            <h2 class="sec-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"s>Special Offers</h2>
         </div>
         <div class="content-slider-wrapper">
-            <div class="offers-slider content-slider">
+            <div class="offers-slider content-slider s-play">
                 <?php contentSlider($db,array('table'=>'offer','section-type'=>'2'),$texts); ?> 
             </div>
         </div>
@@ -184,3 +185,5 @@ if($result_slide !== false){
         </div>
     </section>
 </main>
+
+ 

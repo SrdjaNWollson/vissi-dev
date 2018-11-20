@@ -34,7 +34,10 @@
     }
 }
 .introSlider .infoBlock {
-	top: 29%;
+    top: 20%;
+    @include breakpoint(desktop-fit) {
+        top: 29%;
+    }
     @include breakpoint(mobile) {
         top: 16%;
     }

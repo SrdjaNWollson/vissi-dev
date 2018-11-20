@@ -107,10 +107,12 @@ $footer_col3 = $widget2['footer_col_3'][0];
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            dots: false
+            dots: false,
+            autoplay: true
         });
+
         //-- ROOMS and OFFER slider homepage
-         $('.pg-home .content-slider').on('init', function() {
+         $('.pg-home .s-play').on('init', function() {
             $(this).css("visibility", "visible");
         });
         $('.pg-home .content-slider').slick({
@@ -118,17 +120,61 @@ $footer_col3 = $widget2['footer_col_3'][0];
             slidesToScroll: 1,
             arrows: false,
             dots: true,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            speed: 1500,
             responsive: [
                 {
                 breakpoint: 767,
                     settings: {
-                        arrows: true,
-                        // prevArrow: $('#rooms .icon-left-arrow'),
-                        // nextArrow: $('#rooms .icon-right-arrow')
+                        arrows: true
                     }             
                 }
             ]
         });
+
+    /*-- When scroll into view trrigger autoplay--*/ 
+
+    function debounce(func, wait = 200, immediate = true) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+        };
+    };
+    const $sliderToPlay = document.querySelectorAll('.s-play');
+
+    function checkSlider() {
+        $sliderToPlay.forEach(sliderPlay => {
+            var slide = $(sliderPlay);
+            // bottom of window
+            const sliderInAt = (window.scrollY + window.innerHeight);
+            const sliderBottom = slide.offset().top + slide.outerHeight() / 2;
+
+            // tops of the slider
+            const isHalfShown = slide.offset().top + 300 <= sliderInAt;
+            const isNotScrolledPast = window.scrollY < slide.offset().top;
+            
+            if (isHalfShown && isNotScrolledPast) {
+                console.log('started');
+                
+                slide.slick('play');
+            } else {
+               console.log('stoped');
+               
+               slide.slick('pause');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlider)); 
 
         //-- Testimonial slider
         $('.testimonial-slider').slick({
@@ -136,21 +182,27 @@ $footer_col3 = $widget2['footer_col_3'][0];
             slidesToScroll: 1,
             arrows: false,
             dots: true,
-            adaptiveHeight: true
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            speed: 1000
         });
 
         //-- Teaser slider
-        $('.imgSlider__wrapper').on('init', function() {
-            $(this).css("visibility", "visible");
-        });
+        // $('#page .s-play').on('init', function() {
+        //     $(this).css("visibility", "visible");
+        // });
 
-        $('.imgSlider__wrapper').slick({
+        $('#page .s-play').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
-            dots: true
+            dots: true,
+            autoplay: false,
+            autoplaySpeed: 4000,
+            speed: 2000
         });
-
+        checkSlider();
     </script>
 
     <script>
@@ -177,6 +229,17 @@ $footer_col3 = $widget2['footer_col_3'][0];
           document.addEventListener('DOMContentLoaded', doneLoading, false);
         }());
     </script>
-
+    <script>
+        function prlxEffect() {
+            var vissiParallax = document.getElementById('vissi_parallax');
+            //var infoParallax = document.getElementsByClassName('infoBlock')
+            vissiParallax.style.top = (window.pageYOffset / 4) + 'px';
+           // infoParallax.style.top = -(window.pageYOffset / 10) + 'px';
+        }
+        if($(window).width() > 1200) {
+            window.addEventListener("scroll", prlxEffect);
+        }
+        
+    </script>
 </body>
 </html>

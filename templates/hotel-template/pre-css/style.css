@@ -93,11 +93,11 @@ a:focus {
   align-items: center;
   justify-content: center; }
   #overlay img {
-    width: 64px; }
+    width: 84px; }
 
 @font-face {
   font-family: "ButlerRegular";
-  src: url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"), url("/vissi-dev/templates/hotel-template/fonts/ButlerRegular.woff") format("woff"); }
+  src: url("/templates/hotel-template/fonts/ButlerRegular.ttf") format("truetype"), url("/templates/hotel-template/fonts/ButlerRegular.woff") format("woff"); }
 
 @font-face {
   font-family: 'icomoon';
@@ -158,8 +158,7 @@ a:focus {
   color: #d9d8d3; }
 
 body {
-  font-size: 0 !important;
-  color: black; }
+  font-size: 0 !important; }
 
 html {
   font-size: 10px; }
@@ -296,7 +295,7 @@ h1 {
   font-weight: 600;
   cursor: pointer; }
   #mainHeader .btn-book-now:hover {
-    background-color: #6D910D !important; }
+    background-color: #618501 !important; }
 
 .navbar-nav {
   display: inline-block;
@@ -925,11 +924,14 @@ li.prices,
         font-size: 3.75rem; } }
 
 #rooms {
+  position: relative;
   padding-top: 18rem;
   background-image: url("../images/visi-darte-logo-bg.png");
   background-repeat: no-repeat;
   background-position: 120% -80px;
-  background-size: 40%; }
+  background-size: 40%;
+  background-color: #fff;
+  z-index: 22; }
   @media (max-width: 990px) {
     #rooms {
       padding-top: 390px;
@@ -1066,8 +1068,8 @@ li.prices,
     background-color: #7a9e1a;
     border: 1px solid #7a9e1a; }
     #offers .btn-gold:hover {
-      border: 1px solid #6D910D;
-      background-color: #6D910D;
+      border: 1px solid #618501;
+      background-color: #618501;
       color: #fff; }
   #offers .slick-dots {
     width: 100%;
@@ -1784,8 +1786,8 @@ li.prices,
     .btn-green {
       font-size: 1.75rem; } }
   .btn-green:hover {
-    border: 1px solid #6D910D;
-    background-color: #6D910D;
+    border: 1px solid #618501;
+    background-color: #618501;
     color: #fff; }
 
 .btn-gold,
@@ -1865,7 +1867,7 @@ li.prices,
     .btn-royalSlider {
       padding: 2.2rem 4rem; } }
   .btn-royalSlider:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: none; }
   .btn-royalSlider span {
     font-size: 14px;
@@ -2171,7 +2173,7 @@ span.filter-option {
   background: #6197d8; }
 
 .booking-search .btn-primary:hover, .booking-search .btn-primary:active, .booking-search .btn-primary:focus {
-  background-color: #6D910D;
+  background-color: #618501;
   color: #fff; }
 
 /************** BOOKING SEARCH ***************/
@@ -2714,9 +2716,6 @@ ul[class^="items-"] li span {
     transform: scale(1);
     backface-visibility: hidden; }
 
-.imgSlider__wrapper {
-  visibility: hidden; }
-
 .imgSlider .slick-arrow {
   position: absolute;
   top: 50%;
@@ -2962,15 +2961,15 @@ ul[class^="items-"] li span {
   .our-story__box {
     float: left;
     width: 50%;
-    padding: 10rem 8.6rem 9.6rem 0; }
+    padding: 10rem 8.6rem 9.6rem 0;
+    color: #79675a; }
     @media (max-width: 990px) {
       .our-story__box {
         width: 100%;
         float: none;
         margin: 0 auto;
         padding: 11rem 0 12.5rem;
-        background-color: #ecebe4;
-        color: #79675a; } }
+        background-color: #ecebe4; } }
     .our-story__box h3 {
       margin-bottom: 3rem;
       font-size: 28px; }
@@ -3377,7 +3376,10 @@ ul[class^="items-"] li span {
     -webkit-transform: translate3d(0, 0, 0); }
 
 .introSlider .infoBlock {
-  top: 29%; }
+  top: 20%; }
+  @media (max-width: 1600px) {
+    .introSlider .infoBlock {
+      top: 29%; } }
   @media (max-width: 767px) {
     .introSlider .infoBlock {
       top: 16%; } }

@@ -10,7 +10,7 @@ require(getFromTemplate("common/header.php", false)); ?>
             <section class="teaser">
                 <div class="container">
                     <div class="imgSlider">
-                        <div class="imgSlider__wrapper">
+                        <div class="imgSlider__wrapper s-play">
                             <?php 
                             getImagesFromTable($db,'pm_page_file','page');
                              ?>

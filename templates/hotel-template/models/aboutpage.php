@@ -38,7 +38,7 @@ $w = $widget['left'][0];
         <section class="teaser">
             <div class="container">
                 <div class="imgSlider">
-                    <div class="imgSlider__wrapper">
+                    <div class="imgSlider__wrapper s-play">
                         <?php getImagesFromTable($db,'pm_page_file','page'); ?>
                     </div>
                 </div>
@@ -53,12 +53,12 @@ $w = $widget['left'][0];
         <section class="our-story">
             <div class="container">
                 <article class="our-story__box">
-                    <div class="inner-container">
+                    <div class="inner-container wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                         <?= $w['content']; ?>
                     </div>
                 </article>
                 <article class="our-story__box">
-                    <div class="inner-container">
+                    <div class="inner-container wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                         <?= $w['text1']; ?>
                     </div>
                 </article>
@@ -73,7 +73,7 @@ $w = $widget['left'][0];
         <section class="teaser">
             <div class="container">
                 <div class="imgSlider">
-                    <div class="imgSlider__wrapper">
+                    <div class="imgSlider__wrapper s-play">
                         <?php getImagesFromTable($db,'pm_article_file','article'); ?>
                     </div>
                 </div>

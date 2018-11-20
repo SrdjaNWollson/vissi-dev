@@ -129,9 +129,11 @@ if(isset($page_img)){ ?>
 } ?>
 
 <!-- <div id="loader-wrapper"><div id="loader"></div></div> -->
+<?php if(!isset($_GET['id'])) : ?>
 <div id="overlay">
     <img src="<?php echo getFromTemplate("images/vissi-d-arte-white-logo.svg"); ?>" alt="">
 </div>
+<?php endif; ?>
 
 <?php
 if(ENABLE_COOKIES_NOTICE == 1 && !isset($_COOKIE['cookies_enabled'])){ ?>

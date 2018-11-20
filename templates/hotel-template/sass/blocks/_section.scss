@@ -140,11 +140,14 @@ li.prices,
 //--- Section Room slider
 
 #rooms {
+	position: relative;
 	padding-top: 18rem;
 	background-image: url('../images/visi-darte-logo-bg.png');
 	background-repeat: no-repeat;
 	background-position: 120% -80px;
 	background-size: 40%;
+	background-color: $c-white;
+	z-index: 22;
 	@include breakpoint(tablet) {
 		padding-top: 390px;
 	    background-position: 120% 51px;

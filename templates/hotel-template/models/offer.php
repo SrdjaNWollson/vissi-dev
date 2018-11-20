@@ -64,7 +64,7 @@ require(getFromTemplate('common/header.php', false)); ?>
         <article class="imgSlider <?= $bulletClass; ?>" data-rtl="<?php echo (RTL_DIR) ? 'true' : 'false'; ?>">
             <div class="container">
 
-                <div class="imgSlider__wrapper">
+                <div class="imgSlider__wrapper s-play">
                 
                 <?php
                 if($result_room_file !== false){
