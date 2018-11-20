@@ -25,7 +25,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
     <div class="footer-main container">
         <div class="footer__info items">
             <div class="logo-wrapper">
-                <img src="/vissi-dev/templates/hotel-template/images/vissi-darte-logo-grey.svg" alt="logos">
+                <img src="<?= BASE ?>templates/hotel-template/images/vissi-darte-logo-grey.svg" alt="logos">
             </div>
             <div class="contact-info">
                 <?= $footer_col1['content']; ?>

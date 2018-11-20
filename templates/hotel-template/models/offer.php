@@ -169,7 +169,7 @@ require(getFromTemplate('common/header.php', false)); ?>
                             }
                         } ?>
                         </ul>
-                        <a href="<?= BASE ?>/special-offers" class="back-link"><i class="icon-left-arrow"></i><span>Back to offers</span></a>
+                        <a href="<?= BASE ?>special-offers" class="back-link"><i class="icon-left-arrow"></i><span>Back to offers</span></a>
                         <a href="#dummy" class="btn btn-green"><span>Book now</span></a>
                     </div>
                 </div> 
