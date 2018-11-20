@@ -100,7 +100,7 @@ if($result_slide !== false){
     <section id="rooms" class="prim-section">
         <div class="container">
             <h4 class="sec-subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">a new vision of comfort</h4>
-            <h2 class="sec-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Our Rooms</h2>
+            <h2 class="sec-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Our Rooms</h2>
         </div>
         <!-- rooms slider -->
         <div class="content-slider-wrapper">    
@@ -113,7 +113,7 @@ if($result_slide !== false){
     <section id="offers" class="sec-section">
         <div class="container">
             <h4 class="sec-subtitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">taste of mediterranean</h4>
-            <h2 class="sec-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"s>Special Offers</h2>
+            <h2 class="sec-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"s>Special Offers</h2>
         </div>
         <div class="content-slider-wrapper">
             <div class="offers-slider content-slider s-play">
