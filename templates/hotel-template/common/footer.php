@@ -108,7 +108,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
             slidesToScroll: 1,
             arrows: false,
             dots: false,
-            autoplay: true
+            autoplay: false
         });
 
         //-- ROOMS and OFFER slider homepage
@@ -133,48 +133,48 @@ $footer_col3 = $widget2['footer_col_3'][0];
             ]
         });
 
-    /*-- When scroll into view trrigger autoplay--*/ 
+        /*-- When scroll into view trrigger autoplay--*/ 
 
-    function debounce(func, wait = 200, immediate = true) {
-        var timeout;
-        return function() {
-            var context = this, args = arguments;
-            var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
+        function debounce(func, wait = 200, immediate = true) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+            };
         };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-        };
-    };
-    const $sliderToPlay = document.querySelectorAll('.s-play');
+        const $sliderToPlay = document.querySelectorAll('.s-play');
 
-    function checkSlider() {
-        $sliderToPlay.forEach(sliderPlay => {
-            var slide = $(sliderPlay);
-            // bottom of window
-            const sliderInAt = (window.scrollY + window.innerHeight);
-            const sliderBottom = slide.offset().top + slide.outerHeight() / 2;
+        function checkSlider() {
+            $sliderToPlay.forEach(sliderPlay => {
+                var slide = $(sliderPlay);
+                // bottom of window
+                const sliderInAt = (window.scrollY + window.innerHeight);
+                const sliderBottom = slide.offset().top + slide.outerHeight() / 2;
 
-            // tops of the slider
-            const isHalfShown = slide.offset().top + 300 <= sliderInAt;
-            const isNotScrolledPast = window.scrollY < slide.offset().top;
-            
-            if (isHalfShown && isNotScrolledPast) {
-                console.log('started');
+                // tops of the slider
+                const isHalfShown = slide.offset().top + 300 <= sliderInAt;
+                const isNotScrolledPast = window.scrollY < slide.offset().top;
                 
-                slide.slick('play');
-            } else {
-               console.log('stoped');
-               
-               slide.slick('pause');
-            }
-        });
-    }
+                if (isHalfShown && isNotScrolledPast) {
+                    console.log('started');
+                    
+                    slide.slick('play');
+                } else {
+                   console.log('stoped');
+                   
+                   slide.slick('pause');
+                }
+            });
+        }
 
-    window.addEventListener('scroll', debounce(checkSlider)); 
+        window.addEventListener('scroll', debounce(checkSlider)); 
 
         //-- Testimonial slider
         $('.testimonial-slider').slick({
@@ -189,9 +189,6 @@ $footer_col3 = $widget2['footer_col_3'][0];
         });
 
         //-- Teaser slider
-        // $('#page .s-play').on('init', function() {
-        //     $(this).css("visibility", "visible");
-        // });
 
         $('#page .s-play').slick({
             slidesToShow: 1,
@@ -233,10 +230,10 @@ $footer_col3 = $widget2['footer_col_3'][0];
         function prlxEffect() {
             var vissiParallax = document.getElementById('vissi_parallax');
             //var infoParallax = document.getElementsByClassName('infoBlock')
-            vissiParallax.style.top = (window.pageYOffset / 4) + 'px';
+            vissiParallax.style.top = (window.pageYOffset / 3.2) + 'px';
            // infoParallax.style.top = -(window.pageYOffset / 10) + 'px';
         }
-        if($(window).width() > 1200) {
+        if($(window).width() > 1200 && $('#vissi_parallax').length) {
             window.addEventListener("scroll", prlxEffect);
         }
         

@@ -95,6 +95,7 @@ if($result_slide !== false){
 		<?php
 	}
 } ?>
+
 <main id="content" class="pg-home">
     <!-- rooms -->
     <section id="rooms" class="prim-section">
