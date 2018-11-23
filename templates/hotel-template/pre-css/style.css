@@ -439,7 +439,7 @@ header.logo-position-5 .navbar-brand {
     #mainMenu {
       visibility: hidden;
       opacity: 0;
-      transition: opacity 200ms, visibility 0s 200ms;
+      transition: all ease-in-out 0.3s;
       backface-visibility: hidden; } }
 
 #mainMenu.is-open {
@@ -1342,10 +1342,10 @@ li.prices,
       font-size: 1.75rem; } }
 
 .content-slider .slick-arrow, #location .slick-arrow, .teaser .slick-arrow {
-  top: 45.2rem; }
+  top: 30rem; }
   @media (max-width: 480px) {
     .content-slider .slick-arrow, #location .slick-arrow, .teaser .slick-arrow {
-      top: 46.5rem; } }
+      top: 30.5rem; } }
 
 .offers-slider .slick-arrow {
   background-color: #79675a; }

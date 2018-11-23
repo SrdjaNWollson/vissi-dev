@@ -222,7 +222,7 @@ header.logo-position-5 .navbar-brand{
     @include breakpoint(desktop--small) {
         visibility: hidden;
         opacity: 0;
-        transition: opacity 200ms, visibility 0s 200ms;
+        transition: all ease-in-out 0.3s;
         backface-visibility: hidden;
     }
    
