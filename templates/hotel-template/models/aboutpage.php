@@ -38,6 +38,7 @@ $w = $widget['left'][0];
         <section class="teaser">
             <div class="container">
                 <?php 
+                //var_dump('test');
                 $where = "WHERE lang = " . LANG_ID . " AND type = 'image' AND id_item = " . $page_id;
                 $num_rows = numRows($db, 'pm_page_file', $where );
                 $bulletClass = "";
@@ -82,7 +83,7 @@ $w = $widget['left'][0];
             <div class="container">
                 <?php 
                 $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
-                $num_rows = numRows($db, 'pm_article_file', $where );
+                $num_rows = numRows($db, 'pm_room_file', $where );
                 $bulletClass = "";
                 if($num_rows <= 1){
                     $bulletClass = "oneImg";
@@ -90,7 +91,7 @@ $w = $widget['left'][0];
                 ?>
                 <div class="imgSlider <?= $bulletClass; ?>">
                     <div class="imgSlider__wrapper s-play">
-                        <?php getImagesFromTable($db,'pm_article_file','article'); ?>
+                        <?php getImagesFromTable($db,'pm_room_file','room'); ?>
                     </div>
                 </div>
                 <div class="teaser__content">

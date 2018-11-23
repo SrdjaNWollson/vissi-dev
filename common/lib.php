@@ -635,9 +635,9 @@ function getImagesFromTable($db,$table,$entity,$id_item=false){
 
         if(is_file($realpath)) : ?> 
             <div class="img-slide">
-        <picture> 
+        <picture>  
             
-        <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+        <source media="(max-width: 900px)" srcset="<?= $zoompath; ?>">
         <img src="<?= $zoompath ?>" alt="">
         
         </picture>

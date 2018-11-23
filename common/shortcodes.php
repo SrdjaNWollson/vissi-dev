@@ -140,7 +140,7 @@ function contentSlider($db, $atts, $texts){
                             $custompath = DOCBASE.'medias/slide/other/'.$file_id.'/'.$filename;
                             if(is_file($realpath)){ ?> 
                             <picture> 
-                                <source media="(max-width: 900px)" srcset="<?= $custompath; ?>">
+                                <source media="(max-width: 900px)" srcset="<?= $zoompath; ?>">
                                         <img alt="<?php echo $label; ?>" src="<?php echo $zoompath; ?>" />
                             </picture>
                                 <?php
