@@ -616,7 +616,8 @@ function numRows($db,$table,$where=NULL){
 function getImagesFromTable($db,$table,$entity,$id_item=false){
 
     $query = "SELECT * FROM {$table} WHERE lang = " . LANG_ID . " AND type = 'image'"; 
-    if($id_item) $query .= " AND id_item = " . $id_item; 
+    if($id_item) $query .= " AND id_item = " . $id_item;
+
     $images = $db->query($query);
 
     foreach ($images->fetchAll(PDO::FETCH_ASSOC) as $image) {

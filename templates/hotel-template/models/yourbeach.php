@@ -10,7 +10,7 @@ require(getFromTemplate("common/header.php", false)); ?>
             <section class="teaser">
                 <div class="container">
                     <?php 
-                    $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
+                    $where = "WHERE lang = " . LANG_ID . " AND type = 'image' AND id_item = " . $page_id;;
                     $num_rows = numRows($db, 'pm_page_file', $where );
                     $bulletClass = "";
                     if($num_rows <= 1){
@@ -20,7 +20,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                     <div class="imgSlider <?= $bulletClass ?>">
                         <div class="imgSlider__wrapper s-play">
                             <?php 
-                            getImagesFromTable($db,'pm_page_file','page');
+                            getImagesFromTable($db,'pm_page_file','page', $page_id);
                              ?>
                         </div>
                     </div>

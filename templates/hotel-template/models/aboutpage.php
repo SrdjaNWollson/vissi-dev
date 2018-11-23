@@ -38,7 +38,7 @@ $w = $widget['left'][0];
         <section class="teaser">
             <div class="container">
                 <?php 
-                $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
+                $where = "WHERE lang = " . LANG_ID . " AND type = 'image' AND id_item = " . $page_id;
                 $num_rows = numRows($db, 'pm_page_file', $where );
                 $bulletClass = "";
                 if($num_rows <= 1){
@@ -47,7 +47,7 @@ $w = $widget['left'][0];
                 ?>
                 <div class="imgSlider <?= $bulletClass ?>">
                     <div class="imgSlider__wrapper s-play">
-                        <?php getImagesFromTable($db,'pm_page_file','page'); ?>
+                        <?php getImagesFromTable($db,'pm_page_file','page', $page_id); ?>
                     </div>
                 </div>
                 <div class="teaser__content">

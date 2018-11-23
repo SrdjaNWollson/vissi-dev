@@ -1,7 +1,10 @@
 <?php
-require(getFromTemplate("common/header.php", false)); ?>
+require(getFromTemplate("common/header.php", false)); 
 
-<main id="page">
+//var_dump($page_id);
+?>
+
+<main id="page"> 
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
     
@@ -10,8 +13,8 @@ require(getFromTemplate("common/header.php", false)); ?>
             <section class="teaser">
                 <div class="container">
                     <?php 
-                    $where = "WHERE lang = " . LANG_ID . " AND type = 'image'";
-                    $num_rows = numRows($db, 'pm_activity_file', $where );
+                    $where = "WHERE lang = " . LANG_ID . " AND type = 'image' AND id_item = " . $page_id;
+                    $num_rows = numRows($db, 'pm_page_file', $where );
                     $bulletClass = "";
                     if($num_rows <= 1){
                         $bulletClass = "oneImg";
@@ -20,7 +23,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                     <div class="imgSlider <?= $bulletClass ?>">
                         <div class="imgSlider__wrapper s-play">
                             <?php 
-                            getImagesFromTable($db,'pm_activity_file','activity');
+                            getImagesFromTable($db,'pm_page_file','page',$page_id);
                              ?>
                         </div>
                     </div>
