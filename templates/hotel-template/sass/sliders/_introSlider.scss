@@ -39,7 +39,7 @@
 .introSlider .infoBlock {
     top: 20%;
     @include breakpoint(desktop-fit) {
-        top: 29%;
+        top: 23%;
     }
     @include breakpoint(mobile) {
         top: 16%;
@@ -205,4 +205,14 @@
 }
 #sliderContainer .btn-primary:hover {
     border-color: #5381BA;
+}
+
+.slick-track,
+.slick-list,
+.slick-list img {
+    -webkit-perspective: 2000px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    perspective: 2000px;
+    transform: translate3d(0, 0, 0);
 }

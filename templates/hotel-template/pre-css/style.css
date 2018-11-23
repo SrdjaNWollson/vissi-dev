@@ -437,7 +437,14 @@ header.logo-position-5 .navbar-brand {
   float: right; }
   @media (max-width: 1200px) {
     #mainMenu {
-      display: none; } }
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 200ms, visibility 0s 200ms;
+      backface-visibility: hidden; } }
+
+#mainMenu.is-open {
+  visibility: visible;
+  opacity: 1; }
 
 #mainMenu.menu-position-1 {
   float: left; }
@@ -1695,7 +1702,7 @@ li.prices,
       .footer__subscribe .input-wrapper {
         width: 100%;
         height: 6rem;
-        margin-bottom: 10rem; } }
+        margin-bottom: 6rem; } }
     .footer__subscribe .input-wrapper input {
       width: 100%;
       height: 100%;
@@ -3379,7 +3386,7 @@ ul[class^="items-"] li span {
   top: 20%; }
   @media (max-width: 1600px) {
     .introSlider .infoBlock {
-      top: 29%; } }
+      top: 23%; } }
   @media (max-width: 767px) {
     .introSlider .infoBlock {
       top: 16%; } }
@@ -3534,6 +3541,15 @@ ul[class^="items-"] li span {
 
 #sliderContainer .btn-primary:hover {
   border-color: #5381BA; }
+
+.slick-track,
+.slick-list,
+.slick-list img {
+  -webkit-perspective: 2000px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 2000px;
+  transform: translate3d(0, 0, 0); }
 
 /* Slider */
 .slick-slider {

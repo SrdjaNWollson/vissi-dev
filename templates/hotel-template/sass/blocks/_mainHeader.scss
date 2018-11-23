@@ -218,9 +218,18 @@ header.logo-position-5 .navbar-brand{
 #mainMenu {
     text-align: left;
     float: right;
+    
     @include breakpoint(desktop--small) {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 200ms, visibility 0s 200ms;
+        backface-visibility: hidden;
     }
+   
+}
+#mainMenu.is-open {
+    visibility: visible;
+    opacity: 1;
 }
 #mainMenu.menu-position-1{
 	float:left;

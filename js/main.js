@@ -7,8 +7,9 @@ $(document).ready(function(){
 
 	/*-- Mobile menu --*/
 	$('.ham-menu-btn').click(function(){
+		$('#mainMenu').toggleClass("is-open");
 		$(this).toggleClass('is-active');
-		$('#mainMenu').fadeToggle(100);
+		
 		$('html').toggleClass('noScroll');
 	});
     //---------------------------------
