@@ -468,6 +468,8 @@ li.prices,
 }
 
 //-- Slider arrows navigation for mobile only
+
+
 .content-slider-wrapper,
 .imgSlider {
 	position: relative;
@@ -597,9 +599,9 @@ li.prices,
     	}
 	}
 	.slick-arrow {
-		top: 45.2rem;
+		top: 30rem;
 		@include breakpoint(mobile--s) {
-			top: 46.5rem;
+			top: 30.5rem;
 		}
 	}
 }

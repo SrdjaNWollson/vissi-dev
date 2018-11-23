@@ -122,7 +122,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
             dots: true,
             autoplay: false,
             autoplaySpeed: 5000,
-            speed: 1500,
+            speed: 600,
             responsive: [
                 {
                 breakpoint: 767,
@@ -185,7 +185,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
             adaptiveHeight: true,
             autoplay: true,
             autoplaySpeed: 4000,
-            speed: 1000
+            speed: 600
         });
 
         //-- Teaser slider
@@ -197,7 +197,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
             dots: true,
             autoplay: false,
             autoplaySpeed: 4000,
-            speed: 2000
+            speed: 600
         });
         checkSlider();
     </script>
