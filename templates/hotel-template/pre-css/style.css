@@ -2568,6 +2568,22 @@ ul[class^="items-"] li span {
           margin-bottom: 0;
           font-size: 2.5rem;
           text-align: left; } }
+    .teaser__content ul {
+      display: block;
+      list-style-type: disc;
+      list-style-position: inside; }
+    .teaser__content ul li {
+      display: list-item;
+      font-size: 14px;
+      line-height: 1.57;
+      font-weight: 300;
+      color: #79675a; }
+      @media (max-width: 990px) {
+        .teaser__content ul li {
+          font-size: 3rem; } }
+      @media (max-width: 767px) {
+        .teaser__content ul li {
+          font-size: 2.5rem; } }
 
 .teaser-list {
   padding-top: 11.4rem;
