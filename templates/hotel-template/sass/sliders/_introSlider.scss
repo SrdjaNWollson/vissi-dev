@@ -22,9 +22,12 @@
         height: auto;
     }
     .rsContent {
-        position: relative;
+        position: static!important;
         width: 100%;
-        height: auto;
+        height: 90vh;
+        @include breakpoint(slider-h) {
+            height: auto;
+        }
         img {
             width: 100%;
         }
@@ -32,6 +35,9 @@
     .rsSlide {
         position: static;
     } 
+    .slick-list, .slick-track {
+        position: static!important;
+    }
     .slick-slide {
        -webkit-transform: translate3d(0,0,0);
     }
@@ -48,14 +54,14 @@
     }
 }
 .introSlider .infoBlock {
-    top: 20%;
-    @include breakpoint(desktop-fit) {
-        top: 23%;
-    }
-    @include breakpoint(mobile) {
-        top: 16%;
-    }
-    //bottom: 200px;
+    // top: 50%;
+    // margin-top: -10%;
+    // transition: all ease-in-out 0.3s;
+    // @include breakpoint(tablet) {    
+    //    margin: 0;
+    //    transform: translateY(-50%);
+    // }
+    @include absolute(center-vertical);
 }
 .introSlider .infoBlock h1 {
 	margin-bottom: 2.9rem;

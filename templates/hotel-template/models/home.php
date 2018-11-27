@@ -71,7 +71,7 @@ if($result_slide !== false){
                                 </picture>
                                 <?php
                                 if($slide_legend != ''){ ?>
-                                    <div class="infoBlock wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+                                    <div class="infoBlock wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
                                         <?php echo $slide_legend; ?>
                                     </div>
                                     <?php

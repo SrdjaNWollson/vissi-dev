@@ -114,7 +114,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
    <!--  <link rel="stylesheet" href="<?php //echo DOCBASE; ?>common/css/shortcodes.css"> -->
-    <link rel="stylesheet" href="<?php echo getFromTemplate("css/style.css"); ?>?v=1.0">
+    <link rel="stylesheet" href="<?php echo getFromTemplate("css/style.css"); ?>?v=1.1">
     <link rel="stylesheet" href="<?php echo DOCBASE; ?>js/plugins/wow/animate.css">
 </head>
 <body class="header-type-<?= $appearance['header_type'] ?> menu-position-<?= $appearance['menu_position'] ?> logo-position-<?= $appearance['logo_position'] ?> booking-search-position-<?= $appearance['booking_search_position'] ?>" id="page-<?php echo $page_id; ?>" <?php if(RTL_DIR) echo " dir=\"rtl\""; ?>>
@@ -134,7 +134,7 @@ if(isset($page_img)){ ?>
     <img src="<?php echo getFromTemplate("images/vissi-d-arte-white-logo.svg"); ?>" alt="">
 </div>
 <?php endif; ?>
-
+<div id="page-wrapper">
 <?php
 if(ENABLE_COOKIES_NOTICE == 1 && !isset($_COOKIE['cookies_enabled'])){ ?>
     <div id="cookies-notice">

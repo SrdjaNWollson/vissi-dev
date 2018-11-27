@@ -59,6 +59,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
         </div>
     </div>
 </footer>
+</div>
 <!-- <a href="#" id="toTop"><i class="fas fa-fw fa-angle-up"></i></a> -->
 
 
@@ -101,13 +102,18 @@ $footer_col3 = $widget2['footer_col_3'][0];
     <script>
         (function(){
              var ovrl = document.getElementById('overlay');
+              //var page = document.getElementById('page-wrapper');
           
             function doneLoading(){
 
               ovrl.style.opacity = 0;
+              //  setTimeout(function(){ 
+              //   page.style.opacity = "1";
+              // }, 1000);
               setTimeout(function(){ 
                 ovrl.style.display = "none";
               }, 1200);
+             
             }
     
           document.addEventListener('DOMContentLoaded', doneLoading, false);
@@ -126,7 +132,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
             autoplay: false,
             responsive: [
                 {
-                breakpoint: 990,
+                breakpoint: 900,
                     settings: {
                         arrows: false,
                         dots: true
