@@ -98,6 +98,21 @@ $footer_col3 = $widget2['footer_col_3'][0];
             <?php
         }
     } ?>
+    <script>
+        (function(){
+             var ovrl = document.getElementById('overlay');
+          
+            function doneLoading(){
+
+              ovrl.style.opacity = 0;
+              setTimeout(function(){ 
+                ovrl.style.display = "none";
+              }, 1200);
+            }
+    
+          document.addEventListener('DOMContentLoaded', doneLoading, false);
+        }());
+    </script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script type="text/javascript">
@@ -106,9 +121,18 @@ $footer_col3 = $widget2['footer_col_3'][0];
         $('.introSlider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
+            arrows: true,
             dots: false,
-            autoplay: false
+            autoplay: false,
+            responsive: [
+                {
+                breakpoint: 990,
+                    settings: {
+                        arrows: false,
+                        dots: true
+                    }             
+                }
+            ]
         });
 
         //-- ROOMS and OFFER slider homepage
@@ -211,21 +235,7 @@ $footer_col3 = $widget2['footer_col_3'][0];
         //-- WOW init
         wow.init();
     </script>
-    <script>
-        (function(){
-             var ovrl = document.getElementById('overlay');
-          
-            function doneLoading(){
-
-              ovrl.style.opacity = 0;
-              setTimeout(function(){ 
-                ovrl.style.display = "none";
-              }, 1200);
-            }
     
-          document.addEventListener('DOMContentLoaded', doneLoading, false);
-        }());
-    </script>
     <script>
         function prlxEffect() {
             var vissiParallax = document.getElementById('vissi_parallax');

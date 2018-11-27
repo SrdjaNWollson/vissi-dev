@@ -35,6 +35,17 @@
     .slick-slide {
        -webkit-transform: translate3d(0,0,0);
     }
+    .slick-dots {
+        @include breakpoint(tablet) {
+            @include absolute(center-horizontal);
+            margin: 0;
+            padding: 0;
+            bottom: 10rem;
+        }
+        @include breakpoint(mobile) {
+            bottom: 4rem;
+        }
+    }
 }
 .introSlider .infoBlock {
     top: 20%;

@@ -1206,9 +1206,11 @@ li.prices,
     #mapWrapper {
       height: 36rem; } }
 
+.introSlider,
 .content-slider-wrapper,
 .imgSlider {
   position: relative; }
+  .introSlider .slick-arrow,
   .content-slider-wrapper .slick-arrow,
   .imgSlider .slick-arrow {
     display: none;
@@ -1222,10 +1224,12 @@ li.prices,
     cursor: pointer;
     transition: all ease 0.3s; }
     @media (max-width: 767px) {
+      .introSlider .slick-arrow,
       .content-slider-wrapper .slick-arrow,
       .imgSlider .slick-arrow {
         display: block;
         transition: none; } }
+    .introSlider .slick-arrow:before,
     .content-slider-wrapper .slick-arrow:before,
     .imgSlider .slick-arrow:before {
       position: absolute;
@@ -1239,9 +1243,11 @@ li.prices,
       color: #c5ae60;
       font-size: 2.6rem; }
     @media (min-width: 991px) {
+      .introSlider .slick-arrow:hover,
       .content-slider-wrapper .slick-arrow:hover,
       .imgSlider .slick-arrow:hover {
         background-color: rgba(244, 243, 240, 0.6); } }
+  .introSlider .slick-arrow,
   .content-slider-wrapper .slick-arrow,
   .imgSlider .slick-arrow {
     position: absolute;
@@ -1251,6 +1257,7 @@ li.prices,
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
+    .introSlider .slick-arrow:before,
     .content-slider-wrapper .slick-arrow:before,
     .imgSlider .slick-arrow:before {
       position: absolute;
@@ -1262,16 +1269,20 @@ li.prices,
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       display: block; }
+  .introSlider .slick-next,
   .content-slider-wrapper .slick-next,
   .imgSlider .slick-next {
     right: 0; }
+  .introSlider .slick-prev,
   .content-slider-wrapper .slick-prev,
   .imgSlider .slick-prev {
     left: 0; }
+  .introSlider .slick-next:before,
   .content-slider-wrapper .slick-next:before,
   .imgSlider .slick-next:before {
     font-family: 'icomoon';
     content: "\e907"; }
+  .introSlider .slick-prev:before,
   .content-slider-wrapper .slick-prev:before,
   .imgSlider .slick-prev:before {
     font-family: 'icomoon';
@@ -3397,6 +3408,21 @@ ul[class^="items-"] li span {
     position: static; }
   .introSlider .slick-slide {
     -webkit-transform: translate3d(0, 0, 0); }
+  @media (max-width: 990px) {
+    .introSlider .slick-dots {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+      bottom: 10rem; } }
+  @media (max-width: 767px) {
+    .introSlider .slick-dots {
+      bottom: 4rem; } }
 
 .introSlider .infoBlock {
   top: 20%; }
