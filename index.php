@@ -55,6 +55,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
     if($found === false) err404();
 
     $title_tag = $page['title_tag'];
+    
 
     if($article_alias != '' && $page['article_model'] == '') err404();
     if($article_alias == '' && $page['page_model'] == '') err404();

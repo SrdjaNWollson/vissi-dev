@@ -125,11 +125,13 @@ $footer_col3 = $widget2['footer_col_3'][0];
 
         //-- Intro slider
         $('.introSlider').slick({
+            fade: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
             dots: false,
             autoplay: false,
+            speed: 1000,
             responsive: [
                 {
                 breakpoint: 900,

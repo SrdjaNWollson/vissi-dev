@@ -19,7 +19,7 @@
         }
     }
 	.navbar-nav>li.primary>a.firstLevel {
-		font-size: 11px;
+		font-size: 14px;
 		line-height: 1.1;
 		font-weight: 600;
 		color: $c-mainLight;
@@ -51,7 +51,7 @@
 	}
 	.btn-book-now {
 		padding: 11px 13px 10px;
-		font-size: 11px;
+		font-size: 14px;
 		font-weight: 600;
         cursor: pointer;
         &:hover {
@@ -64,7 +64,7 @@
     display: inline-block;
     float: none;
     margin: 0;
-    margin-right: 100px;
+    margin-right: 120px;
     @include breakpoint(desktop--small) {
         margin-right: 0;
     }

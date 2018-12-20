@@ -49,7 +49,7 @@
 				text-align: center;
 			}
 			a {
-				font-size: 11.5px;
+				font-size: 13px;
 				color: $c-offersBg;
 				text-transform: uppercase;
 				transition: all ease-in-out 0.3s;
@@ -182,7 +182,7 @@
 		@include breakpoint(tablet) {
 		 	width: 100%;
 	        height: 6rem;
-	        margin-bottom: 6rem;
+	        margin-bottom: 4rem;
 	    }
 
 		input {
@@ -204,6 +204,9 @@
 		@include breakpoint(tablet) {
 			position: static;
 	        font-size: 1.8rem;
+		}
+		@include breakpoint(mobile) {
+			width: 100%;
 		}
 	}
 }

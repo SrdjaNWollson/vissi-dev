@@ -98,7 +98,7 @@
 			@include breakpoint(mobile) {
 				margin-bottom: 4rem;
 				padding: 0 1.9rem;
-				font-size: 3.25rem;
+				font-size: 4.2rem;
 				text-align: left;
 			}
 		}
@@ -199,7 +199,7 @@
 			}
 			@include breakpoint(mobile) {
 				margin: 2rem 0 4rem;
-				font-size: 3.25rem;
+				font-size: 4.25rem;
 			}
 		}
 		.prices {
@@ -566,7 +566,7 @@
 	.teaser:last-child {
 		padding-top: 13rem;
 		@include breakpoint(mobile) {
-			padding-top: 3.3rem;
+			padding-top: 10rem;
 		}
 	}
 }
@@ -603,7 +603,7 @@
 				font-size: 5rem;
 			}
 			@include breakpoint(mobile) {
-				font-size: 3.25rem;
+				font-size: 4.2rem;
 			}
 		}
 		p {
